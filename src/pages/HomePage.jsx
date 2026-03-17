@@ -110,7 +110,7 @@ export function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
-              <span className="text-xs font-semibold uppercase tracking-luxury text-white">Now booking in Stratford, CT</span>
+              <span className="text-sm font-semibold uppercase tracking-luxury text-white">Now booking in Stratford, CT</span>
             </div>
 
             <h1 className="mt-6 font-serif text-4xl font-normal leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.5rem]">
@@ -175,7 +175,7 @@ export function HomePage() {
                   <svg className="mb-2 h-5 w-5 text-warmStone" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <p className="text-[15px] font-medium leading-[1.6] text-accentNavy">{item}</p>
+                  <p className="text-base font-medium leading-[1.6] text-accentNavy md:text-lg">{item}</p>
                 </div>
             ))}
           </div>
@@ -188,17 +188,17 @@ export function HomePage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-start">
             <ScrollReveal direction="left" delay={0}>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-luxury text-slate-500">About the studio</p>
+              <p className="text-sm font-semibold uppercase tracking-luxury text-slate-500">About the studio</p>
               <h2 className="mt-3 font-serif text-3xl font-normal leading-tight tracking-tight text-accentNavy md:text-4xl">
                 Where science, artistry, and individualized care come together.
               </h2>
-              <p className="mt-6 text-[15px] leading-[1.7] text-slate-600">
+              <p className="mt-6 text-base leading-[1.7] text-slate-600 md:text-lg">
                 Founded by Terri Miller, The Skincare Studio Medical Spa was created from a passion for transformative skincare and a commitment to helping every client feel confident in their own skin.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
+              <p className="mt-4 text-base leading-[1.7] text-slate-600 md:text-lg">
                 With years of experience in dermatology and a deep understanding of the unique needs of diverse skin types and tones, the studio was designed as a welcoming destination for clients seeking expert guidance, modern treatment options, and beautifully natural outcomes.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
+              <p className="mt-4 text-base leading-[1.7] text-slate-600 md:text-lg">
                 We believe aesthetic care should feel both elevated and approachable, combining medical expertise with genuine attention, comfort, and trust.
               </p>
             </div>
@@ -218,7 +218,7 @@ export function HomePage() {
           <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2">
             <ScrollReveal direction="left" delay={0} className="flex">
             <div className="flex-1 rounded-2xl bg-accentNavy p-8 text-white shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">Why clients choose us</p>
+              <p className="text-sm font-semibold uppercase tracking-luxury text-accentGreen">Why clients choose us</p>
               <ul className="mt-4 space-y-3">
                 {reasons.map((reason) => (
                   <li key={reason} className="flex gap-2 text-[15px] leading-[1.6]">
@@ -231,11 +231,11 @@ export function HomePage() {
             </ScrollReveal>
             <ScrollReveal direction="right" delay={100} className="flex">
             <div className="flex-1 rounded-2xl border border-warmStone bg-cream/80 p-8 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Serving Fairfield County</p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
+              <p className="text-sm font-semibold uppercase tracking-luxury text-accentBlue">Serving Fairfield County</p>
+              <p className="mt-4 text-base leading-[1.7] text-slate-600 md:text-lg">
                 Conveniently located in Paradise Green in Stratford, we welcome clients from {serviceAreas.join(", ")} and surrounding communities seeking trusted Botox, filler, laser, peel, and regenerative treatments.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
+              <p className="mt-4 text-base leading-[1.7] text-slate-600 md:text-lg">
                 With flexible scheduling, same-day availability, and a warm, professional environment, every visit is designed to feel seamless and centered around your comfort and goals.
               </p>
             </div>
@@ -263,14 +263,14 @@ export function HomePage() {
             </ScrollReveal>
             <ScrollReveal direction="right" delay={100}>
             <div className="order-1 lg:order-2">
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Treatment philosophy</p>
+              <p className="text-sm font-semibold uppercase tracking-luxury text-accentBlue">Treatment philosophy</p>
               <h2 className="mt-3 font-serif text-3xl font-normal leading-tight tracking-tight text-accentNavy md:text-4xl">
                 Personalized plans. Professional products. Results that feel like you.
               </h2>
-              <p className="mt-6 text-[15px] leading-[1.7] text-slate-600">
+              <p className="mt-6 text-base leading-[1.7] text-slate-600 md:text-lg">
                 Every recommendation begins with careful listening and an individualized plan. Whether you are exploring injectables for the first time, addressing acne or hyperpigmentation, or maintaining healthy, radiant skin, our team takes a thoughtful approach grounded in education and long-term skin health.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
+              <p className="mt-4 text-base leading-[1.7] text-slate-600 md:text-lg">
                 We also offer medical-grade skincare products and expert guidance to help clients build effective at-home routines that complement in-office treatments and support lasting results.
               </p>
             </div>
@@ -285,7 +285,7 @@ export function HomePage() {
               <ScrollReveal key={item.title} direction="up" delay={i * 100}>
               <div className={`rounded-2xl border border-slate-100 ${item.bg} p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md`}>
                 <h3 className="font-serif text-lg font-normal tracking-tight text-accentNavy">{item.title}</h3>
-                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">{item.description}</p>
+                <p className="mt-2 text-base leading-[1.6] text-slate-600 md:text-lg">{item.description}</p>
               </div>
               </ScrollReveal>
             ))}
@@ -302,7 +302,7 @@ export function HomePage() {
           <ScrollReveal direction="left" delay={0}>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Popular services</p>
+              <p className="text-sm font-semibold uppercase tracking-luxury text-accentBlue">Popular services</p>
               <h2 className="mt-3 font-serif text-3xl font-normal leading-tight tracking-tight text-accentNavy md:text-4xl">
                 Advanced treatments tailored to your skin and aesthetic goals.
               </h2>
@@ -324,7 +324,7 @@ export function HomePage() {
                 }`}
               >
                 <h3 className="font-serif text-lg font-normal tracking-tight text-accentNavy">{item.title}</h3>
-                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">{item.description}</p>
+                <p className="mt-2 text-base leading-[1.6] text-slate-600 md:text-lg">{item.description}</p>
                 <a
                   href={bookingUrl}
                   target="_blank"
@@ -356,10 +356,10 @@ export function HomePage() {
           <h2 className="font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
             A simple path to expert care.
           </h2>
-          <p className="mt-6 text-[15px] leading-[1.7] text-slate-600">
+          <p className="mt-6 text-base leading-[1.7] text-slate-600 md:text-lg">
             Browse treatments, review pricing, and schedule directly through our online booking page. If you are unsure where to begin, start with a consultation and our team will guide you toward the most appropriate treatment plan.
           </p>
-          <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
+          <p className="mt-4 text-base leading-[1.7] text-slate-600 md:text-lg">
             New and returning clients can book online for consultations, injectables, facials, corrective treatments, and more.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

@@ -18,7 +18,7 @@ export function Newsletter() {
             <h2 className="font-serif text-2xl font-normal tracking-tight text-white md:text-3xl">
               Stay in the Glow
             </h2>
-            <p className="mt-3 text-[15px] leading-[1.6] text-slate-200">
+            <p className="mt-3 text-base leading-[1.6] text-slate-200 md:text-lg">
               Join our list for exclusive offers, skincare tips, and first access to new treatments.
             </p>
             <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -56,7 +56,7 @@ export function Newsletter() {
             />
             <div className="bg-white/10 px-5 py-3">
               <p className="text-sm font-semibold text-white">3586 Main Street, Stratford, CT</p>
-              <p className="text-xs text-slate-300">Paradise Green · Fairfield County</p>
+              <p className="text-sm text-slate-300">Paradise Green · Fairfield County</p>
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ export function FAQ() {
       </Helmet>
       <div className="mx-auto max-w-3xl px-8 lg:px-12">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">
+          <p className="text-sm font-semibold uppercase tracking-luxury text-accentBlue">
             FAQ
           </p>
           <h2 id="faq-heading" className="mt-3 font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
@@ -54,7 +54,7 @@ export function FAQ() {
               </button>
               {openIndex === i && (
                 <div className="border-t border-slate-100 px-6 pb-5 pt-0">
-                  <p className="text-[15px] leading-[1.7] text-slate-600">{faq.a}</p>
+                  <p className="text-base leading-[1.7] text-slate-600 md:text-lg">{faq.a}</p>
                 </div>
               )}
             </div>

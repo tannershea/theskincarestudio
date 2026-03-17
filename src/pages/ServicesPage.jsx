@@ -149,7 +149,7 @@ function ServiceRow({ service, groupTitle }) {
         className={`overflow-hidden transition-all duration-200 ease-out ${open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         {service.desc && (
-          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-[13px] leading-[1.6] text-slate-500">{service.desc}</p>
+          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-sm leading-[1.6] text-slate-500 md:text-base">{service.desc}</p>
         )}
       </div>
     </div>

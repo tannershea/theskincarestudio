@@ -14,7 +14,7 @@ export function Footer() {
               alt="The Skincare Studio logo"
               className="h-28 w-auto object-contain -ml-3"
             />
-            <p className="mt-4 text-xs font-semibold uppercase tracking-luxury text-slate-500">Medical Spa</p>
+            <p className="mt-4 text-sm font-semibold uppercase tracking-luxury text-slate-500">Medical Spa</p>
             <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">
               Specializing in skin for Black, Latino, African American, and dark skin. Paradise Green, Stratford.
             </p>
@@ -103,7 +103,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-warmStone pt-8 text-center text-sm leading-relaxed text-slate-500">
+        <div className="mt-12 border-t border-warmStone pt-8 text-center text-base leading-relaxed text-slate-500">
           © {new Date().getFullYear()} The Skincare Studio Medical Spa. All rights reserved.
         </div>
       </div>
