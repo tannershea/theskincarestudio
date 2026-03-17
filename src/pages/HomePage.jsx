@@ -161,18 +161,16 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Recognitions - Warm cream + subtle blue accents */}
-      <section className="border-t border-warmStone/50 bg-cream py-16">
+      {/* Recognitions */}
+      <section className="border-t border-slate-100 bg-white py-16">
         <div className="mx-auto max-w-5xl px-8 lg:px-12">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {recognitions.map((item, i) => (
+            {recognitions.map((item) => (
                 <div
                   key={item}
-                  className={`rounded-2xl p-5 ${
-                    i % 2 === 0 ? "bg-white/80 border border-slate-100" : "bg-blueGray/50 border border-accentBlue/10"
-                  }`}
+                  className="rounded-2xl border border-slate-100 bg-white p-5"
                 >
-                  <svg className="mb-2 h-5 w-5 text-warmStone" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <svg className="mb-2 h-5 w-5 text-accentNavy" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <p className="text-base font-medium leading-[1.6] text-accentNavy md:text-lg">{item}</p>
