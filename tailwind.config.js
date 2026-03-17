@@ -5,8 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [
-    { pattern: /^(bg|text|border|ring)-(accentNavy|accentBlue|accentGreen|cream|warmStone|softBlue|softGreen|blueGray|sage)(\/\d+)?$/ },
-    'bg-sage/60', 'bg-sage/70', 'bg-sage/80', 'bg-white', 'bg-white/80', 'bg-white/95', 'bg-cream/30', 'bg-cream/40', 'bg-cream/50', 'bg-cream/60', 'bg-blueGray/30', 'bg-blueGray/50', 'border-accentGreen/20', 'border-accentBlue/10',
+    // Base utilities for custom colors (gradients: from, via, to)
+    { pattern: /^(bg|text|border|ring|from|via|to)-(accentNavy|accentBlue|accentGreen|cream|warmStone|softBlue|softGreen|blueGray|sage)(\/\d+)?$/ },
+    // Explicit class list for dynamic/opacity combos seen in components
+    'bg-sage/60', 'bg-sage/70', 'bg-sage/80', 'bg-sage/70', 'bg-blueGray/20', 'bg-blueGray/30', 'bg-blueGray/50',
+    'bg-white', 'bg-white/80', 'bg-white/95', 'bg-cream/30', 'bg-cream/40', 'bg-cream/50', 'bg-cream/60',
+    'border-accentGreen/20', 'border-accentBlue/10', 'border-accentGreen/30', 'border-accentGreen/40',
+    'from-accentNavy', 'via-accentNavy/98', 'to-accentNavy',
   ],
   theme: {
     extend: {

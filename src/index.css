@@ -2,13 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Design tokens as CSS variables – always in output, ensures dev = prod */
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --accent-navy: #163250;
+  --accent-blue: #39b6d9;
+  --accent-green: #8ee0a6;
+  --cream: #faf9f7;
+  --sage: #e8f0eb;
+  --blue-gray: #e8eef2;
+  --font-size-base: 18px;
+}
+
 @layer base {
   html {
-    font-size: 18px !important;
+    font-size: var(--font-size-base) !important;
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans antialiased text-slate-600;
+    font-family: var(--font-sans);
+    @apply antialiased text-slate-600;
     font-feature-settings: 'kern' 1, 'liga' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
