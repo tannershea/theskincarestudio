@@ -120,7 +120,7 @@ function ServiceRow({ service, groupTitle }) {
             {serviceIcons[service.name] || defaultIcon}
           </span>
           <div className="flex flex-wrap items-center gap-2">
-            <p className="font-serif text-lg font-medium tracking-tight text-accentNavy md:text-xl">{service.name}</p>
+            <p className="font-serif text-base font-medium tracking-tight text-accentNavy">{service.name}</p>
             {isPopular && (
               <span className="rounded-full bg-accentGreen/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accentNavy">
                 Popular
@@ -134,8 +134,8 @@ function ServiceRow({ service, groupTitle }) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </div>
-        <div className="text-base text-slate-600">{service.duration}</div>
-        <div className="text-base font-semibold text-accentNavy md:text-lg">{service.price}</div>
+        <div className="text-[15px] text-slate-600">{service.duration}</div>
+        <div className="font-semibold text-accentNavy">{service.price}</div>
         <div className="md:text-right" onClick={(e) => e.stopPropagation()}>
           <Link
             to={`${bookingUrl}?service=${encodeURIComponent(service.name)}`}
@@ -149,7 +149,7 @@ function ServiceRow({ service, groupTitle }) {
         className={`overflow-hidden transition-all duration-200 ease-out ${open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         {service.desc && (
-          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-sm leading-[1.6] text-slate-500 md:text-base">{service.desc}</p>
+          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-[13px] leading-[1.6] text-slate-500">{service.desc}</p>
         )}
       </div>
     </div>
@@ -200,7 +200,7 @@ export function ServicesPage() {
             <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
             <span className="text-xs font-semibold uppercase tracking-luxury text-white">The Skincare Studio Medical Spa</span>
           </div>
-          <h1 className="mt-6 font-serif text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
+          <h1 className="mt-6 font-serif text-4xl font-normal leading-tight tracking-tight text-white md:text-5xl">
             Services
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-white/80">
@@ -256,19 +256,19 @@ export function ServicesPage() {
             <span className="font-semibold text-accentNavy">224+ Google Reviews</span> — our clients love these treatments
           </p>
 
-          <div className="mb-12 rounded-2xl border border-slate-200 bg-white p-8">
+          <div className="mb-12 rounded-2xl border border-slate-200 bg-cream/60 p-8">
             <div className="grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-slate-200">
               <div className="sm:pr-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-accentNavy">Neatly organized</p>
-                <p className="mt-2 text-base leading-[1.6] text-slate-600">Services are grouped by treatment type so you can quickly find what you need.</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-warmStone">Neatly organized</p>
+                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Services are grouped by treatment type so you can quickly find what you need.</p>
               </div>
               <div className="sm:px-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-accentNavy">Transparent pricing</p>
-                <p className="mt-2 text-base leading-[1.6] text-slate-600">Durations and starting prices are shown clearly to make comparing options easier.</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-warmStone">Transparent pricing</p>
+                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Durations and starting prices are shown clearly to make comparing options easier.</p>
               </div>
               <div className="sm:pl-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-accentNavy">Direct booking</p>
-                <p className="mt-2 text-base leading-[1.6] text-slate-600">Every treatment links straight to our live booking page.</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-warmStone">Direct booking</p>
+                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Every treatment links straight to our live booking page.</p>
               </div>
             </div>
           </div>
@@ -277,7 +277,7 @@ export function ServicesPage() {
             {serviceGroups.map((group) => (
               <section key={group.title} id={slugify(group.title)} className="scroll-mt-24 space-y-4">
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Category</p>
-                <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy md:text-3xl">
+                <h2 className="font-serif text-2xl font-normal tracking-tight text-accentNavy md:text-3xl">
                   {group.title}
                 </h2>
 

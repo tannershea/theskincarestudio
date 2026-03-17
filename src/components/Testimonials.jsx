@@ -45,7 +45,7 @@ export function Testimonials() {
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">
               What Our Clients Say
             </p>
-            <h2 className="mt-3 font-serif text-3xl font-semibold text-white md:text-4xl">
+            <h2 className="mt-3 font-serif text-3xl font-normal text-white md:text-4xl">
               Trusted by Fairfield County
             </h2>
           </div>

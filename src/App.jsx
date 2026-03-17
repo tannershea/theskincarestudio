@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { StickyCtaProvider } from './contexts/StickyCtaContext'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { StickyCTA } from './components/StickyCTA'
@@ -21,7 +20,6 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <StickyCtaProvider>
     <div className="min-h-screen bg-white text-slate-800">
       <ScrollToTop />
       <Header />
@@ -40,7 +38,6 @@ function App() {
       <StickyCTA />
       <SupportBot />
     </div>
-    </StickyCtaProvider>
   )
 }
 

@@ -11,7 +11,7 @@ export function StudioGallery({ images = defaultImages }) {
       <div className="mx-auto max-w-5xl px-8 lg:px-12">
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Our Space</p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight tracking-tight text-accentNavy md:text-4xl">
+          <h2 className="mt-3 font-serif text-3xl font-normal leading-tight tracking-tight text-accentNavy md:text-4xl">
             A calm, welcoming environment for your care
           </h2>
         </div>
