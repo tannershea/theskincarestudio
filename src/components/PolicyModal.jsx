@@ -61,7 +61,7 @@ export function PolicyModal({ isOpen, onClose }) {
           </button>
         </div>
         <div className="max-h-[60vh] overflow-y-auto px-6 py-5">
-          <div className="space-y-3 text-base leading-[1.7] text-slate-600 md:text-lg">
+          <div className="space-y-3 text-[15px] leading-[1.7] text-slate-600">
             {parts.map((item, i) =>
               item.type === 'heading' ? (
                 <p key={i} className="mt-4 font-semibold text-slate-800 first:mt-0">

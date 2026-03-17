@@ -149,7 +149,7 @@ function ServiceRow({ service, groupTitle }) {
         className={`overflow-hidden transition-all duration-200 ease-out ${open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         {service.desc && (
-          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-sm leading-[1.6] text-slate-500 md:text-base">{service.desc}</p>
+          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-[13px] leading-[1.6] text-slate-500">{service.desc}</p>
         )}
       </div>
     </div>
@@ -200,7 +200,7 @@ export function ServicesPage() {
             <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
             <span className="text-xs font-semibold uppercase tracking-luxury text-white">The Skincare Studio Medical Spa</span>
           </div>
-          <h1 className="mt-6 font-serif text-4xl font-normal leading-tight tracking-tight text-white md:text-5xl">
+          <h1 className="mt-6 font-serif text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
             Services
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-white/80">
@@ -277,7 +277,7 @@ export function ServicesPage() {
             {serviceGroups.map((group) => (
               <section key={group.title} id={slugify(group.title)} className="scroll-mt-24 space-y-4">
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Category</p>
-                <h2 className="font-serif text-2xl font-normal tracking-tight text-accentNavy md:text-3xl">
+                <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy md:text-3xl">
                   {group.title}
                 </h2>
 

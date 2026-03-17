@@ -15,10 +15,10 @@ export function Newsletter() {
       <div className="mx-auto max-w-5xl px-8 lg:px-12">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="font-serif text-2xl font-normal tracking-tight text-white md:text-3xl">
+            <h2 className="font-serif text-2xl font-semibold tracking-tight text-white md:text-3xl">
               Stay in the Glow
             </h2>
-            <p className="mt-3 text-base leading-[1.6] text-slate-200 md:text-lg">
+            <p className="mt-3 text-[15px] leading-[1.6] text-slate-200">
               Join our list for exclusive offers, skincare tips, and first access to new treatments.
             </p>
             <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -56,7 +56,7 @@ export function Newsletter() {
             />
             <div className="bg-white/10 px-5 py-3">
               <p className="text-sm font-semibold text-white">3586 Main Street, Stratford, CT</p>
-              <p className="text-sm text-slate-300">Paradise Green · Fairfield County</p>
+              <p className="text-xs text-slate-300">Paradise Green · Fairfield County</p>
             </div>
           </div>
         </div>

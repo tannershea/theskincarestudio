@@ -156,7 +156,7 @@ export function BookingPage() {
       <section className="bg-cream py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-8 text-center lg:px-12">
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">The Skincare Studio Medical Spa</p>
-          <h1 className="mt-3 font-serif text-4xl font-normal leading-tight tracking-tight text-accentNavy md:text-5xl">
+          <h1 className="mt-3 font-serif text-4xl font-semibold leading-tight tracking-tight text-accentNavy md:text-5xl">
             Book Your Appointment
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7] text-slate-600">
@@ -177,7 +177,7 @@ export function BookingPage() {
         <section className="border-t border-warmStone/50 bg-white py-20">
           <div className="mx-auto max-w-2xl px-8 text-center lg:px-12">
             <div className="rounded-2xl border border-accentGreen/30 bg-softGreen/30 p-10">
-              <h2 className="font-serif text-2xl font-normal tracking-tight text-accentNavy">Thank you!</h2>
+              <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Thank you!</h2>
               <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
                 Your booking request has been received. Our team will contact you shortly at the number or email you provide to confirm your appointment.
               </p>
@@ -264,7 +264,7 @@ export function BookingPage() {
             <div className="space-y-12">
               {/* Team Member */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Select Team Member</h2>
+                <h2 className="font-serif text-xl font-semibold tracking-tight text-accentNavy">Select Team Member</h2>
                 <div className="mt-4 flex flex-wrap gap-3">
                   {teamMembers.map((tm) => (
                     <label
@@ -291,7 +291,7 @@ export function BookingPage() {
 
               {/* Calendar */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Select Date</h2>
+                <h2 className="font-serif text-xl font-semibold tracking-tight text-accentNavy">Select Date</h2>
                 <p className="mt-1 text-sm text-slate-500">Weekend slots fill fast — book ahead for best availability</p>
                 <div className="mt-4 flex items-center justify-between gap-4">
                   <button
@@ -356,7 +356,7 @@ export function BookingPage() {
               {/* Time Slots */}
               {selectedDate && (
                 <div>
-                  <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Select Time</h2>
+                  <h2 className="font-serif text-xl font-semibold tracking-tight text-accentNavy">Select Time</h2>
                   <p className="mt-1 text-sm text-slate-500">Available times for {selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {TIME_SLOTS.map((time) => (
@@ -379,7 +379,7 @@ export function BookingPage() {
 
               {/* Add Service */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Add Service</h2>
+                <h2 className="font-serif text-xl font-semibold tracking-tight text-accentNavy">Add Service</h2>
                 <p className="mt-1 text-sm text-slate-500">Select one or more services — 224+ clients love our treatments</p>
                 <div className="mt-4">
                   <input
@@ -472,7 +472,7 @@ export function BookingPage() {
 
               {/* Reserve Product */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Reserve Products</h2>
+                <h2 className="font-serif text-xl font-semibold tracking-tight text-accentNavy">Reserve Products</h2>
                 <p className="mt-1 text-sm text-slate-500">Reserve products to purchase at your appointment — pick up in-store, no shipping</p>
                 <div className="mt-4">
                   <input
@@ -558,7 +558,7 @@ export function BookingPage() {
 
               {/* Photo Upload */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Pre-Assessment Photos</h2>
+                <h2 className="font-serif text-xl font-semibold tracking-tight text-accentNavy">Pre-Assessment Photos</h2>
                 <p className="mt-1 text-sm text-slate-500">Send a pic — so we can start our assessment</p>
                 <div className="mt-4">
                   <input
@@ -595,7 +595,7 @@ export function BookingPage() {
 
               {/* Contact Info */}
               <div className="rounded-2xl border border-slate-200 bg-cream/50 p-6">
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Your Information</h2>
+                <h2 className="font-serif text-xl font-semibold tracking-tight text-accentNavy">Your Information</h2>
                 <p className="mt-1 text-sm text-slate-500">We'll call or email within 24 hours to confirm — no charge until you arrive</p>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
                   <div>
@@ -620,7 +620,7 @@ export function BookingPage() {
               {/* Booking Details & Payment */}
               {(selectedDate || selectedTime || selectedServices.length > 0 || selectedProducts.length > 0) && (
                 <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Booking Details</h2>
+                  <h2 className="font-serif text-xl font-semibold tracking-tight text-accentNavy">Booking Details</h2>
                   <div className="mt-4 space-y-2">
                     {selectedServices.length > 0 && (
                       <p className="text-[15px] text-slate-700">{selectedServices.map((s) => s.name).join(', ')}</p>

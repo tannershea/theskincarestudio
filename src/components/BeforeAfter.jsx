@@ -107,7 +107,7 @@ export function BeforeAfter() {
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">
               Real results
             </p>
-            <h2 className="mt-3 font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
+            <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-accentNavy md:text-4xl">
               Before &amp; after
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-[15px] leading-[1.7] text-slate-500">

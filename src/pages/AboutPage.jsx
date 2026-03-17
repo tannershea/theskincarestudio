@@ -192,7 +192,7 @@ export function AboutPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
                 <span className="text-xs font-semibold uppercase tracking-luxury text-white">Award-Winning Medical Spa &middot; Stratford, CT</span>
               </div>
-              <h1 className="mt-6 font-serif text-4xl font-normal leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.25rem]">
+              <h1 className="mt-6 font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.25rem]">
                 Where science, artistry, and care come together.
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-[16px] leading-[1.75] text-white/80">
@@ -257,7 +257,7 @@ export function AboutPage() {
               <ScrollReveal direction="right" delay={100}>
                 <div className="rounded-2xl border border-slate-100 bg-cream/50 p-8">
                   <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Our Story</p>
-                  <h2 className="mt-3 font-serif text-2xl font-normal leading-tight tracking-tight text-accentNavy md:text-3xl">
+                  <h2 className="mt-3 font-serif text-2xl font-semibold leading-tight tracking-tight text-accentNavy md:text-3xl">
                     Built on passion, driven by results.
                   </h2>
                   <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
@@ -268,11 +268,11 @@ export function AboutPage() {
               <ScrollReveal direction="right" delay={200}>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="rounded-2xl border border-accentBlue/10 bg-softBlue/40 p-6">
-                    <p className="font-serif text-lg font-normal text-accentNavy">All Skin Types</p>
+                    <p className="font-serif text-lg font-semibold text-accentNavy">All Skin Types</p>
                     <p className="mt-2 text-[13px] leading-[1.5] text-slate-600">Expert care for diverse skin types and tones — understanding unique needs is at the core of what we do.</p>
                   </div>
                   <div className="rounded-2xl border border-accentGreen/20 bg-sage/50 p-6">
-                    <p className="font-serif text-lg font-normal text-accentNavy">Luxury + Clinical</p>
+                    <p className="font-serif text-lg font-semibold text-accentNavy">Luxury + Clinical</p>
                     <p className="mt-2 text-[13px] leading-[1.5] text-slate-600">We blend medical precision with a calm, luxury spa experience — so you feel confident and cared for.</p>
                   </div>
                 </div>
@@ -289,7 +289,7 @@ export function AboutPage() {
             <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Experienced Nurses & Estheticians</p>
-                <h2 className="mt-3 font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
+                <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-accentNavy md:text-4xl">
                   Meet the team.
                 </h2>
               </div>
@@ -317,7 +317,7 @@ export function AboutPage() {
                       </div>
                     )}
                   </div>
-                  <h3 className="mt-4 font-serif text-lg font-normal tracking-tight text-accentNavy">{member.name}</h3>
+                  <h3 className="mt-4 font-serif text-lg font-semibold tracking-tight text-accentNavy">{member.name}</h3>
                   <p className="mt-1 text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{member.role}</p>
                   {member.credentials && (
                     <p className="mt-1 text-[11px] text-slate-400">{member.credentials}</p>
@@ -337,7 +337,7 @@ export function AboutPage() {
             <ScrollReveal direction="left" delay={0}>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Our Expertise</p>
-                <h2 className="mt-3 font-serif text-3xl font-normal leading-tight tracking-tight text-accentNavy md:text-4xl">
+                <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight tracking-tight text-accentNavy md:text-4xl">
                   Medical-grade treatments that deliver real, lasting results.
                 </h2>
                 <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
@@ -358,7 +358,7 @@ export function AboutPage() {
                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-softBlue text-accentBlue">
                       {item.icon}
                     </div>
-                    <h3 className="mt-3 font-serif text-base font-normal tracking-tight text-accentNavy">{item.title}</h3>
+                    <h3 className="mt-3 font-serif text-base font-semibold tracking-tight text-accentNavy">{item.title}</h3>
                     <p className="mt-1.5 text-[13px] leading-[1.5] text-slate-500">{item.desc}</p>
                   </div>
                 ))}
@@ -374,7 +374,7 @@ export function AboutPage() {
           <ScrollReveal direction="up" delay={0}>
             <div className="text-center">
               <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Recognized Excellence</p>
-              <h2 className="mt-3 font-serif text-2xl font-normal tracking-tight text-accentNavy md:text-3xl">
+              <h2 className="mt-3 font-serif text-2xl font-semibold tracking-tight text-accentNavy md:text-3xl">
                 Awards & industry recognition
               </h2>
             </div>
@@ -402,7 +402,7 @@ export function AboutPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accentNavy/5">
                     <svg className="h-6 w-6 text-accentNavy" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-2.77.896m5.25-6.392V2.721" /></svg>
                   </div>
-                  <h3 className="mt-4 font-serif text-lg font-normal text-accentNavy">{award.title}</h3>
+                  <h3 className="mt-4 font-serif text-lg font-semibold text-accentNavy">{award.title}</h3>
                   <p className="mt-1 text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{award.subtitle}</p>
                   <p className="mt-3 flex-1 text-[13px] leading-[1.5] text-slate-500">{award.desc}</p>
                 </div>
@@ -418,7 +418,7 @@ export function AboutPage() {
         <div className="relative mx-auto max-w-4xl px-8 text-center lg:px-12">
           <ScrollReveal direction="up" delay={0}>
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">Our Mission</p>
-            <h2 className="mt-6 font-serif text-3xl font-normal leading-snug tracking-tight text-white md:text-4xl lg:text-[2.75rem]">
+            <h2 className="mt-6 font-serif text-3xl font-semibold leading-snug tracking-tight text-white md:text-4xl lg:text-[2.75rem]">
               "To empower every client with personalized, evidence-based skincare that reveals true confidence from within."
             </h2>
             <div className="mx-auto mt-10 h-px w-16 bg-accentGreen/50" />
@@ -443,7 +443,7 @@ export function AboutPage() {
           <ScrollReveal direction="up" delay={0}>
             <div className="text-center">
               <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">What We Stand For</p>
-              <h2 className="mt-3 font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
+              <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-accentNavy md:text-4xl">
                 Our values guide every treatment.
               </h2>
             </div>
@@ -456,7 +456,7 @@ export function AboutPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-softBlue text-accentBlue">
                     {item.icon}
                   </div>
-                  <h3 className="mt-4 font-serif text-lg font-normal tracking-tight text-accentNavy">{item.title}</h3>
+                  <h3 className="mt-4 font-serif text-lg font-semibold tracking-tight text-accentNavy">{item.title}</h3>
                   <p className="mt-2 text-[14px] leading-[1.6] text-slate-600">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -472,7 +472,7 @@ export function AboutPage() {
             <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.4fr]">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Serving Fairfield County</p>
-                <h2 className="mt-3 font-serif text-2xl font-normal tracking-tight text-accentNavy md:text-3xl">
+                <h2 className="mt-3 font-serif text-2xl font-semibold tracking-tight text-accentNavy md:text-3xl">
                   Welcoming clients from across the region.
                 </h2>
                 <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
@@ -506,7 +506,7 @@ export function AboutPage() {
         <div className="mx-auto max-w-3xl px-8 text-center lg:px-12">
           <ScrollReveal direction="zoom" delay={0}>
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Your Next Step</p>
-            <h2 className="mt-4 font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
+            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-accentNavy md:text-4xl">
               Ready to experience the difference?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.7] text-slate-600">

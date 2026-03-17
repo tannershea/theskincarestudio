@@ -42,10 +42,10 @@ export function Testimonials() {
       <div className="mx-auto max-w-5xl px-8 lg:px-12">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-luxury text-accentGreen">
+            <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">
               What Our Clients Say
             </p>
-            <h2 className="mt-3 font-serif text-3xl font-normal text-white md:text-4xl">
+            <h2 className="mt-3 font-serif text-3xl font-semibold text-white md:text-4xl">
               Trusted by Fairfield County
             </h2>
           </div>
@@ -99,12 +99,12 @@ export function Testimonials() {
                       <StarRating />
                       <GoogleIcon className="h-5 w-5 text-white/60" />
                     </div>
-                    <blockquote className="mt-4 line-clamp-5 text-base leading-[1.75] text-slate-100 md:text-lg">
+                    <blockquote className="mt-4 line-clamp-5 text-[15px] leading-[1.75] text-slate-100">
                       "{t.quote}"
                     </blockquote>
                     <div className="mt-4">
-                      <p className="font-serif text-base font-medium tracking-tight text-white md:text-lg">{t.author}</p>
-                      <p className="text-sm text-accentGreen">Verified Google Review</p>
+                      <p className="font-serif text-[15px] font-medium tracking-tight text-white">{t.author}</p>
+                      <p className="text-xs text-accentGreen">Verified Google Review</p>
                     </div>
                   </div>
                 </div>
