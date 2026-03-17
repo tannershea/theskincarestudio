@@ -256,19 +256,19 @@ export function ServicesPage() {
             <span className="font-semibold text-accentNavy">224+ Google Reviews</span> — our clients love these treatments
           </p>
 
-          <div className="mb-12 rounded-2xl border border-slate-200 bg-cream/60 p-8">
+          <div className="mb-12 rounded-2xl border border-slate-200 bg-white p-8">
             <div className="grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-slate-200">
               <div className="sm:pr-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-warmStone">Neatly organized</p>
-                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Services are grouped by treatment type so you can quickly find what you need.</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-accentNavy">Neatly organized</p>
+                <p className="mt-2 text-base leading-[1.6] text-slate-600">Services are grouped by treatment type so you can quickly find what you need.</p>
               </div>
               <div className="sm:px-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-warmStone">Transparent pricing</p>
-                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Durations and starting prices are shown clearly to make comparing options easier.</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-accentNavy">Transparent pricing</p>
+                <p className="mt-2 text-base leading-[1.6] text-slate-600">Durations and starting prices are shown clearly to make comparing options easier.</p>
               </div>
               <div className="sm:pl-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-warmStone">Direct booking</p>
-                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Every treatment links straight to our live booking page.</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-accentNavy">Direct booking</p>
+                <p className="mt-2 text-base leading-[1.6] text-slate-600">Every treatment links straight to our live booking page.</p>
               </div>
             </div>
           </div>

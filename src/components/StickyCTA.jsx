@@ -1,20 +1,9 @@
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { bookingUrl, contactDetails } from '../data'
+import { useStickyCta } from '../contexts/StickyCtaContext'
 
 export function StickyCTA() {
-  const [visible, setVisible] = useState(false)
-  const { pathname } = useLocation()
-  const isHomePage = pathname === '/'
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > 300)
-    }
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  const { visible, isHomePage } = useStickyCta()
 
   return (
     <div

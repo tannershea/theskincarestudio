@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useStickyCta } from '../contexts/StickyCtaContext'
 import {
   contactDetails,
   openingHours,
@@ -323,8 +324,14 @@ export function SupportBot() {
     }, 400)
   }
 
+  const { visible: ctaVisible } = useStickyCta()
+
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div
+      className={`fixed right-6 z-50 flex flex-col items-end gap-3 ${
+        ctaVisible ? 'bottom-24 sm:bottom-6' : 'bottom-6'
+      }`}
+    >
       {isOpen && (
         <div className="flex h-[420px] w-[340px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_40px_rgba(0,0,0,0.12)] sm:w-[380px]">
           <div className="flex items-center justify-between border-b border-slate-100 bg-accentNavy px-4 py-3">
