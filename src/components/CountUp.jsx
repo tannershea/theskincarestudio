@@ -65,10 +65,10 @@ export function CountUp({ value, duration = 1500, label, className = '' }) {
 
   return (
     <div ref={ref} className={className}>
-      <p className="font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
+      <p className="font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
         {formatted}
       </p>
-      <p className="mt-1 text-sm font-medium leading-relaxed text-slate-500">{label}</p>
+      <p className="mt-1 text-sm leading-relaxed text-slate-500">{label}</p>
     </div>
   )
 }

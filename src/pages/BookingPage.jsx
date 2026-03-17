@@ -156,7 +156,7 @@ export function BookingPage() {
       <section className="bg-cream py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-8 text-center lg:px-12">
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">The Skincare Studio Medical Spa</p>
-          <h1 className="mt-3 font-serif text-4xl font-normal leading-tight tracking-tight text-accentNavy md:text-5xl">
+          <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight text-accentNavy md:text-5xl">
             Book Your Appointment
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7] text-slate-600">
@@ -177,7 +177,7 @@ export function BookingPage() {
         <section className="border-t border-warmStone/50 bg-white py-20">
           <div className="mx-auto max-w-2xl px-8 text-center lg:px-12">
             <div className="rounded-2xl border border-accentGreen/30 bg-softGreen/30 p-10">
-              <h2 className="font-serif text-2xl font-normal tracking-tight text-accentNavy">Thank you!</h2>
+              <h2 className="font-serif text-2xl tracking-tight text-accentNavy">Thank you!</h2>
               <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
                 Your booking request has been received. Our team will contact you shortly at the number or email you provide to confirm your appointment.
               </p>
@@ -204,7 +204,7 @@ export function BookingPage() {
                 {STEPS.map((step, i) => (
                   <div key={step} className="flex justify-center">
                     <div
-                      className={`relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-medium leading-none transition-all duration-300 ${
+                      className={`relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs leading-none transition-all duration-300 ${
                         i < progressStep ? 'bg-accentGreen text-white' : i === progressStep ? 'bg-accentBlue text-white ring-2 ring-accentBlue/30' : 'bg-slate-100 text-slate-400'
                       }`}
                     >
@@ -230,7 +230,7 @@ export function BookingPage() {
                       {selectedServices.map((s) => (
                         <li key={s.name} className="flex justify-between gap-2">
                           <span className="truncate">{s.name}</span>
-                          <span className="shrink-0 font-medium text-accentNavy">{s.price}</span>
+                          <span className="shrink-0 text-accentNavy">{s.price}</span>
                         </li>
                       ))}
                     </ul>
@@ -243,7 +243,7 @@ export function BookingPage() {
                       {selectedProducts.map((p) => (
                         <li key={p.name} className="flex justify-between gap-2">
                           <span className="truncate">{p.name}</span>
-                          <span className="shrink-0 font-medium text-accentNavy">{p.price}</span>
+                          <span className="shrink-0 text-accentNavy">{p.price}</span>
                         </li>
                       ))}
                     </ul>
@@ -264,7 +264,7 @@ export function BookingPage() {
             <div className="space-y-12">
               {/* Team Member */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Select Team Member</h2>
+                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Select Team Member</h2>
                 <div className="mt-4 flex flex-wrap gap-3">
                   {teamMembers.map((tm) => (
                     <label
@@ -283,7 +283,7 @@ export function BookingPage() {
                         onChange={() => setTeamMember(tm.id)}
                         className="sr-only"
                       />
-                      <span className="text-[15px] font-medium text-accentNavy">{tm.name}</span>
+                      <span className="text-[15px] text-accentNavy">{tm.name}</span>
                     </label>
                   ))}
                 </div>
@@ -291,7 +291,7 @@ export function BookingPage() {
 
               {/* Calendar */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Select Date</h2>
+                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Select Date</h2>
                 <p className="mt-1 text-sm text-slate-500">Weekend slots fill fast — book ahead for best availability</p>
                 <div className="mt-4 flex items-center justify-between gap-4">
                   <button
@@ -309,7 +309,7 @@ export function BookingPage() {
                   >
                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                   </button>
-                  <p className="font-serif text-lg font-medium text-accentNavy">{MONTHS[month]} {year}</p>
+                  <p className="font-serif text-lg text-accentNavy">{MONTHS[month]} {year}</p>
                   <button
                     type="button"
                     onClick={() => {
@@ -339,7 +339,7 @@ export function BookingPage() {
                       type="button"
                       onClick={() => available && setSelectedDate(date)}
                       disabled={!available}
-                      className={`rounded-lg py-2.5 text-sm font-medium transition-all duration-200 ${
+                      className={`rounded-lg py-2.5 text-sm transition-all duration-200 ${
                         selectedDate?.toDateString() === date.toDateString()
                           ? 'bg-accentNavy text-white shadow-md scale-105'
                           : available
@@ -356,7 +356,7 @@ export function BookingPage() {
               {/* Time Slots */}
               {selectedDate && (
                 <div>
-                  <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Select Time</h2>
+                  <h2 className="font-serif text-xl tracking-tight text-accentNavy">Select Time</h2>
                   <p className="mt-1 text-sm text-slate-500">Available times for {selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {TIME_SLOTS.map((time) => (
@@ -364,7 +364,7 @@ export function BookingPage() {
                         key={time}
                         type="button"
                         onClick={() => setSelectedTime(time)}
-                        className={`rounded-xl border px-4 py-2.5 text-sm font-medium transition-all duration-200 hover:scale-[1.02] ${
+                        className={`rounded-xl border px-4 py-2.5 text-sm transition-all duration-200 hover:scale-[1.02] ${
                           selectedTime === time
                             ? 'border-accentBlue bg-accentBlue/10 text-accentNavy shadow-sm'
                             : 'border-slate-200 text-slate-600 hover:border-accentBlue/50'
@@ -379,7 +379,7 @@ export function BookingPage() {
 
               {/* Add Service */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Add Service</h2>
+                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Add Service</h2>
                 <p className="mt-1 text-sm text-slate-500">Select one or more services — 224+ clients love our treatments</p>
                 <div className="mt-4">
                   <input
@@ -451,7 +451,7 @@ export function BookingPage() {
                                     )}
                                   </div>
                                   <div
-                                    className={`shrink-0 rounded-lg px-3 py-1.5 text-sm font-medium transition-all ${
+                                    className={`shrink-0 rounded-lg px-3 py-1.5 text-sm transition-all ${
                                       isSelected ? 'bg-accentNavy text-white' : 'bg-slate-100 text-slate-600'
                                     }`}
                                   >
@@ -472,7 +472,7 @@ export function BookingPage() {
 
               {/* Reserve Product */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Reserve Products</h2>
+                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Reserve Products</h2>
                 <p className="mt-1 text-sm text-slate-500">Reserve products to purchase at your appointment — pick up in-store, no shipping</p>
                 <div className="mt-4">
                   <input
@@ -540,7 +540,7 @@ export function BookingPage() {
                                     )}
                                   </div>
                                   <div
-                                    className={`shrink-0 rounded-lg px-3 py-1.5 text-sm font-medium transition-all ${
+                                    className={`shrink-0 rounded-lg px-3 py-1.5 text-sm transition-all ${
                                       isSelected ? 'bg-accentNavy text-white' : 'bg-slate-100 text-slate-600'
                                     }`}
                                   >
@@ -558,7 +558,7 @@ export function BookingPage() {
 
               {/* Photo Upload */}
               <div>
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Pre-Assessment Photos</h2>
+                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Pre-Assessment Photos</h2>
                 <p className="mt-1 text-sm text-slate-500">Send a pic — so we can start our assessment</p>
                 <div className="mt-4">
                   <input
@@ -573,7 +573,7 @@ export function BookingPage() {
                   <button
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
-                    className="flex items-center gap-2 rounded-lg bg-accentNavy px-5 py-3 text-sm font-medium text-white transition hover:bg-accentNavy/90"
+                    className="flex items-center gap-2 rounded-lg bg-accentNavy px-5 py-3 text-sm text-white transition hover:bg-accentNavy/90"
                   >
                     <span className="text-lg">+</span>
                     Upload File
@@ -595,23 +595,23 @@ export function BookingPage() {
 
               {/* Contact Info */}
               <div className="rounded-2xl border border-slate-200 bg-cream/50 p-6">
-                <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Your Information</h2>
+                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Your Information</h2>
                 <p className="mt-1 text-sm text-slate-500">We'll call or email within 24 hours to confirm — no charge until you arrive</p>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="booking-name" className="block text-sm font-medium text-slate-700">Name</label>
+                    <label htmlFor="booking-name" className="block text-sm text-slate-700">Name</label>
                     <input id="booking-name" type="text" required className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-[15px] outline-none transition-all focus:border-accentBlue focus:ring-2 focus:ring-accentBlue/20" placeholder="Your name" />
                   </div>
                   <div>
-                    <label htmlFor="booking-phone" className="block text-sm font-medium text-slate-700">Phone</label>
+                    <label htmlFor="booking-phone" className="block text-sm text-slate-700">Phone</label>
                     <input id="booking-phone" type="tel" required className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-[15px] outline-none transition-all focus:border-accentBlue focus:ring-2 focus:ring-accentBlue/20" placeholder="(203) 555-0123" />
                   </div>
                   <div className="sm:col-span-2">
-                    <label htmlFor="booking-email" className="block text-sm font-medium text-slate-700">Email</label>
+                    <label htmlFor="booking-email" className="block text-sm text-slate-700">Email</label>
                     <input id="booking-email" type="email" required className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-[15px] outline-none transition-all focus:border-accentBlue focus:ring-2 focus:ring-accentBlue/20" placeholder="you@example.com" />
                   </div>
                   <div className="sm:col-span-2">
-                    <label htmlFor="booking-notes" className="block text-sm font-medium text-slate-700">Notes (optional)</label>
+                    <label htmlFor="booking-notes" className="block text-sm text-slate-700">Notes (optional)</label>
                     <textarea id="booking-notes" rows={3} className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-[15px] outline-none transition-all focus:border-accentBlue focus:ring-2 focus:ring-accentBlue/20" placeholder="Any special requests or questions..." />
                   </div>
                 </div>
@@ -620,7 +620,7 @@ export function BookingPage() {
               {/* Booking Details & Payment */}
               {(selectedDate || selectedTime || selectedServices.length > 0 || selectedProducts.length > 0) && (
                 <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h2 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Booking Details</h2>
+                  <h2 className="font-serif text-xl tracking-tight text-accentNavy">Booking Details</h2>
                   <div className="mt-4 space-y-2">
                     {selectedServices.length > 0 && (
                       <p className="text-[15px] text-slate-700">{selectedServices.map((s) => s.name).join(', ')}</p>
@@ -643,7 +643,7 @@ export function BookingPage() {
                       <div className="rounded-lg border border-slate-100 bg-cream/50 p-4 text-sm text-slate-600">
                         {selectedServices.length > 0 && (
                           <div className="mb-3">
-                            <p className="mb-2 font-medium text-slate-700">Services</p>
+                            <p className="mb-2 text-slate-700">Services</p>
                             <ul className="space-y-1">
                               {selectedServices.map((s) => (
                                 <li key={s.name} className="flex justify-between gap-4">
@@ -657,7 +657,7 @@ export function BookingPage() {
                         )}
                         {selectedProducts.length > 0 && (
                           <div className="mb-3">
-                            <p className="mb-2 font-medium text-slate-700">Reserved products</p>
+                            <p className="mb-2 text-slate-700">Reserved products</p>
                             <ul className="space-y-1">
                               {selectedProducts.map((p) => (
                                 <li key={p.name} className="flex justify-between gap-4">
@@ -724,7 +724,7 @@ export function BookingPage() {
                   <button
                     type="button"
                     onClick={() => setPolicyOpen(true)}
-                    className="mt-2 text-sm font-medium text-accentBlue hover:underline"
+                    className="mt-2 text-sm text-accentBlue hover:underline"
                   >
                     View Policy
                   </button>

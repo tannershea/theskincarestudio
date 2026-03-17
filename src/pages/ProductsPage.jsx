@@ -229,7 +229,7 @@ export function ProductsPage() {
             <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
             <span className="text-xs font-semibold uppercase tracking-luxury text-white">Clinical-Grade Skincare · All Products In-Store Only</span>
           </div>
-          <h1 className="mt-6 font-serif text-4xl font-normal leading-tight tracking-tight text-white md:text-5xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight tracking-tight text-white md:text-5xl">
             Products
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-white/80">
@@ -255,7 +255,7 @@ export function ProductsPage() {
                 key={brand}
                 type="button"
                 onClick={() => setActiveFilter(brand)}
-                className={`rounded-full px-5 py-2 text-sm font-medium tracking-wide transition-all duration-200 hover:scale-105 ${
+                className={`rounded-full px-5 py-2 text-sm tracking-wide transition-all duration-200 hover:scale-105 ${
                   activeFilter === brand
                     ? 'bg-accentNavy text-white shadow-sm'
                     : 'border border-slate-200 bg-white text-slate-600 hover:border-accentBlue hover:text-accentBlue'
@@ -306,11 +306,11 @@ export function ProductsPage() {
                   </div>
                   <div className="mt-4 flex flex-1 flex-col">
                     <p className="text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{product.brand}</p>
-                    <h3 className="mt-1 font-serif text-base font-normal tracking-tight text-accentNavy">{product.name}</h3>
+                    <h3 className="mt-1 font-serif text-base tracking-tight text-accentNavy">{product.name}</h3>
                     <p className="mt-2 flex-1 text-[13px] leading-[1.5] text-slate-500">{product.desc}</p>
                     <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
                       <span className="text-lg font-bold text-accentNavy">{product.price}</span>
-                      <span className="text-[11px] font-medium uppercase tracking-wider text-slate-400">In-store only</span>
+                      <span className="text-[11px] uppercase tracking-wider text-slate-400">In-store only</span>
                     </div>
                   </div>
                 </div>
@@ -325,7 +325,7 @@ export function ProductsPage() {
         <div className="mx-auto max-w-3xl px-8 text-center lg:px-12">
           <ScrollReveal direction="up" delay={0}>
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Personalized Recommendations</p>
-            <h2 className="mt-3 font-serif text-2xl font-normal tracking-tight text-accentNavy md:text-3xl">
+            <h2 className="mt-3 font-serif text-2xl tracking-tight text-accentNavy md:text-3xl">
               Not sure which products are right for you?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.7] text-slate-600">

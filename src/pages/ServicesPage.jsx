@@ -120,7 +120,7 @@ function ServiceRow({ service, groupTitle }) {
             {serviceIcons[service.name] || defaultIcon}
           </span>
           <div className="flex flex-wrap items-center gap-2">
-            <p className="font-serif text-base font-medium tracking-tight text-accentNavy">{service.name}</p>
+            <p className="font-serif text-base tracking-tight text-accentNavy">{service.name}</p>
             {isPopular && (
               <span className="rounded-full bg-accentGreen/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accentNavy">
                 Popular
@@ -200,7 +200,7 @@ export function ServicesPage() {
             <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
             <span className="text-xs font-semibold uppercase tracking-luxury text-white">The Skincare Studio Medical Spa</span>
           </div>
-          <h1 className="mt-6 font-serif text-4xl font-normal leading-tight tracking-tight text-white md:text-5xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight tracking-tight text-white md:text-5xl">
             Services
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-white/80">
@@ -244,7 +244,7 @@ export function ServicesPage() {
                   key={group.title}
                   type="button"
                   onClick={() => scrollToCategory(slugify(group.title))}
-                  className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-accentNavy transition-all duration-150 ease-out hover:scale-105 hover:border-accentBlue hover:bg-softBlue/50 hover:text-accentBlue active:scale-[0.98]"
+                  className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm text-accentNavy transition-all duration-150 ease-out hover:scale-105 hover:border-accentBlue hover:bg-softBlue/50 hover:text-accentBlue active:scale-[0.98]"
                 >
                   {group.title}
                 </button>
@@ -277,7 +277,7 @@ export function ServicesPage() {
             {serviceGroups.map((group) => (
               <section key={group.title} id={slugify(group.title)} className="scroll-mt-24 space-y-4">
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Category</p>
-                <h2 className="font-serif text-2xl font-normal tracking-tight text-accentNavy md:text-3xl">
+                <h2 className="font-serif text-2xl tracking-tight text-accentNavy md:text-3xl">
                   {group.title}
                 </h2>
 

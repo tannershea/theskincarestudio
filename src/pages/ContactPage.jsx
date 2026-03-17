@@ -57,7 +57,7 @@ export function ContactPage() {
       <section className="bg-cream py-20 lg:py-24">
         <div className="mx-auto max-w-5xl px-8 text-center lg:px-12">
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">The Skincare Studio Medical Spa</p>
-          <h1 className="mt-3 font-serif text-4xl font-normal leading-tight tracking-tight text-accentNavy md:text-5xl">
+          <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight text-accentNavy md:text-5xl">
             Contact Us
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-body-lg leading-[1.75] text-slate-600">
@@ -86,7 +86,7 @@ export function ContactPage() {
                 />
               </div>
               <div className="rounded-xl border border-slate-200 bg-white p-10 ">
-                <h2 className="font-serif text-2xl font-normal tracking-tight text-accentNavy">The Skincare Studio Medical Spa</h2>
+                <h2 className="font-serif text-2xl tracking-tight text-accentNavy">The Skincare Studio Medical Spa</h2>
                 <div className="mt-8 space-y-6">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Visit Us</p>
@@ -139,10 +139,10 @@ export function ContactPage() {
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-white p-10 ">
-                <h3 className="font-serif text-xl font-normal tracking-tight text-accentNavy">Send a Message</h3>
+                <h3 className="font-serif text-xl tracking-tight text-accentNavy">Send a Message</h3>
                 <form onSubmit={handleSubmit} className="mt-6 space-y-5">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium tracking-wide text-slate-700">Name</label>
+                    <label htmlFor="name" className="block text-sm tracking-wide text-slate-700">Name</label>
                     <input
                       type="text"
                       id="name"
@@ -154,7 +154,7 @@ export function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium tracking-wide text-slate-700">Email</label>
+                    <label htmlFor="email" className="block text-sm tracking-wide text-slate-700">Email</label>
                     <input
                       type="email"
                       id="email"
@@ -166,7 +166,7 @@ export function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium tracking-wide text-slate-700">Phone (Optional)</label>
+                    <label htmlFor="phone" className="block text-sm tracking-wide text-slate-700">Phone (Optional)</label>
                     <input
                       type="tel"
                       id="phone"
@@ -177,7 +177,7 @@ export function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium tracking-wide text-slate-700">Message</label>
+                    <label htmlFor="message" className="block text-sm tracking-wide text-slate-700">Message</label>
                     <textarea
                       id="message"
                       name="message"

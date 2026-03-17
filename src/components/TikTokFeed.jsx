@@ -53,7 +53,7 @@ export function TikTokFeed() {
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">
               Follow along
             </p>
-            <h2 className="mt-3 font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
+            <h2 className="mt-3 font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
               See us in action
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-[15px] leading-[1.7] text-slate-500">

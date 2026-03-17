@@ -25,7 +25,7 @@ export function FAQ() {
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">
             FAQ
           </p>
-          <h2 id="faq-heading" className="mt-3 font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
+          <h2 id="faq-heading" className="mt-3 font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
             Common Questions
           </h2>
         </div>
@@ -40,7 +40,7 @@ export function FAQ() {
                 onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
                 className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors duration-200 hover:text-accentBlue"
               >
-                <span className="font-serif text-[15px] font-medium tracking-tight text-accentNavy">{faq.q}</span>
+                <span className="font-serif text-[15px] tracking-tight text-accentNavy">{faq.q}</span>
                 <svg
                   className={`ml-4 h-5 w-5 shrink-0 text-accentBlue transition-transform duration-200 ${
                     openIndex === i ? 'rotate-180' : ''

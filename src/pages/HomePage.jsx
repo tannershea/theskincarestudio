@@ -113,7 +113,7 @@ export function HomePage() {
               <span className="text-xs font-semibold uppercase tracking-luxury text-white">Now booking in Stratford, CT</span>
             </div>
 
-            <h1 className="mt-6 font-serif text-4xl font-normal leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.5rem]">
+            <h1 className="mt-6 font-serif text-4xl leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.5rem]">
               Confidence starts with your skin.
             </h1>
 
@@ -175,7 +175,7 @@ export function HomePage() {
                   <svg className="mb-2 h-5 w-5 text-warmStone" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <p className="text-[15px] font-medium leading-[1.6] text-accentNavy">{item}</p>
+                  <p className="text-[15px] leading-[1.6] text-accentNavy">{item}</p>
                 </div>
             ))}
           </div>
@@ -189,7 +189,7 @@ export function HomePage() {
             <ScrollReveal direction="left" delay={0}>
             <div>
               <p className="text-xs font-semibold uppercase tracking-luxury text-slate-500">About the studio</p>
-              <h2 className="mt-3 font-serif text-3xl font-normal leading-tight tracking-tight text-accentNavy md:text-4xl">
+              <h2 className="mt-3 font-serif text-3xl leading-tight tracking-tight text-accentNavy md:text-4xl">
                 Where science, artistry, and individualized care come together.
               </h2>
               <p className="mt-6 text-[15px] leading-[1.7] text-slate-600">
@@ -264,7 +264,7 @@ export function HomePage() {
             <ScrollReveal direction="right" delay={100}>
             <div className="order-1 lg:order-2">
               <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Treatment philosophy</p>
-              <h2 className="mt-3 font-serif text-3xl font-normal leading-tight tracking-tight text-accentNavy md:text-4xl">
+              <h2 className="mt-3 font-serif text-3xl leading-tight tracking-tight text-accentNavy md:text-4xl">
                 Personalized plans. Professional products. Results that feel like you.
               </h2>
               <p className="mt-6 text-[15px] leading-[1.7] text-slate-600">
@@ -284,7 +284,7 @@ export function HomePage() {
             ].map((item, i) => (
               <ScrollReveal key={item.title} direction="up" delay={i * 100}>
               <div className={`rounded-2xl border border-slate-100 ${item.bg} p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md`}>
-                <h3 className="font-serif text-lg font-normal tracking-tight text-accentNavy">{item.title}</h3>
+                <h3 className="font-serif text-lg tracking-tight text-accentNavy">{item.title}</h3>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">{item.description}</p>
               </div>
               </ScrollReveal>
@@ -303,7 +303,7 @@ export function HomePage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Popular services</p>
-              <h2 className="mt-3 font-serif text-3xl font-normal leading-tight tracking-tight text-accentNavy md:text-4xl">
+              <h2 className="mt-3 font-serif text-3xl leading-tight tracking-tight text-accentNavy md:text-4xl">
                 Advanced treatments tailored to your skin and aesthetic goals.
               </h2>
             </div>
@@ -323,7 +323,7 @@ export function HomePage() {
                   "bg-sage/60 border border-accentGreen/20"
                 }`}
               >
-                <h3 className="font-serif text-lg font-normal tracking-tight text-accentNavy">{item.title}</h3>
+                <h3 className="font-serif text-lg tracking-tight text-accentNavy">{item.title}</h3>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">{item.description}</p>
                 <a
                   href={bookingUrl}
@@ -353,7 +353,7 @@ export function HomePage() {
       <section className="border-t border-blueGray/50 bg-blueGray/20 py-20">
         <ScrollReveal direction="zoom" delay={0}>
         <div className="mx-auto max-w-3xl px-8 text-center lg:px-12">
-          <h2 className="font-serif text-3xl font-normal tracking-tight text-accentNavy md:text-4xl">
+          <h2 className="font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
             A simple path to expert care.
           </h2>
           <p className="mt-6 text-[15px] leading-[1.7] text-slate-600">

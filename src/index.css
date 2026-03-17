@@ -4,8 +4,8 @@
 
 /* Design tokens as CSS variables – always in output, ensures dev = prod */
 :root {
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
   --accent-navy: #163250;
   --accent-blue: #39b6d9;
   --accent-green: #8ee0a6;
@@ -22,10 +22,13 @@
   }
   body {
     font-family: var(--font-sans);
-    @apply antialiased text-slate-600;
-    font-feature-settings: 'kern' 1, 'liga' 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply antialiased font-medium text-slate-600;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
+  }
+  .font-serif {
+    font-weight: 500;
   }
 }
 
