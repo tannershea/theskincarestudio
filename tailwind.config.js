@@ -4,6 +4,10 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    { pattern: /^(bg|text|border|ring)-(accentNavy|accentBlue|accentGreen|cream|warmStone|softBlue|softGreen|blueGray|sage)(\/\d+)?$/ },
+    'bg-sage/60', 'bg-sage/70', 'bg-sage/80', 'bg-white', 'bg-white/80', 'bg-white/95', 'bg-cream/30', 'bg-cream/40', 'bg-cream/50', 'bg-cream/60', 'bg-blueGray/30', 'bg-blueGray/50', 'border-accentGreen/20', 'border-accentBlue/10',
+  ],
   theme: {
     extend: {
       fontFamily: {
