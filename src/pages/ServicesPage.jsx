@@ -120,7 +120,7 @@ function ServiceRow({ service, groupTitle }) {
             {serviceIcons[service.name] || defaultIcon}
           </span>
           <div className="flex flex-wrap items-center gap-2">
-            <p className="font-serif text-base font-medium tracking-tight text-accentNavy">{service.name}</p>
+            <p className="font-serif text-lg font-medium tracking-tight text-accentNavy md:text-xl">{service.name}</p>
             {isPopular && (
               <span className="rounded-full bg-accentGreen/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accentNavy">
                 Popular
@@ -134,8 +134,8 @@ function ServiceRow({ service, groupTitle }) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </div>
-        <div className="text-[15px] text-slate-600">{service.duration}</div>
-        <div className="font-semibold text-accentNavy">{service.price}</div>
+        <div className="text-base text-slate-600">{service.duration}</div>
+        <div className="text-base font-semibold text-accentNavy md:text-lg">{service.price}</div>
         <div className="md:text-right" onClick={(e) => e.stopPropagation()}>
           <Link
             to={`${bookingUrl}?service=${encodeURIComponent(service.name)}`}
@@ -149,7 +149,7 @@ function ServiceRow({ service, groupTitle }) {
         className={`overflow-hidden transition-all duration-200 ease-out ${open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         {service.desc && (
-          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-[13px] leading-[1.6] text-slate-500">{service.desc}</p>
+          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-sm leading-[1.6] text-slate-500 md:text-base">{service.desc}</p>
         )}
       </div>
     </div>
