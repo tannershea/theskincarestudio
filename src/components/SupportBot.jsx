@@ -109,6 +109,17 @@ const buildKnowledgeBase = () => {
     })
   })
 
+  // Toners (specific product category — prioritize when user asks about toners)
+  const toners = products.filter((p) => p.name.toLowerCase().includes('toner'))
+  if (toners.length > 0) {
+    entries.push({
+      keywords: ['toner', 'toners', 'what', 'offer', 'have', 'carry'],
+      answer: `We carry ${toners.map((t) => `${t.name} by ${t.brand} (${t.price})`).join('; ')}. All products are available in-store.`,
+      linkTarget: 'products',
+      linkLabel: 'Browse our toners',
+    })
+  }
+
   // General product info
   entries.push({
     keywords: ['product', 'shop', 'buy', 'purchase', 'store', 'in-store'],
@@ -173,32 +184,45 @@ function findAnswer(question) {
   if (!trimmed) return { answer: fallbackMessage }
 
   const lower = trimmed.toLowerCase()
-  if (['hi', 'hello', 'hey', 'help'].some((g) => lower === g || lower.startsWith(g + ' '))) {
+  // Strip leading greetings so "Hi Rebecca, what toners..." focuses on the actual question
+  const greetingPatterns = ['hi', 'hello', 'hey', 'hi there', 'hello there', 'hey there']
+  let content = lower
+  for (const g of greetingPatterns) {
+    if (content === g || content.startsWith(g + ',') || content.startsWith(g + ' ')) {
+      content = content.slice(g.length).replace(/^[,\s]+/, '').replace(/^rebecca[,\s]+/i, '').trim()
+      break
+    }
+  }
+  // Only use generic greeting when the message is purely a greeting (no substantive question)
+  const isPurelyGreeting = content.length < 5 || /^(rebecca|there|everyone)[!.]?$/i.test(content) || content === ''
+  if (isPurelyGreeting && ['hi', 'hello', 'hey', 'help'].some((g) => lower === g || lower.startsWith(g + ' ') || lower.startsWith(g + ','))) {
     return { answer: "Hello! I'm Rebecca, Terri's AI assistant. Ask me about our services, pricing, products, hours, location, or booking!" }
   }
+  // Use the content (with greeting stripped) for lookup if we had a greeting + real question
+  const toSearch = content.length > 3 ? content : lower
 
   // Simple "products" or "services" — direct to page (only for general requests, not specific product/service questions)
   const hasSpecificProduct = products.some((p) => {
     const name = p.name.toLowerCase()
-    return lower.includes(name) || name.split(/\s+/).some((word) => word.length > 3 && lower.includes(word))
+    return toSearch.includes(name) || name.split(/\s+/).some((word) => word.length > 3 && toSearch.includes(word))
   })
   const hasSpecificService = serviceGroups.some((g) =>
     g.services.some((s) => {
       const name = s.name.toLowerCase()
-      return lower.includes(name) || name.split(/\s+/).some((word) => word.length > 3 && lower.includes(word))
+      return toSearch.includes(name) || name.split(/\s+/).some((word) => word.length > 3 && toSearch.includes(word))
     })
   )
   const simpleProductsPhrases = ['products', 'product', 'show products', 'view products', 'browse products', 'what products', 'your products']
   const simpleServicesPhrases = ['services', 'service', 'show services', 'view services', 'what services', 'your services']
-  if (!hasSpecificProduct && simpleProductsPhrases.some((p) => lower === p || lower === p + '?' || lower.startsWith(p + ' ') || lower.endsWith(' ' + p))) {
+  if (!hasSpecificProduct && simpleProductsPhrases.some((p) => toSearch === p || toSearch === p + '?' || toSearch.startsWith(p + ' ') || toSearch.endsWith(' ' + p))) {
     return { answer: 'Browse our full skincare collection.', linkTarget: 'products', linkLabel: 'View our products' }
   }
-  if (!hasSpecificService && simpleServicesPhrases.some((p) => lower === p || lower === p + '?' || lower.startsWith(p + ' ') || lower.endsWith(' ' + p))) {
+  if (!hasSpecificService && simpleServicesPhrases.some((p) => toSearch === p || toSearch === p + '?' || toSearch.startsWith(p + ' ') || toSearch.endsWith(' ' + p))) {
     return { answer: 'View our full treatment menu with pricing.', linkTarget: 'services', linkLabel: 'View our services' }
   }
 
   // If the question mentions terms/policy/legal intent, direct to Terms page
-  if (termsIntentWords.some((w) => lower.includes(w))) {
+  if (termsIntentWords.some((w) => toSearch.includes(w))) {
     return {
       answer: "Our Terms & Conditions page has our privacy policy, cancellation policy, payment methods, and other guidelines.",
       linkTarget: 'terms',
@@ -207,7 +231,7 @@ function findAnswer(question) {
   }
 
   // If the question mentions booking/appointment intent, always return the booking link
-  if (bookingIntentWords.some((w) => lower.includes(w))) {
+  if (bookingIntentWords.some((w) => toSearch.includes(w))) {
     return {
       answer: "We recommend scheduling your appointment 2–3 weeks in advance for our most popular time slots. New clients can often be accommodated within a week. For the most up-to-date availability, please book online.",
       linkTarget: 'booking',
@@ -215,7 +239,7 @@ function findAnswer(question) {
     }
   }
 
-  const normalized = lower.replace(/[?.,!'"]/g, '')
+  const normalized = toSearch.replace(/[?.,!'"]/g, '')
   const words = normalized.split(/\s+/).filter((w) => w.length > 2)
 
   let bestMatch = null
