@@ -168,11 +168,9 @@ export function HomePage() {
             {recognitions.map((item, i) => (
                 <div
                   key={item}
-                  className={`rounded-2xl p-5 ${
-                    i % 2 === 0 ? "bg-white/80 border border-slate-100" : "bg-blueGray/50 border border-accentBlue/10"
-                  }`}
+                  className="rounded-2xl border border-slate-100 bg-white p-5"
                 >
-                  <svg className="mb-2 h-5 w-5 text-warmStone" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <svg className="mb-2 h-5 w-5 text-accentGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <p className="text-[15px] leading-[1.6] text-accentNavy">{item}</p>
@@ -276,15 +274,15 @@ export function HomePage() {
             </div>
             </ScrollReveal>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:items-stretch">
             {[
               { ...featuredCategories[0], bg: "bg-white" },
-              { ...featuredCategories[1], bg: "bg-sage/70" },
+              { ...featuredCategories[1], bg: "bg-white" },
               { ...featuredCategories[2], bg: "bg-white" },
             ].map((item, i) => (
-              <ScrollReveal key={item.title} direction="up" delay={i * 100}>
-              <div className={`rounded-2xl border border-slate-100 ${item.bg} p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md`}>
-                <h3 className="font-serif text-lg tracking-tight text-accentNavy">{item.title}</h3>
+              <ScrollReveal key={item.title} direction="up" delay={i * 100} className="h-full">
+              <div className={`h-full rounded-2xl border border-slate-100 ${item.bg} p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md`}>
+                <h3 className="font-serif text-lg font-semibold tracking-tight text-accentNavy">{item.title}</h3>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">{item.description}</p>
               </div>
               </ScrollReveal>
@@ -315,15 +313,8 @@ export function HomePage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {popularServices.map((item, i) => (
               <ScrollReveal key={item.title} direction="up" delay={i * 100}>
-              <div
-                className={`rounded-2xl p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:bg-sage/80 hover:border-accentGreen/40 ${
-                  i % 4 === 0 ? "bg-sage/60 border border-accentGreen/20" :
-                  i % 4 === 1 ? "bg-sage/60 border border-accentGreen/20" :
-                  i % 4 === 2 ? "bg-sage/60 border border-accentGreen/20" :
-                  "bg-sage/60 border border-accentGreen/20"
-                }`}
-              >
-                <h3 className="font-serif text-lg tracking-tight text-accentNavy">{item.title}</h3>
+              <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-accentGreen/40">
+                <h3 className="font-serif text-lg font-semibold tracking-tight text-accentNavy">{item.title}</h3>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">{item.description}</p>
                 <a
                   href={bookingUrl}
@@ -356,10 +347,10 @@ export function HomePage() {
           <h2 className="font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
             A simple path to expert care.
           </h2>
-          <p className="mt-6 text-[15px] leading-[1.7] text-slate-600">
+          <p className="mt-6 text-[16px] leading-[1.7] text-slate-600">
             Browse treatments, review pricing, and schedule directly through our online booking page. If you are unsure where to begin, start with a consultation and our team will guide you toward the most appropriate treatment plan.
           </p>
-          <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
+          <p className="mt-4 text-[16px] leading-[1.7] text-slate-600">
             New and returning clients can book online for consultations, injectables, facials, corrective treatments, and more.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -367,13 +358,13 @@ export function HomePage() {
               href={bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex justify-center rounded-full bg-accentGreen px-8 py-4 text-base font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:bg-accentGreen/90 hover:shadow-lg"
+              className="inline-flex justify-center rounded-full bg-accentGreen px-6 py-3 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:bg-accentGreen/90 hover:shadow-lg"
             >
               Book Your Appointment
             </a>
             <Link
               to="/services"
-              className="shrink-0 inline-flex justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:border-accentBlue hover:bg-slate-50"
+              className="shrink-0 inline-flex justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:border-accentBlue hover:bg-slate-50"
             >
               View Services
             </Link>

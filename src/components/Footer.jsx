@@ -5,7 +5,7 @@ export function Footer() {
   const hoursOrdered = openingHours
 
   return (
-    <footer className="border-t border-warmStone bg-cream">
+    <footer className="border-t border-warmStone bg-white">
       <div className="mx-auto max-w-6xl px-8 py-16 lg:px-12">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
@@ -14,9 +14,9 @@ export function Footer() {
               alt="The Skincare Studio logo"
               className="h-28 w-auto object-contain -ml-3"
             />
-            <p className="mt-4 text-xs font-semibold uppercase tracking-luxury text-slate-500">Medical Spa</p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-luxury text-accentBlue">Medical Spa</p>
             <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">
-              Specializing in skin for Black, Latino, African American, and dark skin. Paradise Green, Stratford.
+              Award-winning medical spa offering expert aesthetic care in a calm, elevated setting. Paradise Green, Stratford.
             </p>
             <div className="mt-4 flex justify-center gap-3 md:justify-start">
               <a
@@ -56,7 +56,7 @@ export function Footer() {
           </div>
           <div className="flex gap-6 lg:gap-8">
             <div className="flex-1 text-center md:text-left">
-              <p className="font-serif text-sm font-medium tracking-tight text-accentNavy">Explore</p>
+              <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">Explore</p>
               <nav className="mt-3 flex flex-col items-center gap-2 text-[15px] leading-[1.6] text-slate-600 md:items-start">
                 <Link to="/" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Home</Link>
                 <Link to="/services" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Services</Link>
@@ -74,7 +74,7 @@ export function Footer() {
               </nav>
             </div>
             <div className="flex-1 text-center md:text-left">
-              <p className="font-serif text-sm font-medium tracking-tight text-accentNavy">Visit Us</p>
+              <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">Visit Us</p>
             <div className="mt-3 flex flex-col items-center space-y-2 text-[15px] leading-[1.6] text-slate-600 md:items-start">
               <p className="flex items-center justify-center gap-2 md:justify-start">
                 <span className="text-accentBlue">📍</span>
@@ -92,7 +92,7 @@ export function Footer() {
             </div>
           </div>
           <div className="text-center md:text-left">
-            <p className="font-serif text-sm font-medium tracking-tight text-accentNavy">Hours</p>
+            <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">Hours</p>
             <div className="mt-3 space-y-2 text-[15px] leading-[1.6] text-slate-600">
               {hoursOrdered.map((item) => (
                 <div key={item.days} className="flex justify-between gap-8">

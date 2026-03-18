@@ -232,7 +232,7 @@ export function AboutPage() {
               <ScrollReveal key={stat.label} direction="up" delay={i * 80}>
                 <div className="text-center">
                   <CountUp value={stat.value} className="text-3xl font-bold text-accentNavy md:text-4xl" duration={2000} />
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-luxury text-slate-400">{stat.label}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-luxury text-accentBlue">{stat.label}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -267,12 +267,12 @@ export function AboutPage() {
               </ScrollReveal>
               <ScrollReveal direction="right" delay={200}>
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="rounded-2xl border border-accentBlue/10 bg-softBlue/40 p-6">
-                    <p className="font-serif text-lg text-accentNavy">All Skin Types</p>
+                  <div className="rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-accentBlue/30 hover:shadow-lg">
+                    <p className="font-serif text-lg font-semibold text-accentNavy">All Skin Types</p>
                     <p className="mt-2 text-[13px] leading-[1.5] text-slate-600">Expert care for diverse skin types and tones — understanding unique needs is at the core of what we do.</p>
                   </div>
-                  <div className="rounded-2xl border border-accentGreen/20 bg-sage/50 p-6">
-                    <p className="font-serif text-lg text-accentNavy">Luxury + Clinical</p>
+                  <div className="rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-accentBlue/30 hover:shadow-lg">
+                    <p className="font-serif text-lg font-semibold text-accentNavy">Luxury + Clinical</p>
                     <p className="mt-2 text-[13px] leading-[1.5] text-slate-600">We blend medical precision with a calm, luxury spa experience — so you feel confident and cared for.</p>
                   </div>
                 </div>
@@ -317,7 +317,7 @@ export function AboutPage() {
                       </div>
                     )}
                   </div>
-                  <h3 className="mt-4 font-serif text-lg tracking-tight text-accentNavy">{member.name}</h3>
+                  <h3 className="mt-4 font-serif text-lg font-semibold tracking-tight text-accentNavy">{member.name}</h3>
                   <p className="mt-1 text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{member.role}</p>
                   {member.credentials && (
                     <p className="mt-1 text-[11px] text-slate-400">{member.credentials}</p>
@@ -358,7 +358,7 @@ export function AboutPage() {
                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-softBlue text-accentBlue">
                       {item.icon}
                     </div>
-                    <h3 className="mt-3 font-serif text-base tracking-tight text-accentNavy">{item.title}</h3>
+                    <h3 className="mt-3 font-serif text-lg font-semibold tracking-tight text-accentNavy">{item.title}</h3>
                     <p className="mt-1.5 text-[13px] leading-[1.5] text-slate-500">{item.desc}</p>
                   </div>
                 ))}
@@ -402,7 +402,7 @@ export function AboutPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accentNavy/5">
                     <svg className="h-6 w-6 text-accentNavy" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-2.77.896m5.25-6.392V2.721" /></svg>
                   </div>
-                  <h3 className="mt-4 font-serif text-lg text-accentNavy">{award.title}</h3>
+                  <h3 className="mt-4 font-serif text-xl font-semibold text-accentNavy">{award.title}</h3>
                   <p className="mt-1 text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{award.subtitle}</p>
                   <p className="mt-3 flex-1 text-[13px] leading-[1.5] text-slate-500">{award.desc}</p>
                 </div>
@@ -452,11 +452,11 @@ export function AboutPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((item, i) => (
               <ScrollReveal key={item.title} direction="up" delay={i * 100}>
-                <div className="rounded-2xl border border-slate-200 bg-cream/40 p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:bg-white">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-softBlue text-accentBlue">
                     {item.icon}
                   </div>
-                  <h3 className="mt-4 font-serif text-lg tracking-tight text-accentNavy">{item.title}</h3>
+                  <h3 className="mt-4 font-serif text-xl font-semibold tracking-tight text-accentNavy">{item.title}</h3>
                   <p className="mt-2 text-[14px] leading-[1.6] text-slate-600">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -478,20 +478,29 @@ export function AboutPage() {
                 <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
                   Located at 3586 Main Street in Paradise Green, Stratford, we welcome clients from Norwalk, Stamford, Bridgeport, Trumbull, Shelton, Fairfield, Milford, and surrounding towns throughout Fairfield County.
                 </p>
-                <div className="mt-6 flex flex-col gap-2 text-[14px] text-slate-600">
-                  <a href="tel:203-377-0166" className="flex items-center gap-2 transition-colors hover:text-accentNavy">
-                    <svg className="h-4 w-4 text-accentBlue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <a
+                    href="tel:203-377-0166"
+                    className="inline-flex items-center gap-2.5 rounded-full border-2 border-accentBlue/30 bg-accentBlue/5 px-5 py-2.5 text-[15px] font-semibold text-accentNavy transition-all duration-200 hover:border-accentBlue hover:bg-accentBlue hover:text-white hover:scale-105"
+                  >
+                    <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                     (203) 377-0166
                   </a>
-                  <a href="mailto:info@theskincarestudioct.com" className="flex items-center gap-2 transition-colors hover:text-accentNavy">
-                    <svg className="h-4 w-4 text-accentBlue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                  <a
+                    href="mailto:info@theskincarestudioct.com"
+                    className="inline-flex items-center gap-2.5 rounded-full border-2 border-accentBlue/30 bg-accentBlue/5 px-5 py-2.5 text-[15px] font-semibold text-accentNavy transition-all duration-200 hover:border-accentBlue hover:bg-accentBlue hover:text-white hover:scale-105"
+                  >
+                    <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
                     info@theskincarestudioct.com
                   </a>
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
                 {['Stratford', 'Norwalk', 'Stamford', 'Bridgeport', 'Trumbull', 'Shelton', 'Fairfield', 'Milford'].map((town) => (
-                  <div key={town} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-center text-[13px] text-slate-600 transition-all duration-200 hover:border-accentBlue/20 hover:text-accentNavy">
+                  <div
+                    key={town}
+                    className="cursor-pointer rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-center text-[13px] font-medium text-slate-600 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 hover:border-accentBlue hover:bg-accentBlue/5 hover:text-accentNavy hover:shadow-md active:scale-[0.98]"
+                  >
                     {town}
                   </div>
                 ))}
@@ -517,14 +526,14 @@ export function AboutPage() {
                 href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-accentNavy px-8 py-4 text-base font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                className="group inline-flex items-center gap-2 rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
               >
                 Book Your Appointment
                 <svg className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
               </a>
               <Link
                 to="/services"
-                className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-8 py-4 text-base font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:bg-white hover:scale-105"
+                className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-6 py-3 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:bg-white hover:scale-105"
               >
                 View Services <span className="text-slate-400">→</span>
               </Link>

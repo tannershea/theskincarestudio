@@ -1,4 +1,6 @@
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
+import { bookingUrl } from '../data'
 import { ScrollReveal } from '../components/ScrollReveal'
 
 export function TermsPage() {
@@ -16,6 +18,23 @@ export function TermsPage() {
           <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight text-accentNavy md:text-5xl">
             Terms &amp; Conditions
           </h1>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
+            >
+              Book Your Appointment
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-1.5 rounded-full border-2 border-accentBlue/40 bg-accentBlue/5 px-6 py-3 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:border-accentBlue hover:bg-accentBlue hover:text-white hover:scale-105"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -156,16 +175,34 @@ export function TermsPage() {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={50}>
-            <div className="mt-12 border-t border-warmStone/50 pt-10 text-center">
-              <p className="text-[15px] leading-[1.75] text-slate-600">
-                If you have questions regarding any of our policies, please contact us:
+            <div className="mt-16 rounded-2xl border-2 border-accentBlue/20 bg-accentBlue/5 p-8 text-center">
+              <p className="text-lg font-semibold text-accentNavy">Questions about our policies?</p>
+              <p className="mt-2 text-[15px] text-slate-600">
+                We're here to help. Reach out or book your appointment below.
               </p>
-              <div className="mt-4 space-y-1 text-[15px] text-slate-600">
-                <p className="font-semibold text-accentNavy">The Skincare Studio Medical Spa</p>
-                <p>3586 Main Street, Stratford, CT 06614</p>
-                <a href="tel:203-377-0166" className="block transition-colors hover:text-accentBlue">(203) 377-0166</a>
-                <a href="mailto:info@theskincarestudioct.com" className="block transition-colors hover:text-accentBlue">info@theskincarestudioct.com</a>
+              <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+                <a
+                  href="tel:203-377-0166"
+                  className="inline-flex items-center gap-2 rounded-full bg-accentNavy px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                >
+                  (203) 377-0166
+                </a>
+                <a
+                  href="mailto:info@theskincarestudioct.com"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-accentBlue/40 bg-white px-5 py-2.5 text-sm font-semibold text-accentNavy transition-all duration-200 hover:border-accentBlue hover:bg-accentBlue hover:text-white hover:scale-105"
+                >
+                  Email Us
+                </a>
+                <a
+                  href={bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-accentBlue/40 bg-white px-5 py-2.5 text-sm font-semibold text-accentNavy transition-all duration-200 hover:border-accentBlue hover:bg-accentBlue hover:text-white hover:scale-105"
+                >
+                  Book Online
+                </a>
               </div>
+              <p className="mt-4 text-[14px] text-slate-500">3586 Main Street, Stratford, CT 06614</p>
             </div>
           </ScrollReveal>
 

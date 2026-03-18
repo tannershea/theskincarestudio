@@ -120,7 +120,7 @@ function ServiceRow({ service, groupTitle }) {
             {serviceIcons[service.name] || defaultIcon}
           </span>
           <div className="flex flex-wrap items-center gap-2">
-            <p className="font-serif text-base tracking-tight text-accentNavy">{service.name}</p>
+            <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">{service.name}</p>
             {isPopular && (
               <span className="rounded-full bg-accentGreen/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accentNavy">
                 Popular
@@ -134,8 +134,8 @@ function ServiceRow({ service, groupTitle }) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </div>
-        <div className="text-[15px] text-slate-600">{service.duration}</div>
-        <div className="font-semibold text-accentNavy">{service.price}</div>
+        <div className="text-base font-medium text-slate-600">{service.duration}</div>
+        <div className="text-base font-semibold text-accentNavy">{service.price}</div>
         <div className="md:text-right" onClick={(e) => e.stopPropagation()}>
           <Link
             to={`${bookingUrl}?service=${encodeURIComponent(service.name)}`}
@@ -149,7 +149,7 @@ function ServiceRow({ service, groupTitle }) {
         className={`overflow-hidden transition-all duration-200 ease-out ${open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         {service.desc && (
-          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-[13px] leading-[1.6] text-slate-500">{service.desc}</p>
+          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-[15px] font-medium leading-[1.6] text-slate-500">{service.desc}</p>
         )}
       </div>
     </div>
@@ -256,18 +256,18 @@ export function ServicesPage() {
             <span className="font-semibold text-accentNavy">224+ Google Reviews</span> — our clients love these treatments
           </p>
 
-          <div className="mb-12 rounded-2xl border border-slate-200 bg-cream/60 p-8">
+          <div className="mb-12 rounded-2xl border border-slate-200 bg-white p-8">
             <div className="grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-slate-200">
               <div className="sm:pr-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-warmStone">Neatly organized</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Neatly organized</p>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Services are grouped by treatment type so you can quickly find what you need.</p>
               </div>
               <div className="sm:px-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-warmStone">Transparent pricing</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Transparent pricing</p>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Durations and starting prices are shown clearly to make comparing options easier.</p>
               </div>
               <div className="sm:pl-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-warmStone">Direct booking</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Direct booking</p>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Every treatment links straight to our live booking page.</p>
               </div>
             </div>

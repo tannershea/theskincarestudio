@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { teamMembers, serviceGroups, contactDetails, getBookingTotals, getProductTotals, popularServiceNames, popularProductNames } from '../data'
 import { products } from './ProductsPage'
 import { PolicyModal } from '../components/PolicyModal'
@@ -150,7 +150,25 @@ export function BookingPage() {
       <Helmet>
         <title>Book an Appointment | The Skincare Studio Medical Spa | Stratford, CT</title>
         <meta name="description" content="Book your appointment at The Skincare Studio. Select your preferred date, time, team member, services, and reserve products for your visit." />
+        <meta name="keywords" content="book appointment Stratford CT, medical spa booking, Botox appointment, facial booking Paradise Green, skincare appointment" />
         <link rel="canonical" href="https://www.theskincarestudioct.com/book" />
+        <meta property="og:title" content="Book an Appointment | The Skincare Studio | Stratford, CT" />
+        <meta property="og:description" content="Reserve your preferred date and time in under 2 minutes. Botox, fillers, facials & more. We'll confirm within 24 hours." />
+        <meta property="og:url" content="https://www.theskincarestudioct.com/book" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          "name": "The Skincare Studio Medical Spa",
+          "url": "https://www.theskincarestudioct.com",
+          "telephone": "203-377-0166",
+          "address": { "@type": "PostalAddress", "streetAddress": "3586 Main Street", "addressLocality": "Stratford", "addressRegion": "CT", "postalCode": "06614" },
+          "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday"], "opens": "09:00", "closes": "18:00" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "17:00" }
+          ],
+          "priceRange": "$$"
+        })}</script>
       </Helmet>
 
       <section className="bg-cream py-16 lg:py-20">
@@ -170,6 +188,11 @@ export function BookingPage() {
             <span className="text-slate-300">·</span>
             <span>BSN & RN licensed professionals</span>
           </div>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm">
+            <Link to="/services" className="font-semibold text-accentBlue transition-transform hover:scale-105 hover:underline">View all services</Link>
+            <span className="text-slate-300">·</span>
+            <Link to="/contact" className="font-semibold text-accentBlue transition-transform hover:scale-105 hover:underline">Contact us</Link>
+          </div>
         </div>
       </section>
 
@@ -177,7 +200,7 @@ export function BookingPage() {
         <section className="border-t border-warmStone/50 bg-white py-20">
           <div className="mx-auto max-w-2xl px-8 text-center lg:px-12">
             <div className="rounded-2xl border border-accentGreen/30 bg-softGreen/30 p-10">
-              <h2 className="font-serif text-2xl tracking-tight text-accentNavy">Thank you!</h2>
+              <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Thank you!</h2>
               <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
                 Your booking request has been received. Our team will contact you shortly at the number or email you provide to confirm your appointment.
               </p>
@@ -264,12 +287,12 @@ export function BookingPage() {
             <div className="space-y-12">
               {/* Team Member */}
               <div>
-                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Select Team Member</h2>
+                <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Select Team Member</h2>
                 <div className="mt-4 flex flex-wrap gap-3">
                   {teamMembers.map((tm) => (
                     <label
                       key={tm.id}
-                      className={`flex cursor-pointer items-center rounded-xl border px-4 py-3 transition-all duration-200 hover:scale-[1.02] ${
+                      className={`flex cursor-pointer items-center rounded-xl border px-4 py-3 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-within:ring-2 focus-within:ring-accentBlue/50 focus-within:ring-offset-2 ${
                         teamMember === tm.id
                           ? 'border-accentBlue bg-accentBlue/5 shadow-sm'
                           : 'border-slate-200 hover:border-accentBlue/50 hover:shadow-sm'
@@ -291,7 +314,7 @@ export function BookingPage() {
 
               {/* Calendar */}
               <div>
-                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Select Date</h2>
+                <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Select Date</h2>
                 <p className="mt-1 text-sm text-slate-500">Weekend slots fill fast — book ahead for best availability</p>
                 <div className="mt-4 flex items-center justify-between gap-4">
                   <button
@@ -356,16 +379,17 @@ export function BookingPage() {
               {/* Time Slots */}
               {selectedDate && (
                 <div>
-                  <h2 className="font-serif text-xl tracking-tight text-accentNavy">Select Time</h2>
+                  <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Select Time</h2>
                   <p className="mt-1 text-sm text-slate-500">Available times for {selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
+                  <p className="mt-1 text-sm text-slate-500">{contactDetails.addressLine1}, Stratford, CT 06614</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {TIME_SLOTS.map((time) => (
                       <button
                         key={time}
                         type="button"
                         onClick={() => setSelectedTime(time)}
-                        className={`rounded-xl border px-4 py-2.5 text-sm transition-all duration-200 hover:scale-[1.02] ${
-                          selectedTime === time
+className={`rounded-xl border px-4 py-2.5 text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue/50 focus-visible:ring-offset-2 ${
+                        selectedTime === time
                             ? 'border-accentBlue bg-accentBlue/10 text-accentNavy shadow-sm'
                             : 'border-slate-200 text-slate-600 hover:border-accentBlue/50'
                         }`}
@@ -379,7 +403,7 @@ export function BookingPage() {
 
               {/* Add Service */}
               <div>
-                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Add Service</h2>
+                <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Add Service</h2>
                 <p className="mt-1 text-sm text-slate-500">Select one or more services — 224+ clients love our treatments</p>
                 <div className="mt-4">
                   <input
@@ -410,7 +434,7 @@ export function BookingPage() {
                                 tabIndex={0}
                                 onClick={() => toggleService(svc)}
                                 onKeyDown={(e) => e.key === 'Enter' && toggleService(svc)}
-                                className={`cursor-pointer rounded-xl border p-4 transition-all duration-200 hover:shadow-md ${
+                                className={`cursor-pointer rounded-xl border p-4 transition-all duration-200 hover:shadow-md hover:scale-[1.01] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue/50 focus-visible:ring-offset-2 ${
                                   isSelected ? 'border-accentBlue bg-accentBlue/5 shadow-sm' : 'border-slate-100 hover:border-accentBlue/50'
                                 }`}
                               >
@@ -472,7 +496,7 @@ export function BookingPage() {
 
               {/* Reserve Product */}
               <div>
-                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Reserve Products</h2>
+                <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Reserve Products</h2>
                 <p className="mt-1 text-sm text-slate-500">Reserve products to purchase at your appointment — pick up in-store, no shipping</p>
                 <div className="mt-4">
                   <input
@@ -499,7 +523,7 @@ export function BookingPage() {
                             tabIndex={0}
                             onClick={() => toggleProduct(p)}
                             onKeyDown={(e) => e.key === 'Enter' && toggleProduct(p)}
-                            className={`cursor-pointer rounded-xl border p-4 transition-all duration-200 hover:shadow-md ${
+                            className={`cursor-pointer rounded-xl border p-4 transition-all duration-200 hover:shadow-md hover:scale-[1.01] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue/50 focus-visible:ring-offset-2 ${
                               isSelected ? 'border-accentBlue bg-accentBlue/5 shadow-sm' : 'border-slate-100 hover:border-accentBlue/50'
                             }`}
                           >
@@ -558,7 +582,7 @@ export function BookingPage() {
 
               {/* Photo Upload */}
               <div>
-                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Pre-Assessment Photos</h2>
+                <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Pre-Assessment Photos</h2>
                 <p className="mt-1 text-sm text-slate-500">Send a pic — so we can start our assessment</p>
                 <div className="mt-4">
                   <input
@@ -595,7 +619,7 @@ export function BookingPage() {
 
               {/* Contact Info */}
               <div className="rounded-2xl border border-slate-200 bg-cream/50 p-6">
-                <h2 className="font-serif text-xl tracking-tight text-accentNavy">Your Information</h2>
+                <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Your Information</h2>
                 <p className="mt-1 text-sm text-slate-500">We'll call or email within 24 hours to confirm — no charge until you arrive</p>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
                   <div>
@@ -620,7 +644,7 @@ export function BookingPage() {
               {/* Booking Details & Payment */}
               {(selectedDate || selectedTime || selectedServices.length > 0 || selectedProducts.length > 0) && (
                 <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h2 className="font-serif text-xl tracking-tight text-accentNavy">Booking Details</h2>
+                  <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Booking Details</h2>
                   <div className="mt-4 space-y-2">
                     {selectedServices.length > 0 && (
                       <p className="text-[15px] text-slate-700">{selectedServices.map((s) => s.name).join(', ')}</p>
@@ -734,7 +758,7 @@ export function BookingPage() {
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-accentNavy py-4 text-[15px] font-semibold tracking-wide text-white shadow-lg transition hover:scale-[1.02] hover:bg-accentNavy/90 hover:shadow-xl sm:w-auto sm:px-14"
+                  className="w-full rounded-full bg-accentNavy py-4 text-[15px] font-semibold tracking-wide text-white shadow-lg transition hover:scale-[1.02] hover:bg-accentNavy/90 hover:shadow-xl active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue focus-visible:ring-offset-2 sm:w-auto sm:px-14"
                 >
                   Request Appointment
                 </button>

@@ -306,7 +306,7 @@ export function ProductsPage() {
                   </div>
                   <div className="mt-4 flex flex-1 flex-col">
                     <p className="text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{product.brand}</p>
-                    <h3 className="mt-1 font-serif text-base tracking-tight text-accentNavy">{product.name}</h3>
+                    <h3 className="mt-1 font-serif text-lg font-semibold tracking-tight text-accentNavy">{product.name}</h3>
                     <p className="mt-2 flex-1 text-[13px] leading-[1.5] text-slate-500">{product.desc}</p>
                     <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
                       <span className="text-lg font-bold text-accentNavy">{product.price}</span>
