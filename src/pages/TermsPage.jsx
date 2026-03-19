@@ -163,6 +163,22 @@ export function TermsPage() {
 
           <ScrollReveal direction="up" delay={50}>
             <div className="mt-12 border-t border-warmStone/50 pt-10">
+              <h2 className="font-serif text-2xl tracking-tight text-accentNavy">Aftercare Instructions</h2>
+              <p className="mt-4 text-[15px] leading-[1.75] text-slate-600">
+                After your treatment, follow our step-by-step aftercare guides to support healing and get the best results. We provide detailed instructions for VI Peel (Face & Body), Microneedling SkinPen, Chemical Peel, Facial Balancing, Botox, and Filler.
+              </p>
+              <Link
+                to="/aftercare"
+                className="mt-4 inline-flex items-center gap-2 rounded-full bg-accentNavy px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
+              >
+                View Aftercare Instructions
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+              </Link>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={50}>
+            <div className="mt-12 border-t border-warmStone/50 pt-10">
               <h2 className="font-serif text-2xl tracking-tight text-accentNavy">Payment Methods</h2>
               <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {['Credit / Debit Cards', 'HSA / FSA', 'Afterpay', 'Klarna', 'Cherry', 'Offline Payments'].map((method) => (

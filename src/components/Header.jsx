@@ -22,6 +22,7 @@ export function Header() {
         <nav className="hidden items-center gap-8 text-[15px] font-medium tracking-tight md:flex">
           <NavLink to="/" end className={navLinkClass}>Home</NavLink>
           <NavLink to="/services" className={navLinkClass}>Services</NavLink>
+          <NavLink to="/aftercare" className={navLinkClass}>Aftercare</NavLink>
           <NavLink to="/products" className={navLinkClass}>Products</NavLink>
           <NavLink to="/about" className={navLinkClass}>About Us</NavLink>
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
@@ -71,6 +72,9 @@ export function Header() {
             </NavLink>
             <NavLink to="/services" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Services
+            </NavLink>
+            <NavLink to="/aftercare" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
+              Aftercare
             </NavLink>
             <NavLink to="/products" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Products

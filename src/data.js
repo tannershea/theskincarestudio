@@ -339,3 +339,102 @@ export const serviceGroups = [
     services: [{ name: "Teen Acne Facial", duration: "1 hr", price: "$175", desc: "Age-appropriate facial designed for teen skin — gentle extractions, education, and a clear-skin plan." }],
   },
 ];
+
+export const aftercareTreatments = [
+  {
+    id: 'botox',
+    title: 'Botox',
+    image: '/aftercare/botox.jpg',
+    instructions: [
+      'Do not touch, rub, or massage the treated areas for at least 4–6 hours.',
+      'Stay upright for 4 hours after treatment. Avoid lying down flat.',
+      'Avoid strenuous exercise, saunas, and hot yoga for 24 hours.',
+      'Results typically appear within 3–7 days. Full effect at 2 weeks.',
+      'Avoid facials, laser treatments, and chemical peels for 24–48 hours.',
+    ],
+  },
+  {
+    id: 'chemical-peel',
+    title: 'Chemical Peel',
+    image: '/aftercare/chemical-peel.jpg',
+    instructions: [
+      'Follow the specific instructions provided at your appointment based on peel depth.',
+      'Keep skin moisturized. Use gentle cleanser and avoid harsh products or exfoliants.',
+      'Peeling may occur. Do not pick or pull at skin. Let it shed naturally.',
+      'Apply broad-spectrum SPF 30+ daily. Avoid sun exposure and tanning beds.',
+      'Avoid makeup until skin has calmed. No strenuous exercise or swimming until healed.',
+    ],
+  },
+  {
+    id: 'facial-balancing',
+    title: 'Facial Balancing / PRFM',
+    image: '/aftercare/facial-balancing.png',
+    instructions: [
+      'Avoid touching or massaging the treated areas for at least 6 hours.',
+      'Apply ice or cold compresses as needed to reduce swelling. Sleep elevated for 1–2 nights if possible.',
+      'Avoid strenuous exercise, alcohol, and blood thinners for 24–48 hours.',
+      'Avoid facials, laser treatments, and chemical peels for 2 weeks.',
+      'Bruising and swelling are normal and typically resolve within 1–2 weeks.',
+    ],
+  },
+  {
+    id: 'filler',
+    title: 'Facial Filler / Lip Filler',
+    images: ['/aftercare/filler-left.png', '/aftercare/filler-right.png'],
+    instructions: [
+      'Avoid touching or massaging the treated areas for at least 6 hours unless directed otherwise.',
+      'Apply ice or cold compresses to reduce swelling. Sleep elevated for 1–2 nights if possible.',
+      'Avoid strenuous exercise, alcohol, and blood thinners for 24–48 hours.',
+      'Bruising and swelling are common and typically resolve within 1–2 weeks.',
+      'Avoid facials, laser treatments, and chemical peels for 2 weeks.',
+    ],
+  },
+  {
+    id: 'laser-hair-removal',
+    title: 'Laser Hair Removal',
+    image: '/aftercare/laser-hair-removal.png',
+    instructions: [
+      'Avoid sun exposure and tanning for at least 2 weeks before and after each treatment. Apply broad-spectrum SPF 30+ daily on treated areas.',
+      'Do not wax, pluck, or use depilatory creams between sessions. Shaving is allowed.',
+      'Keep the treated area clean and moisturized. Use gentle, fragrance-free products for 24–48 hours.',
+      'Redness, swelling, and mild sensitivity are normal and typically resolve within a few hours to a few days.',
+      'Avoid hot baths, saunas, strenuous exercise, and swimming for 24–48 hours after treatment.',
+    ],
+  },
+  {
+    id: 'microneedling-skinpen',
+    title: 'Microneedling SkinPen',
+    image: '/aftercare/microneedling-skinpen.png',
+    instructions: [
+      'Keep the treated area clean and moisturized. Use only gentle, non-irritating products for 24–48 hours.',
+      'Avoid makeup for at least 24 hours. No retinoids, AHAs, BHAs, or exfoliants for 5–7 days.',
+      'Apply broad-spectrum SPF 30+ daily. Avoid direct sun exposure and tanning for 2 weeks.',
+      'Do not touch, pick, or scratch the treated area. Redness and mild swelling are normal for 24–72 hours.',
+      'Avoid strenuous exercise, saunas, swimming, and excessive sweating for 24–48 hours.',
+    ],
+  },
+  {
+    id: 'vi-peel-body',
+    title: 'VI Peel Body',
+    image: '/aftercare/vi-peel-body.jpg',
+    instructions: [
+      'Do not wash, touch, or apply anything to the treated area for at least 4–6 hours after the peel.',
+      'Peeling typically begins 2–3 days after treatment. Do not pick or pull at peeling skin.',
+      'Apply the provided post-peel products as directed. Keep the area moisturized.',
+      'Avoid sun exposure and wear protective clothing or SPF on treated areas.',
+      'Avoid strenuous exercise, saunas, hot tubs, and swimming until skin has fully healed.',
+    ],
+  },
+  {
+    id: 'vi-peel-face',
+    title: 'VI Peel Face',
+    image: '/aftercare/vi-peel-face.png',
+    instructions: [
+      'Do not wash, touch, or apply anything to the treated area for at least 4–6 hours after the peel.',
+      'Peeling typically begins 2–3 days after treatment and may last 5–7 days. Do not pick or pull at peeling skin.',
+      'Apply the provided post-peel towelettes as directed. Use gentle cleanser and moisturizer once peeling begins.',
+      'Avoid sun exposure and wear broad-spectrum SPF 30+ daily. No makeup until peeling is complete.',
+      'Avoid strenuous exercise, saunas, and swimming until skin has fully healed.',
+    ],
+  },
+];

@@ -331,6 +331,34 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* Aftercare Instructions */}
+      <section className="border-t border-warmStone/50 bg-white py-16">
+        <div className="mx-auto max-w-5xl px-8 lg:px-12">
+          <ScrollReveal direction="up" delay={0}>
+            <div className="rounded-2xl border border-accentBlue/20 bg-softBlue/50 p-8 md:p-10">
+              <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">After your treatment</p>
+                  <h2 className="mt-2 font-serif text-2xl font-semibold tracking-tight text-accentNavy md:text-3xl">
+                    Aftercare Instructions
+                  </h2>
+                  <p className="mt-3 max-w-xl text-[15px] leading-[1.6] text-slate-600">
+                    Follow our step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, Botox, and Filler to support healing and get the best results.
+                  </p>
+                </div>
+                <Link
+                  to="/aftercare"
+                  className="shrink-0 inline-flex items-center gap-2 rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                >
+                  View Aftercare Guide
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* TikTok Feed */}
       <TikTokFeed />
 
