@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { bookingUrl, contactDetails, openingHours, serviceAreas } from '../data'
+import { bookingUrl, contactDetails, openingHours, serviceAreas, localBusinessSchema, googleMapsUrl } from '../data'
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -23,24 +23,7 @@ export function ContactPage() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const schemaOrg = {
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "The Skincare Studio Medical Spa",
-    "telephone": "203-377-0166",
-    "email": "info@theskincarestudioct.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3586 Main Street",
-      "addressLocality": "Stratford",
-      "addressRegion": "CT",
-      "postalCode": "06614"
-    },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday"], "opens": "09:00", "closes": "18:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "17:00" }
-    ]
-  }
+  const schemaOrg = localBusinessSchema
 
   return (
     <>
@@ -51,6 +34,9 @@ export function ContactPage() {
         <meta property="og:title" content="Contact | The Skincare Studio Medical Spa - Stratford, CT" />
         <meta property="og:description" content="Visit us at 3586 Main Street, Paradise Green. Call 203-377-0166 or book online. Serving Fairfield County." />
         <meta property="og:url" content="https://www.theskincarestudioct.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.theskincarestudioct.com/studio-lounge.png" />
+        <meta property="og:image:alt" content="The Skincare Studio Medical Spa in Paradise Green, Stratford, CT" />
         <script type="application/ld+json">{JSON.stringify(schemaOrg)}</script>
       </Helmet>
 
@@ -199,18 +185,34 @@ export function ContactPage() {
             </div>
           </div>
 
-          <div className="mt-10 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-            <iframe
-              title="The Skincare Studio location on Google Maps"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.0!2d-73.1318!3d41.1845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s3586+Main+Street%2C+Stratford%2C+CT!5e0!3m2!1sen!2sus!4v1700000000000"
-              width="100%"
-              height="350"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
-            />
+          <div className="mt-10 space-y-3">
+            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+              <iframe
+                title="The Skincare Studio location on Google Maps"
+                src="https://www.google.com/maps?q=The+Skincare+Studio+Medical+Spa+3586+Main+Street+Stratford+CT+06614&output=embed"
+                width="100%"
+                height="350"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
+            </div>
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-accentNavy transition-all duration-200 hover:scale-[1.02] hover:border-accentBlue hover:shadow-md"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" />
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+              </svg>
+              View on Google Maps · See reviews, hours &amp; directions
+            </a>
           </div>
         </div>
       </section>

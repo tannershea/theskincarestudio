@@ -11,6 +11,7 @@ import {
   featuredCategories,
   popularServices,
   reasons,
+  localBusinessSchema,
 } from '../data'
 import { TrustBadges } from '../components/TrustBadges'
 import { FAQ } from '../components/FAQ'
@@ -54,32 +55,7 @@ function HeroBackgroundCarousel() {
 }
 
 export function HomePage() {
-  const schemaOrg = {
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "The Skincare Studio Medical Spa",
-    "description": "Medical spa specializing in skin for Black people, Latino people, African Americans, and dark skin. Botox, fillers, laser treatments, facials in Stratford, CT.",
-    "url": "https://www.theskincarestudioct.com",
-    "telephone": "203-377-0166",
-    "email": "info@theskincarestudioct.com",
-    "image": "https://www.theskincarestudioct.com/studio-lounge.png",
-    "priceRange": "$$",
-    "sameAs": [
-      "https://www.instagram.com/theskincarestudioct/",
-      "https://www.facebook.com/theskincarestudioct/"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3586 Main Street",
-      "addressLocality": "Stratford",
-      "addressRegion": "CT",
-      "postalCode": "06614"
-    },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday"], "opens": "09:00", "closes": "18:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "17:00" }
-    ]
-  }
+  const schemaOrg = localBusinessSchema
 
   return (
     <>
@@ -343,7 +319,7 @@ export function HomePage() {
                     Aftercare Instructions
                   </h2>
                   <p className="mt-3 max-w-xl text-[15px] leading-[1.6] text-slate-600">
-                    Follow our step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, Botox, and Filler to support healing and get the best results.
+                    Follow our step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Botox, and Filler to support healing and get the best results.
                   </p>
                 </div>
                 <Link

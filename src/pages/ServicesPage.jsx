@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { bookingUrl, serviceGroups, popularServiceNames } from '../data'
+import { bookingUrl, serviceGroups, popularServiceNames, serviceFaqs } from '../data'
+import { FAQ } from '../components/FAQ'
 
 const servicesHeroImages = [
   '/services-hero.png',
@@ -223,7 +224,7 @@ export function ServicesPage() {
             <span className="font-semibold text-white">Treat now, pay over time</span> — flexible payment plans available for any treatment through Cherry.
           </p>
           <a
-            href="https://pay.withcherry.com/%20%20theskincarestudioct"
+            href="https://pay.withcherry.com/theskincarestudioct"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-white/20"
@@ -281,7 +282,7 @@ export function ServicesPage() {
                   Aftercare Instructions
                 </h2>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">
-                  Step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, Botox, and Filler.
+                  Step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Botox, and Filler.
                 </p>
               </div>
               <Link
@@ -321,6 +322,8 @@ export function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <FAQ items={serviceFaqs} sectionTitle="Services FAQ" id="services-faq-heading" />
     </>
   )
 }

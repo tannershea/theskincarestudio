@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet-async'
 import { faqs } from '../data'
 import { ScrollReveal } from './ScrollReveal'
 
-export function FAQ() {
+export function FAQ({ items = faqs, sectionTitle = "Common Questions", id = "faq-heading" }) {
   const [openIndex, setOpenIndex] = useState(-1)
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map((faq) => ({
+    "mainEntity": items.map((faq) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": { "@type": "Answer", "text": faq.a },
@@ -16,7 +16,7 @@ export function FAQ() {
   }
 
   return (
-    <section className="bg-white py-20" aria-labelledby="faq-heading">
+    <section className="bg-white py-20" aria-labelledby={id}>
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -25,12 +25,12 @@ export function FAQ() {
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">
             FAQ
           </p>
-          <h2 id="faq-heading" className="mt-3 font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
-            Common Questions
+          <h2 id={id} className="mt-3 font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
+            {sectionTitle}
           </h2>
         </div>
         <div className="mt-12 space-y-3">
-          {faqs.map((faq, i) => (
+          {items.map((faq, i) => (
             <ScrollReveal key={i} direction="up" delay={i * 80}>
             <div
               className="overflow-hidden rounded-2xl border border-slate-200 bg-cream/50 transition-all duration-300 ease-out hover:border-accentBlue/40 hover:bg-white hover:shadow-lg hover:-translate-y-1.5 hover:z-10"

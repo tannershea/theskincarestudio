@@ -99,10 +99,56 @@ export const socialLinks = {
   tiktok: "https://www.tiktok.com/@skincarestudiomed",
 };
 
+/** Link to open the business on Google Maps / Google Business Profile */
+export const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=The+Skincare+Studio+Medical+Spa+3586+Main+Street+Stratford+CT+06614";
+
 export const openingHours = [
   { days: "Mon – Sat", hours: "9:00 AM – 5:00 PM" },
   { days: "Sunday", hours: "Closed" },
 ];
+
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "The Skincare Studio Medical Spa",
+  "description": "Medical spa specializing in skin for Black people, Latino people, African Americans, and dark skin. Botox, fillers, laser treatments, facials in Stratford, CT.",
+  "url": "https://www.theskincarestudioct.com",
+  "telephone": "203-377-0166",
+  "email": "info@theskincarestudioct.com",
+  "image": "https://www.theskincarestudioct.com/studio-lounge.png",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.instagram.com/theskincarestudioct/",
+    "https://www.facebook.com/theskincarestudioct/",
+    "https://www.tiktok.com/@skincarestudiomed"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3586 Main Street",
+    "addressLocality": "Stratford",
+    "addressRegion": "CT",
+    "postalCode": "06614"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.1976,
+    "longitude": -73.1020
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Stratford", "containedInPlace": { "@type": "AdministrativeArea", "name": "Fairfield County" } },
+    { "@type": "City", "name": "Norwalk" },
+    { "@type": "City", "name": "Stamford" },
+    { "@type": "City", "name": "Bridgeport" },
+    { "@type": "City", "name": "Trumbull" },
+    { "@type": "City", "name": "Shelton" },
+    { "@type": "City", "name": "Fairfield" },
+    { "@type": "City", "name": "Milford" },
+    { "@type": "AdministrativeArea", "name": "Fairfield County" }
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "17:00" }
+  ]
+};
 
 export const featuredCategories = [
   {
@@ -227,6 +273,25 @@ export const faqs = [
   },
 ];
 
+export const serviceFaqs = [
+  {
+    q: "How do I book an appointment?",
+    a: "You can book online through our booking page. Select your preferred service, date, and time. For consultations or custom treatment plans, call us at 203-377-0166.",
+  },
+  {
+    q: "What payment options do you accept?",
+    a: "We accept major credit cards, debit cards, and flexible payment plans through Cherry. Treat now, pay over time — financing is available for any treatment.",
+  },
+  {
+    q: "What services do you offer?",
+    a: "We offer consultations, neuromodulators (Botox, Letybo, Daxxify), dermal fillers, VI Peels, chemical peels, facials (Hydrafacial, GLO2Facial, microderm), microneedling, laser hair removal, laser treatments, and regenerative services like PRFM and facial balancing.",
+  },
+  {
+    q: "Do you offer consultations before treatment?",
+    a: "Yes. We offer both virtual and in-studio consultations. Consultations start at $100 and may be applied toward your first treatment. Our team will help you choose the right treatment for your goals.",
+  },
+];
+
 export const popularServiceNames = [
   'Soft Volume Lips', 'VI Peel Original', 'Polished Glow Microderm Facial', 'Hydrafacial Deluxe',
   'Neurotoxin', 'Lip Filler', 'SkinPen Microneedling', 'In-Studio Consultation',
@@ -344,97 +409,236 @@ export const aftercareTreatments = [
   {
     id: 'botox',
     title: 'Botox',
-    image: '/aftercare/botox.jpg',
-    instructions: [
-      'Do not touch, rub, or massage the treated areas for at least 4–6 hours.',
-      'Stay upright for 4 hours after treatment. Avoid lying down flat.',
-      'Avoid strenuous exercise, saunas, and hot yoga for 24 hours.',
-      'Results typically appear within 3–7 days. Full effect at 2 weeks.',
-      'Avoid facials, laser treatments, and chemical peels for 24–48 hours.',
+    image: '/aftercare/botox.png',
+    instructionGroups: [
+      {
+        title: 'DO',
+        items: [
+          'Remain upright for at least 4 hours (you may recline, but do not lie flat).',
+          'Gently wash your face without applying pressure to injection sites for 24 hours.',
+          'Drink plenty of water and stay hydrated.',
+          'Take Tylenol if needed for headaches or discomfort.',
+          'Allow up to 14 days for full results to develop.',
+          'Consult your provider before additional treatments in the same area.',
+        ],
+      },
+      {
+        title: 'DO NOT',
+        items: [
+          'Apply makeup for 12 hours.',
+          'Exercise for 24 hours.',
+          'Take aspirin or ibuprofen for 24 hours.',
+          'Smoke or drink alcohol for 24 hours.',
+        ],
+      },
     ],
   },
   {
     id: 'chemical-peel',
     title: 'Chemical Peel',
-    image: '/aftercare/chemical-peel.jpg',
-    instructions: [
-      'Follow the specific instructions provided at your appointment based on peel depth.',
-      'Keep skin moisturized. Use gentle cleanser and avoid harsh products or exfoliants.',
-      'Peeling may occur. Do not pick or pull at skin. Let it shed naturally.',
-      'Apply broad-spectrum SPF 30+ daily. Avoid sun exposure and tanning beds.',
-      'Avoid makeup until skin has calmed. No strenuous exercise or swimming until healed.',
+    image: '/aftercare/chemical-peel.png',
+    instructionGroups: [
+      {
+        title: 'DO',
+        items: [
+          {
+            text: 'Resume skincare the next morning using gentle products:',
+            subItems: [
+              'Cleanser',
+              'Toner',
+              'Eye cream',
+              'Serums',
+              'Moisturizer (PM)',
+              'Sunscreen (AM)',
+            ],
+          },
+          'Wear sunscreen daily (even indoors).',
+        ],
+      },
+      {
+        title: 'DO NOT',
+        items: [
+          'Wash your face the remainder of the treatment day.',
+          'Perform strenuous activities for 48 hours.',
+          'Expose skin to excessive heat or direct sunlight.',
+        ],
+      },
     ],
   },
   {
     id: 'facial-balancing',
-    title: 'Facial Balancing / PRFM',
+    title: 'Facial Balancing',
+    image: '/aftercare/facial-balancing-aftercare.png',
+    instructionGroups: [
+      {
+        title: 'DO',
+        items: [
+          'Take Tylenol for mild discomfort.',
+          'Allow 14 days for full results.',
+          'Schedule a follow-up if needed.',
+        ],
+      },
+      {
+        title: 'DO NOT',
+        items: [
+          'Exercise for 24 hours.',
+          'Drink alcohol for 24 hours.',
+          'Expose skin to sun for 48 hours.',
+          'Take NSAIDs (ibuprofen, aspirin).',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'prfm',
+    title: 'PRFM',
     image: '/aftercare/facial-balancing.png',
-    instructions: [
-      'Avoid touching or massaging the treated areas for at least 6 hours.',
-      'Apply ice or cold compresses as needed to reduce swelling. Sleep elevated for 1–2 nights if possible.',
-      'Avoid strenuous exercise, alcohol, and blood thinners for 24–48 hours.',
-      'Avoid facials, laser treatments, and chemical peels for 2 weeks.',
-      'Bruising and swelling are normal and typically resolve within 1–2 weeks.',
+    instructionGroups: [
+      {
+        title: 'DO',
+        items: [
+          'Expect swelling and bruising.',
+          'Apply a cold compress.',
+          'Take Tylenol for discomfort.',
+          'Allow up to 14 days for results.',
+          'Schedule follow-up if needed.',
+        ],
+      },
+      {
+        title: 'DO NOT',
+        items: [
+          'Massage the area unless instructed.',
+          'Drink alcohol for 24 hours.',
+          'Smoke for 12 hours.',
+          'Exercise for 24 hours.',
+          'Expose skin to sun for 24 hours.',
+          'Apply makeup for 12 hours.',
+          'Take NSAIDs (ibuprofen, aspirin).',
+        ],
+      },
     ],
   },
   {
     id: 'filler',
     title: 'Facial Filler / Lip Filler',
     images: ['/aftercare/filler-left.png', '/aftercare/filler-right.png'],
-    instructions: [
-      'Avoid touching or massaging the treated areas for at least 6 hours unless directed otherwise.',
-      'Apply ice or cold compresses to reduce swelling. Sleep elevated for 1–2 nights if possible.',
-      'Avoid strenuous exercise, alcohol, and blood thinners for 24–48 hours.',
-      'Bruising and swelling are common and typically resolve within 1–2 weeks.',
-      'Avoid facials, laser treatments, and chemical peels for 2 weeks.',
+    instructionGroups: [
+      {
+        title: 'DO',
+        items: [
+          'Expect swelling and bruising (may last up to 2 weeks).',
+          'Apply a cold compress for 24–48 hours.',
+          'Take Tylenol if needed for pain.',
+        ],
+      },
+      {
+        title: 'DO NOT',
+        items: [
+          'Perform high-intensity exercise for 24–48 hours.',
+          'Sleep on your side or stomach for 24–48 hours.',
+          'Drink alcohol for 12–24 hours.',
+          'Apply makeup or skincare products for 24 hours.',
+          'Expose skin to heat (saunas, steam rooms, hot tubs, heated workouts).',
+        ],
+      },
     ],
   },
   {
     id: 'laser-hair-removal',
     title: 'Laser Hair Removal',
     image: '/aftercare/laser-hair-removal.png',
-    instructions: [
-      'Avoid sun exposure and tanning for at least 2 weeks before and after each treatment. Apply broad-spectrum SPF 30+ daily on treated areas.',
-      'Do not wax, pluck, or use depilatory creams between sessions. Shaving is allowed.',
-      'Keep the treated area clean and moisturized. Use gentle, fragrance-free products for 24–48 hours.',
-      'Redness, swelling, and mild sensitivity are normal and typically resolve within a few hours to a few days.',
-      'Avoid hot baths, saunas, strenuous exercise, and swimming for 24–48 hours after treatment.',
+    instructionGroups: [
+      {
+        title: 'DO',
+        items: [
+          'Be patient—results may require multiple sessions.',
+          'Schedule follow-up treatments as recommended.',
+          'Drink plenty of water.',
+          'Apply cold compresses for swelling or discomfort.',
+          'Use aloe vera for 3 days post-treatment.',
+        ],
+      },
+      {
+        title: 'DO NOT',
+        items: [
+          'Apply makeup for 24 hours.',
+          'Shave for 72 hours.',
+          'Exercise for 48 hours.',
+          'Wax, tweeze, or pick for 4 weeks.',
+          'Expose skin to direct sunlight for 2 weeks.',
+        ],
+      },
     ],
   },
   {
     id: 'microneedling-skinpen',
     title: 'Microneedling SkinPen',
     image: '/aftercare/microneedling-skinpen.png',
-    instructions: [
-      'Keep the treated area clean and moisturized. Use only gentle, non-irritating products for 24–48 hours.',
-      'Avoid makeup for at least 24 hours. No retinoids, AHAs, BHAs, or exfoliants for 5–7 days.',
-      'Apply broad-spectrum SPF 30+ daily. Avoid direct sun exposure and tanning for 2 weeks.',
-      'Do not touch, pick, or scratch the treated area. Redness and mild swelling are normal for 24–72 hours.',
-      'Avoid strenuous exercise, saunas, swimming, and excessive sweating for 24–48 hours.',
+    instructionGroups: [
+      {
+        title: 'DO',
+        items: [
+          'Use a gentle cleanser for 3 days.',
+          'Keep hands, pillowcases, and brushes clean.',
+          'Drink at least 8 glasses of water daily.',
+          'Reapply sunscreen every 2 hours if exposed to sunlight.',
+          'Allow 1–4 days for recovery.',
+        ],
+      },
+      {
+        title: 'DO NOT',
+        items: [
+          'Expose skin to sun for 3–5 days.',
+          'Pick, scratch, or touch the treated skin.',
+          'Apply makeup for 24 hours.',
+          'Use exfoliating products (Vitamin C, Retin-A, acids) for 3 days.',
+        ],
+      },
     ],
   },
   {
     id: 'vi-peel-body',
     title: 'VI Peel Body',
-    image: '/aftercare/vi-peel-body.jpg',
-    instructions: [
-      'Do not wash, touch, or apply anything to the treated area for at least 4–6 hours after the peel.',
-      'Peeling typically begins 2–3 days after treatment. Do not pick or pull at peeling skin.',
-      'Apply the provided post-peel products as directed. Keep the area moisturized.',
-      'Avoid sun exposure and wear protective clothing or SPF on treated areas.',
-      'Avoid strenuous exercise, saunas, hot tubs, and swimming until skin has fully healed.',
+    image: '/aftercare/vi-peel-body.png',
+    instructionGroups: [
+      {
+        title: 'DO',
+        items: [
+          'Apply sunscreen regularly.',
+          'Reapply sunscreen every 2 hours when exposed to the sun.',
+          'Limit sun exposure as much as possible.',
+        ],
+      },
+      {
+        title: 'DO NOT',
+        items: [
+          'Wash the treated area for 8–12 hours after treatment.',
+          'Prolong sun exposure without protection.',
+        ],
+      },
     ],
   },
   {
     id: 'vi-peel-face',
     title: 'VI Peel Face',
     image: '/aftercare/vi-peel-face.png',
-    instructions: [
-      'Do not wash, touch, or apply anything to the treated area for at least 4–6 hours after the peel.',
-      'Peeling typically begins 2–3 days after treatment and may last 5–7 days. Do not pick or pull at peeling skin.',
-      'Apply the provided post-peel towelettes as directed. Use gentle cleanser and moisturizer once peeling begins.',
-      'Avoid sun exposure and wear broad-spectrum SPF 30+ daily. No makeup until peeling is complete.',
-      'Avoid strenuous exercise, saunas, and swimming until skin has fully healed.',
+    imagePosition: 'center',
+    instructionGroups: [
+      {
+        title: 'DO',
+        items: [
+          'Wait 4 hours before washing your face.',
+          'Follow all provided aftercare instructions and use recommended products only.',
+          'Resume your regular skincare routine after 7 days.',
+        ],
+      },
+      {
+        title: 'DO NOT',
+        items: [
+          'Use non-approved products during the peeling process.',
+          'Disrupt or pick at peeling skin.',
+        ],
+      },
     ],
   },
 ];

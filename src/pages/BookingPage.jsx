@@ -156,6 +156,8 @@ export function BookingPage() {
         <meta property="og:description" content="Reserve your preferred date and time in under 2 minutes. Botox, fillers, facials & more. We'll confirm within 24 hours." />
         <meta property="og:url" content="https://www.theskincarestudioct.com/book" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.theskincarestudioct.com/studio-lounge.png" />
+        <meta property="og:image:alt" content="Book your appointment at The Skincare Studio Medical Spa in Stratford, CT" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",

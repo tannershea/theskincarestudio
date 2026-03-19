@@ -215,6 +215,12 @@ export function ProductsPage() {
         <title>Skincare Products | PCA Skin, Elta MD, Obagi, iS Clinical | The Skincare Studio</title>
         <meta name="description" content="Shop clinical-grade skincare products at The Skincare Studio in Stratford, CT. We carry PCA Skin, Elta MD, Obagi, iS Clinical, SkinCeuticals, and more." />
         <link rel="canonical" href="https://www.theskincarestudioct.com/products" />
+        <meta property="og:title" content="Skincare Products | PCA Skin, Elta MD, Obagi | The Skincare Studio" />
+        <meta property="og:description" content="Shop clinical-grade skincare products in Stratford, CT. PCA Skin, Elta MD, Obagi, iS Clinical, SkinCeuticals &amp; more. In-store only." />
+        <meta property="og:url" content="https://www.theskincarestudioct.com/products" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.theskincarestudioct.com/studio-elta-display.png" />
+        <meta property="og:image:alt" content="Medical-grade skincare products at The Skincare Studio in Stratford, CT" />
         <script type="application/ld+json">{JSON.stringify(schemaOrg)}</script>
       </Helmet>
 

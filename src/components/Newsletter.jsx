@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { googleMapsUrl } from '../data'
 
 export function Newsletter() {
   const [email, setEmail] = useState('')
@@ -45,7 +46,7 @@ export function Newsletter() {
           <div className="overflow-hidden rounded-2xl border border-white/10 shadow-lg">
             <iframe
               title="The Skincare Studio location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.0!2d-73.1318!3d41.1845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s3586+Main+Street%2C+Stratford%2C+CT!5e0!3m2!1sen!2sus!4v1700000000000"
+              src="https://www.google.com/maps?q=The+Skincare+Studio+Medical+Spa+3586+Main+Street+Stratford+CT+06614&output=embed"
               width="100%"
               height="280"
               style={{ border: 0 }}
@@ -54,10 +55,15 @@ export function Newsletter() {
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full"
             />
-            <div className="bg-white/10 px-5 py-3">
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white/10 px-5 py-3 transition-colors hover:bg-white/15"
+            >
               <p className="text-sm font-semibold text-white">3586 Main Street, Stratford, CT</p>
-              <p className="text-xs text-slate-300">Paradise Green · Fairfield County</p>
-            </div>
+              <p className="text-xs text-slate-300">Paradise Green · Fairfield County · View on Google →</p>
+            </a>
           </div>
         </div>
       </div>

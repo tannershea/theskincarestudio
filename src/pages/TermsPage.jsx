@@ -10,6 +10,12 @@ export function TermsPage() {
         <title>Terms &amp; Conditions | The Skincare Studio Medical Spa | Stratford, CT</title>
         <meta name="description" content="Terms & Conditions, Privacy Policy, Cancellation Policy, and Payment Methods for The Skincare Studio Medical Spa in Stratford, CT." />
         <link rel="canonical" href="https://www.theskincarestudioct.com/terms" />
+        <meta property="og:title" content="Terms &amp; Conditions | The Skincare Studio Medical Spa | Stratford, CT" />
+        <meta property="og:description" content="Terms & Conditions, Privacy Policy, Cancellation Policy, and Payment Methods for The Skincare Studio Medical Spa in Stratford, CT." />
+        <meta property="og:url" content="https://www.theskincarestudioct.com/terms" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.theskincarestudioct.com/studio-lounge.png" />
+        <meta property="og:image:alt" content="The Skincare Studio Medical Spa in Stratford, CT" />
       </Helmet>
 
       <section className="bg-cream py-20 lg:py-24">
@@ -165,7 +171,7 @@ export function TermsPage() {
             <div className="mt-12 border-t border-warmStone/50 pt-10">
               <h2 className="font-serif text-2xl tracking-tight text-accentNavy">Aftercare Instructions</h2>
               <p className="mt-4 text-[15px] leading-[1.75] text-slate-600">
-                After your treatment, follow our step-by-step aftercare guides to support healing and get the best results. We provide detailed instructions for VI Peel (Face & Body), Microneedling SkinPen, Chemical Peel, Facial Balancing, Botox, and Filler.
+                After your treatment, follow our step-by-step aftercare guides to support healing and get the best results. We provide detailed instructions for VI Peel (Face & Body), Microneedling SkinPen, Chemical Peel, Facial Balancing, PRFM, Botox, and Filler.
               </p>
               <Link
                 to="/aftercare"
