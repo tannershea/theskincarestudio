@@ -66,8 +66,6 @@ export function Footer() {
                 <Link to="/terms" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Terms &amp; Conditions</Link>
                 <a
                   href={bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left"
                 >
                   Book Online

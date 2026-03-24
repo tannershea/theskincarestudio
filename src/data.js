@@ -1,11 +1,15 @@
-export const bookingUrl = "/book";
+export const bookingUrl = "/services";
 
 /** Full booking URLs for services that use the external calendar instead of /book */
 export const serviceBookingUrlOverrides = {
+  "Spring Special Neurotoxin":
+    "https://www.theskincarestudioct.com/booking-calendar/spring-special-neurotoxin?referral=service_list_widget",
+  "Spring Special Facial":
+    "https://www.theskincarestudioct.com/booking-calendar/spring-facial?referral=service_list_widget",
   "Soft Volume Lips":
     "https://www.theskincarestudioct.com/booking-calendar/soft-volume-lips?referral=service_list_widget",
   "The Refresh Neurotoxin":
-    "https://www.theskincarestudioct.com/booking-calendar/spring-special-neurotoxin?referral=service_list_widget",
+    "https://www.theskincarestudioct.com/booking-calendar/neurotoxin?referral=service_list_widget",
   "Neurotoxin":
     "https://www.theskincarestudioct.com/booking-calendar/spring-special-neurotoxin?referral=service_list_widget",
   "Lip Filler":
@@ -402,9 +406,16 @@ export const popularProductNames = [
 
 export const serviceGroups = [
   {
+    title: "Spring Specials",
+    services: [
+      { name: "Spring Special Neurotoxin", duration: "15 min", price: "$12 Per Unit", desc: "Limited-time spring pricing on neurotoxin to smooth fine lines and refresh your look." },
+      { name: "Spring Special Facial", duration: "45 min", price: "$125", desc: "A 45-minute brightening facial — no extractions, no dermaplaning. The perfect spring glow-up." },
+    ],
+  },
+  {
     title: "Client Favorites",
     services: [
-      { name: "The Refresh Neurotoxin", duration: "15 min", price: "$25", desc: "A quick neurotoxin touch-up to smooth fine lines and maintain a refreshed, natural look." },
+      { name: "The Refresh Neurotoxin", duration: "15 min", price: "$14 Per Unit", desc: "A quick neurotoxin touch-up to smooth fine lines and maintain a refreshed, natural look." },
       { name: "Soft Volume Lips", duration: "45 min", price: "$600", desc: "Premium lip filler treatment for soft, natural volume and defined shape using advanced techniques." },
       { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "A medical-grade chemical peel that improves skin tone, texture, and clarity with minimal downtime." },
       { name: "Polished Glow Microderm Facial", duration: "1 hr", price: "$125", desc: "Gentle exfoliation facial that buffs away dead skin cells for an instant, radiant glow." },

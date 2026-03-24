@@ -27,8 +27,6 @@ export function TermsPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
             >
               Book Your Appointment
@@ -217,8 +215,6 @@ export function TermsPage() {
                 </a>
                 <a
                   href={bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border-2 border-accentBlue/40 bg-white px-5 py-2.5 text-sm font-semibold text-accentNavy transition-all duration-200 hover:border-accentBlue hover:bg-accentBlue hover:text-white hover:scale-105"
                 >
                   Book Online

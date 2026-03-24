@@ -100,8 +100,6 @@ export function HomePage() {
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <a
                 href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:shadow-lg"
               >
                 Book a consultation
@@ -294,8 +292,6 @@ export function HomePage() {
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">{item.description}</p>
                 <a
                   href={bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accentNavy transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left"
                 >
                   Book now <span aria-hidden>→</span>
@@ -360,8 +356,6 @@ export function HomePage() {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex justify-center rounded-full bg-accentGreen px-6 py-3 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:bg-accentGreen/90 hover:shadow-lg"
             >
               Book Your Appointment

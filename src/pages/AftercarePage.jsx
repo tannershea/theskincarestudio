@@ -333,8 +333,6 @@ function ViPeelFaceUrgentSection() {
           </Link>
           <a
             href={bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex w-full max-w-xs items-center justify-center rounded-full border-2 border-white/25 bg-white/5 px-6 py-3.5 text-center text-[15px] font-semibold tracking-wide text-white/95 transition-all duration-200 hover:scale-[1.02] hover:border-white/50 hover:bg-white/10 sm:w-auto sm:min-w-[180px]"
           >
             Book follow-up online
@@ -464,8 +462,6 @@ export function AftercarePage() {
               </a>
               <a
                 href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-accentBlue/35 bg-accentBlue/5 px-5 py-2.5 text-sm font-semibold text-accentNavy transition-all hover:border-accentBlue hover:bg-accentBlue hover:text-white sm:min-w-[180px]"
               >
                 Book online
@@ -492,8 +488,6 @@ export function AftercarePage() {
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:scale-[1.03] hover:shadow-lg"
               >
                 Book an appointment
@@ -526,8 +520,6 @@ export function AftercarePage() {
           </a>
           <a
             href={bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="flex flex-1 items-center justify-center gap-2 rounded-full bg-accentNavy py-3 text-sm font-semibold text-white shadow-md active:scale-[0.98]"
           >
             Book

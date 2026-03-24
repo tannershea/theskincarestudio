@@ -268,7 +268,7 @@ function AnswerWithLink({ answer, linkTarget, linkLabel }) {
     return (
       <>
         {answer}{' '}
-        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        <a href={bookingUrl} className={linkClass}>
           {linkLabel} →
         </a>
       </>

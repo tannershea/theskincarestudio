@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { bookingUrl, serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs } from '../data'
+import { serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs } from '../data'
 import { FAQ } from '../components/FAQ'
 
 const servicesHeroImages = [
@@ -100,8 +100,7 @@ function ServiceRow({ service, groupTitle }) {
   const [open, setOpen] = useState(false)
   const isPopular = popularServiceNames.includes(service.name)
   const overrideBookUrl = serviceBookingUrlOverrides[service.name]
-  const bookHref =
-    overrideBookUrl ?? `${bookingUrl}?service=${encodeURIComponent(service.name)}`
+  const bookHref = overrideBookUrl ?? `/book?service=${encodeURIComponent(service.name)}`
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -221,14 +220,13 @@ export function ServicesPage() {
           <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-white/80">
             Browse the full treatment menu — from consultations and injectables to lasers, peels, facials, teen treatments, and regenerative services, all organized for easy booking.
           </p>
-          <a
-            href={bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => document.getElementById('service-list')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
             className="mt-8 inline-flex rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:shadow-lg"
           >
-            Book Your Appointment
-          </a>
+            Browse Treatments
+          </button>
         </div>
       </section>
 
@@ -249,7 +247,7 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <section className="border-t border-warmStone/50 bg-cream/30 py-16">
+      <section id="service-list" className="scroll-mt-24 border-t border-warmStone/50 bg-cream/30 py-16">
         <div className="mx-auto max-w-5xl px-8 lg:px-12">
           <div className="mb-12">
             <p className="mb-3 text-xs font-semibold uppercase tracking-luxury text-accentBlue">Jump to category</p>
