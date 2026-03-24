@@ -114,18 +114,18 @@ export function HomePage() {
               </Link>
             </div>
 
-            <div className="mx-auto mt-12 inline-flex items-center justify-center gap-6 rounded-2xl border border-white/20 bg-white/10 px-8 py-4 text-[15px] text-white/60 shadow-sm backdrop-blur-sm">
+            <div className="mx-auto mt-12 inline-flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-8 py-4 text-[15px] text-white/60 shadow-sm backdrop-blur-sm sm:flex-row sm:gap-6">
               <div className="flex items-center gap-2">
                 <span className="text-lg text-accentGreen">★</span>
                 <CountUp value="4.9" className="text-lg font-bold text-white" duration={2000} />
                 <span>rating</span>
               </div>
-              <span className="h-5 w-px bg-white/30" />
+              <span className="hidden h-5 w-px bg-white/30 sm:block" />
               <div className="flex items-center gap-2">
                 <CountUp value="10K+" className="text-lg font-bold text-white" duration={2000} />
                 <span>treatments</span>
               </div>
-              <span className="h-5 w-px bg-white/30" />
+              <span className="hidden h-5 w-px bg-white/30 sm:block" />
               <div className="flex items-center gap-2">
                 <CountUp value="15+" className="text-lg font-bold text-white" duration={2000} />
                 <span>years</span>
