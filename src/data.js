@@ -1,5 +1,103 @@
 export const bookingUrl = "/book";
 
+/** Full booking URLs for services that use the external calendar instead of /book */
+export const serviceBookingUrlOverrides = {
+  "Soft Volume Lips":
+    "https://www.theskincarestudioct.com/booking-calendar/soft-volume-lips?referral=service_list_widget",
+  "The Refresh Neurotoxin":
+    "https://www.theskincarestudioct.com/booking-calendar/spring-special-neurotoxin?referral=service_list_widget",
+  "Neurotoxin":
+    "https://www.theskincarestudioct.com/booking-calendar/spring-special-neurotoxin?referral=service_list_widget",
+  "Lip Filler":
+    "https://www.theskincarestudioct.com/booking-calendar/lip-filler?referral=service_list_widget",
+  "Dermal Fillers":
+    "https://www.theskincarestudioct.com/booking-calendar/dermal-fillers?referral=service_list_widget",
+  "Skinvive Skin Booster by Juvederm":
+    "https://www.theskincarestudioct.com/booking-calendar/skinvive-skin-booster-by-juvederm?referral=service_list_widget",
+  "VAMP by Prollenium Skin Booster":
+    "https://www.theskincarestudioct.com/booking-calendar/vamp-by-prollenium-skin-boosters?referral=service_list_widget",
+  "Facial Balancing":
+    "https://www.theskincarestudioct.com/booking-calendar/facial-balancing-1?referral=service_list_widget",
+  "Undereye PRFM":
+    "https://www.theskincarestudioct.com/booking-calendar/undereye-prfm?referral=service_list_widget",
+  "PRFM Full Face":
+    "https://www.theskincarestudioct.com/booking-calendar/prfm-full-face?referral=service_list_widget",
+  "Undereye Filler + PRFM":
+    "https://www.theskincarestudioct.com/booking-calendar/undereye-filler-prfm?referral=service_list_widget",
+  "PRP Hair Restoration":
+    "https://www.theskincarestudioct.com/booking-calendar/hair-restoration-with-prp-injections?referral=service_list_widget",
+  "SkinPen Microneedling":
+    "https://www.theskincarestudioct.com/booking-calendar/skinpen-microneedling-1?referral=service_list_widget",
+  "SkinPen Microneedling with PRP":
+    "https://www.theskincarestudioct.com/booking-calendar/skinpen-with-prp-1?referral=service_list_widget",
+  "Nano Needling Brightening Facial":
+    "https://www.theskincarestudioct.com/booking-calendar/nanoneedling-brighting-facial?referral=service_list_widget",
+  "Radiofrequency Microneedling":
+    "https://www.theskincarestudioct.com/booking-calendar/radiofrequency-microneedling-1?referral=service_list_widget",
+  "Radiofrequency Microneedling with PRP":
+    "https://www.theskincarestudioct.com/booking-calendar/radio-frequency-microneedling-prp-1?referral=service_list_widget",
+  "Laser Hair Removal":
+    "https://www.theskincarestudioct.com/booking-calendar/laser-hair-removal?referral=service_list_widget",
+  "Spider & Varicose Vein Removal":
+    "https://www.theskincarestudioct.com/booking-calendar/spider-varicose-vein-removal?referral=service_list_widget",
+  "Laser Toning":
+    "https://www.theskincarestudioct.com/booking-calendar/laser-toning?referral=service_list_widget",
+  "IPL Laser Facial":
+    "https://www.theskincarestudioct.com/booking-calendar/ipl-laser-facial?referral=service_list_widget",
+  "Laser Genesis":
+    "https://www.theskincarestudioct.com/booking-calendar/laser-genesis?referral=service_list_widget",
+  "VI Peel Original":
+    "https://www.theskincarestudioct.com/booking-calendar/vi-peel-original?referral=service_list_widget",
+  "VI Peel Advanced":
+    "https://www.theskincarestudioct.com/booking-calendar/vi-peel-advanced-9d7m7?referral=service_list_widget",
+  "VI Peel Purify":
+    "https://www.theskincarestudioct.com/booking-calendar/vi-peel-purify-posxr?referral=service_list_widget",
+  "VI Peel Precision Plus":
+    "https://www.theskincarestudioct.com/booking-calendar/vi-peel-precision-peptides?referral=service_list_widget",
+  "VI Peel Purify with Precision Plus":
+    "https://www.theskincarestudioct.com/booking-calendar/vi-peel-purify-with-precision-plus-zynvp?referral=service_list_widget",
+  "The Radiance Peel":
+    "https://www.theskincarestudioct.com/booking-calendar/the-radiance-peel?referral=service_list_widget",
+  "The Clarifying Peel":
+    "https://www.theskincarestudioct.com/booking-calendar/the-clarifying-peel?referral=service_list_widget",
+  "Tox Booster with VI Peel":
+    "https://www.theskincarestudioct.com/booking-calendar/tox-booster-with-vi-peel?referral=service_list_widget",
+  "Milia Extraction":
+    "https://www.theskincarestudioct.com/booking-calendar/milia-extraction?referral=service_list_widget",
+  "Polished Glow Microderm Facial":
+    "https://www.theskincarestudioct.com/booking-calendar/polished-glow-microderm-facial?referral=service_list_widget",
+  "Hydrafacial Platinum":
+    "https://www.theskincarestudioct.com/booking-calendar/hydrafacial-platinum?referral=service_list_widget",
+  "GLO2Facial Signature":
+    "https://www.theskincarestudioct.com/booking-calendar/glo2facial-signature-3?referral=service_list_widget",
+  "Hydrafacial Deluxe":
+    "https://www.theskincarestudioct.com/booking-calendar/hydrafacial-deluxe?referral=service_list_widget",
+  "GLO2Facial Deluxe":
+    "https://www.theskincarestudioct.com/booking-calendar/glo2facial-deluxe-2?referral=service_list_widget",
+  "iS Clinical Glow On The GO":
+    "https://www.theskincarestudioct.com/booking-calendar/glow-on-the-go-facial?referral=service_list_widget",
+  "iS Clinical Fire & Ice Facial":
+    "https://www.theskincarestudioct.com/booking-calendar/fire-ice-facial?referral=service_list_widget",
+  "Teen Acne Facial":
+    "https://www.theskincarestudioct.com/booking-calendar/teen-acne-facial?referral=service_list_widget",
+  "Skin Tag Removal":
+    "https://www.theskincarestudioct.com/booking-calendar/skin-tag?referral=service_list_widget",
+  "Cystic Acne Injection":
+    "https://www.theskincarestudioct.com/booking-calendar/cystic-acne-injection?referral=service_list_widget",
+  "Acne Clinic":
+    "https://www.theskincarestudioct.com/booking-calendar/acne-clinic?referral=service_list_widget",
+  "Virtual Consultation":
+    "https://www.theskincarestudioct.com/booking-calendar/virtual-consult?referral=service_list_widget",
+  "In-Studio Consultation":
+    "https://www.theskincarestudioct.com/booking-calendar/consultations?referral=service_list_widget",
+  "Neuromodulator Consultation":
+    "https://www.theskincarestudioct.com/booking-calendar/consultation-for-neuromodulators?referral=service_list_widget",
+  "Laser Consultation":
+    "https://www.theskincarestudioct.com/booking-calendar/laser-consult?referral=service_list_widget",
+  "Hair Restoration Consultation":
+    "https://www.theskincarestudioct.com/booking-calendar/hair-restoration-consultation?referral=service_list_widget",
+}
+
 export const bookingPolicy = {
   title: "No-Show, Late, & Payment Policy",
   content: `No-Show, Late, & Payment Policy

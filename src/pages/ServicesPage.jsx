@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { bookingUrl, serviceGroups, popularServiceNames, serviceFaqs } from '../data'
+import { bookingUrl, serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs } from '../data'
 import { FAQ } from '../components/FAQ'
 
 const servicesHeroImages = [
@@ -99,6 +99,9 @@ const slugify = (title) =>
 function ServiceRow({ service, groupTitle }) {
   const [open, setOpen] = useState(false)
   const isPopular = popularServiceNames.includes(service.name)
+  const overrideBookUrl = serviceBookingUrlOverrides[service.name]
+  const bookHref =
+    overrideBookUrl ?? `${bookingUrl}?service=${encodeURIComponent(service.name)}`
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -138,12 +141,23 @@ function ServiceRow({ service, groupTitle }) {
         <div className="text-base font-medium text-slate-600">{service.duration}</div>
         <div className="text-base font-semibold text-accentNavy">{service.price}</div>
         <div className="md:text-right" onClick={(e) => e.stopPropagation()}>
-          <Link
-            to={`${bookingUrl}?service=${encodeURIComponent(service.name)}`}
-            className="inline-flex rounded-lg bg-accentNavy px-4 py-2 text-sm font-semibold tracking-wide text-white transition-all duration-150 ease-out hover:scale-105 hover:bg-accentNavy/90 hover:shadow-md active:scale-[0.98]"
-          >
-            Book now
-          </Link>
+          {overrideBookUrl ? (
+            <a
+              href={bookHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-lg bg-accentNavy px-4 py-2 text-sm font-semibold tracking-wide text-white transition-all duration-150 ease-out hover:scale-105 hover:bg-accentNavy/90 hover:shadow-md active:scale-[0.98]"
+            >
+              Book now
+            </a>
+          ) : (
+            <Link
+              to={bookHref}
+              className="inline-flex rounded-lg bg-accentNavy px-4 py-2 text-sm font-semibold tracking-wide text-white transition-all duration-150 ease-out hover:scale-105 hover:bg-accentNavy/90 hover:shadow-md active:scale-[0.98]"
+            >
+              Book now
+            </Link>
+          )}
         </div>
       </div>
       <div
