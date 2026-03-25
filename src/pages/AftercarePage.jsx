@@ -320,7 +320,7 @@ function ViPeelFaceUrgentSection() {
             Call {phoneDisplay}
           </a>
           <a
-            href={`sms:${phoneDigits}`}
+            href="sms:2039080673"
             className="inline-flex w-full max-w-xs items-center justify-center gap-2 rounded-full border-2 border-white/40 bg-white/10 px-6 py-3.5 text-center text-[15px] font-semibold tracking-wide text-white transition-all duration-200 hover:scale-[1.02] hover:border-white hover:bg-white/15 sm:w-auto sm:min-w-[160px]"
           >
             Text us
@@ -449,7 +449,7 @@ export function AftercarePage() {
             </p>
             <div className="mt-5 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
               <a
-                href={`sms:${phoneDigits}`}
+                href="sms:2039080673"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-accentNavy px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-[1.02] hover:shadow-md sm:min-w-[140px]"
               >
                 Text us

@@ -16,8 +16,6 @@ export const serviceBookingUrlOverrides = {
     "https://www.theskincarestudioct.com/booking-calendar/lip-filler?referral=service_list_widget",
   "Dermal Fillers":
     "https://www.theskincarestudioct.com/booking-calendar/dermal-fillers?referral=service_list_widget",
-  "Skinvive Skin Booster by Juvederm":
-    "https://www.theskincarestudioct.com/booking-calendar/skinvive-skin-booster-by-juvederm?referral=service_list_widget",
   "VAMP by Prollenium Skin Booster":
     "https://www.theskincarestudioct.com/booking-calendar/vamp-by-prollenium-skin-boosters?referral=service_list_widget",
   "Facial Balancing":
@@ -54,12 +52,10 @@ export const serviceBookingUrlOverrides = {
     "https://www.theskincarestudioct.com/booking-calendar/vi-peel-original?referral=service_list_widget",
   "VI Peel Advanced":
     "https://www.theskincarestudioct.com/booking-calendar/vi-peel-advanced-9d7m7?referral=service_list_widget",
-  "VI Peel Purify":
-    "https://www.theskincarestudioct.com/booking-calendar/vi-peel-purify-posxr?referral=service_list_widget",
-  "VI Peel Precision Plus":
-    "https://www.theskincarestudioct.com/booking-calendar/vi-peel-precision-peptides?referral=service_list_widget",
   "VI Peel Purify with Precision Plus":
     "https://www.theskincarestudioct.com/booking-calendar/vi-peel-purify-with-precision-plus-zynvp?referral=service_list_widget",
+  "VI Peel Body":
+    "https://www.theskincarestudioct.com/booking-calendar/vi-peel-body?referral=service_list_widget",
   "The Radiance Peel":
     "https://www.theskincarestudioct.com/booking-calendar/the-radiance-peel?referral=service_list_widget",
   "The Clarifying Peel":
@@ -359,7 +355,7 @@ export const testimonials = [
 export const faqs = [
   {
     q: "Do you offer complimentary consultations?",
-    a: "We offer both virtual and in-studio consultations. Our team will help you determine the best treatment plan for your goals. Consultations start at $100 and may be applied toward your first treatment.",
+    a: "We offer both virtual and in-studio consultations. Our team will help you determine the best treatment plan for your goals. Consultations start at $100 and may be applied only toward same-day service.",
   },
   {
     q: "What injectables do you use?",
@@ -408,14 +404,14 @@ export const serviceGroups = [
   {
     title: "Spring Specials",
     services: [
-      { name: "Spring Special Neurotoxin", duration: "15 min", price: "$12 Per Unit", desc: "Limited-time spring pricing on neurotoxin to smooth fine lines and refresh your look." },
+      { name: "Spring Special Neurotoxin", duration: "15-30 min", price: "$12 Per Unit", desc: "Limited-time spring pricing on neurotoxin to smooth fine lines and refresh your look." },
       { name: "Spring Special Facial", duration: "45 min", price: "$125", desc: "A 45-minute brightening facial — no extractions, no dermaplaning. The perfect spring glow-up." },
     ],
   },
   {
     title: "Client Favorites",
     services: [
-      { name: "The Refresh Neurotoxin", duration: "15 min", price: "$14 Per Unit", desc: "A quick neurotoxin touch-up to smooth fine lines and maintain a refreshed, natural look." },
+      { name: "The Refresh Neurotoxin", duration: "15-30 min", price: "$14 Per Unit", desc: "A quick neurotoxin touch-up to smooth fine lines and maintain a refreshed, natural look." },
       { name: "Soft Volume Lips", duration: "45 min", price: "$600", desc: "Premium lip filler treatment for soft, natural volume and defined shape using advanced techniques." },
       { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "A medical-grade chemical peel that improves skin tone, texture, and clarity with minimal downtime." },
       { name: "Polished Glow Microderm Facial", duration: "1 hr", price: "$125", desc: "Gentle exfoliation facial that buffs away dead skin cells for an instant, radiant glow." },
@@ -437,13 +433,12 @@ export const serviceGroups = [
   {
     title: "Cosmetic Injectables",
     services: [
-      { name: "Neurotoxin", duration: "15 min", price: "$14 per unit", desc: "Botox, Letybo, or Daxxify to smooth wrinkles and fine lines for a refreshed appearance." },
+      { name: "Neurotoxin", duration: "15-30 min", price: "$14 per unit", desc: "Botox, Letybo, or Daxxify to smooth wrinkles and fine lines for a refreshed appearance." },
       { name: "Lip Filler", duration: "45 min", price: "$550", desc: "Hyaluronic acid filler for subtle lip enhancement, improved symmetry, and natural fullness." },
       { name: "Soft Volume Lips", duration: "45 min", price: "$600", desc: "Premium lip volumizing treatment for soft, pillowy results with expert technique." },
       { name: "Dermal Fillers", duration: "1 hr", price: "Starting at $750", desc: "RHA and Juvederm fillers to restore volume, contour, and smooth deep lines." },
-      { name: "Skinvive Skin Booster by Juvederm", duration: "30 min", price: "$300", desc: "Micro-injections of hyaluronic acid to boost skin hydration, smoothness, and glow." },
       { name: "VAMP by Prollenium Skin Booster", duration: "15 min", price: "$175", desc: "PDRN (Salmon DNA) skin booster to rejuvenate and improve skin quality from within." },
-      { name: "Facial Balancing", duration: "1 hr 30 min", price: "Inquire within", desc: "Strategic filler placement across multiple areas for harmonious, natural facial proportions." },
+      { name: "Facial Balancing", duration: "1 hr 30 min", price: "Inquire", desc: "Strategic filler placement across multiple areas for harmonious, natural facial proportions." },
     ],
   },
   {
@@ -481,9 +476,8 @@ export const serviceGroups = [
     services: [
       { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "Medium-depth peel for tone, texture, and anti-aging — suitable for all skin types." },
       { name: "VI Peel Advanced", duration: "35 min", price: "$410", desc: "Enhanced formula with boosted anti-aging ingredients for more mature skin concerns." },
-      { name: "VI Peel Purify", duration: "35 min", price: "$400", desc: "Specially formulated for acne-prone skin to clear breakouts and prevent future blemishes." },
-      { name: "VI Peel Precision Plus", duration: "35 min", price: "$415", desc: "Targeted treatment for stubborn hyperpigmentation, melasma, and sun damage." },
       { name: "VI Peel Purify with Precision Plus", duration: "1 hr", price: "$410", desc: "Dual-action peel combining acne-clearing and pigment-correcting benefits in one treatment." },
+      { name: "VI Peel Body", duration: "1 hr", price: "From $400", desc: "A medical-grade body peel to improve tone, texture, and discoloration on larger treatment areas." },
     ],
   },
   {
