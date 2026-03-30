@@ -97,6 +97,15 @@ const teamMembers = [
   },
 ]
 
+const TEAM_GROUP_SIZE = 4
+const teamGroups = (() => {
+  const groups = []
+  for (let i = 0; i < teamMembers.length; i += TEAM_GROUP_SIZE) {
+    groups.push(teamMembers.slice(i, i + TEAM_GROUP_SIZE))
+  }
+  return groups
+})()
+
 const values = [
   {
     icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>,
@@ -185,17 +194,17 @@ export function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-        <div className="relative mx-auto max-w-5xl px-8 py-24 lg:px-12 lg:py-32">
+        <div className="relative mx-auto max-w-5xl px-4 py-14 sm:px-8 md:py-20 lg:px-12 lg:py-32">
           <div className="mx-auto max-w-2xl text-center">
             <ScrollReveal direction="up" delay={0}>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
                 <span className="text-xs font-semibold uppercase tracking-luxury text-white">Award-Winning Medical Spa &middot; Stratford, CT</span>
               </div>
-              <h1 className="mt-6 font-serif text-4xl leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.25rem]">
+              <h1 className="mt-4 font-serif text-[1.75rem] leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-4xl md:text-5xl lg:text-[3.25rem]">
                 Where science, artistry, and care come together.
               </h1>
-              <p className="mx-auto mt-6 max-w-xl text-[16px] leading-[1.75] text-white/80">
+              <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.65] text-white/80 sm:mt-6 sm:text-[16px] sm:leading-[1.75]">
                 The Skincare Studio Medical Spa combines advanced technology, expert medical care, and a personalized approach to help every client achieve radiant, healthy skin.
               </p>
               <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -217,30 +226,28 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Stats bar */}
-      <section className="border-y border-warmStone/50 bg-white py-10">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {[
-              { value: '15+', label: 'Years of Experience' },
-              { value: '10K+', label: 'Treatments Performed' },
-              { value: '4.9', label: 'Google Rating' },
-              { value: '8', label: 'Expert Team Members' },
-            ].map((stat, i) => (
-              <ScrollReveal key={stat.label} direction="up" delay={i * 80}>
-                <div className="text-center">
-                  <CountUp value={stat.value} className="text-3xl font-bold text-accentNavy md:text-4xl" duration={2000} />
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-luxury text-accentBlue">{stat.label}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+      {/* At a glance: stats + our story (one scroll block) */}
+      <section className="border-t border-warmStone/50 bg-white py-8 md:py-12 lg:py-16">
+        <div className="mx-auto max-w-5xl space-y-10 px-4 sm:px-8 md:space-y-12 lg:px-12 lg:space-y-14">
+          <div className="rounded-2xl border border-warmStone/60 bg-cream/40 px-4 py-6 sm:px-6 sm:py-8">
+            <p className="mb-4 text-center text-xs font-semibold uppercase tracking-luxury text-accentBlue">At a glance</p>
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 md:gap-8">
+              {[
+                { value: '15+', label: 'Years of Experience' },
+                { value: '10K+', label: 'Treatments Performed' },
+                { value: '4.9', label: 'Google Rating' },
+                { value: '8', label: 'Expert Team Members' },
+              ].map((stat, i) => (
+                <ScrollReveal key={stat.label} direction="up" delay={i * 80}>
+                  <div className="text-center">
+                    <CountUp value={stat.value} className="text-3xl font-bold text-accentNavy md:text-4xl" duration={2000} />
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-luxury text-accentBlue">{stat.label}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Our Story — Bento style */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
           <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
             <ScrollReveal direction="left" delay={0}>
               <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-sm h-full">
@@ -253,7 +260,7 @@ export function AboutPage() {
             </ScrollReveal>
             <div className="flex flex-col gap-6">
               <ScrollReveal direction="right" delay={100}>
-                <div className="rounded-2xl border border-slate-100 bg-cream/50 p-8">
+                <div className="rounded-xl border border-slate-100 bg-cream/50 p-5 sm:rounded-2xl sm:p-8">
                   <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Our Story</p>
                   <h2 className="mt-3 font-serif text-2xl leading-tight tracking-tight text-accentNavy md:text-3xl">
                     Built on passion, driven by results.
@@ -280,9 +287,10 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Meet the Team */}
-      <section className="bg-cream/40 py-20">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
+      {/* People & expertise (one scroll block) */}
+      <section className="border-t border-warmStone/50 bg-cream/40 py-10 md:py-16 lg:py-20">
+        <div className="mx-auto max-w-5xl space-y-12 px-4 sm:px-8 md:space-y-16 lg:px-12">
+          <div>
           <ScrollReveal direction="up" delay={0}>
             <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
               <div>
@@ -300,36 +308,40 @@ export function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {teamMembers.map((member, i) => (
-              <ScrollReveal key={member.name} direction="up" delay={i * 60}>
-                <div className="group flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white p-6 text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-accentBlue/20">
-                  <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-slate-100 shadow-sm transition-all duration-300 group-hover:border-accentBlue/30 group-hover:shadow-md">
-                    {member.image ? (
-                      <img src={member.image} alt={member.name} className="h-full w-full object-cover object-top" />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-softBlue text-xl font-semibold text-accentBlue">
-                        {member.name.split(' ').map(n => n[0]).join('')}
+          <div className="mt-8 space-y-8 sm:mt-10">
+            {teamGroups.map((group, groupIndex) => (
+              <div
+                key={groupIndex}
+                className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4"
+              >
+                {group.map((member, i) => (
+                  <ScrollReveal key={member.name} direction="up" delay={(groupIndex * TEAM_GROUP_SIZE + i) * 60}>
+                    <div className="group flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white p-6 text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-accentBlue/20">
+                      <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-slate-100 shadow-sm transition-all duration-300 group-hover:border-accentBlue/30 group-hover:shadow-md">
+                        {member.image ? (
+                          <img src={member.image} alt={member.name} className="h-full w-full object-cover object-top" />
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center bg-softBlue text-xl font-semibold text-accentBlue">
+                            {member.name.split(' ').map(n => n[0]).join('')}
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                  <h3 className="mt-4 font-serif text-lg font-semibold tracking-tight text-accentNavy">{member.name}</h3>
-                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{member.role}</p>
-                  {member.credentials && (
-                    <p className="mt-1 text-[11px] text-slate-400">{member.credentials}</p>
-                  )}
-                  <p className="mt-3 flex-1 text-[13px] leading-[1.5] text-slate-500">{member.bio}</p>
-                </div>
-              </ScrollReveal>
+                      <h3 className="mt-4 font-serif text-lg font-semibold tracking-tight text-accentNavy">{member.name}</h3>
+                      <p className="mt-1 text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{member.role}</p>
+                      {member.credentials && (
+                        <p className="mt-1 text-[11px] text-slate-400">{member.credentials}</p>
+                      )}
+                      <p className="mt-3 flex-1 text-[13px] leading-[1.5] text-slate-500">{member.bio}</p>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
             ))}
           </div>
-        </div>
-      </section>
+          </div>
 
-      {/* Expertise */}
-      <section className="border-t border-warmStone/50 bg-cream/40 py-20">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+          <div className="border-t border-warmStone/40 pt-10 md:pt-14">
+          <div className="grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-12">
             <ScrollReveal direction="left" delay={0}>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Our Expertise</p>
@@ -348,7 +360,7 @@ export function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={100}>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid grid-cols-2 gap-4 sm:gap-5">
                 {expertise.map((item) => (
                   <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-softBlue text-accentBlue">
@@ -361,12 +373,14 @@ export function AboutPage() {
               </div>
             </ScrollReveal>
           </div>
+          </div>
         </div>
       </section>
 
-      {/* Recognitions */}
-      <section className="border-t border-warmStone/50 bg-white py-16">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
+      {/* Recognition + values (one scroll block) */}
+      <section className="border-t border-warmStone/50 bg-white py-9 md:py-12 lg:py-16">
+        <div className="mx-auto max-w-5xl space-y-12 px-4 sm:px-8 md:space-y-14 lg:px-12">
+          <div>
           <ScrollReveal direction="up" delay={0}>
             <div className="text-center">
               <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Recognized Excellence</p>
@@ -375,7 +389,7 @@ export function AboutPage() {
               </h2>
             </div>
           </ScrollReveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-3 sm:gap-6">
             {[
               {
                 title: 'PCA Skin USA',
@@ -405,13 +419,39 @@ export function AboutPage() {
               </ScrollReveal>
             ))}
           </div>
+          </div>
+
+          <div className="border-t border-warmStone/40 pt-10 md:pt-12">
+          <ScrollReveal direction="up" delay={0}>
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">What We Stand For</p>
+              <h2 className="mt-3 font-serif text-2xl tracking-tight text-accentNavy sm:text-3xl md:text-4xl">
+                Our values guide every treatment.
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
+            {values.map((item, i) => (
+              <ScrollReveal key={item.title} direction="up" delay={i * 100}>
+                <div className="rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg sm:p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-softBlue text-accentBlue">
+                    {item.icon}
+                  </div>
+                  <h3 className="mt-4 font-serif text-lg font-semibold tracking-tight text-accentNavy sm:text-xl">{item.title}</h3>
+                  <p className="mt-2 text-[14px] leading-[1.6] text-slate-600">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          </div>
         </div>
       </section>
 
       {/* Mission Statement */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-accentNavy via-accentNavy/98 to-accentNavy py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-accentNavy via-accentNavy/98 to-accentNavy py-12 md:py-16 lg:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accentBlue/10 via-transparent to-transparent" />
-        <div className="relative mx-auto max-w-4xl px-8 text-center lg:px-12">
+        <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-8 lg:px-12">
           <ScrollReveal direction="up" delay={0}>
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">Our Mission</p>
             <h2 className="mt-6 font-serif text-3xl leading-snug tracking-tight text-white md:text-4xl lg:text-[2.75rem]">
@@ -431,39 +471,11 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="border-t border-warmStone/50 bg-white py-20">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
+      {/* Location + next step (one scroll block) */}
+      <section className="border-t border-warmStone/50 bg-gradient-to-b from-cream/30 via-cream/20 to-blueGray/25 py-10 md:py-14 lg:py-16">
+        <div className="mx-auto max-w-5xl space-y-12 px-4 sm:px-8 md:space-y-14 lg:px-12">
           <ScrollReveal direction="up" delay={0}>
-            <div className="text-center">
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">What We Stand For</p>
-              <h2 className="mt-3 font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
-                Our values guide every treatment.
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((item, i) => (
-              <ScrollReveal key={item.title} direction="up" delay={i * 100}>
-                <div className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-softBlue text-accentBlue">
-                    {item.icon}
-                  </div>
-                  <h3 className="mt-4 font-serif text-xl font-semibold tracking-tight text-accentNavy">{item.title}</h3>
-                  <p className="mt-2 text-[14px] leading-[1.6] text-slate-600">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Serving Fairfield County */}
-      <section className="border-t border-warmStone/50 bg-cream/30 py-16">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
-          <ScrollReveal direction="up" delay={0}>
-            <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.4fr]">
+            <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-10">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Serving Fairfield County</p>
                 <h2 className="mt-3 font-serif text-2xl tracking-tight text-accentNavy md:text-3xl">
@@ -501,36 +513,33 @@ export function AboutPage() {
               </div>
             </div>
           </ScrollReveal>
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="border-t border-warmStone/50 bg-blueGray/20 py-24">
-        <div className="mx-auto max-w-3xl px-8 text-center lg:px-12">
-          <ScrollReveal direction="zoom" delay={0}>
-            <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Your Next Step</p>
-            <h2 className="mt-4 font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
-              Ready to experience the difference?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.7] text-slate-600">
-              Whether you're new to aesthetic treatments or looking for a new home for your skincare, we'd love to welcome you. Beautiful, balanced results — with medical expertise you can trust.
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <a
-                href={bookingUrl}
-                className="group inline-flex items-center gap-2 rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
-              >
-                Book Your Appointment
-                <svg className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-              </a>
-              <Link
-                to="/services"
-                className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-6 py-3 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:bg-white hover:scale-105"
-              >
-                View Services <span className="text-slate-400">→</span>
-              </Link>
-            </div>
-          </ScrollReveal>
+          <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-6 text-center shadow-soft sm:p-8 md:p-10">
+            <ScrollReveal direction="zoom" delay={0}>
+              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Your Next Step</p>
+              <h2 className="mt-3 font-serif text-2xl tracking-tight text-accentNavy sm:text-3xl md:text-4xl">
+                Ready to experience the difference?
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.7] text-slate-600">
+                Whether you're new to aesthetic treatments or looking for a new home for your skincare, we'd love to welcome you. Beautiful, balanced results — with medical expertise you can trust.
+              </p>
+              <div className="mt-7 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center">
+                <a
+                  href={bookingUrl}
+                  className="group inline-flex items-center gap-2 rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                >
+                  Book Your Appointment
+                  <svg className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                </a>
+                <Link
+                  to="/services"
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-6 py-3 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:bg-cream/80 hover:scale-105"
+                >
+                  View Services <span className="text-slate-400">→</span>
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
     </>

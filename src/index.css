@@ -20,6 +20,11 @@
     font-size: var(--font-size-base) !important;
     scroll-behavior: smooth;
   }
+  @media (max-width: 639px) {
+    html {
+      font-size: 16px !important;
+    }
+  }
   body {
     font-family: var(--font-sans);
     @apply antialiased font-medium text-slate-600;
@@ -35,5 +40,12 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

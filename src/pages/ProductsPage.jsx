@@ -230,15 +230,15 @@ export function ProductsPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-        <div className="relative mx-auto max-w-5xl px-8 py-24 text-center lg:px-12 lg:py-32">
+        <div className="relative mx-auto max-w-5xl px-4 py-14 text-center sm:px-8 md:py-20 lg:px-12 lg:py-32">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
             <span className="text-xs font-semibold uppercase tracking-luxury text-white">Clinical-Grade Skincare · All Products In-Store Only</span>
           </div>
-          <h1 className="mt-6 font-serif text-4xl leading-tight tracking-tight text-white md:text-5xl">
+          <h1 className="mt-4 font-serif text-3xl leading-tight tracking-tight text-white sm:mt-6 sm:text-4xl md:text-5xl">
             Products
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-white/80">
+          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7] text-white/80 sm:mt-6 sm:text-[16px] sm:leading-[1.75]">
             We carry only the highest quality medical-grade skincare products — available exclusively in-store. Our team can help you build a personalized routine tailored to your skin.
           </p>
           <a
@@ -252,7 +252,7 @@ export function ProductsPage() {
 
       {/* Brand Filter */}
       <section className="sticky top-[72px] z-30 border-y border-warmStone/50 bg-white/95 py-4 backdrop-blur-sm">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
           <div className="flex flex-wrap justify-center gap-2">
             {brands.map((brand) => (
               <button
@@ -273,14 +273,14 @@ export function ProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="bg-cream/20 py-16">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
-          <p className="mb-8 text-sm text-slate-400">
+      <section className="bg-cream/20 py-9 md:py-12 lg:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <p className="mb-5 text-sm text-slate-400 sm:mb-8">
             Showing <span className="font-semibold text-accentNavy">{filtered.length}</span> product{filtered.length !== 1 ? 's' : ''}
             {activeFilter !== 'All' && <> in <span className="font-semibold text-accentNavy">{activeFilter}</span></>}
           </p>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
             {filtered.map((product, i) => (
               <ScrollReveal key={`${product.brand}-${product.name}`} direction="up" delay={Math.min(i % 6, 5) * 60}>
                 <div className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-accentBlue/20">
@@ -325,11 +325,11 @@ export function ProductsPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-warmStone/50 bg-white py-16">
-        <div className="mx-auto max-w-3xl px-8 text-center lg:px-12">
+      <section className="border-t border-warmStone/50 bg-white py-9 md:py-12 lg:py-16">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-8 lg:px-12">
           <ScrollReveal direction="up" delay={0}>
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Personalized Recommendations</p>
-            <h2 className="mt-3 font-serif text-2xl tracking-tight text-accentNavy md:text-3xl">
+            <h2 className="mt-2 font-serif text-xl tracking-tight text-accentNavy sm:mt-3 sm:text-2xl md:text-3xl">
               Not sure which products are right for you?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.7] text-slate-600">

@@ -111,7 +111,7 @@ function ServiceRow({ service, groupTitle }) {
       <div
         role="button"
         tabIndex={0}
-        className="grid cursor-pointer gap-3 rounded-lg px-6 py-5 transition-all duration-150 ease-out hover:bg-slate-50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue/50 focus-visible:ring-inset md:grid-cols-[1.5fr_0.7fr_0.7fr_0.8fr] md:items-center"
+        className="grid cursor-pointer gap-2 rounded-lg px-4 py-4 transition-all duration-150 ease-out hover:bg-slate-50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue/50 focus-visible:ring-inset sm:gap-3 sm:px-6 sm:py-5 md:grid-cols-[1.5fr_0.7fr_0.7fr_0.8fr] md:items-center"
         onClick={() => setOpen(!open)}
         onKeyDown={handleKeyDown}
       >
@@ -120,7 +120,7 @@ function ServiceRow({ service, groupTitle }) {
             {serviceIcons[service.name] || defaultIcon}
           </span>
           <div className="flex flex-wrap items-center gap-2">
-            <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">{service.name}</p>
+            <p className="font-serif text-base font-semibold tracking-tight text-accentNavy sm:text-lg">{service.name}</p>
             {isPopular && (
               <span className="rounded-full bg-accentGreen/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accentNavy">
                 Popular
@@ -160,7 +160,7 @@ function ServiceRow({ service, groupTitle }) {
         className={`overflow-hidden transition-all duration-200 ease-out ${open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         {service.desc && (
-          <p className="px-6 pt-4 pb-4 pl-[4.25rem] text-[15px] font-medium leading-[1.6] text-slate-500">{service.desc}</p>
+          <p className="px-4 pb-4 pt-3 pl-4 text-[14px] font-medium leading-[1.55] text-slate-500 sm:pl-[4.25rem] sm:px-6 sm:pt-4 sm:text-[15px] sm:leading-[1.6]">{service.desc}</p>
         )}
       </div>
     </div>
@@ -206,21 +206,21 @@ export function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-        <div className="relative mx-auto max-w-5xl px-8 py-24 text-center lg:px-12 lg:py-32">
+        <div className="relative mx-auto max-w-5xl px-4 py-14 text-center sm:px-8 md:py-20 lg:px-12 lg:py-32">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
             <span className="text-xs font-semibold uppercase tracking-luxury text-white">The Skincare Studio Medical Spa</span>
           </div>
-          <h1 className="mt-6 font-serif text-4xl leading-tight tracking-tight text-white md:text-5xl">
+          <h1 className="mt-4 font-serif text-3xl leading-tight tracking-tight text-white sm:mt-6 sm:text-4xl md:text-5xl">
             Services
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-white/80">
+          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.65] text-white/80 sm:mt-6 sm:text-[16px] sm:leading-[1.75]">
             Browse the full treatment menu — from consultations and injectables to lasers, peels, facials, teen treatments, and regenerative services, all organized for easy booking.
           </p>
           <button
             type="button"
             onClick={() => document.getElementById('service-list')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-            className="mt-8 inline-flex rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:shadow-lg"
+            className="mt-6 inline-flex rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:shadow-lg sm:mt-8"
           >
             Browse Treatments
           </button>
@@ -228,7 +228,7 @@ export function ServicesPage() {
       </section>
 
       <section className="border-t border-warmStone/50 bg-accentNavy py-4">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-8 sm:flex-row lg:px-12">
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-8 lg:px-12">
           <p className="text-center text-[15px] text-white/90 sm:text-left">
             <span className="font-semibold text-white">Treat now, pay over time</span> — flexible payment plans available for any treatment through Cherry.
           </p>
@@ -244,9 +244,9 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <section id="service-list" className="scroll-mt-24 border-t border-warmStone/50 bg-cream/30 py-16">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
-          <div className="mb-12">
+      <section id="service-list" className="scroll-mt-24 border-t border-warmStone/50 bg-cream/30 py-9 md:py-12 lg:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <div className="mb-6 sm:mb-10 md:mb-12">
             <p className="mb-3 text-xs font-semibold uppercase tracking-luxury text-accentBlue">Jump to category</p>
             <div className="flex flex-wrap gap-2">
               {serviceGroups.map((group) => (
@@ -262,12 +262,12 @@ export function ServicesPage() {
             </div>
           </div>
 
-          <p className="mb-8 text-center text-sm text-slate-600">
+          <p className="mb-5 text-center text-sm text-slate-600 sm:mb-8">
             <span className="font-semibold text-accentNavy">224+ Google Reviews</span> — our clients love these treatments
           </p>
 
-          <div className="mb-12 rounded-2xl border border-slate-200 bg-white p-8">
-            <div className="grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-slate-200">
+          <div className="mb-6 rounded-xl border border-slate-200 bg-white p-5 sm:mb-10 sm:rounded-2xl sm:p-8 md:mb-12">
+            <div className="grid gap-5 sm:grid-cols-3 sm:gap-8 sm:divide-x sm:divide-slate-200">
               <div className="sm:pr-8">
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Neatly organized</p>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Services are grouped by treatment type so you can quickly find what you need.</p>
@@ -283,7 +283,7 @@ export function ServicesPage() {
             </div>
           </div>
 
-          <div className="mb-12 rounded-2xl border-2 border-accentBlue/20 bg-softBlue/50 p-6 md:p-8">
+          <div className="mb-6 rounded-xl border-2 border-accentBlue/20 bg-softBlue/50 p-5 sm:mb-10 sm:rounded-2xl sm:p-6 md:mb-12 md:p-8">
             <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">After your treatment</p>
@@ -304,16 +304,16 @@ export function ServicesPage() {
             </div>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {serviceGroups.map((group) => (
-              <section key={group.title} id={slugify(group.title)} className="scroll-mt-24 space-y-4">
+              <section key={group.title} id={slugify(group.title)} className="scroll-mt-24 space-y-3 sm:space-y-4">
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Category</p>
-                <h2 className="font-serif text-2xl tracking-tight text-accentNavy md:text-3xl">
+                <h2 className="font-serif text-xl tracking-tight text-accentNavy sm:text-2xl md:text-3xl">
                   {group.title}
                 </h2>
 
                 <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-200 ease-out hover:shadow-md hover:border-slate-300/80">
-                  <div className="grid border-b border-slate-200 bg-slate-50 px-6 py-4 text-sm font-semibold tracking-wide text-slate-500 md:grid-cols-[1.5fr_0.7fr_0.7fr_0.8fr]">
+                  <div className="grid border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold tracking-wide text-slate-500 sm:px-6 sm:py-4 sm:text-sm md:grid-cols-[1.5fr_0.7fr_0.7fr_0.8fr]">
                     <div>Service</div>
                     <div>Duration</div>
                     <div>Price</div>

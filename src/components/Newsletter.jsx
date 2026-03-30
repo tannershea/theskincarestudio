@@ -12,9 +12,9 @@ export function Newsletter() {
   }
 
   return (
-    <section className="bg-gradient-to-br from-accentNavy via-accentNavy/98 to-accentNavy py-16">
-      <div className="mx-auto max-w-5xl px-8 lg:px-12">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+    <section className="bg-gradient-to-br from-accentNavy via-accentNavy/98 to-accentNavy py-10 md:py-14 lg:py-16">
+      <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+        <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
           <div>
             <h2 className="font-serif text-2xl tracking-tight text-white md:text-3xl">
               Stay in the Glow

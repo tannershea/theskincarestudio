@@ -173,13 +173,13 @@ export function BookingPage() {
         })}</script>
       </Helmet>
 
-      <section className="bg-cream py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-8 text-center lg:px-12">
+      <section className="bg-cream py-9 md:py-12 lg:py-20">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-8 lg:px-12">
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">The Skincare Studio Medical Spa</p>
-          <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight text-accentNavy md:text-5xl">
+          <h1 className="mt-2 font-serif text-3xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-4xl md:text-5xl">
             Book Your Appointment
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7] text-slate-600">
+          <p className="mx-auto mt-3 max-w-2xl text-[15px] leading-[1.65] text-slate-600 sm:mt-4 sm:leading-[1.7]">
             Reserve your preferred date and time in under 2 minutes. We'll confirm within 24 hours.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-slate-600">
@@ -199,9 +199,9 @@ export function BookingPage() {
       </section>
 
       {submitted ? (
-        <section className="border-t border-warmStone/50 bg-white py-20">
-          <div className="mx-auto max-w-2xl px-8 text-center lg:px-12">
-            <div className="rounded-2xl border border-accentGreen/30 bg-softGreen/30 p-10">
+        <section className="border-t border-warmStone/50 bg-white py-10 md:py-16 lg:py-20">
+          <div className="mx-auto max-w-2xl px-4 text-center sm:px-8 lg:px-12">
+            <div className="rounded-2xl border border-accentGreen/30 bg-softGreen/30 p-6 sm:p-10">
               <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Thank you!</h2>
               <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
                 Your booking request has been received. Our team will contact you shortly at the number or email you provide to confirm your appointment.
@@ -213,10 +213,10 @@ export function BookingPage() {
           </div>
         </section>
       ) : (
-        <form onSubmit={handleSubmit} className="relative border-t border-warmStone/50 bg-white py-16">
+        <form onSubmit={handleSubmit} className="relative border-t border-warmStone/50 bg-white py-9 md:py-12 lg:py-16">
           <div ref={formTopRef} className="h-1" aria-hidden="true" />
           {/* Progress bar */}
-          <div className="sticky top-0 z-10 -mx-8 border-b border-slate-100 bg-white/95 px-8 py-3 backdrop-blur-sm lg:-mx-12 lg:px-12">
+          <div className="sticky top-0 z-10 -mx-4 border-b border-slate-100 bg-white/95 px-4 py-2.5 backdrop-blur-sm sm:-mx-8 sm:px-8 sm:py-3 lg:-mx-12 lg:px-12">
             <div className="relative mx-auto flex max-w-4xl items-center">
               {/* Connecting line behind circles */}
               <div className="absolute left-0 right-0 top-1/2 flex -translate-y-1/2">
@@ -285,8 +285,8 @@ export function BookingPage() {
             </div>
           )}
 
-          <div className="mx-auto max-w-4xl px-8 pt-8 lg:px-12">
-            <div className="space-y-12">
+          <div className="mx-auto max-w-4xl px-4 pt-6 sm:px-8 sm:pt-8 lg:px-12">
+            <div className="space-y-8 sm:space-y-10 md:space-y-12">
               {/* Team Member */}
               <div>
                 <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Select Team Member</h2>

@@ -40,13 +40,13 @@ export function ContactPage() {
         <script type="application/ld+json">{JSON.stringify(schemaOrg)}</script>
       </Helmet>
 
-      <section className="bg-cream py-20 lg:py-24">
-        <div className="mx-auto max-w-5xl px-8 text-center lg:px-12">
+      <section className="bg-cream py-10 md:py-16 lg:py-24">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-8 lg:px-12">
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">The Skincare Studio Medical Spa</p>
-          <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight text-accentNavy md:text-5xl">
+          <h1 className="mt-2 font-serif text-3xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-4xl md:text-5xl">
             Contact Us
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-body-lg leading-[1.75] text-slate-600">
+          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7] text-slate-600 sm:mt-6 sm:text-body-lg sm:leading-[1.75]">
             Questions? We're here to help you feel confident before you even walk in. Reach out to learn more about treatments or book online when you're ready.
           </p>
           <a
@@ -58,9 +58,9 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="border-t border-warmStone/50 bg-white py-16">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+      <section className="border-t border-warmStone/50 bg-white py-9 md:py-12 lg:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <div className="grid gap-6 sm:gap-8 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
             <div className="space-y-6">
               <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-sm">
                 <img
@@ -69,9 +69,9 @@ export function ContactPage() {
                   className="aspect-[4/3] w-full object-cover"
                 />
               </div>
-              <div className="rounded-xl border border-slate-200 bg-white p-10 ">
-                <h2 className="font-serif text-2xl tracking-tight text-accentNavy">The Skincare Studio Medical Spa</h2>
-                <div className="mt-8 space-y-6">
+              <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-8 md:p-10">
+                <h2 className="font-serif text-xl tracking-tight text-accentNavy sm:text-2xl">The Skincare Studio Medical Spa</h2>
+                <div className="mt-5 space-y-5 sm:mt-8 sm:space-y-6">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Visit Us</p>
                     <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">{contactDetails.addressLine1}</p>
@@ -93,7 +93,7 @@ export function ContactPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-softGreen/30 p-8 ">
+              <div className="rounded-xl border border-slate-200 bg-softGreen/30 p-5 sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Hours</p>
                 <div className="mt-4 space-y-3 text-[15px] leading-[1.6] text-slate-600">
                   {openingHours.map((item) => (
@@ -113,16 +113,16 @@ export function ContactPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="rounded-xl bg-accentNavy p-10 text-white -lg">
+              <div className="rounded-xl bg-accentNavy p-5 text-white sm:p-8 md:p-10">
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">Studio note</p>
                 <p className="mt-4 text-[15px] leading-[1.75] text-slate-100">
                   Whether you are new to aesthetic treatments or maintaining results you love, our team is committed to creating a comfortable, elevated experience with personalized care for every client.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-white p-10 ">
-                <h3 className="font-serif text-xl tracking-tight text-accentNavy">Send a Message</h3>
-                <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+              <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-8 md:p-10">
+                <h3 className="font-serif text-lg tracking-tight text-accentNavy sm:text-xl">Send a Message</h3>
+                <form onSubmit={handleSubmit} className="mt-5 space-y-4 sm:mt-6 sm:space-y-5">
                   <div>
                     <label htmlFor="name" className="block text-sm tracking-wide text-slate-700">Name</label>
                     <input
@@ -181,7 +181,7 @@ export function ContactPage() {
             </div>
           </div>
 
-          <div className="mt-10 space-y-3">
+          <div className="mt-6 space-y-3 sm:mt-10">
             <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
               <iframe
                 title="The Skincare Studio location on Google Maps"

@@ -12,7 +12,7 @@ function AnnouncementBar() {
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-accentNavy via-accentNavy/95 to-accentNavy text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.06),transparent_50%)]" aria-hidden />
-      <div className="relative mx-auto flex max-w-6xl items-center justify-center gap-3 px-10 py-2.5 text-center sm:gap-4">
+      <div className="relative mx-auto flex max-w-6xl items-center justify-center gap-3 px-4 py-2.5 text-center sm:gap-4 sm:px-10">
         <p className="text-[13px] font-medium tracking-wide sm:text-sm">
           <span className="mr-1.5 inline-block animate-pulse text-base" aria-hidden>✨</span>
           <span className="font-bold text-accentGreen">Spring Special Sale</span>
@@ -47,7 +47,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
       <AnnouncementBar />
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-8 py-4 lg:px-12">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-8 sm:py-4 lg:px-12">
         <Link to="/" className="shrink-0 transition-transform duration-200 hover:scale-105">
           <img
             src={logoSrc}

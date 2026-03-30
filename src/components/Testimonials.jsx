@@ -38,20 +38,20 @@ export function Testimonials() {
   }
 
   return (
-    <section className="overflow-hidden bg-gradient-to-br from-accentNavy via-accentNavy/95 to-accentNavy py-20">
-      <div className="mx-auto max-w-5xl px-8 lg:px-12">
+    <section className="overflow-hidden bg-gradient-to-br from-accentNavy via-accentNavy/95 to-accentNavy py-10 md:py-16 lg:py-20">
+      <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">
               What Our Clients Say
             </p>
-            <h2 className="mt-3 font-serif text-3xl text-white md:text-4xl">
+            <h2 className="mt-2 font-serif text-2xl text-white sm:mt-3 sm:text-3xl md:text-4xl">
               Trusted by Fairfield County
             </h2>
           </div>
         </ScrollReveal>
 
-        <div className="relative mt-12">
+        <div className="relative mt-6 sm:mt-10 md:mt-12">
           {/* Left arrow */}
           <button
             onClick={prev}
@@ -64,7 +64,7 @@ export function Testimonials() {
           </button>
 
           {/* Carousel track */}
-          <div className="relative flex h-[340px] items-center justify-center">
+          <div className="relative flex h-[260px] items-center justify-center sm:h-[300px] md:h-[340px]">
             {testimonials.map((t, i) => {
               const offset = getOffset(i)
               const isCenter = offset === 0
@@ -139,7 +139,7 @@ export function Testimonials() {
         </div>
 
         {/* Overall rating - links to Google reviews */}
-        <div className="mt-10 flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-8 py-6 sm:flex-row sm:justify-center sm:gap-6">
+        <div className="mt-6 flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-5 sm:mt-10 sm:rounded-2xl sm:px-8 sm:py-6 sm:flex-row sm:justify-center sm:gap-6">
           <GoogleIcon className="h-8 w-8 text-white/70" />
           <div className="flex items-center gap-3">
             <span className="text-3xl font-bold text-white">4.9</span>

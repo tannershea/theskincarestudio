@@ -46,14 +46,14 @@ function AutoPlayVideo({ src, alt }) {
 
 export function TikTokFeed() {
   return (
-    <section className="border-t border-warmStone/50 bg-white py-20">
-      <div className="mx-auto max-w-6xl px-8 lg:px-12">
+    <section className="border-t border-warmStone/50 bg-white py-10 md:py-16 lg:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">
               Follow along
             </p>
-            <h2 className="mt-3 font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
+            <h2 className="mt-2 font-serif text-2xl tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
               See us in action
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-[15px] leading-[1.7] text-slate-500">
@@ -62,7 +62,7 @@ export function TikTokFeed() {
           </div>
         </ScrollReveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:mt-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {tiktokVideos.map((video, i) => (
             <ScrollReveal key={video.src} direction="up" delay={i * 100}>
               <div className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -74,7 +74,7 @@ export function TikTokFeed() {
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-6 text-center sm:mt-10">
           <a
             href="https://www.tiktok.com/@skincarestudiomed"
             target="_blank"

@@ -18,7 +18,7 @@ export function StickyCTA() {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-40 transform border-t border-slate-200 bg-white/95 px-6 py-3 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] backdrop-blur-xl transition-transform duration-300 ${isHomePage ? '' : 'hidden'} ${
+      className={`fixed bottom-0 left-0 right-0 z-40 transform border-t border-slate-200 bg-white/95 px-4 py-2.5 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] backdrop-blur-xl transition-transform duration-300 sm:px-6 sm:py-3 ${isHomePage ? '' : 'hidden'} ${
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >

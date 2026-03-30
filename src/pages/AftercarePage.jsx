@@ -161,7 +161,7 @@ function AftercareCard({ treatment, index }) {
     <ScrollReveal direction="up" delay={index * 50}>
       <article
         id={treatment.id}
-        className="scroll-mt-24 rounded-2xl border border-warmStone/50 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accentBlue/20 hover:shadow-soft-lg md:p-8"
+        className="scroll-mt-24 rounded-xl border border-warmStone/50 bg-white p-4 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accentBlue/20 hover:shadow-soft-lg sm:rounded-2xl sm:p-6 md:p-8"
       >
         <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10">
           {hasImage && (
@@ -172,52 +172,76 @@ function AftercareCard({ treatment, index }) {
           <div className="min-w-0 flex-1">
             <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">{treatment.title}</h2>
             {treatment.instructionGroups ? (
-              <div className="mt-4 space-y-8">
-                {(() => {
-                  let running = 0
-                  return treatment.instructionGroups.map((group) => (
-                    <div key={group.title}>
-                      <h3 className="font-serif text-lg font-bold tracking-tight text-accentNavy underline underline-offset-4 decoration-2 decoration-accentNavy/70">
-                        {group.title}
-                      </h3>
-                      <ul className="mt-3 space-y-3">
-                        {group.items.map((step, i) => {
-                          const num = treatment.continuousInstructionNumbering ? ++running : i + 1
-                          const isNested =
-                            step && typeof step === 'object' && 'text' in step && Array.isArray(step.subItems)
-                          return (
-                            <li key={i} className="flex items-start gap-3 text-[15px] leading-[1.75] text-slate-600">
-                              <span
-                                className={`mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
-                                  group.title === 'DO NOT'
-                                    ? 'bg-red-100 text-red-900'
-                                    : 'bg-accentBlue/20 text-accentNavy'
+              (() => {
+                const groups = treatment.instructionGroups
+                const isDoDontPair =
+                  groups.length === 2 && groups[0].title === 'DO' && groups[1].title === 'DO NOT'
+                let running = 0
+                return (
+                  <div
+                    className={
+                      isDoDontPair
+                        ? 'mt-4 grid grid-cols-2 items-start gap-3 sm:gap-4 md:grid-cols-1 md:gap-8'
+                        : 'mt-4 space-y-8'
+                    }
+                  >
+                    {groups.map((group) => (
+                      <div key={group.title} className="min-w-0">
+                        <h3 className="font-serif text-base font-bold tracking-tight text-accentNavy underline underline-offset-4 decoration-2 decoration-accentNavy/70 sm:text-lg">
+                          {group.title}
+                        </h3>
+                        <ul className="mt-2 space-y-2 sm:mt-3 sm:space-y-3">
+                          {group.items.map((step, i) => {
+                            const num = treatment.continuousInstructionNumbering ? ++running : i + 1
+                            const isNested =
+                              step && typeof step === 'object' && 'text' in step && Array.isArray(step.subItems)
+                            return (
+                              <li
+                                key={i}
+                                className={`flex items-start gap-2 text-slate-600 sm:gap-3 ${
+                                  isDoDontPair
+                                    ? 'text-[12px] leading-[1.55] sm:text-[15px] sm:leading-[1.75]'
+                                    : 'text-[15px] leading-[1.75]'
                                 }`}
                               >
-                                {num}
-                              </span>
-                              <div className="min-w-0">
-                                {isNested ? (
-                                  <>
-                                    <span>{step.text}</span>
-                                    <ul className="mt-2 list-disc space-y-1 pl-5 text-[15px] leading-[1.75] text-slate-600">
-                                      {step.subItems.map((sub, j) => (
-                                        <li key={j}>{sub}</li>
-                                      ))}
-                                    </ul>
-                                  </>
-                                ) : (
-                                  <span>{step}</span>
-                                )}
-                              </div>
-                            </li>
-                          )
-                        })}
-                      </ul>
-                    </div>
-                  ))
-                })()}
-              </div>
+                                <span
+                                  className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold sm:mt-1.5 sm:h-5 sm:w-5 sm:text-xs ${
+                                    group.title === 'DO NOT'
+                                      ? 'bg-red-100 text-red-900'
+                                      : 'bg-accentBlue/20 text-accentNavy'
+                                  }`}
+                                >
+                                  {num}
+                                </span>
+                                <div className="min-w-0">
+                                  {isNested ? (
+                                    <>
+                                      <span>{step.text}</span>
+                                      <ul
+                                        className={`mt-1.5 list-disc space-y-0.5 pl-4 sm:mt-2 sm:space-y-1 sm:pl-5 ${
+                                          isDoDontPair
+                                            ? 'text-[12px] leading-[1.55] sm:text-[15px] sm:leading-[1.75]'
+                                            : 'text-[15px] leading-[1.75]'
+                                        }`}
+                                      >
+                                        {step.subItems.map((sub, j) => (
+                                          <li key={j}>{sub}</li>
+                                        ))}
+                                      </ul>
+                                    </>
+                                  ) : (
+                                    <span>{step}</span>
+                                  )}
+                                </div>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                )
+              })()
             ) : (
               <ul className="mt-4 space-y-3">
                 {treatment.instructions.map((step, i) => (
@@ -279,7 +303,7 @@ function ViPeelFaceUrgentSection() {
 
   return (
     <section
-      className="overflow-hidden rounded-2xl bg-gradient-to-br from-accentNavy via-accentNavy/95 to-accentNavy px-6 py-10 text-center shadow-soft-lg md:px-10 md:py-12"
+      className="overflow-hidden rounded-xl bg-gradient-to-br from-accentNavy via-accentNavy/95 to-accentNavy px-4 py-8 text-center shadow-soft-lg sm:rounded-2xl sm:px-6 sm:py-10 md:px-10 md:py-12"
       aria-labelledby="vi-peel-urgent-heading"
     >
       <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">Your safety first</p>
@@ -404,13 +428,13 @@ export function AftercarePage() {
         <script type="application/ld+json">{JSON.stringify(aftercareFaqSchema(aftercareTreatments))}</script>
       </Helmet>
 
-      <section className="relative bg-cream py-20 lg:py-24">
-        <div className="mx-auto max-w-5xl px-8 text-center lg:px-12">
+      <section className="relative bg-cream py-10 md:py-16 lg:py-24">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-8 lg:px-12">
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">The Skincare Studio Medical Spa</p>
-          <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight text-accentNavy md:text-5xl">
+          <h1 className="mt-2 font-serif text-3xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-4xl md:text-5xl">
             Aftercare Instructions
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-[16px] leading-relaxed text-slate-600">
+          <p className="mt-3 max-w-2xl mx-auto text-[15px] leading-relaxed text-slate-600 sm:mt-4 sm:text-[16px]">
             Follow these guidelines for the best healing and results. Same team, same Stratford office—reach out anytime if something doesn’t feel right.
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-slate-600">
@@ -438,9 +462,9 @@ export function AftercarePage() {
         </div>
       </section>
 
-      <section className="border-t border-warmStone/50 bg-white py-16">
-        <div className="mx-auto max-w-5xl px-8 lg:px-12">
-          <div className="mb-8 rounded-2xl border border-accentBlue/15 bg-gradient-to-br from-accentBlue/[0.06] to-cream/80 p-6 text-center shadow-soft md:p-8">
+      <section className="border-t border-warmStone/50 bg-white py-9 md:py-12 lg:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <div className="mb-5 rounded-xl border border-accentBlue/15 bg-gradient-to-br from-accentBlue/[0.06] to-cream/80 p-5 text-center shadow-soft sm:mb-8 sm:rounded-2xl sm:p-6 md:p-8">
             <p className="font-serif text-lg font-semibold text-accentNavy md:text-xl">
               Questions while you heal?
             </p>
@@ -469,16 +493,16 @@ export function AftercarePage() {
             </div>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {aftercareTreatments.map((treatment, index) => (
-              <div key={treatment.id} className="space-y-12">
+              <div key={treatment.id} className="space-y-8 sm:space-y-10 md:space-y-12">
                 <AftercareCard treatment={treatment} index={index} />
                 {treatment.id === 'vi-peel-face' && <ViPeelFaceUrgentSection />}
               </div>
             ))}
           </div>
 
-          <div className="mt-16 rounded-2xl border border-warmStone/60 bg-cream/60 p-8 text-center md:p-10">
+          <div className="mt-10 rounded-xl border border-warmStone/60 bg-cream/60 p-5 text-center sm:mt-16 sm:rounded-2xl sm:p-8 md:p-10">
             <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">
               Ready for your next visit?
             </h2>

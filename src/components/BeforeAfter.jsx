@@ -44,7 +44,7 @@ function Slider({ before, after, label }) {
     <div className="flex flex-col items-center gap-4">
       <div
         ref={containerRef}
-        className="relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
+        className="relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden rounded-xl border border-slate-200 shadow-sm sm:rounded-2xl"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -100,14 +100,14 @@ function Slider({ before, after, label }) {
 
 export function BeforeAfter() {
   return (
-    <section className="border-t border-warmStone/50 bg-cream/40 py-20">
-      <div className="mx-auto max-w-5xl px-8 lg:px-12">
+    <section className="border-t border-warmStone/50 bg-cream/40 py-10 md:py-16 lg:py-20">
+      <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">
               Real results
             </p>
-            <h2 className="mt-3 font-serif text-3xl tracking-tight text-accentNavy md:text-4xl">
+            <h2 className="mt-2 font-serif text-2xl tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
               Before &amp; after
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-[15px] leading-[1.7] text-slate-500">
@@ -116,7 +116,7 @@ export function BeforeAfter() {
           </div>
         </ScrollReveal>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-2">
+        <div className="mt-6 grid gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-8 md:mt-12 lg:gap-10">
           {comparisons.map((item, i) => (
             <ScrollReveal key={item.label} direction="up" delay={i * 120}>
               <Slider {...item} />

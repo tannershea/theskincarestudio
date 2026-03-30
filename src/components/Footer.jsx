@@ -6,8 +6,8 @@ export function Footer() {
 
   return (
     <footer className="border-t border-warmStone bg-white">
-      <div className="mx-auto max-w-6xl px-8 py-16 lg:px-12">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1fr_auto_1fr]">
+      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
+        <div className="grid grid-cols-1 gap-10 sm:gap-12 sm:grid-cols-2 lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <img
               src={logoSrc}
@@ -54,16 +54,18 @@ export function Footer() {
               </a>
             </div>
           </div>
-          <div className="flex gap-6 lg:gap-8">
-            <div className="flex-1 text-center md:text-left">
+          <div className="flex min-w-0 gap-4 sm:gap-6 lg:gap-8">
+            <div className="min-w-0 flex-1 text-left">
               <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">Explore</p>
-              <nav className="mt-3 flex flex-col items-center gap-2 text-[15px] leading-[1.6] text-slate-600 md:items-start">
+              <nav className="mt-3 flex flex-col items-start gap-1.5 text-[14px] leading-snug text-slate-600 sm:gap-2 sm:text-[15px] sm:leading-[1.6]">
                 <Link to="/" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Home</Link>
                 <Link to="/services" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Services</Link>
                 <Link to="/aftercare" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Aftercare</Link>
                 <Link to="/products" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Products</Link>
                 <Link to="/contact" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Contact Us</Link>
-                <Link to="/terms" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Terms &amp; Conditions</Link>
+                <Link to="/terms" className="inline-block text-pretty transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">
+                  Terms &amp; Conditions
+                </Link>
                 <a
                   href={bookingUrl}
                   className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left"
@@ -72,31 +74,48 @@ export function Footer() {
                 </a>
               </nav>
             </div>
-            <div className="flex-1 text-center md:text-left">
+            <div className="min-w-0 flex-1 text-left">
               <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">Visit Us</p>
-            <div className="mt-3 flex flex-col items-center space-y-2 text-[15px] leading-[1.6] text-slate-600 md:items-start">
-              <p className="flex items-center justify-center gap-2 md:justify-start">
-                <span className="text-accentBlue">📍</span>
-                {contactDetails.addressLine1} {contactDetails.addressLine2}
-              </p>
-              <a href={`tel:${contactDetails.phone}`} className="inline-flex items-center justify-center gap-2 transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left md:justify-start">
-                <span className="text-accentBlue">📞</span>
-                {contactDetails.phone}
-              </a>
-              <a href={`mailto:${contactDetails.email}`} className="inline-flex items-center justify-center gap-2 transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left md:justify-start">
-                <span className="text-accentBlue">📧</span>
-                {contactDetails.email}
-              </a>
-            </div>
+              <div className="mt-3 flex w-full min-w-0 flex-col items-start space-y-2 text-[14px] leading-snug text-slate-600 sm:text-[15px] sm:leading-[1.6]">
+                <p className="flex w-full min-w-0 items-start gap-2 text-left">
+                  <span className="mt-0.5 shrink-0 text-base leading-none text-accentBlue" aria-hidden>
+                    📍
+                  </span>
+                  <span className="min-w-0 flex-1 [overflow-wrap:anywhere]">
+                    {contactDetails.addressLine1} {contactDetails.addressLine2}
+                  </span>
+                </p>
+                <a
+                  href={`tel:${contactDetails.phone}`}
+                  className="flex w-full min-w-0 items-start gap-2 transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left"
+                >
+                  <span className="mt-0.5 shrink-0 text-base leading-none text-accentBlue" aria-hidden>
+                    📞
+                  </span>
+                  <span className="min-w-0 flex-1">{contactDetails.phone}</span>
+                </a>
+                <a
+                  href={`mailto:${contactDetails.email}`}
+                  className="flex w-full min-w-0 items-start gap-2 transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left"
+                >
+                  <span className="mt-0.5 shrink-0 text-base leading-none text-accentBlue" aria-hidden>
+                    📧
+                  </span>
+                  <span className="min-w-0 flex-1 text-left [overflow-wrap:anywhere]">{contactDetails.email}</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div className="text-center md:text-left">
+          <div className="text-left sm:col-span-2 lg:col-span-1">
             <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">Hours</p>
-            <div className="mt-3 space-y-2 text-[15px] leading-[1.6] text-slate-600">
+            <div className="mt-3 space-y-3 text-[14px] leading-snug text-slate-600 sm:space-y-2 sm:text-[15px] sm:leading-[1.6]">
               {hoursOrdered.map((item) => (
-                <div key={item.days} className="flex justify-between gap-8">
+                <div
+                  key={item.days}
+                  className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
+                >
                   <span className="font-medium text-accentNavy">{item.days}</span>
-                  <span>{item.hours}</span>
+                  <span className="text-slate-600 sm:text-right tabular-nums">{item.hours}</span>
                 </div>
               ))}
             </div>

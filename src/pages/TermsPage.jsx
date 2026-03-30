@@ -18,10 +18,10 @@ export function TermsPage() {
         <meta property="og:image:alt" content="The Skincare Studio Medical Spa in Stratford, CT" />
       </Helmet>
 
-      <section className="bg-cream py-20 lg:py-24">
-        <div className="mx-auto max-w-5xl px-8 text-center lg:px-12">
+      <section className="bg-cream py-10 md:py-16 lg:py-24">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-8 lg:px-12">
           <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">The Skincare Studio Medical Spa</p>
-          <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight text-accentNavy md:text-5xl">
+          <h1 className="mt-2 font-serif text-3xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-4xl md:text-5xl">
             Terms &amp; Conditions
           </h1>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -42,8 +42,8 @@ export function TermsPage() {
         </div>
       </section>
 
-      <section className="border-t border-warmStone/50 bg-white py-16">
-        <div className="mx-auto max-w-3xl px-8 lg:px-12">
+      <section className="border-t border-warmStone/50 bg-white py-9 md:py-12 lg:py-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-8 lg:px-12">
 
           <ScrollReveal direction="up" delay={0}>
             <div className="prose-section">
