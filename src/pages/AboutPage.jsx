@@ -40,13 +40,6 @@ function AboutHeroCarousel() {
 
 const teamMembers = [
   {
-    name: 'Terri Miller',
-    role: 'CEO & Founder',
-    credentials: 'BSN, RN, Licensed Esthetician',
-    bio: 'With over 15 years of experience in dermatology and plastic surgery, Terri founded The Skincare Studio to bring medical-grade aesthetic care to Fairfield County.',
-    image: '/team-terri.png',
-  },
-  {
     name: 'Morine Cebert',
     role: 'Medical Director',
     credentials: 'PhD, FNP-C, RN, GYN',
@@ -54,25 +47,18 @@ const teamMembers = [
     image: '/team-morine.png',
   },
   {
+    name: 'Terri Miller',
+    role: 'CEO & Founder',
+    credentials: 'BSN, RN, Licensed Esthetician',
+    bio: 'With over 15 years of experience in dermatology and plastic surgery, Terri founded The Skincare Studio to bring medical-grade aesthetic care to Fairfield County.',
+    image: '/team-terri.png',
+  },
+  {
     name: 'Jessica Louisseize',
     role: 'Registered Nurse',
     credentials: 'BSN, RN',
     bio: 'Jessica brings nursing expertise and meticulous attention to detail as a trusted member of our injectable and treatment team.',
     image: '/team-jessica.png',
-  },
-  {
-    name: 'Iyanna Brookins',
-    role: 'Medical Esthetician',
-    credentials: '',
-    bio: 'Iyanna specializes in advanced facial treatments and skincare protocols with a passion for results-driven care.',
-    image: '/team-iyanna.png',
-  },
-  {
-    name: 'Jenny Depina',
-    role: 'Patient Coordinator',
-    credentials: '',
-    bio: 'Jenny ensures every client\'s experience — from scheduling to follow-up — is seamless, comfortable, and personalized.',
-    image: '/team-jenny.png',
   },
   {
     name: 'Britney St. Pierre',
@@ -89,11 +75,25 @@ const teamMembers = [
     image: '/team-alixandria.png',
   },
   {
+    name: 'Iyanna Brookins',
+    role: 'Medical Esthetician',
+    credentials: '',
+    bio: 'Iyanna specializes in advanced facial treatments and skincare protocols with a passion for results-driven care.',
+    image: '/team-iyanna.png',
+  },
+  {
     name: 'Semhar Samuels',
     role: 'Practice Manager',
     credentials: '',
     bio: 'Semhar keeps The Skincare Studio running smoothly, delivering the elevated professional experience our clients expect.',
     image: '/team-semhar.png',
+  },
+  {
+    name: 'Jenny Depina',
+    role: 'Patient Coordinator',
+    credentials: '',
+    bio: 'Jenny ensures every client\'s experience — from scheduling to follow-up — is seamless, comfortable, and personalized.',
+    image: '/team-jenny.png',
   },
 ]
 
@@ -134,7 +134,7 @@ const expertise = [
   {
     icon: <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" /></svg>,
     title: 'Neurotoxins',
-    desc: 'Botox, Letybo, and Daxxify to smooth wrinkles and enhance your natural features.',
+    desc: 'Letybo and Daxxify to smooth wrinkles and enhance your natural features.',
   },
   {
     icon: <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>,

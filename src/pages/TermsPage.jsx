@@ -169,7 +169,7 @@ export function TermsPage() {
             <div className="mt-12 border-t border-warmStone/50 pt-10">
               <h2 className="font-serif text-2xl tracking-tight text-accentNavy">Aftercare Instructions</h2>
               <p className="mt-4 text-[15px] leading-[1.75] text-slate-600">
-                After your treatment, follow our step-by-step aftercare guides to support healing and get the best results. We provide detailed instructions for VI Peel (Face & Body), Microneedling SkinPen, Chemical Peel, Facial Balancing, PRFM, Botox, and Filler.
+                After your treatment, follow our step-by-step aftercare guides to support healing and get the best results. We provide detailed instructions for VI Peel (Face & Body), Microneedling SkinPen, Chemical Peel, Facial Balancing, PRFM, Neurotoxin, and Filler.
               </p>
               <Link
                 to="/aftercare"

@@ -94,7 +94,7 @@ export function HomePage() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-lg text-[16px] leading-[1.7] text-white/80">
-              Medical-grade treatments personalized to you — from Botox and fillers to laser facials and regenerative skincare. Natural results, never overdone.
+              Medical-grade treatments personalized to you — from neurotoxin and fillers to laser facials and regenerative skincare. Natural results, never overdone.
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -205,7 +205,7 @@ export function HomePage() {
             <div className="flex-1 rounded-2xl border border-warmStone bg-cream/80 p-8 shadow-sm">
               <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Serving Fairfield County</p>
               <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                Conveniently located in Paradise Green in Stratford, we welcome clients from {serviceAreas.join(", ")} and surrounding communities seeking trusted Botox, filler, laser, peel, and regenerative treatments.
+                Conveniently located in Paradise Green in Stratford, we welcome clients from {serviceAreas.join(", ")} and surrounding communities seeking trusted neurotoxin, filler, laser, peel, and regenerative treatments.
               </p>
               <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
                 With flexible scheduling, same-day availability, and a warm, professional environment, every visit is designed to feel seamless and centered around your comfort and goals.
@@ -315,7 +315,7 @@ export function HomePage() {
                     Aftercare Instructions
                   </h2>
                   <p className="mt-3 max-w-xl text-[15px] leading-[1.6] text-slate-600">
-                    Follow our step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Botox, and Filler to support healing and get the best results.
+                    Follow our step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Neurotoxin, and Filler to support healing and get the best results.
                   </p>
                 </div>
                 <Link

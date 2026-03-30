@@ -252,7 +252,7 @@ export const featuredCategories = [
   {
     title: "Injectables",
     description:
-      "Botox, Letybo, Daxxify, RHA, Juvederm, and facial balancing treatments designed to deliver refined, natural-looking results.",
+      "Letybo, Daxxify, RHA, and facial balancing treatments designed to deliver refined, natural-looking results.",
   },
   {
     title: "Skin Rejuvenation",
@@ -276,11 +276,11 @@ export const reasons = [
 export const popularServices = [
   {
     title: "Neuromodulators",
-    description: "Botox, Letybo, and Daxxify treatments for smooth, refreshed expression.",
+    description: "Letybo and Daxxify treatments for smooth, refreshed expression.",
   },
   {
     title: "Dermal Fillers",
-    description: "RHA and Juvederm options for subtle enhancement and facial balance.",
+    description: "RHA fillers for subtle enhancement and facial balance.",
   },
   {
     title: "Laser + Corrective Care",
@@ -359,7 +359,7 @@ export const faqs = [
   },
   {
     q: "What injectables do you use?",
-    a: "We offer Botox, Letybo, Daxxify, RHA, and Juvederm for neuromodulators and dermal fillers. Every treatment is customized to your facial anatomy and desired outcome.",
+    a: "We offer Botox, Letybo, and Daxxify as neuromodulators, and RHA for dermal fillers. Every treatment is customized to your facial anatomy and desired outcome.",
   },
   {
     q: "How far in advance should I book?",
@@ -433,10 +433,10 @@ export const serviceGroups = [
   {
     title: "Cosmetic Injectables",
     services: [
-      { name: "Neurotoxin", duration: "15-30 min", price: "$14 per unit", desc: "Botox, Letybo, or Daxxify to smooth wrinkles and fine lines for a refreshed appearance." },
+      { name: "Neurotoxin", duration: "15-30 min", price: "$14 per unit", desc: "Letybo or Daxxify to smooth wrinkles and fine lines for a refreshed appearance." },
       { name: "Lip Filler", duration: "45 min", price: "$550", desc: "Hyaluronic acid filler for subtle lip enhancement, improved symmetry, and natural fullness." },
       { name: "Soft Volume Lips", duration: "45 min", price: "$600", desc: "Premium lip volumizing treatment for soft, pillowy results with expert technique." },
-      { name: "Dermal Fillers", duration: "1 hr", price: "Starting at $750", desc: "RHA and Juvederm fillers to restore volume, contour, and smooth deep lines." },
+      { name: "Dermal Fillers", duration: "1 hr", price: "Starting at $750", desc: "RHA fillers to restore volume, contour, and smooth deep lines." },
       { name: "VAMP by Prollenium Skin Booster", duration: "15 min", price: "$175", desc: "PDRN (Salmon DNA) skin booster to rejuvenate and improve skin quality from within." },
       { name: "Facial Balancing", duration: "1 hr 30 min", price: "Inquire", desc: "Strategic filler placement across multiple areas for harmonious, natural facial proportions." },
     ],
@@ -510,9 +510,9 @@ export const serviceGroups = [
 
 export const aftercareTreatments = [
   {
-    id: 'botox',
-    title: 'Botox',
-    image: '/aftercare/botox.png',
+    id: 'neurotoxin',
+    title: 'Neurotoxin',
+    image: '/aftercare/neurotoxin.png',
     instructionGroups: [
       {
         title: 'DO',

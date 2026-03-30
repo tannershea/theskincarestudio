@@ -393,10 +393,10 @@ export function AftercarePage() {
     <>
       <Helmet>
         <title>Aftercare Instructions | The Skincare Studio Medical Spa | Stratford, CT</title>
-        <meta name="description" content="Aftercare instructions for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Botox, and Filler treatments at The Skincare Studio in Stratford, CT." />
+        <meta name="description" content="Aftercare instructions for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Neurotoxin, and Filler treatments at The Skincare Studio in Stratford, CT." />
         <link rel="canonical" href="https://www.theskincarestudioct.com/aftercare" />
         <meta property="og:title" content="Aftercare Instructions | The Skincare Studio Medical Spa | Stratford, CT" />
-        <meta property="og:description" content="Aftercare instructions for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Botox, Filler, and Laser Hair Removal at The Skincare Studio in Stratford, CT." />
+        <meta property="og:description" content="Aftercare instructions for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Neurotoxin, Filler, and Laser Hair Removal at The Skincare Studio in Stratford, CT." />
         <meta property="og:url" content="https://www.theskincarestudioct.com/aftercare" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.theskincarestudioct.com/hero-treatment.png" />

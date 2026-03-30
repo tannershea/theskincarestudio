@@ -291,7 +291,7 @@ export function ServicesPage() {
                   Aftercare Instructions
                 </h2>
                 <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">
-                  Step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Botox, and Filler.
+                  Step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Neurotoxin, and Filler.
                 </p>
               </div>
               <Link
