@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs } from '../data'
+import { serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs, servicesPageReviews } from '../data'
 import { FAQ } from '../components/FAQ'
 
 const servicesHeroImages = [
@@ -93,6 +93,21 @@ const slugify = (title) =>
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
 
+function BeforeAfterSplitLabels({ afterVariant = 'default' }) {
+  const labelClass =
+    'pointer-events-none absolute left-2 z-10 rounded bg-black/55 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm sm:left-2.5 sm:text-[10px]'
+  const afterTop =
+    afterVariant === 'right'
+      ? 'top-[calc(50%+20px)] sm:top-[calc(50%+22px)]'
+      : 'top-[calc(50%+24px)] sm:top-[calc(50%+26px)]'
+  return (
+    <>
+      <span className={`${labelClass} top-2 sm:top-2.5`}>Before</span>
+      <span className={`${labelClass} ${afterTop}`}>After</span>
+    </>
+  )
+}
+
 function ServiceRow({ service, groupTitle }) {
   const [open, setOpen] = useState(false)
   const isPopular = popularServiceNames.includes(service.name)
@@ -167,7 +182,32 @@ function ServiceRow({ service, groupTitle }) {
   )
 }
 
+const baLipImage = {
+  src: '/services-ba-lip-filler.png',
+  alt: 'Before and after lip filler: smiling client showing fuller lips after treatment',
+}
+const baUndereyeImage = {
+  src: '/services-ba-prfm-undereye.png',
+  alt: 'Before and after PRFM under-eye treatment: smoother, more rested under-eye area',
+}
+
 export function ServicesPage() {
+  const [zoomedImage, setZoomedImage] = useState(null)
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') setZoomedImage(null)
+    }
+    if (zoomedImage) {
+      document.body.style.overflow = 'hidden'
+      window.addEventListener('keydown', handleEscape)
+    }
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handleEscape)
+    }
+  }, [zoomedImage])
+
   const scrollToCategory = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
@@ -191,6 +231,34 @@ export function ServicesPage() {
 
   return (
     <>
+      {zoomedImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setZoomedImage(null)}
+          role="presentation"
+        >
+          <button
+            type="button"
+            onClick={() => setZoomedImage(null)}
+            className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            aria-label="Close"
+          >
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div className="relative max-h-[90vh] max-w-full" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={zoomedImage.src}
+              alt={zoomedImage.alt}
+              className="max-h-[90vh] max-w-full object-contain"
+              draggable={false}
+            />
+            <BeforeAfterSplitLabels afterVariant={zoomedImage.afterVariant ?? 'default'} />
+          </div>
+        </div>
+      )}
+
       <Helmet>
         <title>Services &amp; Pricing | Botox, Fillers, Facials, Lasers | Stratford, CT</title>
         <meta name="description" content="View our full treatment menu with transparent pricing. Botox, fillers, VI Peels, microneedling, Hydrafacial, PRFM &amp; more. Book online at The Skincare Studio in Paradise Green, Stratford." />
@@ -262,23 +330,29 @@ export function ServicesPage() {
             </div>
           </div>
 
-          <p className="mb-5 text-center text-sm text-slate-600 sm:mb-8">
-            <span className="font-semibold text-accentNavy">224+ Google Reviews</span> — our clients love these treatments
-          </p>
+          <div className="mb-8 space-y-8 sm:mb-10 sm:space-y-10 md:mb-12 md:space-y-12">
+            <p className="text-center text-sm text-slate-600">
+              <span className="font-semibold text-accentNavy">224+ Google Reviews</span> — our clients love these treatments
+            </p>
 
-          <div className="mb-6 rounded-xl border border-slate-200 bg-white p-5 sm:mb-10 sm:rounded-2xl sm:p-8 md:mb-12">
-            <div className="grid gap-5 sm:grid-cols-3 sm:gap-8 sm:divide-x sm:divide-slate-200">
-              <div className="sm:pr-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Neatly organized</p>
-                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Services are grouped by treatment type so you can quickly find what you need.</p>
-              </div>
-              <div className="sm:px-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Transparent pricing</p>
-                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Durations and starting prices are shown clearly to make comparing options easier.</p>
-              </div>
-              <div className="sm:pl-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Direct booking</p>
-                <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">Every treatment links straight to our live booking page.</p>
+            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:rounded-2xl sm:p-6 md:p-8">
+              <p className="text-center text-xs font-semibold uppercase tracking-luxury text-accentBlue">What clients say</p>
+              <div className="mt-4 grid grid-cols-2 gap-2 sm:gap-5">
+                {servicesPageReviews
+                  .filter((r) => r.quote?.trim())
+                  .map((r, i) => (
+                    <blockquote
+                      key={i}
+                      className="min-w-0 rounded-lg border border-slate-100 bg-cream/50 p-2.5 shadow-sm sm:rounded-lg sm:p-5"
+                    >
+                      <div className="flex flex-wrap gap-0.5 text-[10px] leading-none text-accentGreen sm:text-sm" aria-hidden>
+                        ★★★★★
+                      </div>
+                      <p className="mt-1.5 whitespace-pre-line text-[11px] leading-[1.45] text-slate-700 sm:mt-2 sm:text-[15px] sm:leading-[1.6]">
+                        &ldquo;{r.quote}&rdquo;
+                      </p>
+                    </blockquote>
+                  ))}
               </div>
             </div>
           </div>
@@ -328,6 +402,65 @@ export function ServicesPage() {
                 </div>
               </section>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-warmStone/50 bg-gradient-to-b from-white to-cream/40 py-10 md:py-14 lg:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:rounded-2xl sm:p-6 md:p-8">
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Real results</p>
+              <h2 className="mt-2 font-serif text-xl tracking-tight text-accentNavy sm:text-2xl md:text-3xl">
+                Before &amp; after
+              </h2>
+              <p className="mx-auto mt-2 max-w-xl text-[13px] leading-relaxed text-slate-600 sm:mt-3 sm:text-[15px]">
+                Individual outcomes vary. These photos show actual clients after treatment at our Stratford studio.
+              </p>
+            </div>
+
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-6">
+              <figure className="flex min-w-0 w-full flex-col">
+                <button
+                  type="button"
+                  onClick={() => setZoomedImage({ ...baLipImage, afterVariant: 'default' })}
+                  className="group relative cursor-zoom-in overflow-hidden rounded-xl border border-slate-200 bg-white text-left shadow-sm transition hover:border-accentBlue/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue sm:rounded-2xl"
+                  aria-label="View larger: Lip filler before and after"
+                >
+                  <img
+                    src={baLipImage.src}
+                    alt=""
+                    className="w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                  <BeforeAfterSplitLabels afterVariant="default" />
+                </button>
+                <figcaption className="mt-2 text-center text-[10px] font-semibold leading-tight tracking-wide text-accentNavy sm:mt-3 sm:text-sm">
+                  Lip filler
+                </figcaption>
+              </figure>
+              <figure className="flex min-w-0 w-full flex-col">
+                <button
+                  type="button"
+                  onClick={() => setZoomedImage({ ...baUndereyeImage, afterVariant: 'right' })}
+                  className="group relative cursor-zoom-in overflow-hidden rounded-xl border border-slate-200 bg-white text-left shadow-sm transition hover:border-accentBlue/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue sm:rounded-2xl"
+                  aria-label="View larger: PRFM Undereye before and after"
+                >
+                  <img
+                    src={baUndereyeImage.src}
+                    alt=""
+                    className="w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                  <BeforeAfterSplitLabels afterVariant="right" />
+                </button>
+                <figcaption className="mt-2 text-center text-[10px] font-semibold leading-tight tracking-wide text-accentNavy sm:mt-3 sm:text-sm">
+                  PRFM Undereye
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@ import { ScrollReveal } from './ScrollReveal'
 const tiktokVideos = [
   { src: '/videos/tiktok-1.mp4', alt: 'Skincare treatment at The Skincare Studio' },
   { src: '/videos/tiktok-4.mp4', alt: 'Real results from The Skincare Studio' },
-  { src: '/videos/tiktok-3.mov', alt: 'Skincare tips from The Skincare Studio' },
+  { src: '/videos/tiktok-middle-left.mov', alt: 'The Skincare Studio — treatment and results' },
   { src: '/videos/tiktok-5.mov', alt: 'Behind the scenes at The Skincare Studio' },
 ]
 

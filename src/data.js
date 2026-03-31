@@ -299,6 +299,17 @@ export const stats = [
   { value: "98%", label: "Client Satisfaction" },
 ];
 
+export const servicesPageReviews = [
+  {
+    quote:
+      "I'm so pleased with my results! I felt at home! Such an amazing feeling to have while experiencing something so new.\n\nTerri is a doll! Gentle & warm. What a beautiful soul! And the staff is super kind/helpful. I will be back!!",
+  },
+  {
+    quote:
+      "Terri and her team are the best! They are very warm, friendly, and welcoming. Her services are amazing as well as I am very pleased with my results during my skin care journey!",
+  },
+]
+
 export const testimonials = [
   {
     quote: "I just came back from The Skincare Studio, where I went in to address under-eye bags and dark circles, and I honestly cannot say enough good things about my experience. Terri is absolutely amazing. From the moment I walked in, she and her staff were thoughtful, caring, and incredibly attentive. What stood out the most was that they truly listened to my concerns. We talked through my goals, discussed my options in detail, and I never once felt rushed or pressured. I decided to move forward with PRFM, and the entire process was smooth, professional, and comfortable. The results? I look amazing. I genuinely can't believe I waited this long to do this. Terri is knowledgeable, professional, and clearly passionate about her work. I'm beyond happy with my results and would highly recommend The Skincare Studio to anyone considering under-eye treatments or aesthetic services. Hands down, one of the best experiences I've had!!!!!",
