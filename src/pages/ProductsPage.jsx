@@ -250,8 +250,8 @@ export function ProductsPage() {
         </div>
       </section>
 
-      {/* Brand Filter */}
-      <section className="sticky top-[72px] z-30 border-y border-warmStone/50 bg-white/95 py-4 backdrop-blur-sm">
+      {/* Brand Filter — sticky only on lg+ so it doesn’t pin under the header on mobile */}
+      <section className="border-y border-warmStone/50 bg-white/95 py-4 backdrop-blur-sm lg:sticky lg:top-[72px] lg:z-30">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
           <div className="flex flex-wrap justify-center gap-2">
             {brands.map((brand) => (
@@ -280,12 +280,12 @@ export function ProductsPage() {
             {activeFilter !== 'All' && <> in <span className="font-semibold text-accentNavy">{activeFilter}</span></>}
           </p>
 
-          <div className="grid gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {filtered.map((product, i) => (
               <ScrollReveal key={`${product.brand}-${product.name}`} direction="up" delay={Math.min(i % 6, 5) * 60}>
-                <div className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-accentBlue/20">
+                <div className="group flex h-full flex-col rounded-xl border border-slate-200 bg-white p-3 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-accentBlue/20 sm:rounded-2xl sm:p-6">
                   <div
-                    className={`flex h-40 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-cream to-softBlue/30 ${getProductImage(product) ? 'cursor-zoom-in' : ''}`}
+                    className={`flex h-28 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-cream to-softBlue/30 sm:h-40 sm:rounded-xl ${getProductImage(product) ? 'cursor-zoom-in' : ''}`}
                     onClick={() => getProductImage(product) && setZoomedImage({ src: getProductImage(product), alt: product.name })}
                     onKeyDown={(e) => getProductImage(product) && (e.key === 'Enter' || e.key === ' ') && setZoomedImage({ src: getProductImage(product), alt: product.name })}
                     role={getProductImage(product) ? 'button' : undefined}
@@ -308,13 +308,13 @@ export function ProductsPage() {
                       </div>
                     )}
                   </div>
-                  <div className="mt-4 flex flex-1 flex-col">
-                    <p className="text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{product.brand}</p>
-                    <h3 className="mt-1 font-serif text-lg font-semibold tracking-tight text-accentNavy">{product.name}</h3>
-                    <p className="mt-2 flex-1 text-[13px] leading-[1.5] text-slate-500">{product.desc}</p>
-                    <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
-                      <span className="text-lg font-bold text-accentNavy">{product.price}</span>
-                      <span className="text-[11px] uppercase tracking-wider text-slate-400">In-store only</span>
+                  <div className="mt-2 flex flex-1 flex-col sm:mt-4">
+                    <p className="text-[10px] font-semibold uppercase tracking-luxury text-accentBlue sm:text-[11px]">{product.brand}</p>
+                    <h3 className="mt-0.5 font-serif text-sm font-semibold leading-snug tracking-tight text-accentNavy sm:mt-1 sm:text-lg">{product.name}</h3>
+                    <p className="mt-1.5 flex-1 text-[11px] leading-[1.45] text-slate-500 sm:mt-2 sm:text-[13px] sm:leading-[1.5]">{product.desc}</p>
+                    <div className="mt-3 flex flex-col gap-1 border-t border-slate-100 pt-3 sm:mt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-0 sm:pt-4">
+                      <span className="text-base font-bold text-accentNavy sm:text-lg">{product.price}</span>
+                      <span className="text-[10px] uppercase tracking-wider text-slate-400 sm:text-[11px]">In-store only</span>
                     </div>
                   </div>
                 </div>

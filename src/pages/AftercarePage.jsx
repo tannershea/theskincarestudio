@@ -392,26 +392,8 @@ function formatPhoneDisplay(phone) {
 }
 
 export function AftercarePage() {
-  const [showMobileSticky, setShowMobileSticky] = useState(false)
-  const [showBackToTop, setShowBackToTop] = useState(false)
-
   const phoneDisplay = useMemo(() => formatPhoneDisplay(contactDetails.phone), [])
   const phoneDigits = useMemo(() => contactDetails.phone.replace(/\D/g, ''), [])
-
-  useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY
-      setShowMobileSticky(y > 320)
-      setShowBackToTop(y > 520)
-    }
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
 
   return (
     <>
@@ -526,43 +508,6 @@ export function AftercarePage() {
           </div>
         </div>
       </section>
-
-      {/* Mobile sticky conversion bar */}
-      <div
-        className={`fixed inset-x-0 bottom-0 z-[100] border-t border-warmStone/50 bg-white/95 px-4 py-3 shadow-[0_-8px_30px_rgba(15,23,42,0.1)] backdrop-blur-md transition-transform duration-300 ease-out lg:hidden pb-[max(0.75rem,env(safe-area-inset-bottom))] ${
-          showMobileSticky ? 'translate-y-0' : 'translate-y-full pointer-events-none'
-        }`}
-        role="region"
-        aria-label="Quick actions"
-      >
-        <div className="mx-auto flex max-w-md items-stretch justify-center gap-3">
-          <a
-            href={`tel:${contactDetails.phone}`}
-            className="flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-accentNavy/30 py-3 text-sm font-semibold text-accentNavy active:scale-[0.98]"
-          >
-            Call
-          </a>
-          <a
-            href={bookingUrl}
-            className="flex flex-1 items-center justify-center gap-2 rounded-full bg-accentNavy py-3 text-sm font-semibold text-white shadow-md active:scale-[0.98]"
-          >
-            Book
-          </a>
-        </div>
-      </div>
-
-      <button
-        type="button"
-        onClick={scrollToTop}
-        className={`fixed right-4 z-[95] flex h-11 w-11 items-center justify-center rounded-full border border-warmStone/60 bg-white text-accentNavy shadow-lg transition-all duration-300 hover:border-accentBlue/40 hover:bg-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue lg:right-6 ${
-          showBackToTop ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
-        } ${showMobileSticky ? 'bottom-[5.5rem] lg:bottom-8' : 'bottom-6 lg:bottom-8'}`}
-        aria-label="Back to top"
-      >
-        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-        </svg>
-      </button>
     </>
   )
 }

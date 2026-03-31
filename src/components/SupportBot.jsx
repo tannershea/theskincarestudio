@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import {
   contactDetails,
   openingHours,
@@ -318,6 +318,8 @@ function AnswerWithLink({ answer, linkTarget, linkLabel }) {
 }
 
 export function SupportBot() {
+  const { pathname } = useLocation()
+  const isHomePage = pathname === '/'
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState([
     { role: 'bot', answer: "Hi! I'm Rebecca, Terri's AI assistant. Ask me about our services, prices, products, hours, location, booking, or anything else about The Skincare Studio." },
@@ -348,7 +350,13 @@ export function SupportBot() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div
+      className={`fixed right-6 z-50 flex flex-col items-end gap-3 ${
+        isHomePage
+          ? 'bottom-[calc(5.75rem+env(safe-area-inset-bottom,0px))] lg:bottom-6'
+          : 'bottom-6'
+      }`}
+    >
       {isOpen && (
         <div className="flex h-[420px] w-[340px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_40px_rgba(0,0,0,0.12)] sm:w-[380px]">
           <div className="flex items-center justify-between border-b border-slate-100 bg-accentNavy px-4 py-3">
