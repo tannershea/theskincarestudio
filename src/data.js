@@ -418,6 +418,7 @@ export const serviceGroups = [
     services: [
       { name: "The Refresh Neurotoxin", duration: "15-30 min", price: "$14 Per Unit", desc: "A quick neurotoxin touch-up to smooth fine lines and maintain a refreshed, natural look." },
       { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "A medical-grade chemical peel that improves skin tone, texture, and clarity with minimal downtime." },
+      { name: "Lip Filler", duration: "45 min", price: "$600", desc: "Hyaluronic acid filler for subtle lip enhancement, improved symmetry, and natural fullness." },
       { name: "Polished Glow Microderm Facial", duration: "1 hr", price: "$125", desc: "Gentle exfoliation facial that buffs away dead skin cells for an instant, radiant glow." },
       { name: "Skin Tag Removal", duration: "1 hr", price: "From $175", desc: "Safe, precise removal of skin tags with minimal discomfort and fast healing." },
       { name: "Cystic Acne Injection", duration: "15 min", price: "$35", desc: "Targeted cortisone injection to quickly reduce painful, deep cystic acne breakouts." },
