@@ -6,8 +6,6 @@ export const serviceBookingUrlOverrides = {
     "https://www.booktheskincarestudioct.com/booking-calendar/spring-special-neurotoxin?referral=service_list_widget",
   "Spring Special Facial":
     "https://www.booktheskincarestudioct.com/booking-calendar/spring-facial?referral=service_list_widget",
-  "Soft Volume Lips":
-    "https://www.booktheskincarestudioct.com/booking-calendar/soft-volume-lips?referral=service_list_widget",
   "The Refresh Neurotoxin":
     "https://www.booktheskincarestudioct.com/booking-calendar/neurotoxin?referral=service_list_widget",
   "Neurotoxin":
@@ -24,8 +22,6 @@ export const serviceBookingUrlOverrides = {
     "https://www.booktheskincarestudioct.com/booking-calendar/undereye-prfm?referral=service_list_widget",
   "PRFM Full Face":
     "https://www.booktheskincarestudioct.com/booking-calendar/prfm-full-face?referral=service_list_widget",
-  "Undereye Filler + PRFM":
-    "https://www.booktheskincarestudioct.com/booking-calendar/undereye-filler-prfm?referral=service_list_widget",
   "PRP Hair Restoration":
     "https://www.booktheskincarestudioct.com/booking-calendar/hair-restoration-with-prp-injections?referral=service_list_widget",
   "SkinPen Microneedling":
@@ -46,8 +42,6 @@ export const serviceBookingUrlOverrides = {
     "https://www.booktheskincarestudioct.com/booking-calendar/laser-toning?referral=service_list_widget",
   "IPL Laser Facial":
     "https://www.booktheskincarestudioct.com/booking-calendar/ipl-laser-facial?referral=service_list_widget",
-  "Laser Genesis":
-    "https://www.booktheskincarestudioct.com/booking-calendar/laser-genesis-1?referral=service_list_widget",
   "VI Peel Original":
     "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-original?referral=service_list_widget",
   "VI Peel Advanced":
@@ -402,7 +396,7 @@ export const serviceFaqs = [
 ];
 
 export const popularServiceNames = [
-  'Soft Volume Lips', 'VI Peel Original', 'Polished Glow Microderm Facial', 'Hydrafacial Deluxe',
+  'VI Peel Original', 'Polished Glow Microderm Facial', 'Hydrafacial Deluxe',
   'Neurotoxin', 'Lip Filler', 'SkinPen Microneedling', 'In-Studio Consultation',
 ]
 
@@ -423,7 +417,6 @@ export const serviceGroups = [
     title: "Client Favorites",
     services: [
       { name: "The Refresh Neurotoxin", duration: "15-30 min", price: "$14 Per Unit", desc: "A quick neurotoxin touch-up to smooth fine lines and maintain a refreshed, natural look." },
-      { name: "Soft Volume Lips", duration: "45 min", price: "$600", desc: "Premium lip filler treatment for soft, natural volume and defined shape using advanced techniques." },
       { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "A medical-grade chemical peel that improves skin tone, texture, and clarity with minimal downtime." },
       { name: "Polished Glow Microderm Facial", duration: "1 hr", price: "$125", desc: "Gentle exfoliation facial that buffs away dead skin cells for an instant, radiant glow." },
       { name: "Skin Tag Removal", duration: "1 hr", price: "From $175", desc: "Safe, precise removal of skin tags with minimal discomfort and fast healing." },
@@ -445,8 +438,7 @@ export const serviceGroups = [
     title: "Cosmetic Injectables",
     services: [
       { name: "Neurotoxin", duration: "15-30 min", price: "$14 per unit", desc: "Letybo or Daxxify to smooth wrinkles and fine lines for a refreshed appearance." },
-      { name: "Lip Filler", duration: "45 min", price: "$550", desc: "Hyaluronic acid filler for subtle lip enhancement, improved symmetry, and natural fullness." },
-      { name: "Soft Volume Lips", duration: "45 min", price: "$600", desc: "Premium lip volumizing treatment for soft, pillowy results with expert technique." },
+      { name: "Lip Filler", duration: "45 min", price: "$600", desc: "Hyaluronic acid filler for subtle lip enhancement, improved symmetry, and natural fullness." },
       { name: "Dermal Fillers", duration: "1 hr", price: "Starting at $750", desc: "RHA fillers to restore volume, contour, and smooth deep lines." },
       { name: "VAMP by Prollenium Skin Booster", duration: "15 min", price: "$175", desc: "PDRN (Salmon DNA) skin booster to rejuvenate and improve skin quality from within." },
       { name: "Facial Balancing", duration: "1 hr 30 min", price: "Inquire", desc: "Strategic filler placement across multiple areas for harmonious, natural facial proportions." },
@@ -457,7 +449,6 @@ export const serviceGroups = [
     services: [
       { name: "Undereye PRFM", duration: "1 hr 15 min", price: "$850", desc: "Platelet-rich fibrin matrix treatment to reduce dark circles, hollowing, and under-eye aging." },
       { name: "PRFM Full Face", duration: "1 hr 30 min", price: "$1,450", desc: "Full-face regenerative treatment using your own growth factors for collagen renewal and skin rejuvenation." },
-      { name: "Undereye Filler + PRFM", duration: "45 min", price: "$850", desc: "Combined filler and PRFM approach for comprehensive under-eye correction and lasting results." },
       { name: "NAD+", duration: "Varies", price: "Inquire", desc: "NAD+ IV therapy for cellular energy, anti-aging support, and overall wellness." },
       { name: "PRP Hair Restoration", duration: "1 hr", price: "Inquire", desc: "Platelet-rich plasma treatment to stimulate hair follicles and support healthier, thicker hair growth." },
     ],
@@ -475,11 +466,10 @@ export const serviceGroups = [
   {
     title: "Laser Treatments",
     services: [
-      { name: "Laser Hair Removal", duration: "15 min", price: "Varies by area", desc: "Lutronic Clarity II laser for safe, effective hair reduction on all skin types and tones." },
+      { name: "Laser Hair Removal", duration: "15 min", price: "$175-$250", desc: "Lutronic Clarity II laser for safe, effective hair reduction on all skin types and tones." },
       { name: "Spider & Varicose Vein Removal", duration: "1 hr", price: "From $250", desc: "Targeted laser treatment to reduce the appearance of spider veins and small varicose veins." },
       { name: "Laser Toning", duration: "30 min", price: "$350", desc: "Low-energy laser passes to even out skin tone, reduce pigmentation, and improve clarity." },
       { name: "IPL Laser Facial", duration: "30 min", price: "$375", desc: "Intense pulsed light treatment to target sun damage, redness, and uneven pigmentation." },
-      { name: "Laser Genesis", duration: "30 min", price: "$350", desc: "Non-invasive laser therapy that promotes collagen growth and reduces fine lines and redness." },
     ],
   },
   {
