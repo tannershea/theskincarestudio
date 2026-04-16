@@ -22,6 +22,8 @@ export const serviceBookingUrlOverrides = {
     "https://www.booktheskincarestudioct.com/booking-calendar/undereye-prfm?referral=service_list_widget",
   "PRFM Full Face":
     "https://www.booktheskincarestudioct.com/booking-calendar/prfm-full-face?referral=service_list_widget",
+  "Keravive Treatments":
+    "https://www.booktheskincarestudioct.com/booking-calendar/keravive-treatments?referral=service_list_widget",
   "PRP Hair Restoration":
     "https://www.booktheskincarestudioct.com/booking-calendar/hair-restoration-with-prp-injections?referral=service_list_widget",
   "SkinPen Microneedling":
@@ -46,34 +48,56 @@ export const serviceBookingUrlOverrides = {
     "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-original?referral=service_list_widget",
   "VI Peel Advanced":
     "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-advanced-9d7m7?referral=service_list_widget",
+  "VI Peel Purify":
+    "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-purify?referral=service_list_widget",
   "VI Peel Purify with Precision Plus":
     "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-purify-with-precision-plus-zynvp?referral=service_list_widget",
+  "VI Peel Precision + Peptides":
+    "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-precision-plus-peptides?referral=service_list_widget",
   "VI Peel Body":
     "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-body?referral=service_list_widget",
-  "The Radiance Peel":
+  "Chemical Peel":
     "https://www.booktheskincarestudioct.com/booking-calendar/the-radiance-peel?referral=service_list_widget",
-  "The Clarifying Peel":
-    "https://www.booktheskincarestudioct.com/booking-calendar/the-clarifying-peel?referral=service_list_widget",
+  "PCA Body Chemical Peel":
+    "https://www.booktheskincarestudioct.com/booking-calendar/pca-body-chemical-peel?referral=service_list_widget",
+  "Lip Peel":
+    "https://www.booktheskincarestudioct.com/booking-calendar/lip-peel?referral=service_list_widget",
+  "4% Retinol Peel":
+    "https://www.booktheskincarestudioct.com/booking-calendar/4-retinol-peel?referral=service_list_widget",
+  "6% Retinol Peel":
+    "https://www.booktheskincarestudioct.com/booking-calendar/6-retinol-peel?referral=service_list_widget",
   "Tox Booster with VI Peel":
     "https://www.booktheskincarestudioct.com/booking-calendar/tox-booster-with-vi-peel?referral=service_list_widget",
   "Milia Extraction":
     "https://www.booktheskincarestudioct.com/booking-calendar/milia-extraction?referral=service_list_widget",
-  "Polished Glow Microderm Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/polished-glow-microderm-facial?referral=service_list_widget",
+  "Hydrafacial Signature":
+    "https://www.booktheskincarestudioct.com/booking-calendar/hydrafacial-signature?referral=service_list_widget",
   "Hydrafacial Platinum":
     "https://www.booktheskincarestudioct.com/booking-calendar/hydrafacial-platinum?referral=service_list_widget",
+  "Hydrafacial For Him":
+    "https://www.booktheskincarestudioct.com/booking-calendar/hydrafacial-for-him?referral=service_list_widget",
   "GLO2Facial Signature":
     "https://www.booktheskincarestudioct.com/booking-calendar/glo2facial-signature-3?referral=service_list_widget",
   "Hydrafacial Deluxe":
     "https://www.booktheskincarestudioct.com/booking-calendar/hydrafacial-deluxe?referral=service_list_widget",
   "GLO2Facial Deluxe":
     "https://www.booktheskincarestudioct.com/booking-calendar/glo2facial-deluxe-2?referral=service_list_widget",
-  "iS Clinical Glow On The GO":
+  "Glow On The GO":
     "https://www.booktheskincarestudioct.com/booking-calendar/glow-on-the-go-facial?referral=service_list_widget",
-  "iS Clinical Fire & Ice Facial":
+  "Fire & Ice Facial":
     "https://www.booktheskincarestudioct.com/booking-calendar/fire-ice-facial?referral=service_list_widget",
+  "Dermaplanning Facial":
+    "https://www.booktheskincarestudioct.com/booking-calendar/dermaplanning-facial?referral=service_list_widget",
+  "LED Express Facial":
+    "https://www.booktheskincarestudioct.com/booking-calendar/led-express-facial?referral=service_list_widget",
+  "Skincare Studio Facial":
+    "https://www.booktheskincarestudioct.com/booking-calendar/skincare-studio-facial?referral=service_list_widget",
+  "The Gentleman's Facial":
+    "https://www.booktheskincarestudioct.com/booking-calendar/the-gentlemans-facial?referral=service_list_widget",
   "Teen Acne Facial":
     "https://www.booktheskincarestudioct.com/booking-calendar/teen-acne-facial?referral=service_list_widget",
+  "Back Facial":
+    "https://www.booktheskincarestudioct.com/booking-calendar/back-facial?referral=service_list_widget",
   "Skin Tag Removal":
     "https://www.booktheskincarestudioct.com/booking-calendar/skin-tag?referral=service_list_widget",
   "Cystic Acne Injection":
@@ -82,14 +106,74 @@ export const serviceBookingUrlOverrides = {
     "https://www.booktheskincarestudioct.com/booking-calendar/acne-clinic?referral=service_list_widget",
   "Virtual Consultation":
     "https://www.booktheskincarestudioct.com/booking-calendar/virtual-consult?referral=service_list_widget",
-  "In-Studio Consultation":
+  "In-Studio Facial Consultation":
     "https://www.booktheskincarestudioct.com/booking-calendar/consultations?referral=service_list_widget",
-  "Neuromodulator Consultation":
+  "Cosmetic Consultation - Neurotoxin":
     "https://www.booktheskincarestudioct.com/booking-calendar/consultation-for-neuromodulators?referral=service_list_widget",
+  "Lip Dermal Filler Consultation":
+    "https://www.booktheskincarestudioct.com/booking-calendar/lip-dermal-filler-consultation?referral=service_list_widget",
   "Laser Consultation":
     "https://www.booktheskincarestudioct.com/booking-calendar/laser-consult?referral=service_list_widget",
   "Hair Restoration Consultation":
     "https://www.booktheskincarestudioct.com/booking-calendar/hair-restoration-consultation?referral=service_list_widget",
+  "Body Consultation":
+    "https://www.booktheskincarestudioct.com/booking-calendar/body-consultation?referral=service_list_widget",
+  "Office Visit":
+    "https://www.booktheskincarestudioct.com/booking-calendar/office-visit?referral=service_list_widget",
+  "Brazilian Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/brazilian-wax?referral=service_list_widget",
+  "Brazilian & Eyebrow Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/brazilian-eyebrow-wax?referral=service_list_widget",
+  "Brazilian & Full Legs Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/brazilian-full-legs-wax?referral=service_list_widget",
+  "Buttox Strips Only":
+    "https://www.booktheskincarestudioct.com/booking-calendar/buttox-strips-only?referral=service_list_widget",
+  "Eyebrow & Upper Lip Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/eyebrow-upper-lip-wax?referral=service_list_widget",
+  "Eyebrow, Upper Lip & Chin Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/eyebrow-upper-lip-chin-wax?referral=service_list_widget",
+  "Full Arm Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/full-arm-wax?referral=service_list_widget",
+  "Full Back Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/full-back-wax?referral=service_list_widget",
+  "Full Legs & Feet Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/full-legs-feet-wax?referral=service_list_widget",
+  "Full Stomach Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/full-stomach-wax?referral=service_list_widget",
+  "Half Back Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/half-back-wax?referral=service_list_widget",
+  "Half Arm Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/half-arm-wax?referral=service_list_widget",
+  "Half Leg Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/half-leg-wax?referral=service_list_widget",
+  "Inner Thigh Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/inner-thigh-wax?referral=service_list_widget",
+  "Side of Face Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/side-of-face-wax?referral=service_list_widget",
+  "Strip Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/strip-wax?referral=service_list_widget",
+  "Underarm Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/underarm-wax?referral=service_list_widget",
+  "Upper Lip Wax":
+    "https://www.booktheskincarestudioct.com/booking-calendar/upper-lip-wax?referral=service_list_widget",
+  "Dermal Filler Follow-Up (In Person)":
+    "https://www.booktheskincarestudioct.com/booking-calendar/dermal-filler-follow-up-in-person?referral=service_list_widget",
+  "Neurotoxin Follow-Up (In Person)":
+    "https://www.booktheskincarestudioct.com/booking-calendar/neurotoxin-follow-up-in-person?referral=service_list_widget",
+  "In-Person Follow-Up":
+    "https://www.booktheskincarestudioct.com/booking-calendar/in-person-follow-up?referral=service_list_widget",
+  "Virtual Follow-Up":
+    "https://www.booktheskincarestudioct.com/booking-calendar/virtual-follow-up?referral=service_list_widget",
+  "Brow Lamination":
+    "https://www.booktheskincarestudioct.com/booking-calendar/brow-lamination?referral=service_list_widget",
+  "Brow Lamination + Tint + Shape":
+    "https://www.booktheskincarestudioct.com/booking-calendar/brow-lamination-tint-shape?referral=service_list_widget",
+  "Brow Shape + Tint":
+    "https://www.booktheskincarestudioct.com/booking-calendar/brow-shape-tint?referral=service_list_widget",
+  "Brow Shape":
+    "https://www.booktheskincarestudioct.com/booking-calendar/brow-shape?referral=service_list_widget",
+  "Brow Tint":
+    "https://www.booktheskincarestudioct.com/booking-calendar/brow-tint?referral=service_list_widget",
 }
 
 export const bookingPolicy = {
@@ -387,7 +471,7 @@ export const serviceFaqs = [
   },
   {
     q: "What services do you offer?",
-    a: "We offer consultations, neuromodulators (Botox, Letybo, Daxxify), dermal fillers, VI Peels, chemical peels, facials (Hydrafacial, GLO2Facial, microderm), microneedling, laser hair removal, laser treatments, and regenerative services like PRFM and facial balancing.",
+    a: "We offer consultations, neuromodulators (Botox, Letybo, Daxxify), dermal fillers, VI Peels, chemical peels, facials (Hydrafacial, GLO2Facial), microneedling, laser hair removal, laser treatments, and regenerative services like PRFM and facial balancing.",
   },
   {
     q: "Do you offer consultations before treatment?",
@@ -396,8 +480,8 @@ export const serviceFaqs = [
 ];
 
 export const popularServiceNames = [
-  'VI Peel Original', 'Polished Glow Microderm Facial', 'Hydrafacial Deluxe',
-  'Neurotoxin', 'Lip Filler', 'SkinPen Microneedling', 'In-Studio Consultation',
+  'VI Peel Original', 'GLO2Facial Signature', 'Hydrafacial Deluxe',
+  'Neurotoxin', 'Lip Filler', 'SkinPen Microneedling', 'In-Studio Facial Consultation',
 ]
 
 export const popularProductNames = [
@@ -419,20 +503,21 @@ export const serviceGroups = [
       { name: "The Refresh Neurotoxin", duration: "15-30 min", price: "$14 Per Unit", desc: "A quick neurotoxin touch-up to smooth fine lines and maintain a refreshed, natural look." },
       { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "A medical-grade chemical peel that improves skin tone, texture, and clarity with minimal downtime." },
       { name: "Lip Filler", duration: "45 min", price: "$600", desc: "Hyaluronic acid filler for subtle lip enhancement, improved symmetry, and natural fullness." },
-      { name: "Polished Glow Microderm Facial", duration: "1 hr", price: "$125", desc: "Gentle exfoliation facial that buffs away dead skin cells for an instant, radiant glow." },
       { name: "Skin Tag Removal", duration: "1 hr", price: "From $175", desc: "Safe, precise removal of skin tags with minimal discomfort and fast healing." },
       { name: "Cystic Acne Injection", duration: "15 min", price: "$35", desc: "Targeted cortisone injection to quickly reduce painful, deep cystic acne breakouts." },
-      { name: "Acne Clinic", duration: "30 min", price: "$99", desc: "Focused acne treatment session with extractions and corrective care for clearer skin." },
     ],
   },
   {
     title: "Consultations",
     services: [
       { name: "Virtual Consultation", duration: "45 min", price: "$100", desc: "Meet with our team remotely to discuss your skin goals and explore treatment options." },
-      { name: "In-Studio Consultation", duration: "1 hr", price: "From $100", desc: "Comprehensive in-person skin assessment with a personalized treatment plan." },
-      { name: "Neuromodulator Consultation", duration: "1 hr", price: "$100", desc: "Detailed evaluation to determine the best neurotoxin approach for your aesthetic goals." },
+      { name: "In-Studio Facial Consultation", duration: "1 hr", price: "$100", desc: "Comprehensive in-person skin assessment with a personalized treatment plan." },
+      { name: "Cosmetic Consultation - Neurotoxin", duration: "30 min", price: "$100", desc: "Detailed evaluation to determine the best neurotoxin approach for your aesthetic goals." },
+      { name: "Lip Dermal Filler Consultation", duration: "30 min", price: "$100", desc: "Focused consult on lip goals, filler options, and a personalized plan for natural-looking enhancement." },
       { name: "Laser Consultation", duration: "15 min", price: "$100", desc: "Skin analysis to determine candidacy and create a custom laser treatment plan." },
-      { name: "Hair Restoration Consultation", duration: "1 hr", price: "$150", desc: "In-depth assessment of hair loss concerns with PRP/PRFM treatment recommendations." },
+      { name: "Hair Restoration Consultation", duration: "30 min", price: "$150", desc: "In-depth assessment of hair loss concerns with PRP/PRFM treatment recommendations." },
+      { name: "Body Consultation", duration: "30 min", price: "$100", desc: "In-person discussion of body skin goals — tone, texture, acne, or rejuvenation — with a personalized plan for peels, lasers, or other body-appropriate options." },
+      { name: "Office Visit", duration: "30 min", price: "$75", desc: "In-office time for follow-up, questions, or matters that do not require a full consultation." },
     ],
   },
   {
@@ -440,7 +525,7 @@ export const serviceGroups = [
     services: [
       { name: "Neurotoxin", duration: "15-30 min", price: "$14 per unit", desc: "Letybo or Daxxify to smooth wrinkles and fine lines for a refreshed appearance." },
       { name: "Lip Filler", duration: "45 min", price: "$600", desc: "Hyaluronic acid filler for subtle lip enhancement, improved symmetry, and natural fullness." },
-      { name: "Dermal Fillers", duration: "1 hr", price: "Starting at $750", desc: "RHA fillers to restore volume, contour, and smooth deep lines." },
+      { name: "Dermal Fillers", duration: "1 hr", price: "From $850", desc: "RHA fillers to restore volume, contour, and smooth deep lines." },
       { name: "VAMP by Prollenium Skin Booster", duration: "15 min", price: "$175", desc: "PDRN (Salmon DNA) skin booster to rejuvenate and improve skin quality from within." },
       { name: "Facial Balancing", duration: "1 hr 30 min", price: "Inquire", desc: "Strategic filler placement across multiple areas for harmonious, natural facial proportions." },
     ],
@@ -450,6 +535,7 @@ export const serviceGroups = [
     services: [
       { name: "Undereye PRFM", duration: "1 hr 15 min", price: "$850", desc: "Platelet-rich fibrin matrix treatment to reduce dark circles, hollowing, and under-eye aging." },
       { name: "PRFM Full Face", duration: "1 hr 30 min", price: "$1,450", desc: "Full-face regenerative treatment using your own growth factors for collagen renewal and skin rejuvenation." },
+      { name: "Keravive Treatments", duration: "1 hr", price: "$125", desc: "HydraFacial Keravive scalp protocol — deep cleanse, exfoliation, and peptide-rich hydration to support a healthier scalp and fuller-looking hair." },
       { name: "NAD+", duration: "Varies", price: "Inquire", desc: "NAD+ IV therapy for cellular energy, anti-aging support, and overall wellness." },
       { name: "PRP Hair Restoration", duration: "1 hr", price: "Inquire", desc: "Platelet-rich plasma treatment to stimulate hair follicles and support healthier, thicker hair growth." },
     ],
@@ -460,8 +546,8 @@ export const serviceGroups = [
       { name: "SkinPen Microneedling", duration: "1 hr", price: "$475", desc: "FDA-cleared microneedling to stimulate collagen, reduce scars, and improve skin texture." },
       { name: "SkinPen Microneedling with PRP", duration: "1 hr 30 min", price: "$575", desc: "Microneedling enhanced with platelet-rich plasma for accelerated healing and deeper rejuvenation." },
       { name: "Nano Needling Brightening Facial", duration: "1 hr", price: "$300", desc: "Gentle nano-needling facial that infuses brightening serums for luminous, even-toned skin." },
-      { name: "Radiofrequency Microneedling", duration: "1 hr 30 min", price: "$625", desc: "Lutronic Genius RF microneedling for skin tightening, wrinkle reduction, and deep remodeling." },
-      { name: "Radiofrequency Microneedling with PRP", duration: "1 hr 30 min", price: "$725", desc: "RF microneedling combined with PRP for maximum collagen stimulation and skin renewal." },
+      { name: "Radiofrequency Microneedling", duration: "1 hr", price: "$625", desc: "Lutronic Genius RF microneedling for skin tightening, wrinkle reduction, and deep remodeling." },
+      { name: "Radiofrequency Microneedling with PRP", duration: "1 hr", price: "$725", desc: "RF microneedling combined with PRP for maximum collagen stimulation and skin renewal." },
     ],
   },
   {
@@ -478,35 +564,86 @@ export const serviceGroups = [
     services: [
       { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "Medium-depth peel for tone, texture, and anti-aging — suitable for all skin types." },
       { name: "VI Peel Advanced", duration: "35 min", price: "$410", desc: "Enhanced formula with boosted anti-aging ingredients for more mature skin concerns." },
+      { name: "VI Peel Purify", duration: "30 min", price: "$400", desc: "Medical-grade peel for acne-prone and oily skin — helps decongest pores, calm breakouts, and refine texture." },
       { name: "VI Peel Purify with Precision Plus", duration: "1 hr", price: "$410", desc: "Dual-action peel combining acne-clearing and pigment-correcting benefits in one treatment." },
+      { name: "VI Peel Precision + Peptides", duration: "35 min", price: "$415", desc: "Advanced VI Peel formula with peptides to support collagen, improve texture, and boost overall radiance." },
       { name: "VI Peel Body", duration: "1 hr", price: "From $400", desc: "A medical-grade body peel to improve tone, texture, and discoloration on larger treatment areas." },
     ],
   },
   {
-    title: "Chemical Peels + Corrective Treatments",
+    title: "Chemical Peels + Acne Treatments",
     services: [
-      { name: "The Radiance Peel", duration: "1 hr 15 min", price: "$205", desc: "Brightening chemical peel that reveals smoother, more luminous skin with a healthy glow." },
-      { name: "The Clarifying Peel", duration: "1 hr 15 min", price: "$205", desc: "Purifying peel designed to decongest pores, reduce breakouts, and improve skin clarity." },
+      { name: "Chemical Peel", duration: "1 hr 15 min", price: "$205", desc: "Brightening chemical peel that reveals smoother, more luminous skin with a healthy glow." },
+      { name: "PCA Body Chemical Peel", duration: "1 hr", price: "$200", desc: "Professional PCA body peel to improve tone, texture, and discoloration on areas like back, chest, or arms." },
+      { name: "Lip Peel", duration: "15 min", price: "$105", desc: "Quick, targeted peel for the lip area to smooth texture and brighten the lips and lip line." },
       { name: "Tox Booster with VI Peel", duration: "1 hr", price: "$400 + $10 per unit", desc: "Combination treatment pairing neurotoxin with a VI Peel for comprehensive rejuvenation." },
       { name: "Milia Extraction", duration: "45 min", price: "From $75", desc: "Professional extraction of small, hard white bumps (milia) for smoother skin." },
+      { name: "Acne Clinic", duration: "30 min", price: "$99", desc: "Focused acne treatment session with extractions and corrective care for clearer skin." },
       { name: "Cystic Acne Injection", duration: "15 min", price: "$35", desc: "Quick cortisone injection to calm painful, inflamed cystic acne lesions." },
+      { name: "4% Retinol Peel", duration: "1 hr", price: "$225", desc: "Professional-strength retinol peel to refine texture, soften fine lines, and support clearer, more even-toned skin." },
+      { name: "6% Retinol Peel", duration: "1 hr", price: "$300", desc: "Higher-strength retinol peel for more noticeable renewal — ideal when your skin is ready for a deeper corrective treatment." },
     ],
   },
   {
     title: "Facials",
     services: [
-      { name: "Polished Glow Microderm Facial", duration: "1 hr", price: "$125", desc: "Microdermabrasion facial for deep exfoliation, brighter skin, and a polished finish." },
+      { name: "Hydrafacial Signature", duration: "1 hr", price: "$225", desc: "The classic Hydrafacial experience — deep cleanse, gentle exfoliation, painless extractions, and hydrating infusion for healthy, glowing skin." },
       { name: "Hydrafacial Deluxe", duration: "1 hr 15 min", price: "$275", desc: "Multi-step Hydrafacial with cleansing, extraction, and hydration plus customized boosters." },
       { name: "Hydrafacial Platinum", duration: "1 hr 15 min", price: "$325", desc: "Our most advanced Hydrafacial with LED light therapy and lymphatic drainage for ultimate glow." },
+      { name: "Hydrafacial For Him", duration: "1 hr", price: "$150", desc: "Hydrafacial tailored for men’s skin — deep cleansing, exfoliation, extractions, and hydration for a clear, refreshed look." },
       { name: "GLO2Facial Signature", duration: "1 hr", price: "$225", desc: "Oxygenation facial that exfoliates, infuses nutrients, and gives skin an instant radiant boost." },
       { name: "GLO2Facial Deluxe", duration: "1 hr 30 min", price: "$275", desc: "Extended GLO2Facial with additional treatments for deeper hydration and enhanced results." },
-      { name: "iS Clinical Glow On The GO", duration: "30 min", price: "Inquire", desc: "Quick, targeted facial treatment for an instant glow — ideal for busy schedules." },
-      { name: "iS Clinical Fire & Ice Facial", duration: "1 hr", price: "Inquire", desc: "Signature treatment combining warming and cooling masks for rejuvenation and radiance." },
+      { name: "Glow On The GO", duration: "30 min", price: "Inquire", desc: "Quick, targeted facial treatment for an instant glow — ideal for busy schedules." },
+      { name: "Fire & Ice Facial", duration: "1 hr", price: "Inquire", desc: "Signature treatment combining warming and cooling masks for rejuvenation and radiance." },
+      { name: "Dermaplanning Facial", duration: "1 hr", price: "$215", desc: "Manual exfoliation that removes peach fuzz and dead skin for instantly smoother texture, brighter tone, and better product absorption." },
+      { name: "LED Express Facial", duration: "30 min", price: "$99", desc: "Express treatment with LED light therapy to support collagen, calm inflammation, and boost radiance — perfect when you’re short on time." },
+      { name: "Skincare Studio Facial", duration: "1 hr 15 min", price: "$200", desc: "Our signature full facial tailored to your skin — deep cleanse, exfoliation, extractions as needed, treatment mask, and finishing care for a refreshed glow." },
+      { name: "The Gentleman's Facial", duration: "1 hr", price: "$200", desc: "Facial designed for men’s skin — thorough cleansing, exfoliation, extractions when appropriate, and hydration for a clear, healthy complexion." },
+      { name: "Teen Acne Facial", duration: "1 hr", price: "$175", desc: "Age-appropriate facial designed for teen skin — gentle extractions, education, and a clear-skin plan." },
+      { name: "Back Facial", duration: "1 hr", price: "$175", desc: "Deep cleansing, exfoliation, extractions as needed, and hydration focused on the back — ideal for congestion, breakouts, or seasonal skin refresh." },
     ],
   },
   {
-    title: "Teen Treatments",
-    services: [{ name: "Teen Acne Facial", duration: "1 hr", price: "$175", desc: "Age-appropriate facial designed for teen skin — gentle extractions, education, and a clear-skin plan." }],
+    title: "Eyebrow Treatments",
+    services: [
+      { name: "Brow Lamination", duration: "1 hr", price: "$120", desc: "Sets brow hairs in a lifted, fuller direction for a polished, feathered look that lasts — ideal for sparse or unruly brows." },
+      { name: "Brow Lamination + Tint + Shape", duration: "1 hr", price: "$150", desc: "Full brow refresh: lamination plus custom tint and shaping for definition, depth, and a clean, symmetrical arch." },
+      { name: "Brow Shape", duration: "1 hr", price: "$30", desc: "Expert brow mapping and cleanup — wax, trim, or tweeze — for a defined arch that flatters your face." },
+      { name: "Brow Shape + Tint", duration: "1 hr", price: "$60", desc: "Professional shaping with a tint boost to enhance color and make brows look fuller without lamination." },
+      { name: "Brow Tint", duration: "45 min", price: "$35", desc: "Semi-permanent tint for brows to deepen color, fill gaps visually, and make daily makeup optional." },
+    ],
+  },
+  {
+    title: "Waxing Services",
+    services: [
+      { name: "Brazilian Wax", duration: "50 min", price: "$80", desc: "Full Brazilian waxing for smooth, long-lasting results with professional technique and comfort in mind." },
+      { name: "Brazilian & Eyebrow Wax", duration: "55 min", price: "$110", desc: "Brazilian wax plus brow shaping and cleanup for a polished, put-together look in one visit." },
+      { name: "Brazilian & Full Legs Wax", duration: "1 hr 30 min", price: "$120", desc: "Brazilian wax combined with full-leg hair removal for silky-smooth skin from brows to toes." },
+      { name: "Buttox Strips Only", duration: "20 min", price: "$30", desc: "Quick strip waxing for the buttocks area — smooth results in a short add-on style visit." },
+      { name: "Eyebrow & Upper Lip Wax", duration: "30 min", price: "$50", desc: "Brow shaping and cleanup plus upper lip waxing for a neat, defined look." },
+      { name: "Eyebrow, Upper Lip & Chin Wax", duration: "40 min", price: "$65", desc: "Facial wax combo for brows, upper lip, and chin — ideal for maintaining a polished complexion." },
+      { name: "Full Arm Wax", duration: "1 hr", price: "$55", desc: "Hair removal from shoulder to wrist for smooth, even arms." },
+      { name: "Full Back Wax", duration: "1 hr", price: "$60", desc: "Complete back waxing to remove unwanted hair and leave skin silky and clear." },
+      { name: "Full Legs & Feet Wax", duration: "1 hr 30 min", price: "$85", desc: "Full legs from hip to ankle plus feet for head-to-toe smoothness in one session." },
+      { name: "Full Stomach Wax", duration: "30 min", price: "$40", desc: "Removes hair across the stomach area for a clean, even look." },
+      { name: "Half Back Wax", duration: "45 min", price: "$60", desc: "Waxing for the upper or lower half of the back — ideal for maintenance between full backs." },
+      { name: "Half Arm Wax", duration: "35 min", price: "$35", desc: "Hair removal from either elbow to wrist or shoulder to elbow, depending on your preference." },
+      { name: "Half Leg Wax", duration: "30 min", price: "$55", desc: "Lower or upper half of the legs waxed smooth — great for touch-ups or seasonal upkeep." },
+      { name: "Inner Thigh Wax", duration: "20 min", price: "$25", desc: "Targets the inner thigh area for smooth skin and a clean line where chafing or stubble can bother you most." },
+      { name: "Side of Face Wax", duration: "30 min", price: "$20", desc: "Removes hair along the sideburns and side of the face for a softer, more defined profile." },
+      { name: "Strip Wax", duration: "10 min", price: "$15", desc: "Quick strip wax for a small zone — ideal as an add-on or between larger wax appointments." },
+      { name: "Underarm Wax", duration: "20 min", price: "$25", desc: "Fast underarm hair removal for long-lasting smoothness and less irritation than shaving." },
+      { name: "Upper Lip Wax", duration: "20 min", price: "$15", desc: "Removes upper lip hair for a clean, smooth look — perfect on its own or between brow appointments." },
+    ],
+  },
+  {
+    title: "Follow-Ups",
+    services: [
+      { name: "Dermal Filler Follow-Up (In Person)", duration: "15 min", price: "Free", desc: "Brief in-studio visit to check healing, symmetry, or results after dermal filler — complimentary when booked as a follow-up." },
+      { name: "Neurotoxin Follow-Up (In Person)", duration: "15 min", price: "Free", desc: "Short in-person check-in after neurotoxin treatment to assess your results and answer questions — complimentary follow-up visit." },
+      { name: "In-Person Follow-Up", duration: "15 min", price: "Free", desc: "A quick complimentary in-office follow-up for questions or a brief reassessment after a qualifying treatment." },
+      { name: "Virtual Follow-Up", duration: "15 min", price: "Free", desc: "Complimentary video check-in to review your progress, results, or next steps after a qualifying treatment." },
+    ],
   },
 ];
 

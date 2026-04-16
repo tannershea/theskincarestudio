@@ -93,7 +93,7 @@ export function BookingPage() {
 
   const filteredServiceGroups = useMemo(() => {
     const q = serviceSearch.trim().toLowerCase()
-    if (!q) return serviceGroups
+    if (!q) return serviceGroups.filter((g) => g.services.length > 0)
     return serviceGroups
       .map((g) => ({
         ...g,
