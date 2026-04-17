@@ -19,12 +19,14 @@ function AnnouncementBar() {
           <span className="mx-1.5 hidden text-white/40 sm:inline" aria-hidden>|</span>
           <span className="hidden sm:inline">April 1 – May 31 time slots only.</span>
           <span className="sm:hidden"> Apr 1 – May 31.</span>
-          <Link
-            to="/services"
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-0.5 text-[12px] font-bold tracking-wide text-white transition-all hover:bg-white/25 sm:text-[13px]"
           >
             Book now <span aria-hidden>→</span>
-          </Link>
+          </a>
         </p>
         <button
           type="button"
@@ -74,6 +76,8 @@ export function Header() {
           </a>
           <a
             href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-lg bg-accentNavy px-5 py-2.5 text-[15px] font-semibold tracking-tight text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90 hover:shadow-md"
           >
             Book Online
@@ -122,6 +126,8 @@ export function Header() {
             </NavLink>
             <a
               href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="mt-2 rounded-full bg-accentNavy py-3 text-center text-[15px] font-semibold tracking-tight text-white transition-all duration-200 hover:scale-105"
             >

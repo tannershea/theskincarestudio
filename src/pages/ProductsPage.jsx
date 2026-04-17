@@ -243,6 +243,8 @@ export function ProductsPage() {
           </p>
           <a
             href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:shadow-lg"
           >
             Book a Consultation

@@ -51,6 +51,8 @@ export function ContactPage() {
           </p>
           <a
             href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex rounded-lg bg-accentNavy px-6 py-3.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90"
           >
             Book Online
@@ -105,6 +107,8 @@ export function ContactPage() {
                 </div>
                 <a
                   href={bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-6 inline-flex rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90"
                 >
                   Go to Booking

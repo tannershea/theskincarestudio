@@ -31,6 +31,8 @@ export function StickyCTA() {
         </a>
         <a
           href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 rounded-full bg-accentNavy py-3 text-center text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105"
         >
           Book Online

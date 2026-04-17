@@ -1,61 +1,65 @@
-export const bookingUrl = "/services";
+/** General online booking (Podium). Per-service Acuity-style links: `serviceBookingUrlOverrides`. */
+export const bookingUrl =
+  "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753";
 
 /** Full booking URLs for services that use the external calendar instead of /book */
 export const serviceBookingUrlOverrides = {
   "Spring Special Neurotoxin":
-    "https://www.booktheskincarestudioct.com/booking-calendar/spring-special-neurotoxin?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/c4ebd3d1-447d-4e06-b1fe-1e6e5707963d",
   "Spring Special Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/spring-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/8fe6502c-7581-4471-acc0-7f300489bcc4",
   "The Refresh Neurotoxin":
-    "https://www.booktheskincarestudioct.com/booking-calendar/neurotoxin?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/1784a606-4b4a-4371-b867-711a02b336a4",
   "Neurotoxin":
-    "https://www.booktheskincarestudioct.com/booking-calendar/neurotoxin?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/caeef9db-2fec-45e3-a844-b649b2b9e878",
   "Lip Filler":
-    "https://www.booktheskincarestudioct.com/booking-calendar/lip-filler?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/85e9e4c8-c73e-41a6-b880-e98f031733fd",
   "Dermal Fillers":
-    "https://www.booktheskincarestudioct.com/booking-calendar/dermal-fillers?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/7520b5c0-59bb-4142-ae79-fa6d40c6f7cd",
   "VAMP by Prollenium Skin Booster":
-    "https://www.booktheskincarestudioct.com/booking-calendar/vamp-by-prollenium-skin-boosters?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/52489336-2726-43da-90fe-90e5622dbd69",
   "Facial Balancing":
-    "https://www.booktheskincarestudioct.com/booking-calendar/facial-balancing-1?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/71d7123f-37e4-4e9d-b6a5-7fede8c75cbf",
   "Undereye PRFM":
-    "https://www.booktheskincarestudioct.com/booking-calendar/undereye-prfm?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/fce572c9-e792-4473-9241-9cf1b8c194ca",
   "PRFM Full Face":
-    "https://www.booktheskincarestudioct.com/booking-calendar/prfm-full-face?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/ea4a07f2-730a-4685-87eb-fdef334829e6",
   "Keravive Treatments":
-    "https://www.booktheskincarestudioct.com/booking-calendar/keravive-treatments?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/109bdcbd-523a-477c-810a-c41a910259a5",
+  "NAD+":
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/6dca0d0b-641b-46f5-afa2-7f2c30d1e27f",
   "PRP Hair Restoration":
-    "https://www.booktheskincarestudioct.com/booking-calendar/hair-restoration-with-prp-injections?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/2be38d2f-81c8-4ed9-b30b-e0b457ee57a0",
   "SkinPen Microneedling":
-    "https://www.booktheskincarestudioct.com/booking-calendar/skinpen-microneedling-1?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/1b04ba7a-5a1d-432f-a8b3-db62e1979b5b",
   "SkinPen Microneedling with PRP":
-    "https://www.booktheskincarestudioct.com/booking-calendar/skinpen-with-prp-1?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/2448b80a-e629-4cf7-9953-9be77ce54a79",
   "Nano Needling Brightening Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/nanoneedling-brighting-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/2aa47bc5-e462-49f5-be45-e230480a0085",
   "Radiofrequency Microneedling":
-    "https://www.booktheskincarestudioct.com/booking-calendar/radiofrequency-microneedling-1?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/a807cc38-0fcd-4534-ae11-b646f13c2999",
   "Radiofrequency Microneedling with PRP":
-    "https://www.booktheskincarestudioct.com/booking-calendar/radio-frequency-microneedling-prp-1?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/5ba3f289-9654-42d9-9109-14988d0683ae",
   "Laser Hair Removal":
-    "https://www.booktheskincarestudioct.com/booking-calendar/laser-hair-removal?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/578ef5cb-6e88-47fb-9af6-b909e87f25d4",
   "Spider & Varicose Vein Removal":
-    "https://www.booktheskincarestudioct.com/booking-calendar/spider-varicose-vein-removal?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/95781ede-adc0-4c00-b73f-b39e61463878",
   "Laser Toning":
-    "https://www.booktheskincarestudioct.com/booking-calendar/laser-toning?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/854ae616-0cc3-46b7-ac1d-0ef0d415b6e5",
   "IPL Laser Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/ipl-laser-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/9d0957e2-0985-4c37-b9e8-83d7092a94cc",
   "VI Peel Original":
-    "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-original?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/9e94aa9a-8577-41f3-a692-d90c8a9b1da7",
   "VI Peel Advanced":
-    "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-advanced-9d7m7?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/f1147836-79a5-49fa-bda5-f6916f6519bd",
   "VI Peel Purify":
-    "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-purify?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/2ef01437-0638-4a59-af9b-4e616c68828c",
   "VI Peel Purify with Precision Plus":
-    "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-purify-with-precision-plus-zynvp?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/1a72030a-8a53-4793-8b1b-04eb71cfb644",
   "VI Peel Precision + Peptides":
-    "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-precision-plus-peptides?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/c826628d-ee04-439d-b99d-c14a1481f027",
   "VI Peel Body":
-    "https://www.booktheskincarestudioct.com/booking-calendar/vi-peel-body?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/c1435d11-d32f-41c0-b9e0-450eab7fe248",
   "Chemical Peel":
     "https://www.booktheskincarestudioct.com/booking-calendar/the-radiance-peel?referral=service_list_widget",
   "PCA Body Chemical Peel":
@@ -71,91 +75,91 @@ export const serviceBookingUrlOverrides = {
   "Milia Extraction":
     "https://www.booktheskincarestudioct.com/booking-calendar/milia-extraction?referral=service_list_widget",
   "Hydrafacial Signature":
-    "https://www.booktheskincarestudioct.com/booking-calendar/hydrafacial-signature?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/606c36d6-233a-4ca1-8124-fa7c3edeb924",
   "Hydrafacial Platinum":
-    "https://www.booktheskincarestudioct.com/booking-calendar/hydrafacial-platinum?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/43d9815c-10fe-4b60-b163-06991f7595b2",
   "Hydrafacial For Him":
-    "https://www.booktheskincarestudioct.com/booking-calendar/hydrafacial-for-him?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/23ef3b5a-b5f4-48b8-adfc-35cbf63b6d16",
   "GLO2Facial Signature":
-    "https://www.booktheskincarestudioct.com/booking-calendar/glo2facial-signature-3?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/0a41cd85-8bd2-413a-8c41-d0a37713ad47",
   "Hydrafacial Deluxe":
-    "https://www.booktheskincarestudioct.com/booking-calendar/hydrafacial-deluxe?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/6e122e58-3cad-428c-b6c5-f3f0709da0c2",
   "GLO2Facial Deluxe":
-    "https://www.booktheskincarestudioct.com/booking-calendar/glo2facial-deluxe-2?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/8405bfeb-79a3-4fd0-beb2-ec2143e7b7d9",
   "Glow On The GO":
-    "https://www.booktheskincarestudioct.com/booking-calendar/glow-on-the-go-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/dfae9987-e948-4da3-aa3d-9444cb01f385",
   "Fire & Ice Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/fire-ice-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2e-bfce464daf07",
   "Dermaplanning Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/dermaplanning-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/f1929517-e533-43e3-8b93-2b5097a78374",
   "LED Express Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/led-express-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/cf44a2da-7495-4681-902f-c1f0e23dbdae",
   "Skincare Studio Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/skincare-studio-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/15b728e0-df57-4431-b29c-216cf8578957",
   "The Gentleman's Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/the-gentlemans-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/5221cf0e-8e04-491d-93e7-114485b148ed",
   "Teen Acne Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/teen-acne-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e8880d47-fe2b-474e-9fc0-c575f7f4a242",
   "Back Facial":
-    "https://www.booktheskincarestudioct.com/booking-calendar/back-facial?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/0bf89278-3c1a-4080-a431-1b7281d630e9",
   "Skin Tag Removal":
-    "https://www.booktheskincarestudioct.com/booking-calendar/skin-tag?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/fb2cc0cc-b5ca-4919-8ee6-38f596eb5400",
   "Cystic Acne Injection":
-    "https://www.booktheskincarestudioct.com/booking-calendar/cystic-acne-injection?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/5f65c3cc-0f3f-4c93-b221-ffcf3f5c57ba",
   "Acne Clinic":
     "https://www.booktheskincarestudioct.com/booking-calendar/acne-clinic?referral=service_list_widget",
   "Virtual Consultation":
-    "https://www.booktheskincarestudioct.com/booking-calendar/virtual-consult?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/ac1be514-48a1-4679-96a3-6f1bbd27e742",
   "In-Studio Facial Consultation":
-    "https://www.booktheskincarestudioct.com/booking-calendar/consultations?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/7a2d76f6-a9af-45a1-9fd0-6187b89c762b",
   "Cosmetic Consultation - Neurotoxin":
-    "https://www.booktheskincarestudioct.com/booking-calendar/consultation-for-neuromodulators?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e83ffeaf-b8ec-421d-a86a-10a7aa47d125",
   "Lip Dermal Filler Consultation":
-    "https://www.booktheskincarestudioct.com/booking-calendar/lip-dermal-filler-consultation?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/39c2eeff-de20-45f2-af9f-21f03c1b256b",
   "Laser Consultation":
-    "https://www.booktheskincarestudioct.com/booking-calendar/laser-consult?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/d7703a93-d34a-4217-9fbc-931e872c0b48",
   "Hair Restoration Consultation":
-    "https://www.booktheskincarestudioct.com/booking-calendar/hair-restoration-consultation?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/aaa30a45-d3b1-4d90-afd1-9e2cfe3a10cb",
   "Body Consultation":
-    "https://www.booktheskincarestudioct.com/booking-calendar/body-consultation?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/cab94d35-0cd0-4fea-a714-80131c86cd73",
   "Office Visit":
-    "https://www.booktheskincarestudioct.com/booking-calendar/office-visit?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/ebae64e4-4220-4100-8fa2-677ff3b165c1",
   "Brazilian Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/brazilian-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/a37b8600-dd94-4401-91db-0790c23f0ba9",
   "Brazilian & Eyebrow Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/brazilian-eyebrow-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/3faf6449-4092-4099-b495-801e43145367",
   "Brazilian & Full Legs Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/brazilian-full-legs-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/6335a20f-57a4-4566-a2eb-53e0aaca2036",
   "Buttox Strips Only":
-    "https://www.booktheskincarestudioct.com/booking-calendar/buttox-strips-only?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/1b0668f0-a203-4966-a647-113930cde8ee",
   "Eyebrow & Upper Lip Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/eyebrow-upper-lip-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/eb5aa639-05e3-4f4b-9c58-7ff5d9f876c8",
   "Eyebrow, Upper Lip & Chin Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/eyebrow-upper-lip-chin-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/873cb466-db9b-4da8-bc58-8769d2390dd1",
   "Full Arm Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/full-arm-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/ff375866-65f5-4837-80e5-e8ac15cda156",
   "Full Back Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/full-back-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/30ba9056-d8b1-486b-818e-5a486d939388",
   "Full Legs & Feet Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/full-legs-feet-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/32bf0d8e-518f-4b29-91e6-b439686fb2c9",
   "Full Stomach Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/full-stomach-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/02e04d09-4745-4025-b9fd-da6842dde021",
   "Half Back Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/half-back-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/0e864c00-0240-4252-8075-ab00cbc75986",
   "Half Arm Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/half-arm-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/b31b0dd1-9ef1-47d8-a3f0-9722bb4f75bf",
   "Half Leg Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/half-leg-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/160b7d44-0085-431c-9deb-d8ead3367777",
   "Inner Thigh Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/inner-thigh-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/cca4f54b-a147-4519-a485-27c891761081",
   "Side of Face Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/side-of-face-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/3ab50296-bef0-4328-8e79-457e5e305d5b",
   "Strip Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/strip-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/cd3d41bf-0718-4327-8140-25ff62da5791",
   "Underarm Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/underarm-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e8cba34c-2f8b-4aa3-ba90-482cd3507ca0",
   "Upper Lip Wax":
-    "https://www.booktheskincarestudioct.com/booking-calendar/upper-lip-wax?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/276d63a5-94c2-4dff-88b8-162c3bbc5c1d",
   "Dermal Filler Follow-Up (In Person)":
     "https://www.booktheskincarestudioct.com/booking-calendar/dermal-filler-follow-up-in-person?referral=service_list_widget",
   "Neurotoxin Follow-Up (In Person)":
@@ -165,15 +169,15 @@ export const serviceBookingUrlOverrides = {
   "Virtual Follow-Up":
     "https://www.booktheskincarestudioct.com/booking-calendar/virtual-follow-up?referral=service_list_widget",
   "Brow Lamination":
-    "https://www.booktheskincarestudioct.com/booking-calendar/brow-lamination?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/23334d69-1ee7-4408-b684-e343833987d4",
   "Brow Lamination + Tint + Shape":
-    "https://www.booktheskincarestudioct.com/booking-calendar/brow-lamination-tint-shape?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/75ba69e7-768e-43e3-9dba-c6945c810b72",
   "Brow Shape + Tint":
-    "https://www.booktheskincarestudioct.com/booking-calendar/brow-shape-tint?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/988c46cb-2bb6-42b4-8d54-ca712d48aa4d",
   "Brow Shape":
-    "https://www.booktheskincarestudioct.com/booking-calendar/brow-shape?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/ca4ea427-b12d-4f1b-b434-27d9a1d35acb",
   "Brow Tint":
-    "https://www.booktheskincarestudioct.com/booking-calendar/brow-tint?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/5ebe6f2d-de23-4c3e-9861-346c3a3c29f8",
 }
 
 export const bookingPolicy = {
