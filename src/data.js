@@ -61,19 +61,19 @@ export const serviceBookingUrlOverrides = {
   "VI Peel Body":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/c1435d11-d32f-41c0-b9e0-450eab7fe248",
   "Chemical Peel":
-    "https://www.booktheskincarestudioct.com/booking-calendar/the-radiance-peel?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/24e5d365-3fa2-45f5-bc4f-e085300dfa62",
   "PCA Body Chemical Peel":
-    "https://www.booktheskincarestudioct.com/booking-calendar/pca-body-chemical-peel?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/41288b5a-8f9f-4511-9158-ef7abdf6c57e",
   "Lip Peel":
-    "https://www.booktheskincarestudioct.com/booking-calendar/lip-peel?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e7886e71-b509-425a-a5a6-dc7edbf43bfe",
   "4% Retinol Peel":
-    "https://www.booktheskincarestudioct.com/booking-calendar/4-retinol-peel?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/62148dc3-ce31-4db2-a484-ca0abafcaf00",
   "6% Retinol Peel":
-    "https://www.booktheskincarestudioct.com/booking-calendar/6-retinol-peel?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/9f9d1c8e-21ef-4db5-bb5e-3732909de184",
   "Tox Booster with VI Peel":
-    "https://www.booktheskincarestudioct.com/booking-calendar/tox-booster-with-vi-peel?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/db1498cb-8caa-4e6f-97ee-ca16a109e858",
   "Milia Extraction":
-    "https://www.booktheskincarestudioct.com/booking-calendar/milia-extraction?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/0ce25fbd-9b12-4e99-a8bb-82d064c1eb46",
   "Hydrafacial Signature":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/606c36d6-233a-4ca1-8124-fa7c3edeb924",
   "Hydrafacial Platinum":
@@ -89,7 +89,7 @@ export const serviceBookingUrlOverrides = {
   "Glow On The GO":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/dfae9987-e948-4da3-aa3d-9444cb01f385",
   "Fire & Ice Facial":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2e-bfce464daf07",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/a6a8eb92-c45f-4c3c-9c2e-bfce464daf07",
   "Dermaplanning Facial":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/f1929517-e533-43e3-8b93-2b5097a78374",
   "LED Express Facial":
@@ -107,7 +107,7 @@ export const serviceBookingUrlOverrides = {
   "Cystic Acne Injection":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/5f65c3cc-0f3f-4c93-b221-ffcf3f5c57ba",
   "Acne Clinic":
-    "https://www.booktheskincarestudioct.com/booking-calendar/acne-clinic?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/7bbe15af-716c-4401-a667-854d0e1495f4",
   "Virtual Consultation":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/ac1be514-48a1-4679-96a3-6f1bbd27e742",
   "In-Studio Facial Consultation":
@@ -161,13 +161,13 @@ export const serviceBookingUrlOverrides = {
   "Upper Lip Wax":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/276d63a5-94c2-4dff-88b8-162c3bbc5c1d",
   "Dermal Filler Follow-Up (In Person)":
-    "https://www.booktheskincarestudioct.com/booking-calendar/dermal-filler-follow-up-in-person?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/985c9483-1044-47e5-98e2-e21ca68bf802",
   "Neurotoxin Follow-Up (In Person)":
-    "https://www.booktheskincarestudioct.com/booking-calendar/neurotoxin-follow-up-in-person?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/8ba74434-dd93-479a-a0ed-7f6ea8fd01a4",
   "In-Person Follow-Up":
-    "https://www.booktheskincarestudioct.com/booking-calendar/in-person-follow-up?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/09df7313-3906-4b4d-83ac-b8ecf1971551",
   "Virtual Follow-Up":
-    "https://www.booktheskincarestudioct.com/booking-calendar/virtual-follow-up?referral=service_list_widget",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/aa721fca-48b2-4896-a5e8-bb1ebbdf679f",
   "Brow Lamination":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/23334d69-1ee7-4408-b684-e343833987d4",
   "Brow Lamination + Tint + Shape":
