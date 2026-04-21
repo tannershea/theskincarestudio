@@ -1,8 +1,25 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { contactDetails, openingHours, bookingUrl, logoSrc, socialLinks } from '../data'
 
 export function Footer() {
   const hoursOrdered = openingHours
+
+  useEffect(() => {
+    const existingWidgetScript = document.getElementById('podium-widget')
+    if (existingWidgetScript) return
+
+    const script = document.createElement('script')
+    script.id = 'podium-widget'
+    script.src = 'https://connect.podium.com/widget.js#ORG_TOKEN=b59877a0-1eaa-48a7-8b26-effacf7903a9'
+    script.async = true
+    script.setAttribute('data-organization-api-token', 'b59877a0-1eaa-48a7-8b26-effacf7903a9')
+    document.body.appendChild(script)
+
+    return () => {
+      script.remove()
+    }
+  }, [])
 
   return (
     <footer className="border-t border-warmStone bg-white">
