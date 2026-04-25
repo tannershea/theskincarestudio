@@ -20,9 +20,9 @@ export const serviceBookingUrlOverrides = {
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/52489336-2726-43da-90fe-90e5622dbd69",
   "Facial Balancing":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/71d7123f-37e4-4e9d-b6a5-7fede8c75cbf",
-  "Undereye PRFM":
+  "PRFM Small Area":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/fce572c9-e792-4473-9241-9cf1b8c194ca",
-  "PRFM Full Face":
+  "PRFM Large Area":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/ea4a07f2-730a-4685-87eb-fdef334829e6",
   "Keravive Treatments":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/109bdcbd-523a-477c-810a-c41a910259a5",
@@ -495,23 +495,7 @@ export const popularProductNames = [
 
 export const serviceGroups = [
   {
-    title: "Spring Specials",
-    services: [
-      { name: "Spring Special Neurotoxin", duration: "15-30 min", price: "$12 Per Unit", desc: "Limited-time spring pricing on neurotoxin to smooth fine lines and refresh your look." },
-      { name: "Spring Special Facial", duration: "45 min", price: "$125", desc: "A 45-minute brightening facial — no extractions, no dermaplaning. The perfect spring glow-up." },
-    ],
-  },
-  {
-    title: "Client Favorites",
-    services: [
-      { name: "The Refresh Neurotoxin", duration: "15-30 min", price: "$14 Per Unit", desc: "A quick neurotoxin touch-up to smooth fine lines and maintain a refreshed, natural look." },
-      { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "A medical-grade chemical peel that improves skin tone, texture, and clarity with minimal downtime." },
-      { name: "Lip Filler", duration: "45 min", price: "$600", desc: "Hyaluronic acid filler for subtle lip enhancement, improved symmetry, and natural fullness." },
-      { name: "Skin Tag Removal", duration: "1 hr", price: "From $175", desc: "Safe, precise removal of skin tags with minimal discomfort and fast healing." },
-      { name: "Cystic Acne Injection", duration: "15 min", price: "$35", desc: "Targeted cortisone injection to quickly reduce painful, deep cystic acne breakouts." },
-    ],
-  },
-  {
+    category: "Begin Your Journey",
     title: "Consultations",
     services: [
       { name: "Virtual Consultation", duration: "45 min", price: "$100", desc: "Meet with our team remotely to discuss your skin goals and explore treatment options." },
@@ -525,6 +509,26 @@ export const serviceGroups = [
     ],
   },
   {
+    category: "Clinical Skin & Dermatology Care",
+    title: "Acne Treatments",
+    services: [
+      { name: "Acne Clinic", duration: "30 min", price: "$99", desc: "Focused acne treatment session with extractions and corrective care for clearer skin." },
+      { name: "Cystic Acne Injection", duration: "15 min", price: "$35", desc: "Quick cortisone injection to calm painful, inflamed cystic acne lesions." },
+      { name: "Milia Extraction", duration: "45 min", price: "From $75", desc: "Professional extraction of small, hard white bumps (milia) for smoother skin." },
+    ],
+  },
+  {
+    category: "Clinical Skin & Dermatology Care",
+    title: "Follow-Ups",
+    services: [
+      { name: "Dermal Filler Follow-Up (In Person)", duration: "15 min", price: "Free", desc: "Brief in-studio visit to check healing, symmetry, or results after dermal filler — complimentary when booked as a follow-up." },
+      { name: "Neurotoxin Follow-Up (In Person)", duration: "15 min", price: "Free", desc: "Short in-person check-in after neurotoxin treatment to assess your results and answer questions — complimentary follow-up visit." },
+      { name: "In-Person Follow-Up", duration: "15 min", price: "Free", desc: "A quick complimentary in-office follow-up for questions or a brief reassessment after a qualifying treatment." },
+      { name: "Virtual Follow-Up", duration: "15 min", price: "Free", desc: "Complimentary video check-in to review your progress, results, or next steps after a qualifying treatment." },
+    ],
+  },
+  {
+    category: "Injectable Treatments",
     title: "Cosmetic Injectables",
     services: [
       { name: "Neurotoxin", duration: "15-30 min", price: "$14 per unit", desc: "Letybo or Daxxify to smooth wrinkles and fine lines for a refreshed appearance." },
@@ -535,16 +539,17 @@ export const serviceGroups = [
     ],
   },
   {
-    title: "PRFM + Regenerative Treatments",
+    category: "Advanced Skin Rejuvenation",
+    title: "Laser Treatments",
     services: [
-      { name: "Undereye PRFM", duration: "1 hr 15 min", price: "$850", desc: "Platelet-rich fibrin matrix treatment to reduce dark circles, hollowing, and under-eye aging." },
-      { name: "PRFM Full Face", duration: "1 hr 30 min", price: "$1,450", desc: "Full-face regenerative treatment using your own growth factors for collagen renewal and skin rejuvenation." },
-      { name: "Keravive Treatments", duration: "1 hr", price: "$125", desc: "HydraFacial Keravive scalp protocol — deep cleanse, exfoliation, and peptide-rich hydration to support a healthier scalp and fuller-looking hair." },
-      { name: "NAD+", duration: "Varies", price: "Inquire", desc: "NAD+ IV therapy for cellular energy, anti-aging support, and overall wellness." },
-      { name: "PRP Hair Restoration", duration: "1 hr", price: "Inquire", desc: "Platelet-rich plasma treatment to stimulate hair follicles and support healthier, thicker hair growth." },
+      { name: "Laser Hair Removal", duration: "15 min", price: "$175-$250", desc: "Lutronic Clarity II laser for safe, effective hair reduction on all skin types and tones." },
+      { name: "Spider & Varicose Vein Removal", duration: "1 hr", price: "From $250", desc: "Targeted laser treatment to reduce the appearance of spider veins and small varicose veins." },
+      { name: "Laser Toning", duration: "30 min", price: "$350", desc: "Low-energy laser passes to even out skin tone, reduce pigmentation, and improve clarity." },
+      { name: "IPL Laser Facial", duration: "30 min", price: "$375", desc: "Intense pulsed light treatment to target sun damage, redness, and uneven pigmentation." },
     ],
   },
   {
+    category: "Advanced Skin Rejuvenation",
     title: "Microneedling",
     services: [
       { name: "SkinPen Microneedling", duration: "1 hr", price: "$475", desc: "FDA-cleared microneedling to stimulate collagen, reduce scars, and improve skin texture." },
@@ -555,15 +560,30 @@ export const serviceGroups = [
     ],
   },
   {
-    title: "Laser Treatments",
+    category: "Advanced Skin Rejuvenation",
+    title: "PRFM + Regenerative Treatments",
     services: [
-      { name: "Laser Hair Removal", duration: "15 min", price: "$175-$250", desc: "Lutronic Clarity II laser for safe, effective hair reduction on all skin types and tones." },
-      { name: "Spider & Varicose Vein Removal", duration: "1 hr", price: "From $250", desc: "Targeted laser treatment to reduce the appearance of spider veins and small varicose veins." },
-      { name: "Laser Toning", duration: "30 min", price: "$350", desc: "Low-energy laser passes to even out skin tone, reduce pigmentation, and improve clarity." },
-      { name: "IPL Laser Facial", duration: "30 min", price: "$375", desc: "Intense pulsed light treatment to target sun damage, redness, and uneven pigmentation." },
+      { name: "PRFM Small Area", duration: "1 hr 15 min", price: "$850", desc: "Platelet-rich fibrin matrix treatment to reduce dark circles, hollowing, and under-eye aging." },
+      { name: "PRFM Large Area", duration: "1 hr 30 min", price: "$1,450", desc: "Full-face regenerative treatment using your own growth factors for collagen renewal and skin rejuvenation." },
+      { name: "Keravive Treatments", duration: "1 hr", price: "$125", desc: "HydraFacial Keravive scalp protocol — deep cleanse, exfoliation, and peptide-rich hydration to support a healthier scalp and fuller-looking hair." },
+      { name: "NAD+", duration: "Varies", price: "Inquire", desc: "NAD+ IV therapy for cellular energy, anti-aging support, and overall wellness." },
+      { name: "PRP Hair Restoration", duration: "1 hr", price: "Inquire", desc: "Platelet-rich plasma treatment to stimulate hair follicles and support healthier, thicker hair growth." },
     ],
   },
   {
+    category: "Advanced Skin Rejuvenation",
+    title: "Chemical Peels",
+    services: [
+      { name: "Chemical Peel", duration: "1 hr 15 min", price: "$205", desc: "Brightening chemical peel that reveals smoother, more luminous skin with a healthy glow." },
+      { name: "PCA Body Chemical Peel", duration: "1 hr", price: "$200", desc: "Professional PCA body peel to improve tone, texture, and discoloration on areas like back, chest, or arms." },
+      { name: "Lip Peel", duration: "15 min", price: "$105", desc: "Quick, targeted peel for the lip area to smooth texture and brighten the lips and lip line." },
+      { name: "Tox Booster with VI Peel", duration: "1 hr", price: "$400 + $10 per unit", desc: "Combination treatment pairing neurotoxin with a VI Peel for comprehensive rejuvenation." },
+      { name: "4% Retinol Peel", duration: "1 hr", price: "$225", desc: "Professional-strength retinol peel to refine texture, soften fine lines, and support clearer, more even-toned skin." },
+      { name: "6% Retinol Peel", duration: "1 hr", price: "$300", desc: "Higher-strength retinol peel for more noticeable renewal — ideal when your skin is ready for a deeper corrective treatment." },
+    ],
+  },
+  {
+    category: "Advanced Skin Rejuvenation",
     title: "VI Peels",
     services: [
       { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "Medium-depth peel for tone, texture, and anti-aging — suitable for all skin types." },
@@ -575,20 +595,7 @@ export const serviceGroups = [
     ],
   },
   {
-    title: "Chemical Peels + Acne Treatments",
-    services: [
-      { name: "Chemical Peel", duration: "1 hr 15 min", price: "$205", desc: "Brightening chemical peel that reveals smoother, more luminous skin with a healthy glow." },
-      { name: "PCA Body Chemical Peel", duration: "1 hr", price: "$200", desc: "Professional PCA body peel to improve tone, texture, and discoloration on areas like back, chest, or arms." },
-      { name: "Lip Peel", duration: "15 min", price: "$105", desc: "Quick, targeted peel for the lip area to smooth texture and brighten the lips and lip line." },
-      { name: "Tox Booster with VI Peel", duration: "1 hr", price: "$400 + $10 per unit", desc: "Combination treatment pairing neurotoxin with a VI Peel for comprehensive rejuvenation." },
-      { name: "Milia Extraction", duration: "45 min", price: "From $75", desc: "Professional extraction of small, hard white bumps (milia) for smoother skin." },
-      { name: "Acne Clinic", duration: "30 min", price: "$99", desc: "Focused acne treatment session with extractions and corrective care for clearer skin." },
-      { name: "Cystic Acne Injection", duration: "15 min", price: "$35", desc: "Quick cortisone injection to calm painful, inflamed cystic acne lesions." },
-      { name: "4% Retinol Peel", duration: "1 hr", price: "$225", desc: "Professional-strength retinol peel to refine texture, soften fine lines, and support clearer, more even-toned skin." },
-      { name: "6% Retinol Peel", duration: "1 hr", price: "$300", desc: "Higher-strength retinol peel for more noticeable renewal — ideal when your skin is ready for a deeper corrective treatment." },
-    ],
-  },
-  {
+    category: "Skin Maintenance & Facials",
     title: "Facials",
     services: [
       { name: "Hydrafacial Signature", duration: "1 hr", price: "$225", desc: "The classic Hydrafacial experience — deep cleanse, gentle exfoliation, painless extractions, and hydrating infusion for healthy, glowing skin." },
@@ -608,6 +615,7 @@ export const serviceGroups = [
     ],
   },
   {
+    category: "Brows & Beauty Enhancements",
     title: "Eyebrow Treatments",
     services: [
       { name: "Brow Lamination", duration: "1 hr", price: "$120", desc: "Sets brow hairs in a lifted, fuller direction for a polished, feathered look that lasts — ideal for sparse or unruly brows." },
@@ -618,6 +626,7 @@ export const serviceGroups = [
     ],
   },
   {
+    category: "Brows & Beauty Enhancements",
     title: "Waxing Services",
     services: [
       { name: "Brazilian Wax", duration: "50 min", price: "$80", desc: "Full Brazilian waxing for smooth, long-lasting results with professional technique and comfort in mind." },
@@ -641,12 +650,22 @@ export const serviceGroups = [
     ],
   },
   {
-    title: "Follow-Ups",
+    category: "Most Loved Treatments",
+    title: "Client Favorites",
     services: [
-      { name: "Dermal Filler Follow-Up (In Person)", duration: "15 min", price: "Free", desc: "Brief in-studio visit to check healing, symmetry, or results after dermal filler — complimentary when booked as a follow-up." },
-      { name: "Neurotoxin Follow-Up (In Person)", duration: "15 min", price: "Free", desc: "Short in-person check-in after neurotoxin treatment to assess your results and answer questions — complimentary follow-up visit." },
-      { name: "In-Person Follow-Up", duration: "15 min", price: "Free", desc: "A quick complimentary in-office follow-up for questions or a brief reassessment after a qualifying treatment." },
-      { name: "Virtual Follow-Up", duration: "15 min", price: "Free", desc: "Complimentary video check-in to review your progress, results, or next steps after a qualifying treatment." },
+      { name: "The Refresh Neurotoxin", duration: "15-30 min", price: "$14 Per Unit", desc: "A quick neurotoxin touch-up to smooth fine lines and maintain a refreshed, natural look." },
+      { name: "VI Peel Original", duration: "35 min", price: "$400", desc: "A medical-grade chemical peel that improves skin tone, texture, and clarity with minimal downtime." },
+      { name: "Lip Filler", duration: "45 min", price: "$600", desc: "Hyaluronic acid filler for subtle lip enhancement, improved symmetry, and natural fullness." },
+      { name: "Skin Tag Removal", duration: "1 hr", price: "From $175", desc: "Safe, precise removal of skin tags with minimal discomfort and fast healing." },
+      { name: "Cystic Acne Injection", duration: "15 min", price: "$35", desc: "Targeted cortisone injection to quickly reduce painful, deep cystic acne breakouts." },
+    ],
+  },
+  {
+    category: "Exclusive Offers",
+    title: "Spring Specials",
+    services: [
+      { name: "Spring Special Neurotoxin", duration: "15-30 min", price: "$12 Per Unit", desc: "Limited-time spring pricing on neurotoxin to smooth fine lines and refresh your look." },
+      { name: "Spring Special Facial", duration: "45 min", price: "$125", desc: "A 45-minute brightening facial — no extractions, no dermaplaning. The perfect spring glow-up." },
     ],
   },
 ];
