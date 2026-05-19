@@ -19,6 +19,7 @@ import { TikTokFeed } from '../components/TikTokFeed'
 import { BeforeAfter } from '../components/BeforeAfter'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { CountUp } from '../components/CountUp'
+import { ZoomableImage } from '../components/learn/ZoomableImage'
 
 const heroImages = [
   '/hero-studio-wall-branding.png',
@@ -180,11 +181,11 @@ export function HomePage() {
             </ScrollReveal>
             <ScrollReveal direction="right" delay={100}>
             <div className="overflow-hidden rounded-xl shadow-[0_4px_24px_-4px_rgba(22,50,80,0.08)] sm:rounded-2xl">
-              <img
+              <ZoomableImage
                 src="/home-about-studio-reception.png"
                 alt="Reception at The Skincare Studio in Stratford, white desk, orchids, and Revanesse signage in Paradise Green"
                 className="aspect-[4/3] w-full object-cover object-[center_top] sm:aspect-[4/5]"
-                loading="lazy"
+                wrapperClassName="block w-full"
               />
             </div>
             </ScrollReveal>
@@ -264,11 +265,11 @@ export function HomePage() {
             <ScrollReveal direction="left" delay={0}>
             <div className="order-2 lg:order-1">
               <div className="overflow-hidden rounded-xl shadow-sm sm:rounded-2xl">
-                <img
+                <ZoomableImage
                   src="/home-treatment-philosophy.png"
                   alt="One-on-one treatment consultation at The Skincare Studio, with provider in embroidered lab coat and client in Stratford, CT"
                   className="aspect-[4/3] w-full object-cover object-[center_30%] sm:aspect-[3/4]"
-                  loading="lazy"
+                  wrapperClassName="block w-full"
                 />
               </div>
             </div>

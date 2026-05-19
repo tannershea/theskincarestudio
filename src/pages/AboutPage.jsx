@@ -9,9 +9,9 @@ import { TeamMemberGrid } from '../components/TeamMemberGrid'
 import { ZoomableImage } from '../components/learn/ZoomableImage'
 
 const aboutHeroImages = [
+  '/about-hero-team.png',
   '/about-storefront.png',
   '/about-brbc-award.png',
-  '/about-botox-display.png',
 ]
 
 function AboutHeroCarousel() {
@@ -263,8 +263,8 @@ export function AboutPage() {
             <ScrollReveal direction="left" delay={0}>
               <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-sm h-full">
                 <ZoomableImage
-                  src="/about-team-reception.png"
-                  alt="The Skincare Studio team at the reception desk in Stratford, CT, welcoming clients beneath the studio logo"
+                  src="/about-our-story.png"
+                  alt="LED magnifying glasses and clinical treatment tools in The Skincare Studio workspace in Stratford, CT"
                   className="h-full min-h-[240px] w-full object-cover object-center sm:min-h-[280px]"
                   wrapperClassName="block h-full w-full"
                 />
