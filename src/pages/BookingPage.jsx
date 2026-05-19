@@ -317,7 +317,7 @@ export function BookingPage() {
               {/* Calendar */}
               <div>
                 <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Select Date</h2>
-                <p className="mt-1 text-sm text-slate-500">Weekend slots fill fast — book ahead for best availability</p>
+                <p className="mt-1 text-sm text-slate-500">Weekend slots fill fast, book ahead for best availability</p>
                 <div className="mt-4 flex items-center justify-between gap-4">
                   <button
                     type="button"
@@ -406,7 +406,7 @@ className={`rounded-xl border px-4 py-2.5 text-sm transition-all duration-200 ho
               {/* Add Service */}
               <div>
                 <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Add Service</h2>
-                <p className="mt-1 text-sm text-slate-500">Select one or more services — 224+ clients love our treatments</p>
+                <p className="mt-1 text-sm text-slate-500">Select one or more services, 224+ clients love our treatments</p>
                 <div className="mt-4">
                   <input
                     type="search"
@@ -499,7 +499,7 @@ className={`rounded-xl border px-4 py-2.5 text-sm transition-all duration-200 ho
               {/* Reserve Product */}
               <div>
                 <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Reserve Products</h2>
-                <p className="mt-1 text-sm text-slate-500">Reserve products to purchase at your appointment — pick up in-store, no shipping</p>
+                <p className="mt-1 text-sm text-slate-500">Reserve products to purchase at your appointment, pick up in-store, no shipping</p>
                 <div className="mt-4">
                   <input
                     type="search"
@@ -585,7 +585,7 @@ className={`rounded-xl border px-4 py-2.5 text-sm transition-all duration-200 ho
               {/* Photo Upload */}
               <div>
                 <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Pre-Assessment Photos</h2>
-                <p className="mt-1 text-sm text-slate-500">Send a pic — so we can start our assessment</p>
+                <p className="mt-1 text-sm text-slate-500">Send a pic, so we can start our assessment</p>
                 <div className="mt-4">
                   <input
                     ref={fileInputRef}
@@ -622,7 +622,7 @@ className={`rounded-xl border px-4 py-2.5 text-sm transition-all duration-200 ho
               {/* Contact Info */}
               <div className="rounded-2xl border border-slate-200 bg-cream/50 p-6">
                 <h2 className="font-serif text-2xl font-semibold tracking-tight text-accentNavy">Your Information</h2>
-                <p className="mt-1 text-sm text-slate-500">We'll call or email within 24 hours to confirm — no charge until you arrive</p>
+                <p className="mt-1 text-sm text-slate-500">We'll call or email within 24 hours to confirm, no charge until you arrive</p>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="booking-name" className="block text-sm text-slate-700">Name</label>
@@ -765,7 +765,7 @@ className={`rounded-xl border px-4 py-2.5 text-sm transition-all duration-200 ho
                   Request Appointment
                 </button>
                 <p className="text-center text-xs text-slate-500 sm:text-left">
-                  Questions? Call <a href={`tel:${contactDetails.phone}`} className="font-medium text-accentBlue hover:underline">{contactDetails.phone}</a> — we're happy to help.
+                  Questions? Call <a href={`tel:${contactDetails.phone}`} className="font-medium text-accentBlue hover:underline">{contactDetails.phone}</a>, we're happy to help.
                 </p>
               </div>
 

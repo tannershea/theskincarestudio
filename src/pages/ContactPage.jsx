@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { bookingUrl, contactDetails, openingHours, serviceAreas, localBusinessSchema, googleMapsUrl } from '../data'
+import { bookingUrl, contactDetails, openingHours, localBusinessSchema, googleMapsUrl } from '../data'
+
+/** Shared shell so every card reads as part of one system */
+const CARD = 'rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm sm:p-8'
+const CARD_Navy = 'rounded-2xl border border-white/20 bg-accentNavy p-6 text-white shadow-sm sm:p-8'
+const CARD_GREEN = 'rounded-2xl border border-accentGreen/25 bg-softGreen/25 p-6 shadow-sm sm:p-8'
+const CARD_MEDIA = 'rounded-2xl border border-slate-200/90 bg-gradient-to-b from-white to-cream/40 p-4 shadow-sm sm:p-6'
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -35,8 +41,8 @@ export function ContactPage() {
         <meta property="og:description" content="Visit us at 3586 Main Street, Paradise Green. Call 203-377-0166 or book online. Serving Fairfield County." />
         <meta property="og:url" content="https://www.theskincarestudioct.com/contact" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.theskincarestudioct.com/studio-lounge.png" />
-        <meta property="og:image:alt" content="The Skincare Studio Medical Spa in Paradise Green, Stratford, CT" />
+        <meta property="og:image" content="https://www.theskincarestudioct.com/contact-studio-sign.png" />
+        <meta property="og:image:alt" content="The Skin Care Studio lobby sign with social and website QR codes at the Stratford studio" />
         <script type="application/ld+json">{JSON.stringify(schemaOrg)}</script>
       </Helmet>
 
@@ -62,71 +68,51 @@ export function ContactPage() {
 
       <section className="border-t border-warmStone/50 bg-white py-9 md:py-12 lg:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <div className="grid gap-6 sm:gap-8 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
-            <div className="space-y-6">
-              <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-sm">
+          <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 lg:items-start lg:gap-10 xl:gap-12">
+            <div className="flex flex-col gap-6">
+              <div className={`${CARD_MEDIA} overflow-hidden`}>
                 <img
-                  src="/studio-lounge.png"
-                  alt="Welcoming reception and lounge area at The Skincare Studio in Paradise Green"
-                  className="aspect-[4/3] w-full object-cover"
+                  src="/contact-studio-sign.png"
+                  alt="The Skin Care Studio reception sign with QR codes linking to Facebook, Instagram @theskincarestudio.ct, and the studio website"
+                  className="mx-auto block w-full max-w-sm object-contain object-center sm:max-w-md"
                 />
               </div>
-              <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-8 md:p-10">
+              <div className={CARD}>
                 <h2 className="font-serif text-xl tracking-tight text-accentNavy sm:text-2xl">The Skincare Studio Medical Spa</h2>
-                <div className="mt-5 space-y-5 sm:mt-8 sm:space-y-6">
+                <div className="mt-6 space-y-6">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Visit Us</p>
                     <p className="mt-2 text-[15px] leading-[1.6] text-slate-600">{contactDetails.addressLine1}</p>
                     <p className="text-[15px] leading-[1.6] text-slate-600">{contactDetails.addressLine2}</p>
                   </div>
-                  <div>
+                  <div className="border-t border-warmStone/40 pt-6">
                     <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Call Us</p>
                     <a href={`tel:${contactDetails.phone}`} className="mt-2 inline-block font-semibold text-accentNavy transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">
                       {contactDetails.phone}
                     </a>
                     <p className="text-sm leading-relaxed text-slate-500">Available during business hours</p>
                   </div>
-                  <div>
+                  <div className="border-t border-warmStone/40 pt-6">
                     <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Email</p>
-                    <a href={`mailto:${contactDetails.email}`} className="mt-2 inline-block font-semibold text-accentNavy transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">
+                    <a href={`mailto:${contactDetails.email}`} className="mt-2 inline-block font-semibold text-accentNavy transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left [overflow-wrap:anywhere]">
                       {contactDetails.email}
                     </a>
                   </div>
                 </div>
               </div>
-
-              <div className="rounded-xl border border-slate-200 bg-softGreen/30 p-5 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Hours</p>
-                <div className="mt-4 space-y-3 text-[15px] leading-[1.6] text-slate-600">
-                  {openingHours.map((item) => (
-                    <div key={item.days} className="flex justify-between gap-4">
-                      <p className="font-semibold text-accentNavy">{item.days}</p>
-                      <p>{item.hours}</p>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href={bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90"
-                >
-                  Go to Booking
-                </a>
-              </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="rounded-xl bg-accentNavy p-5 text-white sm:p-8 md:p-10">
+            <div className="flex flex-col gap-6">
+              <div className={CARD_Navy}>
                 <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">Studio note</p>
                 <p className="mt-4 text-[15px] leading-[1.75] text-slate-100">
                   Whether you are new to aesthetic treatments or maintaining results you love, our team is committed to creating a comfortable, elevated experience with personalized care for every client.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-8 md:p-10">
-                <h3 className="font-serif text-lg tracking-tight text-accentNavy sm:text-xl">Send a Message</h3>
-                <form onSubmit={handleSubmit} className="mt-5 space-y-4 sm:mt-6 sm:space-y-5">
+              <div className={`${CARD} flex flex-col`}>
+                <h3 className="font-serif text-xl tracking-tight text-accentNavy sm:text-2xl">Send a Message</h3>
+                <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm tracking-wide text-slate-700">Name</label>
                     <input
@@ -176,17 +162,37 @@ export function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="rounded-full bg-accentNavy px-8 py-3.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90 sm:w-auto"
+                    className="mt-2 w-full rounded-xl bg-accentNavy px-8 py-3.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-[1.02] hover:bg-accentNavy/90 sm:mt-0 sm:ml-auto sm:w-auto sm:self-end"
                   >
                     Send Message
                   </button>
                 </form>
               </div>
+
+              <div className={`${CARD_GREEN} flex flex-col`}>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Hours</p>
+                <ul className="mt-4 list-none divide-y divide-slate-200/80 border-y border-slate-200/80">
+                  {openingHours.map((item) => (
+                    <li key={item.days} className="flex justify-between gap-4 py-3.5 text-[15px] leading-[1.6]">
+                      <p className="font-semibold text-accentNavy">{item.days}</p>
+                      <p className="text-right tabular-nums text-slate-600">{item.hours}</p>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex w-full shrink-0 items-center justify-center rounded-xl bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-[1.02] hover:bg-accentNavy/90 sm:w-auto"
+                >
+                  Go to Booking
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="mt-6 space-y-3 sm:mt-10">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+          <div className="mt-6 space-y-4 sm:mt-10">
+            <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm">
               <iframe
                 title="The Skincare Studio location on Google Maps"
                 src="https://www.google.com/maps?q=The+Skincare+Studio+Medical+Spa+3586+Main+Street+Stratford+CT+06614&output=embed"
@@ -203,7 +209,7 @@ export function ContactPage() {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-accentNavy transition-all duration-200 hover:scale-[1.02] hover:border-accentBlue hover:shadow-md"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl border border-slate-200/90 bg-white px-5 py-3.5 text-sm font-semibold text-accentNavy shadow-sm transition-all duration-200 hover:scale-[1.02] hover:border-accentBlue hover:shadow-md"
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" />

@@ -77,8 +77,10 @@ export function Footer() {
               <nav className="mt-3 flex flex-col items-start gap-1.5 text-[14px] leading-snug text-slate-600 sm:gap-2 sm:text-[15px] sm:leading-[1.6]">
                 <Link to="/" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Home</Link>
                 <Link to="/services" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Services</Link>
+                <Link to="/learn" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Learn</Link>
                 <Link to="/aftercare" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Aftercare</Link>
                 <Link to="/products" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Products</Link>
+                <Link to="/about" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">About Us</Link>
                 <Link to="/contact" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Contact Us</Link>
                 <Link to="/terms" className="inline-block text-pretty transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">
                   Terms &amp; Conditions

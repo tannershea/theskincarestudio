@@ -11,6 +11,8 @@ import { TermsPage } from './pages/TermsPage'
 import { ProductsPage } from './pages/ProductsPage'
 import { BookingPage } from './pages/BookingPage'
 import { AftercarePage } from './pages/AftercarePage'
+import { LearnHubPage } from './pages/LearnHubPage'
+import { LearnTopicPage } from './pages/LearnTopicPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -27,6 +29,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/learn" element={<LearnHubPage />} />
+          <Route path="/learn/:slug" element={<LearnTopicPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/book" element={<BookingPage />} />

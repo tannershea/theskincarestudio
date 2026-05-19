@@ -108,8 +108,8 @@ export const products = [
   { name: 'UV Daily Deep Tinted Face Sunscreen', brand: 'Elta MD', price: '$42', desc: 'Sheer tinted broad-spectrum sunscreen with hyaluronic acid for daily moisture and sun protection.' },
   { name: 'UV Skin Recovery SPF 50', brand: 'Elta MD', price: '$50', desc: 'Fragrance-free mineral sunscreen ideal for post-procedure and sensitive skin with zinc oxide protection.' },
   { name: 'UV Skin Recovery Red Correcting Green Tint SPF 50', brand: 'Elta MD', price: '$52', desc: 'Color-correcting tinted sunscreen that neutralizes redness while providing broad-spectrum SPF 50.' },
-  { name: 'UV Clear Deep Tinted', brand: 'Elta MD', price: '$46', desc: 'Oil-free tinted sunscreen with niacinamide — perfect for acne-prone and hyperpigmentation-prone skin.' },
-  { name: 'Clear Skin Daily Duo', brand: 'Elta MD', price: '$82', desc: 'Cleanser and sunscreen duo for clear, protected skin — ideal for oily and breakout-prone types.' },
+  { name: 'UV Clear Deep Tinted', brand: 'Elta MD', price: '$46', desc: 'Oil-free tinted sunscreen with niacinamide, perfect for acne-prone and hyperpigmentation-prone skin.' },
+  { name: 'Clear Skin Daily Duo', brand: 'Elta MD', price: '$82', desc: 'Cleanser and sunscreen duo for clear, protected skin, ideal for oily and breakout-prone types.' },
   { name: 'Laser Balm', brand: 'Elta MD', price: '$41', desc: 'Soothing post-procedure balm that protects and hydrates healing skin after laser treatments.' },
   { name: 'Skin Recovery Amino Acid Foaming Cleanser', brand: 'Elta MD', price: '$36', desc: 'Gentle amino acid cleanser that removes impurities without disrupting the skin barrier.' },
 
@@ -175,7 +175,7 @@ export function ProductsPage() {
   const schemaOrg = {
     "@context": "https://schema.org",
     "@type": "OfferCatalog",
-    "name": "The Skincare Studio Medical Spa — Skincare Products",
+    "name": "The Skincare Studio Medical Spa, Skincare Products",
     "description": "Clinical-grade skincare products available in-store at The Skincare Studio in Stratford, CT. Carrying PCA Skin, Elta MD, Obagi, iS Clinical, SkinCeuticals, and more.",
     "url": "https://www.theskincarestudioct.com/products",
   }
@@ -239,7 +239,7 @@ export function ProductsPage() {
             Products
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7] text-white/80 sm:mt-6 sm:text-[16px] sm:leading-[1.75]">
-            We carry only the highest quality medical-grade skincare products — available exclusively in-store. Our team can help you build a personalized routine tailored to your skin.
+            We carry only the highest quality medical-grade skincare products, available exclusively in-store. Our team can help you build a personalized routine tailored to your skin.
           </p>
           <a
             href={bookingUrl}
@@ -252,7 +252,7 @@ export function ProductsPage() {
         </div>
       </section>
 
-      {/* Brand Filter — sticky only on lg+ so it doesn’t pin under the header on mobile */}
+      {/* Brand Filter, sticky only on lg+ so it doesn’t pin under the header on mobile */}
       <section className="border-y border-warmStone/50 bg-white/95 py-4 backdrop-blur-sm lg:sticky lg:top-[72px] lg:z-30">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
           <div className="flex flex-wrap justify-center gap-2">

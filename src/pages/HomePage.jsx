@@ -21,7 +21,8 @@ import { ScrollReveal } from '../components/ScrollReveal'
 import { CountUp } from '../components/CountUp'
 
 const heroImages = [
-  '/studio-team.png',
+  '/hero-studio-wall-branding.png',
+  '/hero-studio-waiting-area.png',
   '/studio-elta-display.png',
   '/studio-reception-2.png',
   '/studio-injection.png',
@@ -68,8 +69,8 @@ export function HomePage() {
         <meta property="og:description" content="Personalized aesthetic care in a calm, elevated setting. Medical-grade facials and treatments in Paradise Green." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.theskincarestudioct.com/" />
-        <meta property="og:image" content="https://www.theskincarestudioct.com/studio-lounge.png" />
-        <meta property="og:image:alt" content="Welcoming lounge at The Skincare Studio Medical Spa in Stratford, CT" />
+        <meta property="og:image" content="https://www.theskincarestudioct.com/hero-studio-wall-branding.png" />
+        <meta property="og:image:alt" content="The Skincare Studio wall logo with tagline &quot;Your Skin Deserves Better&quot; inside the Stratford studio" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The Skincare Studio | Medical Spa in Stratford, Connecticut" />
         <meta name="twitter:description" content="Personalized aesthetic care in a calm, elevated setting." />
@@ -94,7 +95,7 @@ export function HomePage() {
             </h1>
 
             <p className="mx-auto mt-4 max-w-lg text-[15px] leading-[1.65] text-white/80 sm:mt-5 sm:text-[16px] sm:leading-[1.7]">
-              Medical-grade treatments personalized to you — from neurotoxin and fillers to laser facials and regenerative skincare. Natural results, never overdone.
+              Medical-grade treatments personalized to you, from neurotoxin and fillers to laser facials and regenerative skincare. Natural results, never overdone.
             </p>
 
             <div className="mt-6 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center">
@@ -180,9 +181,9 @@ export function HomePage() {
             <ScrollReveal direction="right" delay={100}>
             <div className="overflow-hidden rounded-xl shadow-[0_4px_24px_-4px_rgba(22,50,80,0.08)] sm:rounded-2xl">
               <img
-                src="/studio-lounge.png"
-                alt="Welcoming lounge and reception area at The Skincare Studio Medical Spa in Paradise Green, Stratford CT"
-                className="aspect-[4/3] w-full object-cover sm:aspect-[4/5]"
+                src="/home-about-studio-reception.png"
+                alt="Reception at The Skincare Studio in Stratford, white desk, orchids, and Revanesse signage in Paradise Green"
+                className="aspect-[4/3] w-full object-cover object-[center_top] sm:aspect-[4/5]"
                 loading="lazy"
               />
             </div>
@@ -264,9 +265,9 @@ export function HomePage() {
             <div className="order-2 lg:order-1">
               <div className="overflow-hidden rounded-xl shadow-sm sm:rounded-2xl">
                 <img
-                  src="/studio-botox-display.png"
-                  alt="Professional injectables and medical-grade skincare at The Skincare Studio in Stratford CT"
-                  className="aspect-[4/3] w-full object-cover sm:aspect-[3/4]"
+                  src="/home-treatment-philosophy.png"
+                  alt="One-on-one treatment consultation at The Skincare Studio, with provider in embroidered lab coat and client in Stratford, CT"
+                  className="aspect-[4/3] w-full object-cover object-[center_30%] sm:aspect-[3/4]"
                   loading="lazy"
                 />
               </div>

@@ -313,7 +313,7 @@ export function ServicesPage() {
             Services
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.65] text-white/80 sm:mt-6 sm:text-[16px] sm:leading-[1.75]">
-            Browse the full treatment menu — from consultations and injectables to lasers, peels, facials, and regenerative services, all organized for easy booking.
+            Browse the full treatment menu, from consultations and injectables to lasers, peels, facials, and regenerative services, all organized for easy booking.
           </p>
           <button
             type="button"
@@ -328,7 +328,7 @@ export function ServicesPage() {
       <section className="border-t border-warmStone/50 bg-accentNavy py-4">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-8 lg:px-12">
           <p className="text-center text-[15px] text-white/90 sm:text-left">
-            <span className="font-semibold text-white">Treat now, pay over time</span> — flexible payment plans available for any treatment through Cherry.
+            <span className="font-semibold text-white">Treat now, pay over time</span>, flexible payment plans available for any treatment through Cherry.
           </p>
           <a
             href="https://pay.withcherry.com/theskincarestudioct"
@@ -362,7 +362,7 @@ export function ServicesPage() {
 
           <div className="mb-8 space-y-8 sm:mb-10 sm:space-y-10 md:mb-12 md:space-y-12">
             <p className="text-center text-sm text-slate-600">
-              <span className="font-semibold text-accentNavy">224+ Google Reviews</span> — our clients love these treatments
+              <span className="font-semibold text-accentNavy">224+ Google Reviews</span>, our clients love these treatments
             </p>
 
             <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:rounded-2xl sm:p-6 md:p-8">

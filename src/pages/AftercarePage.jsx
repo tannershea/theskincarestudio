@@ -103,7 +103,7 @@ function AftercareCard({ treatment, index }) {
               onClick={() =>
                 openLightbox(
                   src,
-                  `${treatment.title} aftercare ${i === 0 ? '— before/result' : '— care'}`
+                  `${treatment.title} aftercare${i === 0 ? ', before/result' : ', care'}`
                 )
               }
               aria-label={`View larger: ${treatment.title} aftercare image ${i + 1} of 2`}
@@ -314,7 +314,7 @@ function ViPeelFaceUrgentSection() {
         Contact your provider immediately if you experience:
       </h2>
       <p className="mx-auto mt-3 max-w-2xl text-[15px] leading-relaxed text-white/85">
-        Don’t guess—if something feels off, we want to hear from you. Quick questions are normal;{' '}
+        Don’t guess. If something feels off, we want to hear from you. Quick questions are normal;{' '}
         <span className="font-semibold text-white">the symptoms below need a same-day check-in.</span>
       </p>
       <ul className="mx-auto mt-6 inline-block space-y-3 text-left text-[15px] leading-[1.75] text-white/95">
@@ -328,7 +328,7 @@ function ViPeelFaceUrgentSection() {
 
       <div className="mt-10 rounded-xl border border-white/20 bg-white/[0.07] p-6 text-center backdrop-blur-sm md:p-8">
         <p className="mx-auto max-w-2xl font-serif text-lg font-semibold tracking-tight text-white md:text-xl">
-          We’ll help you figure out what’s normal—and what isn’t.
+          We’ll help you figure out what’s normal, and what isn’t.
         </p>
         <p className="mx-auto mt-2 max-w-2xl text-[15px] leading-relaxed text-white/80">
           Call or text our Stratford office now. Most concerns are addressed in minutes; when you need to be seen, we’ll get you on the calendar.
@@ -365,7 +365,7 @@ function ViPeelFaceUrgentSection() {
           </a>
         </div>
         <p className="mt-5 border-t border-white/15 pt-5 text-center text-xs leading-relaxed text-white/55">
-          For peel-related concerns, <span className="text-white/75">The Skincare Studio</span>—same team that treated you.
+          For peel-related concerns, <span className="text-white/75">The Skincare Studio</span>, same team that treated you.
         </p>
       </div>
     </section>
@@ -419,7 +419,7 @@ export function AftercarePage() {
             Aftercare Instructions
           </h1>
           <p className="mt-3 max-w-2xl mx-auto text-[15px] leading-relaxed text-slate-600 sm:mt-4 sm:text-[16px]">
-            Follow these guidelines for the best healing and results. Same team, same Stratford office—reach out anytime if something doesn’t feel right.
+            Follow these guidelines for the best healing and results. Same team, same Stratford office, reach out anytime if something doesn’t feel right.
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-slate-600">
             <span className="inline-flex items-center gap-1.5 font-medium text-accentNavy">
@@ -453,7 +453,7 @@ export function AftercarePage() {
               Questions while you heal?
             </p>
             <p className="mx-auto mt-2 max-w-xl text-[15px] leading-relaxed text-slate-600">
-              Most aftercare concerns are quick to sort out. Call, text, or book a follow-up—we’re here for you.
+              Most aftercare concerns are quick to sort out. Call, text, or book a follow-up, we’re here for you.
             </p>
             <div className="mt-5 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
               <a
@@ -493,7 +493,7 @@ export function AftercarePage() {
               Ready for your next visit?
             </h2>
             <p className="mx-auto mt-2 max-w-lg text-[15px] leading-relaxed text-slate-600">
-              Book your next appointment or ask our team anything—we love helping you feel confident in your skin.
+              Book your next appointment or ask our team anything, we love helping you feel confident in your skin.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a

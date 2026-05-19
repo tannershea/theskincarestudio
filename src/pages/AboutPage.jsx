@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import { bookingUrl } from '../data'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { CountUp } from '../components/CountUp'
+import { aboutTeamMembers } from '../data/aboutTeam'
+import { TeamMemberGrid } from '../components/TeamMemberGrid'
+import { ZoomableImage } from '../components/learn/ZoomableImage'
 
 const aboutHeroImages = [
   '/about-storefront.png',
@@ -38,79 +41,11 @@ function AboutHeroCarousel() {
   )
 }
 
-const teamMembers = [
-  {
-    name: 'Morine Cebert',
-    role: 'Medical Director',
-    credentials: 'PhD, FNP-C, RN, GYN',
-    bio: 'Dr. Cebert brings extensive clinical expertise and oversight, ensuring the highest standards of patient safety across all procedures.',
-    image: '/team-morine.png',
-  },
-  {
-    name: 'Terri Miller',
-    role: 'CEO & Founder',
-    credentials: 'BSN, RN, Licensed Esthetician',
-    bio: 'With over 15 years of experience in dermatology and plastic surgery, Terri founded The Skincare Studio to bring medical-grade aesthetic care to Fairfield County.',
-    image: '/team-terri.png',
-  },
-  {
-    name: 'Jessica Louisseize',
-    role: 'Registered Nurse',
-    credentials: 'BSN, RN',
-    bio: 'Jessica brings nursing expertise and meticulous attention to detail as a trusted member of our injectable and treatment team.',
-    image: '/team-jessica.png',
-  },
-  {
-    name: 'Britney St. Pierre',
-    role: 'Nurse Injector',
-    credentials: '',
-    bio: 'Britney brings precision and artistry to every injectable treatment with a keen eye for natural facial balance.',
-    image: '/team-britney.png',
-  },
-  {
-    name: 'Alix Agathos',
-    role: 'Medical Assistant',
-    credentials: '',
-    bio: 'Alixandria supports our clinical team with hands-on assistance, ensuring every visit runs smoothly and comfortably.',
-    image: '/team-alixandria.png',
-  },
-  {
-    name: 'Iyanna Brookins',
-    role: 'Medical Esthetician',
-    credentials: '',
-    bio: 'Iyanna specializes in advanced facial treatments and skincare protocols with a passion for results-driven care.',
-    image: '/team-iyanna.png',
-  },
-  {
-    name: 'Semhar Samuels',
-    role: 'Practice Manager',
-    credentials: '',
-    bio: 'Semhar keeps The Skincare Studio running smoothly, delivering the elevated professional experience our clients expect.',
-    image: '/team-semhar.png',
-  },
-  {
-    name: 'Jenny Depina',
-    role: 'Patient Coordinator',
-    credentials: '',
-    bio: 'Jenny ensures every client\'s experience — from scheduling to follow-up — is seamless, comfortable, and personalized.',
-    image: '/team-jenny.png',
-  },
-]
-
-const TEAM_GROUP_SIZE = 4
-const teamGroups = (() => {
-  const groups = []
-  for (let i = 0; i < teamMembers.length; i += TEAM_GROUP_SIZE) {
-    groups.push(teamMembers.slice(i, i + TEAM_GROUP_SIZE))
-  }
-  return groups
-})()
-
 const values = [
   {
     icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>,
     title: 'Natural Results',
-    desc: 'We enhance — never overdo. Every treatment aims for results that look like the best version of you.',
+    desc: 'We enhance without overdoing. Every treatment aims for results that look like the best version of you.',
   },
   {
     icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>,
@@ -180,7 +115,7 @@ export function AboutPage() {
     <>
       <Helmet>
         <title>About Us | Award-Winning Medical Spa in Stratford, CT | The Skincare Studio</title>
-        <meta name="description" content="The Skincare Studio Medical Spa in Stratford, CT — founded by Terri Miller, RN, with 15+ years in dermatology. Award-winning care for all skin types. PCA Skin USA recognized. SkinPen Ambassador for CT." />
+        <meta name="description" content="The Skincare Studio Medical Spa in Stratford, CT. Founded by Terri Miller, RN, with 15+ years in dermatology. Award-winning care for all skin types. PCA Skin USA recognized. SkinPen Ambassador for CT." />
         <link rel="canonical" href="https://www.theskincarestudioct.com/about" />
         <meta property="og:title" content="About Us | Award-Winning Medical Spa | The Skincare Studio" />
         <meta property="og:description" content="Stratford's premier medical spa. 15+ years of dermatology expertise, personalized care for all skin types, and natural-looking results. Recognized by PCA Skin USA and BRBC." />
@@ -228,7 +163,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* At a glance: stats + our story (one scroll block) */}
+      {/* At a glance: stats + meet the team (one scroll block) */}
       <section className="border-t border-warmStone/50 bg-white py-8 md:py-12 lg:py-16">
         <div className="mx-auto max-w-5xl space-y-10 px-4 sm:px-8 md:space-y-12 lg:px-12 lg:space-y-14">
           <div className="rounded-2xl border border-warmStone/60 bg-cream/40 px-4 py-6 sm:px-6 sm:py-8">
@@ -238,7 +173,7 @@ export function AboutPage() {
                 { value: '15+', label: 'Years of Experience' },
                 { value: '10K+', label: 'Treatments Performed' },
                 { value: '4.9', label: 'Google Rating' },
-                { value: '8', label: 'Expert Team Members' },
+                { value: '9', label: 'Expert Team Members' },
               ].map((stat, i) => (
                 <ScrollReveal key={stat.label} direction="up" delay={i * 80}>
                   <div className="text-center">
@@ -250,48 +185,6 @@ export function AboutPage() {
             </div>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
-            <ScrollReveal direction="left" delay={0}>
-              <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-sm h-full">
-                <img
-                  src="/studio-display-table.png"
-                  alt="The Skincare Studio product display with brochures and skincare information in Stratford, CT"
-                  className="h-full w-full object-cover object-center"
-                />
-              </div>
-            </ScrollReveal>
-            <div className="flex flex-col gap-6">
-              <ScrollReveal direction="right" delay={100}>
-                <div className="rounded-xl border border-slate-100 bg-cream/50 p-5 sm:rounded-2xl sm:p-8">
-                  <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Our Story</p>
-                  <h2 className="mt-3 font-serif text-2xl leading-tight tracking-tight text-accentNavy md:text-3xl">
-                    Built on passion, driven by results.
-                  </h2>
-                  <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                    Founded by Terri Miller — a registered nurse and licensed esthetician with years of experience in dermatology and aesthetics — The Skincare Studio was created as a sanctuary where science, artistry, and personalized care come together. Located in the heart of Paradise Green in Stratford, Connecticut, our award-winning medical spa serves clients from across Fairfield County.
-                  </p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal direction="right" delay={200}>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-accentBlue/30 hover:shadow-lg">
-                    <p className="font-serif text-lg font-semibold text-accentNavy">All Skin Types</p>
-                    <p className="mt-2 text-[13px] leading-[1.5] text-slate-600">Expert care for diverse skin types and tones — understanding unique needs is at the core of what we do.</p>
-                  </div>
-                  <div className="rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-accentBlue/30 hover:shadow-lg">
-                    <p className="font-serif text-lg font-semibold text-accentNavy">Luxury + Clinical</p>
-                    <p className="mt-2 text-[13px] leading-[1.5] text-slate-600">We blend medical precision with a calm, luxury spa experience — so you feel confident and cared for.</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* People & expertise (one scroll block) */}
-      <section className="border-t border-warmStone/50 bg-cream/40 py-10 md:py-16 lg:py-20">
-        <div className="mx-auto max-w-5xl space-y-12 px-4 sm:px-8 md:space-y-16 lg:px-12">
           <div>
           <ScrollReveal direction="up" delay={0}>
             <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
@@ -312,35 +205,96 @@ export function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <div className="mt-8 space-y-8 sm:mt-10">
-            {teamGroups.map((group, groupIndex) => (
-              <div
-                key={groupIndex}
-                className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4"
-              >
-                {group.map((member, i) => (
-                  <ScrollReveal key={member.name} direction="up" delay={(groupIndex * TEAM_GROUP_SIZE + i) * 60}>
-                    <div className="group flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white p-6 text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-accentBlue/20">
-                      <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-slate-100 shadow-sm transition-all duration-300 group-hover:border-accentBlue/30 group-hover:shadow-md">
-                        {member.image ? (
-                          <img src={member.image} alt={member.name} className="h-full w-full object-cover object-top" />
-                        ) : (
-                          <div className="flex h-full w-full items-center justify-center bg-softBlue text-xl font-semibold text-accentBlue">
-                            {member.name.split(' ').map(n => n[0]).join('')}
-                          </div>
-                        )}
-                      </div>
-                      <h3 className="mt-4 font-serif text-lg font-semibold tracking-tight text-accentNavy">{member.name}</h3>
-                      <p className="mt-1 text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{member.role}</p>
-                      {member.credentials && (
-                        <p className="mt-1 text-[11px] text-slate-400">{member.credentials}</p>
-                      )}
-                      <p className="mt-3 flex-1 text-[13px] leading-[1.5] text-slate-500">{member.bio}</p>
-                    </div>
-                  </ScrollReveal>
-                ))}
+          <ScrollReveal direction="up" delay={80}>
+            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-b from-slate-50 to-cream/40 shadow-soft sm:mt-10">
+              <div className="grid gap-0 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-stretch">
+                <div className="flex items-center justify-center bg-white/80 p-3 sm:p-5 lg:min-h-[320px]">
+                  <ZoomableImage
+                    src="/about-team-full-group.png"
+                    alt="The Skincare Studio medical spa clinical team with founder Terri Miller and staff in Paradise Green, Stratford"
+                    className="max-h-[min(72vh,720px)] w-full object-contain object-center"
+                    wrapperClassName="flex w-full items-center justify-center"
+                  />
+                </div>
+                <div className="flex flex-col justify-center border-t border-slate-100 bg-white px-5 py-8 sm:px-8 sm:py-10 lg:border-l lg:border-t-0">
+                  <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Together in Stratford</p>
+                  <p className="mt-4 font-serif text-xl leading-snug tracking-tight text-accentNavy md:text-2xl">
+                    Medical oversight, nursing, esthetics, and a warm front desk in one place.
+                  </p>
+                  <p className="mt-4 text-[15px] leading-[1.75] text-slate-600">
+                    Whether you&apos;re new to aesthetic treatments or looking for a new home for your skincare, we&apos;d love to welcome you.
+                  </p>
+                  <p className="mt-3 text-[15px] leading-[1.75] text-slate-600">
+                    Beautiful, balanced results, with medical expertise you can trust.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href={bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex rounded-full bg-accentNavy px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-[1.02] hover:bg-accentNavy/90"
+                    >
+                      Book your appointment
+                    </a>
+                    <Link
+                      to="/services"
+                      className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-5 py-2.5 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:border-accentBlue/40 hover:bg-softBlue"
+                    >
+                      View treatments <span aria-hidden>→</span>
+                    </Link>
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-8 sm:mt-10">
+            <TeamMemberGrid members={aboutTeamMembers} />
+          </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our story + expertise (one scroll block) */}
+      <section className="border-t border-warmStone/50 bg-cream/40 py-10 md:py-16 lg:py-20">
+        <div className="mx-auto max-w-5xl space-y-12 px-4 sm:px-8 md:space-y-16 lg:px-12">
+          <div>
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+            <ScrollReveal direction="left" delay={0}>
+              <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-sm h-full">
+                <ZoomableImage
+                  src="/about-team-reception.png"
+                  alt="The Skincare Studio team at the reception desk in Stratford, CT, welcoming clients beneath the studio logo"
+                  className="h-full min-h-[240px] w-full object-cover object-center sm:min-h-[280px]"
+                  wrapperClassName="block h-full w-full"
+                />
+              </div>
+            </ScrollReveal>
+            <div className="flex flex-col gap-6">
+              <ScrollReveal direction="right" delay={100}>
+                <div className="rounded-xl border border-slate-100 bg-cream/50 p-5 sm:rounded-2xl sm:p-8">
+                  <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Our Story</p>
+                  <h2 className="mt-3 font-serif text-2xl leading-tight tracking-tight text-accentNavy md:text-3xl">
+                    Built on passion, driven by results.
+                  </h2>
+                  <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
+                    Founded by Terri Miller, a registered nurse and licensed esthetician with years of experience in dermatology and aesthetics. The Skincare Studio was created as a sanctuary where science, artistry, and personalized care come together. Located in the heart of Paradise Green in Stratford, Connecticut, our award-winning medical spa serves clients from across Fairfield County.
+                  </p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal direction="right" delay={200}>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-accentBlue/30 hover:shadow-lg">
+                    <p className="font-serif text-lg font-semibold text-accentNavy">All Skin Types</p>
+                    <p className="mt-2 text-[13px] leading-[1.5] text-slate-600">Expert care for diverse skin types and tones. Understanding unique needs is at the core of what we do.</p>
+                  </div>
+                  <div className="rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-accentBlue/30 hover:shadow-lg">
+                    <p className="font-serif text-lg font-semibold text-accentNavy">Luxury + Clinical</p>
+                    <p className="mt-2 text-[13px] leading-[1.5] text-slate-600">We blend medical precision with a calm, luxury spa experience, so you feel confident and cared for.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
           </div>
 
@@ -353,7 +307,7 @@ export function AboutPage() {
                   Medical-grade treatments that deliver real, lasting results.
                 </h2>
                 <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                  We specialize in advanced skincare and aesthetic treatments — every treatment plan is customized to your individual goals, skin type, and lifestyle. Our team of experienced nurses and estheticians uses only the highest quality products and state-of-the-art equipment.
+                  We specialize in advanced skincare and aesthetic treatments. Every treatment plan is customized to your individual goals, skin type, and lifestyle. Our team of experienced nurses and estheticians uses only the highest quality products and state-of-the-art equipment.
                 </p>
                 <Link
                   to="/services"
@@ -378,6 +332,31 @@ export function AboutPage() {
             </ScrollReveal>
           </div>
           </div>
+        </div>
+      </section>
+
+      {/* Mission Statement */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-accentNavy via-accentNavy/98 to-accentNavy py-12 md:py-16 lg:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accentBlue/10 via-transparent to-transparent" />
+        <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-8 lg:px-12">
+          <ScrollReveal direction="up" delay={0}>
+            <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">Our Mission</p>
+            <h2 className="mt-6 font-serif text-3xl leading-snug tracking-tight text-white md:text-4xl lg:text-[2.75rem]">
+              "To empower every client with personalized, evidence-based skincare that reveals true confidence from within."
+            </h2>
+            <div className="mx-auto mt-10 h-px w-16 bg-accentGreen/50" />
+            <p className="mx-auto mt-10 max-w-2xl text-[15px] leading-[1.75] text-slate-300">
+              Beautiful skin isn&apos;t about chasing trends. It&apos;s about understanding your unique needs and delivering results that look natural, feel authentic, and last. We blend medical precision with a luxury spa experience, creating a sanctuary where you can feel comfortable, confident, and cared for from the moment you walk in.
+            </p>
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-accentGreen px-7 py-3.5 text-[15px] font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:shadow-lg"
+            >
+              Start your journey
+            </a>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -452,31 +431,6 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Mission Statement */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-accentNavy via-accentNavy/98 to-accentNavy py-12 md:py-16 lg:py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accentBlue/10 via-transparent to-transparent" />
-        <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-8 lg:px-12">
-          <ScrollReveal direction="up" delay={0}>
-            <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">Our Mission</p>
-            <h2 className="mt-6 font-serif text-3xl leading-snug tracking-tight text-white md:text-4xl lg:text-[2.75rem]">
-              "To empower every client with personalized, evidence-based skincare that reveals true confidence from within."
-            </h2>
-            <div className="mx-auto mt-10 h-px w-16 bg-accentGreen/50" />
-            <p className="mx-auto mt-10 max-w-2xl text-[15px] leading-[1.75] text-slate-300">
-              Beautiful skin isn't about chasing trends — it's about understanding your unique needs and delivering results that look natural, feel authentic, and last. We blend medical precision with a luxury spa experience, creating a sanctuary where you can feel comfortable, confident, and cared for from the moment you walk in.
-            </p>
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center gap-2 rounded-full bg-accentGreen px-7 py-3.5 text-[15px] font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:shadow-lg"
-            >
-              Start your journey
-            </a>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Location + next step (one scroll block) */}
       <section className="border-t border-warmStone/50 bg-gradient-to-b from-cream/30 via-cream/20 to-blueGray/25 py-10 md:py-14 lg:py-16">
         <div className="mx-auto max-w-5xl space-y-12 px-4 sm:px-8 md:space-y-14 lg:px-12">
@@ -527,7 +481,7 @@ export function AboutPage() {
                 Ready to experience the difference?
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.7] text-slate-600">
-                Whether you're new to aesthetic treatments or looking for a new home for your skincare, we'd love to welcome you. Beautiful, balanced results — with medical expertise you can trust.
+                Whether you're new to aesthetic treatments or looking for a new home for your skincare, we'd love to welcome you. Beautiful, balanced results, with medical expertise you can trust.
               </p>
               <div className="mt-7 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center">
                 <a

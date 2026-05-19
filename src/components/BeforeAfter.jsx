@@ -53,7 +53,7 @@ function Slider({ before, after, label }) {
         {/* After (full background) */}
         <img
           src={after}
-          alt={`${label} — after`}
+          alt={`${label}, after`}
           className="absolute inset-0 h-full w-full object-cover"
           draggable={false}
         />
@@ -65,7 +65,7 @@ function Slider({ before, after, label }) {
         >
           <img
             src={before}
-            alt={`${label} — before`}
+            alt={`${label}, before`}
             className="absolute inset-0 h-full w-full object-cover"
             style={{ width: `${containerRef.current?.offsetWidth || 1000}px`, maxWidth: 'none' }}
             draggable={false}
