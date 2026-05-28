@@ -13,19 +13,23 @@ function AnnouncementBar() {
     <div className="relative overflow-hidden bg-gradient-to-r from-accentNavy via-accentNavy/95 to-accentNavy text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.06),transparent_50%)]" aria-hidden />
       <div className="relative mx-auto flex max-w-6xl items-center justify-center gap-3 px-4 py-2.5 text-center sm:gap-4 sm:px-10">
-        <p className="text-[13px] font-medium tracking-wide sm:text-sm">
-          <span className="mr-1.5 inline-block animate-pulse text-base" aria-hidden>✨</span>
-          <span className="font-bold text-accentGreen">Spring Special Sale</span>
-          <span className="mx-1.5 hidden text-white/40 sm:inline" aria-hidden>|</span>
-          <span className="hidden sm:inline">April 1 – May 31 time slots only.</span>
-          <span className="sm:hidden"> Apr 1 – May 31.</span>
+        <p className="text-[13px] font-medium leading-snug tracking-wide sm:text-sm">
+          <span className="mr-1.5 inline-flex shrink-0 items-center rounded bg-accentGreen/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accentGreen sm:text-[11px]">
+            June only
+          </span>
+          <span className="mr-1 inline-block animate-pulse text-base leading-none" aria-hidden>🎁</span>
+          <span className="font-extrabold text-accentGreen">$50 OFF</span>
+          <span className="text-white/95"> for new cosmetic patients only</span>
+          <span className="mx-1.5 hidden text-white/35 sm:inline" aria-hidden>|</span>
+          <span className="hidden text-white/65 sm:inline">Ends June 30 · First visit · Botox, fillers &amp; more</span>
+          <span className="sm:hidden text-white/65"> · Ends June 30</span>
           <a
             href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-0.5 text-[12px] font-bold tracking-wide text-white transition-all hover:bg-white/25 sm:text-[13px]"
+            className="ml-2 inline-flex shrink-0 items-center gap-1 rounded-full bg-accentGreen px-3 py-1 text-[12px] font-bold tracking-wide text-accentNavy shadow-sm transition-all hover:bg-accentGreen/90 hover:shadow-md sm:text-[13px]"
           >
-            Book now <span aria-hidden>→</span>
+            Claim $50 off <span aria-hidden>→</span>
           </a>
         </p>
         <button

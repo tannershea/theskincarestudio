@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { ScrollReveal } from '../components/ScrollReveal'
-import { bookingUrl } from '../data'
+import { bookingUrl, giftCardUrl } from '../data'
 
 const productsHeroImages = [
   '/studio-display-table.png',
@@ -248,6 +248,23 @@ export function ProductsPage() {
             className="mt-8 inline-flex rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:shadow-lg"
           >
             Book a Consultation
+          </a>
+        </div>
+      </section>
+
+      <section className="border-b border-warmStone/50 bg-softGreen/30 py-4 md:py-5">
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 text-center sm:flex-row sm:px-8 sm:text-left lg:px-12">
+          <p className="text-[14px] leading-relaxed text-slate-600 sm:text-[15px]">
+            <span className="font-semibold text-accentNavy">Give the gift of great skin.</span>{' '}
+            Gift cards work toward treatments and in-studio skincare.
+          </p>
+          <a
+            href={giftCardUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 inline-flex rounded-full bg-accentNavy px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90"
+          >
+            Buy a Gift Card
           </a>
         </div>
       </section>

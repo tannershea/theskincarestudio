@@ -2,12 +2,13 @@
 export const bookingUrl =
   "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753";
 
+/** Podium gift card purchase */
+export const giftCardUrl =
+  "https://booking.podium.com/medspa/gift-cards/019c8c61-886d-7520-b631-d3871ad7f936";
+
 /** Full booking URLs for services that use the external calendar instead of /book */
 export const serviceBookingUrlOverrides = {
-  "Spring Special Neurotoxin":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/c4ebd3d1-447d-4e06-b1fe-1e6e5707963d",
-  "Spring Special Facial":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/8fe6502c-7581-4471-acc0-7f300489bcc4",
+  "Gift Cards": giftCardUrl,
   "The Refresh Neurotoxin":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/1784a606-4b4a-4371-b867-711a02b336a4",
   "Neurotoxin":
@@ -34,6 +35,8 @@ export const serviceBookingUrlOverrides = {
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/1b04ba7a-5a1d-432f-a8b3-db62e1979b5b",
   "SkinPen Microneedling with PRP":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/2448b80a-e629-4cf7-9953-9be77ce54a79",
+  "SkinPen Microneedling with VAMP":
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/8e70127d-073c-4de4-bede-1021da3029d0",
   "Nano Needling Brightening Facial":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/2aa47bc5-e462-49f5-be45-e230480a0085",
   "Radiofrequency Microneedling":
@@ -553,7 +556,8 @@ export const serviceGroups = [
     title: "Microneedling",
     services: [
       { name: "SkinPen Microneedling", duration: "1 hr", price: "$475", desc: "FDA-cleared microneedling to stimulate collagen, reduce scars, and improve skin texture." },
-      { name: "SkinPen Microneedling with PRP", duration: "1 hr 30 min", price: "$575", desc: "Microneedling enhanced with platelet-rich plasma for accelerated healing and deeper rejuvenation." },
+      { name: "SkinPen Microneedling with PRP", duration: "1 hr 30 min", price: "$675", desc: "Microneedling enhanced with platelet-rich plasma for accelerated healing and deeper rejuvenation." },
+      { name: "SkinPen Microneedling with VAMP", duration: "45 min", price: "$575", desc: "Microneedling paired with VAMP by Prollenium, a PDRN skin booster for collagen support, glow, and skin quality." },
       { name: "Nano Needling Brightening Facial", duration: "1 hr", price: "$300", desc: "Gentle nano-needling facial that infuses brightening serums for luminous, even-toned skin." },
       { name: "Radiofrequency Microneedling", duration: "1 hr", price: "$625", desc: "Lutronic Genius Radiofrequency Microneedling for skin tightening, wrinkle reduction, and deep remodeling." },
       { name: "Radiofrequency Microneedling with PRP", duration: "1 hr", price: "$725", desc: "RF microneedling combined with PRP for maximum collagen stimulation and skin renewal." },
@@ -661,11 +665,16 @@ export const serviceGroups = [
     ],
   },
   {
-    category: "Exclusive Offers",
-    title: "Spring Specials",
+    category: "Gift Cards",
+    title: "Gift Cards",
+    bookable: false,
     services: [
-      { name: "Spring Special Neurotoxin", duration: "15-30 min", price: "$12 Per Unit", desc: "Limited-time spring pricing on neurotoxin to smooth fine lines and refresh your look." },
-      { name: "Spring Special Facial", duration: "45 min", price: "$125", desc: "A 45-minute brightening facial, no extractions, no dermaplaning. The perfect spring glow-up." },
+      {
+        name: "Gift Cards",
+        duration: "Instant",
+        price: "You choose",
+        desc: "Digital gift cards redeem toward treatments and in-studio skincare. A thoughtful gift for any occasion.",
+      },
     ],
   },
 ];

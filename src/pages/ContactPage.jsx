@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { bookingUrl, contactDetails, openingHours, localBusinessSchema, googleMapsUrl } from '../data'
+import { bookingUrl, giftCardUrl, contactDetails, openingHours, localBusinessSchema, googleMapsUrl } from '../data'
 
 /** Shared shell so every card reads as part of one system */
 const CARD = 'rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm sm:p-8'
@@ -55,14 +55,24 @@ export function ContactPage() {
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7] text-slate-600 sm:mt-6 sm:text-body-lg sm:leading-[1.75]">
             Questions? We're here to help you feel confident before you even walk in. Reach out to learn more about treatments or book online when you're ready.
           </p>
-          <a
-            href={bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex rounded-lg bg-accentNavy px-6 py-3.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90"
-          >
-            Book Online
-          </a>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-lg bg-accentNavy px-6 py-3.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90"
+            >
+              Book Online
+            </a>
+            <a
+              href={giftCardUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-lg border border-accentNavy/20 bg-white px-6 py-3.5 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:border-accentBlue hover:bg-slate-50"
+            >
+              Buy a Gift Card
+            </a>
+          </div>
         </div>
       </section>
 

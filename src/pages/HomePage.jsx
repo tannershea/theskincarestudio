@@ -5,6 +5,7 @@ import { Testimonials } from '../components/Testimonials'
 import { Newsletter } from '../components/Newsletter'
 import {
   bookingUrl,
+  giftCardUrl,
   contactDetails,
   recognitions,
   serviceAreas,
@@ -375,6 +376,17 @@ export function HomePage() {
               View Services
             </Link>
           </div>
+          <p className="mt-5 text-[14px] leading-relaxed text-slate-600 sm:mt-6 sm:text-[15px]">
+            Perfect for birthdays, holidays, and treating someone special.{' '}
+            <a
+              href={giftCardUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-accentNavy underline decoration-accentGreen/60 underline-offset-2 transition-colors hover:text-accentBlue"
+            >
+              Buy a gift card
+            </a>
+          </p>
         </div>
         </ScrollReveal>
       </section>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { contactDetails, openingHours, bookingUrl, logoSrc, socialLinks } from '../data'
+import { contactDetails, openingHours, bookingUrl, giftCardUrl, logoSrc, socialLinks } from '../data'
 
 export function Footer() {
   const hoursOrdered = openingHours
@@ -92,6 +92,14 @@ export function Footer() {
                   className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left"
                 >
                   Book Online
+                </a>
+                <a
+                  href={giftCardUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left"
+                >
+                  Gift Cards
                 </a>
               </nav>
             </div>
