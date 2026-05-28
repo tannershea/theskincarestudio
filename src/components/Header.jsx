@@ -77,7 +77,6 @@ export function Header() {
         <nav className="hidden min-w-0 flex-1 items-center justify-center gap-5 text-[14px] font-medium lg:flex xl:gap-7 xl:text-[15px]">
           <NavLink to="/" end className={navLinkClass}>Home</NavLink>
           <NavLink to="/services" className={navLinkClass}>Services</NavLink>
-          <NavLink to={giftCardsPath} className={navLinkClass}>{giftCardsLabel}</NavLink>
           <NavLink to={resultsResourcesPath} className={resultsResourcesNavClass}>
             <span className="hidden whitespace-nowrap xl:inline">{resultsResourcesLabel}</span>
             <span className="xl:hidden">
@@ -86,6 +85,7 @@ export function Header() {
           </NavLink>
           <NavLink to="/aftercare" className={navLinkClass}>Aftercare</NavLink>
           <NavLink to="/products" className={navLinkClass}>Products</NavLink>
+          <NavLink to={giftCardsPath} className={navLinkClass}>{giftCardsLabel}</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
         </nav>
@@ -135,9 +135,6 @@ export function Header() {
             <NavLink to="/services" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Services
             </NavLink>
-            <NavLink to={giftCardsPath} onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
-              {giftCardsLabel}
-            </NavLink>
             <NavLink to={resultsResourcesPath} onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               {resultsResourcesLabel}
             </NavLink>
@@ -146,6 +143,9 @@ export function Header() {
             </NavLink>
             <NavLink to="/products" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Products
+            </NavLink>
+            <NavLink to={giftCardsPath} onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
+              {giftCardsLabel}
             </NavLink>
             <NavLink to="/about" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               About
