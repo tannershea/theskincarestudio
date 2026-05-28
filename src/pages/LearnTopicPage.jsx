@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { bookingUrl } from '../data'
+import { bookingUrl, resultsResourcesPath, resultsResourcesLabel } from '../data'
 import { getLearnTopicBySlug } from '../data/learnTopics'
 import { MediaPlaceholder } from '../components/learn/MediaPlaceholder'
 import { LearnBrandSidebar } from '../components/learn/LearnBrandSidebar'
@@ -35,20 +35,45 @@ function galleryGridClass(count) {
   return 'mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7'
 }
 
+function TopicBeforeAfterFigure({ beforeAfter }) {
+  return (
+    <div>
+      <p className={learnEyebrow}>Real results</p>
+      <figure className="relative mt-4 overflow-hidden rounded-2xl border border-warmStone/40 bg-white shadow-[0_16px_48px_-32px_rgba(22,50,80,0.35)] ring-1 ring-black/[0.03]">
+        <span className="pointer-events-none absolute left-3 top-3 z-10 rounded bg-black/55 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm sm:text-[11px]">
+          Before
+        </span>
+        <span className="pointer-events-none absolute bottom-3 left-3 z-10 rounded bg-black/55 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm sm:text-[11px]">
+          After
+        </span>
+        <ZoomableImage
+          src={beforeAfter.src}
+          alt={beforeAfter.alt}
+          className="aspect-square w-full bg-white object-contain object-center"
+        />
+      </figure>
+      <p className="mt-2 text-[13px] leading-snug text-slate-500 sm:text-[14px]">
+        {beforeAfter.caption}
+      </p>
+    </div>
+  )
+}
+
 export function LearnTopicPage() {
   const { slug } = useParams()
   const topic = getLearnTopicBySlug(slug || '')
 
   if (!topic) {
-    return <Navigate to="/learn" replace />
+    return <Navigate to={resultsResourcesPath} replace />
   }
 
-  const canonical = `${BASE}/learn/${topic.slug}`
+  const canonical = `${BASE}${resultsResourcesPath}/${topic.slug}`
 
   const hasBrandSidebar = Boolean(topic.brands?.length)
   const heroShowsFullImage = topic.heroImageFit === 'contain'
   const hasSidebarVisuals = Boolean(
     hasBrandSidebar ||
+      topic.beforeAfter ||
       topic.heroVideoSrc ||
       topic.heroImageSrc ||
       topic.placeholders?.hero ||
@@ -62,7 +87,7 @@ export function LearnTopicPage() {
   return (
     <>
       <Helmet>
-        <title>{`${topic.title} | Learn | The Skincare Studio Stratford, CT`}</title>
+        <title>{`${topic.title} | ${resultsResourcesLabel} | The Skincare Studio Stratford, CT`}</title>
         <meta name="description" content={topic.metaDescription} />
         <link rel="canonical" href={canonical} />
       </Helmet>
@@ -81,8 +106,8 @@ export function LearnTopicPage() {
               <span className="text-slate-300" aria-hidden>
                 /
               </span>
-              <Link to="/learn" className={`rounded-md px-2 transition-colors hover:text-accentBlue ${learnFocusRing}`}>
-                Learn
+              <Link to={resultsResourcesPath} className={`rounded-md px-2 transition-colors hover:text-accentBlue ${learnFocusRing}`}>
+                {resultsResourcesLabel}
               </Link>
               <span className="text-slate-300" aria-hidden>
                 /
@@ -90,7 +115,7 @@ export function LearnTopicPage() {
               <span className="truncate px-2 font-medium text-accentNavy">{topic.title}</span>
             </nav>
             <Link
-              to="/learn"
+              to={resultsResourcesPath}
               className={`mx-auto mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-accentBlue ${learnFocusRing}`}
             >
               <span aria-hidden>←</span> All guides
@@ -109,6 +134,7 @@ export function LearnTopicPage() {
           >
             {hasSidebarVisuals ? (
             <aside className="order-2 flex flex-col gap-5 lg:sticky lg:top-28 lg:order-1 lg:col-span-4 xl:col-span-4">
+              {topic.beforeAfter ? <TopicBeforeAfterFigure beforeAfter={topic.beforeAfter} /> : null}
               {hasBrandSidebar ? (
                 <LearnBrandSidebar brands={topic.brands} />
               ) : null}
@@ -331,7 +357,7 @@ export function LearnTopicPage() {
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-3">
               <Link
-                to="/learn"
+                to={resultsResourcesPath}
                 className={`inline-flex rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:bg-white/10 ${learnFocusRing}`}
               >
                 All guides

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { learnCategories, learnTopics } from '../data/learnTopics'
+import { resultsResourcesPath, resultsResourcesLabel } from '../data'
 import { LearnHubBackToTop } from '../components/learn/LearnHubBackToTop'
 import { LearnHubSearch } from '../components/learn/LearnHubSearch'
 import { learnCardHover, learnEyebrow, learnFocusRing } from '../components/learn/learnUi'
@@ -56,12 +57,12 @@ export function LearnHubPage() {
   return (
     <>
       <Helmet>
-        <title>Learn | Treatments, Brands & Care Guides | The Skincare Studio Stratford, CT</title>
+        <title>{`${resultsResourcesLabel} | Treatments, Brands & Care Guides | The Skincare Studio Stratford, CT`}</title>
         <meta
           name="description"
           content="Explore SkinPen Microneedling, VI Peel, lasers, Hydrafacial, PCA Skin, injectables, and more at The Skincare Studio Medical Spa in Stratford, Connecticut."
         />
-        <link rel="canonical" href={`${BASE}/learn`} />
+        <link rel="canonical" href={`${BASE}${resultsResourcesPath}`} />
       </Helmet>
 
       <section className="relative overflow-hidden border-b border-warmStone/50 bg-gradient-to-b from-cream/90 via-white to-softBlue/15 pb-12 pt-10 md:pb-16 md:pt-14 lg:pb-20 lg:pt-16">
@@ -70,9 +71,9 @@ export function LearnHubPage() {
           aria-hidden
         />
         <div className="relative mx-auto max-w-6xl px-4 text-center sm:px-8 lg:px-12">
-          <p className={learnEyebrow}>Education hub</p>
+          <p className={learnEyebrow}>Results &amp; resources</p>
           <h1 className="mx-auto mt-3 max-w-3xl font-serif text-[1.875rem] leading-[1.12] tracking-tight text-accentNavy md:text-4xl lg:text-[2.625rem]">
-            Learn what makes our studio different.
+            Real results and trusted resources.
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.75] text-slate-600 md:text-[16px] md:leading-[1.72]">
             Clear guides on the technologies we use, the medical-grade skincare lines we trust, and how to plan visits
@@ -152,7 +153,7 @@ export function LearnHubPage() {
                   {topics.map((topic) => (
                     <li key={topic.slug} className="flex">
                       <Link
-                        to={`/learn/${topic.slug}`}
+                        to={`${resultsResourcesPath}/${topic.slug}`}
                         className={`group flex min-h-[13rem] w-full flex-col rounded-2xl border border-slate-200/90 bg-gradient-to-br from-white to-cream/25 p-6 text-left shadow-sm ring-1 ring-transparent md:min-h-[13.5rem] md:p-7 ${learnFocusRing} hover:-translate-y-1 hover:border-accentBlue/30 hover:to-white hover:shadow-[0_16px_40px_-28px_rgba(45,106,169,0.35)] hover:ring-accentBlue/10`}
                       >
                         <p className="text-[11px] font-semibold uppercase tracking-luxury text-accentBlue md:text-xs">

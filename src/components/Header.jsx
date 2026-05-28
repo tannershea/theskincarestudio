@@ -1,9 +1,21 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { logoSrc, bookingUrl, contactDetails } from '../data'
+import { logoSrc, bookingUrl, contactDetails, giftCardsPath, giftCardsLabel, resultsResourcesPath, resultsResourcesLabel } from '../data'
 
 const navLinkClass = ({ isActive }) =>
-  `relative inline-block tracking-tight transition-all duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:rounded-full after:bg-accentBlue after:transition-[width] after:duration-300 after:ease-out hover:after:w-full hover:scale-105 origin-left ${isActive ? 'text-accentNavy font-semibold after:w-full' : 'text-slate-500 hover:text-accentNavy after:w-0'}`
+  `relative inline-block shrink-0 whitespace-nowrap tracking-tight transition-all duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:rounded-full after:bg-accentBlue after:transition-[width] after:duration-300 after:ease-out hover:after:w-full hover:text-accentNavy origin-left ${isActive ? 'text-accentNavy font-semibold after:w-full' : 'text-slate-500 after:w-0'}`
+
+const resultsResourcesNavClass = ({ isActive }) =>
+  `${navLinkClass({ isActive })} leading-[1.15]`
+
+function ResultsResourcesNavLabel() {
+  return (
+    <span className="inline-block text-center leading-[1.15] xl:text-left">
+      <span className="block whitespace-nowrap">Results &</span>
+      <span className="block whitespace-nowrap">Resources</span>
+    </span>
+  )
+}
 
 function AnnouncementBar() {
   const [dismissed, setDismissed] = useState(false)
@@ -12,7 +24,7 @@ function AnnouncementBar() {
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-accentNavy via-accentNavy/95 to-accentNavy text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.06),transparent_50%)]" aria-hidden />
-      <div className="relative mx-auto flex max-w-6xl items-center justify-center gap-3 px-4 py-2.5 text-center sm:gap-4 sm:px-10">
+      <div className="relative mx-auto flex max-w-7xl items-center justify-center gap-3 px-4 py-2.5 text-center sm:gap-4 sm:px-8 lg:px-10">
         <p className="text-[13px] font-medium leading-snug tracking-wide sm:text-sm">
           <span className="mr-1.5 inline-flex shrink-0 items-center rounded bg-accentGreen/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accentGreen sm:text-[11px]">
             June only
@@ -53,29 +65,35 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
       <AnnouncementBar />
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-8 sm:py-4 lg:px-12">
-        <Link to="/" className="shrink-0 transition-transform duration-200 hover:scale-105">
+      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:gap-6 lg:px-10 lg:py-3.5 xl:gap-8 xl:px-12">
+        <Link to="/" className="shrink-0 transition-transform duration-200 hover:scale-[1.02]">
           <img
             src={logoSrc}
             alt="The Skincare Studio logo - Your Skin Deserves Better"
-            className="h-20 w-auto object-contain sm:h-24 lg:h-28"
+            className="h-[4.25rem] w-auto object-contain sm:h-[4.75rem] lg:h-20 xl:h-[5.25rem]"
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 text-[15px] font-medium tracking-tight md:flex">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-5 text-[14px] font-medium lg:flex xl:gap-7 xl:text-[15px]">
           <NavLink to="/" end className={navLinkClass}>Home</NavLink>
           <NavLink to="/services" className={navLinkClass}>Services</NavLink>
-          <NavLink to="/learn" className={navLinkClass}>Learn</NavLink>
+          <NavLink to={giftCardsPath} className={navLinkClass}>{giftCardsLabel}</NavLink>
+          <NavLink to={resultsResourcesPath} className={resultsResourcesNavClass}>
+            <span className="hidden whitespace-nowrap xl:inline">{resultsResourcesLabel}</span>
+            <span className="xl:hidden">
+              <ResultsResourcesNavLabel />
+            </span>
+          </NavLink>
           <NavLink to="/aftercare" className={navLinkClass}>Aftercare</NavLink>
           <NavLink to="/products" className={navLinkClass}>Products</NavLink>
-          <NavLink to="/about" className={navLinkClass}>About Us</NavLink>
+          <NavLink to="/about" className={navLinkClass}>About</NavLink>
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden shrink-0 items-center gap-4 lg:flex xl:gap-5">
           <a
             href={`tel:${contactDetails.phone}`}
-            className="relative inline-block text-[15px] font-medium tracking-tight text-slate-600 transition-all duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-accentBlue after:transition-[width] after:duration-300 after:ease-out hover:text-accentBlue hover:scale-105 hover:after:w-full origin-left"
+            className="relative hidden whitespace-nowrap text-[14px] font-medium tracking-tight text-slate-600 transition-all duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-accentBlue after:transition-[width] after:duration-300 after:ease-out hover:text-accentBlue hover:after:w-full origin-left lg:inline-block xl:text-[15px]"
           >
             {contactDetails.phone}
           </a>
@@ -83,13 +101,13 @@ export function Header() {
             href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg bg-accentNavy px-5 py-2.5 text-[15px] font-semibold tracking-tight text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90 hover:shadow-md"
+            className="whitespace-nowrap rounded-lg bg-accentNavy px-4 py-2.5 text-[14px] font-semibold tracking-tight text-white transition-all duration-200 hover:bg-accentNavy/90 hover:shadow-md xl:px-5 xl:text-[15px]"
           >
             Book Online
           </a>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="ml-auto flex shrink-0 items-center gap-2 lg:hidden">
           <a
             href={`tel:${contactDetails.phone}`}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-accentBlue transition-all duration-200 hover:scale-110"
@@ -109,7 +127,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-slate-100 bg-white px-6 py-4 md:hidden">
+        <div className="border-t border-slate-100 bg-white px-6 py-4 lg:hidden">
           <nav className="flex flex-col gap-3">
             <NavLink to="/" end onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Home
@@ -117,8 +135,11 @@ export function Header() {
             <NavLink to="/services" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Services
             </NavLink>
-            <NavLink to="/learn" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
-              Learn
+            <NavLink to={giftCardsPath} onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
+              {giftCardsLabel}
+            </NavLink>
+            <NavLink to={resultsResourcesPath} onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
+              {resultsResourcesLabel}
             </NavLink>
             <NavLink to="/aftercare" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Aftercare
@@ -127,7 +148,7 @@ export function Header() {
               Products
             </NavLink>
             <NavLink to="/about" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
-              About Us
+              About
             </NavLink>
             <NavLink to="/contact" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Contact

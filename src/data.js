@@ -6,6 +6,13 @@ export const bookingUrl =
 export const giftCardUrl =
   "https://booking.podium.com/medspa/gift-cards/019c8c61-886d-7520-b631-d3871ad7f936";
 
+export const giftCardsPath = '/gifts'
+export const giftCardsLabel = 'Gift Cards'
+
+/** Results and Resources hub (formerly Learn) */
+export const resultsResourcesPath = '/results-and-resources'
+export const resultsResourcesLabel = 'Results & Resources'
+
 /** Full booking URLs for services that use the external calendar instead of /book */
 export const serviceBookingUrlOverrides = {
   "Gift Cards": giftCardUrl,

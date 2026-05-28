@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { ScrollReveal } from '../components/ScrollReveal'
-import { bookingUrl, giftCardUrl } from '../data'
+import { Link } from 'react-router-dom'
+import { bookingUrl, giftCardsPath, giftCardsLabel } from '../data'
 
 const productsHeroImages = [
   '/studio-display-table.png',
@@ -258,14 +259,12 @@ export function ProductsPage() {
             <span className="font-semibold text-accentNavy">Give the gift of great skin.</span>{' '}
             Gift cards work toward treatments and in-studio skincare.
           </p>
-          <a
-            href={giftCardUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to={giftCardsPath}
             className="shrink-0 inline-flex rounded-full bg-accentNavy px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-accentNavy/90"
           >
-            Buy a Gift Card
-          </a>
+            {giftCardsLabel}
+          </Link>
         </div>
       </section>
 

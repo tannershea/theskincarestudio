@@ -367,6 +367,11 @@ export const learnTopics = [
       },
     ],
     placeholders: {},
+    beforeAfter: {
+      src: '/learn-revanesse-versa-lips-before-after.png',
+      alt: 'Before and after Revanesse Versa lip filler showing fuller, smoother lips at The Skincare Studio',
+      caption: 'Lips enhanced with hyaluronic acid filler at our studio.',
+    },
     heroImageSrc: '/learn-revanesse-versa-product.png',
     heroImageAlt: 'Revanesse Versa and Versa Lips filler packaging on a black background',
     logoImageSrc: '/learn-revanesse-versa-logo.png',
@@ -398,6 +403,11 @@ export const learnTopics = [
       },
     ],
     placeholders: {},
+    beforeAfter: {
+      src: '/learn-letybo-daxxify-forehead-before-after.png',
+      alt: 'Before and after neurotoxin on the forehead showing smoothed horizontal expression lines at The Skincare Studio',
+      caption: 'Forehead lines softened with neuromodulator treatment at our studio.',
+    },
     brands: [
       {
         name: 'Letybo',

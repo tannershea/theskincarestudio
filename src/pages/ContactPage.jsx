@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { bookingUrl, giftCardUrl, contactDetails, openingHours, localBusinessSchema, googleMapsUrl } from '../data'
+import { Link } from 'react-router-dom'
+import { bookingUrl, giftCardsPath, giftCardsLabel, contactDetails, openingHours, localBusinessSchema, googleMapsUrl } from '../data'
 
 /** Shared shell so every card reads as part of one system */
 const CARD = 'rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm sm:p-8'
@@ -64,14 +65,12 @@ export function ContactPage() {
             >
               Book Online
             </a>
-            <a
-              href={giftCardUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={giftCardsPath}
               className="inline-flex rounded-lg border border-accentNavy/20 bg-white px-6 py-3.5 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:border-accentBlue hover:bg-slate-50"
             >
-              Buy a Gift Card
-            </a>
+              {giftCardsLabel}
+            </Link>
           </div>
         </div>
       </section>

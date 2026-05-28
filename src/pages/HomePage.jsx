@@ -6,6 +6,7 @@ import { Newsletter } from '../components/Newsletter'
 import {
   bookingUrl,
   giftCardUrl,
+  giftCardsPath,
   contactDetails,
   recognitions,
   serviceAreas,
@@ -222,6 +223,9 @@ export function HomePage() {
           </div>
       </section>
 
+      {/* Before & After */}
+      <BeforeAfter />
+
       {/* Popular services - Mixed card colors */}
       <section className="border-t border-warmStone/50 bg-cream py-10 md:py-16 lg:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
@@ -307,9 +311,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Before & After */}
-      <BeforeAfter />
-
       {/* Aftercare Instructions */}
       <section className="border-t border-warmStone/50 bg-white py-9 md:py-12 lg:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
@@ -378,14 +379,12 @@ export function HomePage() {
           </div>
           <p className="mt-5 text-[14px] leading-relaxed text-slate-600 sm:mt-6 sm:text-[15px]">
             Perfect for birthdays, holidays, and treating someone special.{' '}
-            <a
-              href={giftCardUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={giftCardsPath}
               className="font-semibold text-accentNavy underline decoration-accentGreen/60 underline-offset-2 transition-colors hover:text-accentBlue"
             >
               Buy a gift card
-            </a>
+            </Link>
           </p>
         </div>
         </ScrollReveal>

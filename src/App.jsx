@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { StickyCTA } from './components/StickyCTA'
@@ -13,6 +13,13 @@ import { BookingPage } from './pages/BookingPage'
 import { AftercarePage } from './pages/AftercarePage'
 import { LearnHubPage } from './pages/LearnHubPage'
 import { LearnTopicPage } from './pages/LearnTopicPage'
+import { GiftCardsPage } from './pages/GiftCardsPage'
+import { resultsResourcesPath } from './data'
+
+function LearnLegacyRedirect() {
+  const { slug } = useParams()
+  return <Navigate to={slug ? `${resultsResourcesPath}/${slug}` : resultsResourcesPath} replace />
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -29,8 +36,11 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/learn" element={<LearnHubPage />} />
-          <Route path="/learn/:slug" element={<LearnTopicPage />} />
+          <Route path="/gifts" element={<GiftCardsPage />} />
+          <Route path={resultsResourcesPath} element={<LearnHubPage />} />
+          <Route path={`${resultsResourcesPath}/:slug`} element={<LearnTopicPage />} />
+          <Route path="/learn" element={<Navigate to={resultsResourcesPath} replace />} />
+          <Route path="/learn/:slug" element={<LearnLegacyRedirect />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/book" element={<BookingPage />} />
