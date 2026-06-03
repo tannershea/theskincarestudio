@@ -23,15 +23,15 @@ export const serviceBookingUrlOverrides = {
   "Lip Filler":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/85e9e4c8-c73e-41a6-b880-e98f031733fd",
   "Dermal Fillers":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/7520b5c0-59bb-4142-ae79-fa6d40c6f7cd",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e83ffeaf-b8ec-421d-a86a-10a7aa47d125",
   "VAMP by Prollenium Skin Booster":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/52489336-2726-43da-90fe-90e5622dbd69",
   "Facial Balancing":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/71d7123f-37e4-4e9d-b6a5-7fede8c75cbf",
   "PRFM Small Area":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/fce572c9-e792-4473-9241-9cf1b8c194ca",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e83ffeaf-b8ec-421d-a86a-10a7aa47d125",
   "PRFM Large Area":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/ea4a07f2-730a-4685-87eb-fdef334829e6",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e83ffeaf-b8ec-421d-a86a-10a7aa47d125",
   "Keravive Treatments":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/109bdcbd-523a-477c-810a-c41a910259a5",
   "NAD+":
@@ -51,7 +51,7 @@ export const serviceBookingUrlOverrides = {
   "Radiofrequency Microneedling with PRP":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/5ba3f289-9654-42d9-9109-14988d0683ae",
   "Laser Hair Removal":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/578ef5cb-6e88-47fb-9af6-b909e87f25d4",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/d7703a93-d34a-4217-9fbc-931e872c0b48",
   "Spider & Varicose Vein Removal":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/95781ede-adc0-4c00-b73f-b39e61463878",
   "Laser Toning":
