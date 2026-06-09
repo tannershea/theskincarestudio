@@ -27,7 +27,7 @@ export const serviceBookingUrlOverrides = {
   "VAMP by Prollenium Skin Booster":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/52489336-2726-43da-90fe-90e5622dbd69",
   "Facial Balancing":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/71d7123f-37e4-4e9d-b6a5-7fede8c75cbf",
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e83ffeaf-b8ec-421d-a86a-10a7aa47d125",
   "PRFM Small Area":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e83ffeaf-b8ec-421d-a86a-10a7aa47d125",
   "PRFM Large Area":
@@ -110,6 +110,10 @@ export const serviceBookingUrlOverrides = {
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/5221cf0e-8e04-491d-93e7-114485b148ed",
   "Teen Acne Facial":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e8880d47-fe2b-474e-9fc0-c575f7f4a242",
+  "Summer Glow Facial":
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/b1740b69-7b8d-43ca-916f-6fef22ed78b0",
+  "Tween & Teen Clinical Facial":
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/6940fde4-e6e5-439f-9e8a-22ee9ffa500f",
   "Back Facial":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/0bf89278-3c1a-4080-a431-1b7281d630e9",
   "Skin Tag Removal":
@@ -609,6 +613,8 @@ export const serviceGroups = [
     category: "Skin Maintenance & Facials",
     title: "Facials",
     services: [
+      { name: "Summer Glow Facial", duration: "30 min", price: "$125", desc: "A 30-minute brightening facial with no extractions and no dermaplaning. The perfect summer glow-up." },
+      { name: "Tween & Teen Clinical Facial", duration: "45 min", price: "$125", desc: "Clinical-grade facial for tween and teen skin, gentle exfoliation, targeted care, and education for a healthy, clear complexion." },
       { name: "Hydrafacial Signature", duration: "1 hr", price: "$225", desc: "The classic Hydrafacial experience, deep cleanse, gentle exfoliation, painless extractions, and hydrating infusion for healthy, glowing skin." },
       { name: "Hydrafacial Deluxe", duration: "1 hr 15 min", price: "$275", desc: "Multi-step Hydrafacial with cleansing, extraction, and hydration plus customized boosters." },
       { name: "Hydrafacial Platinum", duration: "1 hr 15 min", price: "$325", desc: "Our most advanced Hydrafacial with LED light therapy and lymphatic drainage for ultimate glow." },
