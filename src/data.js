@@ -32,6 +32,10 @@ export const serviceBookingUrlOverrides = {
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e83ffeaf-b8ec-421d-a86a-10a7aa47d125",
   "PRFM Large Area":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e83ffeaf-b8ec-421d-a86a-10a7aa47d125",
+  "B-12 Shot":
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/9829de04-79aa-497e-879f-8dc51319dfad",
+  "Glutathione Shot":
+    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/74cfe90d-ed99-4437-bcc1-693c31391356",
   "Keravive Treatments":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/109bdcbd-523a-477c-810a-c41a910259a5",
   "NAD+":
@@ -570,7 +574,7 @@ export const serviceGroups = [
       { name: "SkinPen Microneedling with PRP", duration: "1 hr 30 min", price: "$675", desc: "Microneedling enhanced with platelet-rich plasma for accelerated healing and deeper rejuvenation." },
       { name: "SkinPen Microneedling with VAMP", duration: "45 min", price: "$575", desc: "Microneedling paired with VAMP by Prollenium, a PDRN skin booster for collagen support, glow, and skin quality." },
       { name: "Nano Needling Brightening Facial", duration: "1 hr", price: "$300", desc: "Gentle nano-needling facial that infuses brightening serums for luminous, even-toned skin." },
-      { name: "Radiofrequency Microneedling", duration: "1 hr", price: "$625", desc: "Lutronic Genius Radiofrequency Microneedling for skin tightening, wrinkle reduction, and deep remodeling." },
+      { name: "Radiofrequency Microneedling", duration: "1 hr", price: "$685", desc: "Lutronic Genius Radiofrequency Microneedling for skin tightening, wrinkle reduction, and deep remodeling." },
       { name: "Radiofrequency Microneedling with PRP", duration: "1 hr", price: "$725", desc: "RF microneedling combined with PRP for maximum collagen stimulation and skin renewal." },
     ],
   },
@@ -580,6 +584,8 @@ export const serviceGroups = [
     services: [
       { name: "PRFM Small Area", duration: "1 hr 15 min", price: "$850", desc: "Platelet-rich fibrin matrix treatment to reduce dark circles, hollowing, and under-eye aging." },
       { name: "PRFM Large Area", duration: "1 hr 30 min", price: "$1,450", desc: "Full-face regenerative treatment using your own growth factors for collagen renewal and skin rejuvenation." },
+      { name: "B-12 Shot", duration: "15 min", price: "$35", desc: "Quick vitamin B-12 injection to support energy, metabolism, and overall wellness." },
+      { name: "Glutathione Shot", duration: "15 min", price: "$50", desc: "Powerful antioxidant injection to support detox, skin brightness, and cellular health." },
       { name: "Keravive Treatments", duration: "1 hr", price: "$125", desc: "HydraFacial Keravive scalp protocol, deep cleanse, exfoliation, and peptide-rich hydration to support a healthier scalp and fuller-looking hair." },
       { name: "NAD+", duration: "Varies", price: "Inquire", desc: "NAD+ IV therapy for cellular energy, anti-aging support, and overall wellness." },
       { name: "PRP Hair Restoration", duration: "1 hr", price: "Inquire", desc: "Platelet-rich plasma treatment to stimulate hair follicles and support healthier, thicker hair growth." },
