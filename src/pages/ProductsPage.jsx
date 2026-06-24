@@ -87,6 +87,7 @@ const productImages = {
   'Toner': '/products/obagi-toner.png',
   'Hydrate Facial Moisturizer': '/products/obagi-hydrate-facial-moisturizer.png',
   'Nu-Derm Foaming Gel': '/products/obagi-nu-derm-foaming-gel.png',
+  'Lip Therapy': '/products/obagi-lip-therapy.png',
 }
 
 function getProductImage(product) {
@@ -128,6 +129,7 @@ export const products = [
   { name: 'Elastiderm Lift Up & Sculpt Moisturizer', brand: 'Obagi', price: '$140', desc: 'Facial moisturizer that lifts, sculpts, and firms with peptides and elasticity-boosting ingredients.' },
   { name: 'RebalanceSkin Barrier Recovery Cream', brand: 'Obagi', price: '$125', desc: 'Barrier-repair cream that restores and strengthens the skin\'s natural protective layer.' },
   { name: 'Daily Hydro-Drops Eye Gel Cream', brand: 'Obagi', price: '$80', desc: 'Cooling eye gel cream that provides lightweight hydration and reduces puffiness around the eyes.' },
+  { name: 'Lip Therapy', brand: 'Obagi', price: '$55', desc: 'PM lip treatment with AHA and PHA smoothing micro-peel to exfoliate, soften, and renew dry or flaky lips overnight.' },
 
   // iS Clinical
   { name: 'Pro-Heal Serum Advanced 15ML', brand: 'iS Clinical', price: '$104', desc: 'Powerful antioxidant serum with vitamin C, E, and olive leaf extract for healing and protection.' },

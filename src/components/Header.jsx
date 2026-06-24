@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { logoSrc, bookingUrl, contactDetails, giftCardsPath, giftCardsLabel, resultsResourcesPath, resultsResourcesLabel } from '../data'
+import { logoSrc, bookingUrl, contactDetails, giftCardsPath, giftCardsLabel, resultsResourcesPath, resultsResourcesLabel, serviceBookingUrlOverrides } from '../data'
 
 const navLinkClass = ({ isActive }) =>
   `relative inline-block shrink-0 whitespace-nowrap tracking-tight transition-all duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:rounded-full after:bg-accentBlue after:transition-[width] after:duration-300 after:ease-out hover:after:w-full hover:text-accentNavy origin-left ${isActive ? 'text-accentNavy font-semibold after:w-full' : 'text-slate-500 after:w-0'}`
@@ -19,6 +19,8 @@ function ResultsResourcesNavLabel() {
 
 function AnnouncementBar() {
   const [dismissed, setDismissed] = useState(false)
+  const laserConsultUrl = serviceBookingUrlOverrides['Laser Consultation'] || bookingUrl
+
   if (dismissed) return null
 
   return (
@@ -27,21 +29,20 @@ function AnnouncementBar() {
       <div className="relative mx-auto flex max-w-7xl items-center justify-center gap-3 px-4 py-2.5 text-center sm:gap-4 sm:px-8 lg:px-10">
         <p className="text-[13px] font-medium leading-snug tracking-wide sm:text-sm">
           <span className="mr-1.5 inline-flex shrink-0 items-center rounded bg-accentGreen/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accentGreen sm:text-[11px]">
-            June only
+            July only
           </span>
-          <span className="mr-1 inline-block animate-pulse text-base leading-none" aria-hidden>🎁</span>
-          <span className="font-extrabold text-accentGreen">$50 OFF</span>
-          <span className="text-white/95"> for new cosmetic patients only</span>
-          <span className="mx-1.5 hidden text-white/35 sm:inline" aria-hidden>|</span>
-          <span className="hidden text-white/65 sm:inline">Ends June 30 · First visit · Botox, fillers &amp; more</span>
-          <span className="sm:hidden text-white/65"> · Ends June 30</span>
+          <span className="mr-1 inline-block text-base leading-none" aria-hidden>☀️</span>
+          <span className="font-extrabold text-accentGreen">FREE underarm or post package touch up session</span>
+          <span className="text-white/95"> when you join a Laser Hair Removal Membership</span>
+          <span className="mx-1.5 text-white/35" aria-hidden>|</span>
+          <span className="text-white/65">Ends July 31st</span>
           <a
-            href={bookingUrl}
+            href={laserConsultUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 inline-flex shrink-0 items-center gap-1 rounded-full bg-accentGreen px-3 py-1 text-[12px] font-bold tracking-wide text-accentNavy shadow-sm transition-all hover:bg-accentGreen/90 hover:shadow-md sm:text-[13px]"
           >
-            Claim $50 off <span aria-hidden>→</span>
+            Book Now <span aria-hidden>→</span>
           </a>
         </p>
         <button
