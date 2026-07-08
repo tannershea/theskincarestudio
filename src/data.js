@@ -92,8 +92,6 @@ export const serviceBookingUrlOverrides = {
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/606c36d6-233a-4ca1-8124-fa7c3edeb924",
   "Hydrafacial Platinum":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/43d9815c-10fe-4b60-b163-06991f7595b2",
-  "Hydrafacial For Him":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/23ef3b5a-b5f4-48b8-adfc-35cbf63b6d16",
   "GLO2Facial Signature":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/0a41cd85-8bd2-413a-8c41-d0a37713ad47",
   "Hydrafacial Deluxe":
@@ -624,7 +622,6 @@ export const serviceGroups = [
       { name: "Hydrafacial Signature", duration: "1 hr", price: "$225", desc: "The classic Hydrafacial experience, deep cleanse, gentle exfoliation, painless extractions, and hydrating infusion for healthy, glowing skin." },
       { name: "Hydrafacial Deluxe", duration: "1 hr 15 min", price: "$275", desc: "Multi-step Hydrafacial with cleansing, extraction, and hydration plus customized boosters." },
       { name: "Hydrafacial Platinum", duration: "1 hr 15 min", price: "$325", desc: "Our most advanced Hydrafacial with LED light therapy and lymphatic drainage for ultimate glow." },
-      { name: "Hydrafacial For Him", duration: "1 hr", price: "$150", desc: "Hydrafacial tailored for men’s skin, deep cleansing, exfoliation, extractions, and hydration for a clear, refreshed look." },
       { name: "GLO2Facial Signature", duration: "1 hr", price: "$225", desc: "Oxygenation facial that exfoliates, infuses nutrients, and gives skin an instant radiant boost." },
       { name: "GLO2Facial Deluxe", duration: "1 hr 30 min", price: "$275", desc: "Extended GLO2Facial with additional treatments for deeper hydration and enhanced results." },
       { name: "Glow On The GO", duration: "30 min", price: "Inquire", desc: "Quick, targeted facial treatment for an instant glow, ideal for busy schedules." },
