@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { logoSrc, bookingUrl, contactDetails, giftCardsPath, giftCardsLabel, resultsResourcesPath, resultsResourcesLabel, serviceBookingUrlOverrides } from '../data'
+import { logoSrc, bookingUrl, contactDetails, giftCardsPath, giftCardsLabel, resultsResourcesPath, resultsResourcesLabel } from '../data'
 
 const navLinkClass = ({ isActive }) =>
   `relative inline-block shrink-0 whitespace-nowrap tracking-tight transition-all duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:rounded-full after:bg-accentBlue after:transition-[width] after:duration-300 after:ease-out hover:after:w-full hover:text-accentNavy origin-left ${isActive ? 'text-accentNavy font-semibold after:w-full' : 'text-slate-500 after:w-0'}`
@@ -19,7 +19,8 @@ function ResultsResourcesNavLabel() {
 
 function AnnouncementBar() {
   const [dismissed, setDismissed] = useState(false)
-  const laserConsultUrl = serviceBookingUrlOverrides['Laser Consultation'] || bookingUrl
+  const wellnessSpecialsUrl =
+    'https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/category/04f1205a-4b89-46e5-a0a8-603f09d34bca'
 
   if (dismissed) return null
 
@@ -29,15 +30,15 @@ function AnnouncementBar() {
       <div className="relative mx-auto flex max-w-7xl items-center justify-center gap-3 px-4 py-2.5 text-center sm:gap-4 sm:px-8 lg:px-10">
         <p className="text-[13px] font-medium leading-snug tracking-wide sm:text-sm">
           <span className="mr-1.5 inline-flex shrink-0 items-center rounded bg-accentGreen/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accentGreen sm:text-[11px]">
-            July only
+            August only
           </span>
-          <span className="mr-1 inline-block text-base leading-none" aria-hidden>☀️</span>
-          <span className="font-extrabold text-accentGreen">FREE underarm or post package touch up session</span>
-          <span className="text-white/95"> when you join a Laser Hair Removal Membership</span>
+          <span className="mr-1 inline-block text-base leading-none" aria-hidden>🌻</span>
+          <span className="font-extrabold text-accentGreen">Celebrate National Wellness Month</span>
+          <span className="text-white/95"> with limited-time Wellness Specials</span>
           <span className="mx-1.5 text-white/35" aria-hidden>|</span>
-          <span className="text-white/65">Ends July 31st</span>
+          <span className="text-white/65">Appointments Aug 1–31</span>
           <a
-            href={laserConsultUrl}
+            href={wellnessSpecialsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 inline-flex shrink-0 items-center gap-1 rounded-full bg-accentGreen px-3 py-1 text-[12px] font-bold tracking-wide text-accentNavy shadow-sm transition-all hover:bg-accentGreen/90 hover:shadow-md sm:text-[13px]"

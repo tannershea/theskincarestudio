@@ -16,6 +16,16 @@ export const resultsResourcesLabel = 'Results & Resources'
 /** Full booking URLs for services that use the external calendar instead of /book */
 export const serviceBookingUrlOverrides = {
   "Gift Cards": giftCardUrl,
+  "Wellness Facial":
+    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/ade6412e-1488-43e8-82ed-a11d171f9771",
+  "Wellness Chemical Peel":
+    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/cc5b18ec-308f-4878-92f3-0ab17287363c",
+  "Wellness Neurotoxin":
+    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/d2a15ba9-fb05-4298-954d-e3582bd36c75",
+  "Wellness Lip Filler":
+    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/9db0be57-ac4c-4aca-b5b9-87df4ac9d6b4",
+  "Wellness Regimen Rebuild":
+    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/89a7c78a-9971-41a8-a0c1-12e51be8a82d",
   "The Refresh Neurotoxin":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/1784a606-4b4a-4371-b867-711a02b336a4",
   "Neurotoxin":
@@ -33,7 +43,7 @@ export const serviceBookingUrlOverrides = {
   "PRFM Large Area":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e83ffeaf-b8ec-421d-a86a-10a7aa47d125",
   "B-12 Shot":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/9829de04-79aa-497e-879f-8dc51319dfad",
+    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/9829de04-79aa-497e-879f-8dc51319dfad",
   "Glutathione Shot":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/74cfe90d-ed99-4437-bcc1-693c31391356",
   "Keravive Treatments":
@@ -510,6 +520,48 @@ export const popularProductNames = [
 ]
 
 export const serviceGroups = [
+  {
+    category: "Limited-Time Offers",
+    title: "National Wellness Month Specials",
+    services: [
+      {
+        name: "Wellness Facial",
+        duration: "45 min",
+        price: "$125",
+        desc: "The perfect reset for your skin. Cleanse, exfoliate, hydrate, and leave with a healthy, refreshed glow.",
+      },
+      {
+        name: "B-12 Shot",
+        duration: "15 min",
+        price: "$35",
+        desc: "Support natural energy, focus and overall wellness from the inside out. A boost to help you feel as good as you look.",
+      },
+      {
+        name: "Wellness Chemical Peel",
+        duration: "30 min",
+        price: "$65",
+        desc: "Target pigmentation, acne, texture, and signs of aging.",
+      },
+      {
+        name: "Wellness Neurotoxin",
+        duration: "15 min",
+        price: "$12/unit",
+        desc: "Smooth fine lines while maintaining natural looking results.",
+      },
+      {
+        name: "Wellness Lip Filler",
+        duration: "1 hr",
+        price: "$550 per syringe",
+        desc: "Enhance your lips with soft, balanced, natural-looking volume.",
+      },
+      {
+        name: "Wellness Regimen Rebuild",
+        duration: "30 min",
+        price: "$35 or Complimentary with Skincare Purchase",
+        desc: "Bring in your current skincare products, and we'll evaluate your routine, identify what's working, and create a customized treatment plan.",
+      },
+    ],
+  },
   {
     category: "Begin Your Journey",
     title: "Consultations",

@@ -36,7 +36,7 @@ export const aboutTeamMembers = [
   },
   {
     name: 'Alix Agathos',
-    role: 'Medical Assistant',
+    role: 'Aesthetic Clinical Assistant',
     credentials: 'CPT, PCT',
     bio: 'Alixandria supports our clinical team with hands-on assistance, ensuring every visit runs smoothly and comfortably.',
     image: '/team-alixandria.png',
@@ -58,7 +58,7 @@ export const aboutTeamMembers = [
   },
   {
     name: 'Jenny Depina',
-    role: 'Patient Coordinator',
+    role: 'Assistant Manager',
     credentials: '',
     bio: 'Jenny ensures every client\'s experience, from scheduling through follow-up, is seamless, comfortable, and personalized.',
     image: '/team-jenny.png',
