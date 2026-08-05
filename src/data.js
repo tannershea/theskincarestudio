@@ -557,7 +557,7 @@ export const serviceGroups = [
       {
         name: "Wellness Regimen Rebuild",
         duration: "30 min",
-        price: "$35 or Complimentary with Skincare Purchase",
+        price: "$35 or waived with Skincare Purchase",
         desc: "Bring in your current skincare products, and we'll evaluate your routine, identify what's working, and create a customized treatment plan.",
       },
     ],
