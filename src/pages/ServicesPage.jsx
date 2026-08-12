@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { bookingUrl, serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs, servicesPageReviews } from '../data'
+import { bookingUrl, serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs, servicesPageReviews, giftCardsPath } from '../data'
 import { FAQ } from '../components/FAQ'
 
 const servicesHeroImages = [
@@ -336,19 +336,26 @@ export function ServicesPage() {
       </section>
 
       <section className="border-t border-warmStone/50 bg-accentNavy py-4">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-8 lg:px-12">
-          <p className="text-center text-[15px] text-white/90 sm:text-left">
-            <span className="font-semibold text-white">Treat now, pay over time</span>, flexible payment plans available for any treatment through Cherry.
-          </p>
-          <a
-            href="https://pay.withcherry.com/theskincarestudioct"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:gap-4 sm:px-8 lg:px-12">
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:items-center sm:gap-3">
+            <p className="text-center text-[15px] text-white/90 sm:text-left">
+              <span className="font-semibold text-white">Flexible payment plans</span>
+              {' '}available through Cherry and CareCredit.
+            </p>
+            <p className="inline-flex items-center gap-1.5 text-[13px] font-medium tracking-wide text-accentGreen sm:text-[14px]">
+              Click to learn more
+              <svg className="h-4 w-4 rotate-90 sm:rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </p>
+          </div>
+          <Link
+            to={`${giftCardsPath}#payment-options`}
             className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:bg-white/20"
           >
             Learn more
-            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
-          </a>
+            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+          </Link>
         </div>
       </section>
 

@@ -17,6 +17,15 @@ function ResultsResourcesNavLabel() {
   )
 }
 
+function GiftCardsNavLabel() {
+  return (
+    <span className="inline-block text-center leading-[1.15] xl:text-left">
+      <span className="block whitespace-nowrap">Gift Cards &</span>
+      <span className="block whitespace-nowrap">Payment Options</span>
+    </span>
+  )
+}
+
 function AnnouncementBar() {
   const [dismissed, setDismissed] = useState(false)
   const wellnessSpecialsUrl =
@@ -87,7 +96,9 @@ export function Header() {
           </NavLink>
           <NavLink to="/aftercare" className={navLinkClass}>Aftercare</NavLink>
           <NavLink to="/products" className={navLinkClass}>Products</NavLink>
-          <NavLink to={giftCardsPath} className={navLinkClass}>{giftCardsLabel}</NavLink>
+          <NavLink to={giftCardsPath} className={resultsResourcesNavClass}>
+            <GiftCardsNavLabel />
+          </NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
         </nav>
