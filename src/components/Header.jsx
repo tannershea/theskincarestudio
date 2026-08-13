@@ -1,6 +1,16 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { logoSrc, bookingUrl, contactDetails, giftCardsPath, giftCardsLabel, resultsResourcesPath, resultsResourcesLabel } from '../data'
+import {
+  logoSrc,
+  bookingUrl,
+  contactDetails,
+  giftCardsPath,
+  giftCardsLabel,
+  resultsResourcesPath,
+  resultsResourcesLabel,
+  cherryFinancingUrl,
+  careCreditUrl,
+} from '../data'
 
 const navLinkClass = ({ isActive }) =>
   `relative inline-block shrink-0 whitespace-nowrap tracking-tight transition-all duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:rounded-full after:bg-accentBlue after:transition-[width] after:duration-300 after:ease-out hover:after:w-full hover:text-accentNavy origin-left ${isActive ? 'text-accentNavy font-semibold after:w-full' : 'text-slate-500 after:w-0'}`
@@ -23,6 +33,67 @@ function GiftCardsNavLabel() {
       <span className="block whitespace-nowrap">Gift Cards &</span>
       <span className="block whitespace-nowrap">Payment Options</span>
     </span>
+  )
+}
+
+function CherryLogo({ compact = false }) {
+  return (
+    <span className="inline-flex items-center gap-1 text-slate-900">
+      <svg
+        viewBox="0 0 32 32"
+        className={compact ? 'h-6 w-6' : 'h-7 w-7'}
+        fill="none"
+        aria-hidden="true"
+      >
+        <circle cx="16" cy="16" r="14.25" stroke="currentColor" strokeWidth="2.2" />
+        <circle cx="11.7" cy="11.5" r="2.55" fill="currentColor" />
+        <circle cx="20.3" cy="20.5" r="2.55" fill="currentColor" />
+        <path d="M13.3 13.1l5.4 5.8" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+      </svg>
+      <span className={`font-bold tracking-tight ${compact ? 'text-[12px]' : 'text-[13px] xl:text-[14px]'}`}>
+        Cherry
+      </span>
+    </span>
+  )
+}
+
+function CareCreditLogo({ compact = false }) {
+  return (
+    <span className={`font-bold tracking-tight text-[#00857C] ${compact ? 'text-[12px]' : 'text-[13px] xl:text-[14px]'}`}>
+      CareCredit
+    </span>
+  )
+}
+
+function FinancingLogos({ compact = false, onNavigate }) {
+  const linkClass =
+    'inline-flex items-center rounded-md border border-slate-200 bg-white px-1.5 py-1 shadow-sm transition-all hover:border-slate-300 hover:shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accentBlue'
+
+  return (
+    <div className={`flex items-center ${compact ? 'gap-1.5' : 'gap-2 xl:gap-2.5'}`}>
+      <a
+        href={cherryFinancingUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apply for Cherry financing"
+        title="Apply for Cherry financing"
+        onClick={onNavigate}
+        className={linkClass}
+      >
+        <CherryLogo compact={compact} />
+      </a>
+      <a
+        href={careCreditUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apply with CareCredit"
+        title="Apply with CareCredit"
+        onClick={onNavigate}
+        className={linkClass}
+      >
+        <CareCreditLogo compact={compact} />
+      </a>
+    </div>
   )
 }
 
@@ -76,7 +147,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
       <AnnouncementBar />
-      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:gap-6 lg:px-10 lg:py-3.5 xl:gap-8 xl:px-12">
+      <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:gap-4 lg:px-8 lg:py-3.5 xl:gap-6 xl:px-10">
         <Link to="/" className="shrink-0 transition-transform duration-200 hover:scale-[1.02]">
           <img
             src={logoSrc}
@@ -85,7 +156,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-5 text-[14px] font-medium lg:flex xl:gap-7 xl:text-[15px]">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-3.5 text-[14px] font-medium lg:flex xl:gap-6 xl:text-[15px]">
           <NavLink to="/" end className={navLinkClass}>Home</NavLink>
           <NavLink to="/services" className={navLinkClass}>Services</NavLink>
           <NavLink to={resultsResourcesPath} className={resultsResourcesNavClass}>
@@ -103,13 +174,8 @@ export function Header() {
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-4 lg:flex xl:gap-5">
-          <a
-            href={`tel:${contactDetails.phone}`}
-            className="relative hidden whitespace-nowrap text-[14px] font-medium tracking-tight text-slate-600 transition-all duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-accentBlue after:transition-[width] after:duration-300 after:ease-out hover:text-accentBlue hover:after:w-full origin-left lg:inline-block xl:text-[15px]"
-          >
-            {contactDetails.phone}
-          </a>
+        <div className="hidden shrink-0 items-center gap-2.5 lg:flex xl:gap-3.5">
+          <FinancingLogos />
           <a
             href={bookingUrl}
             target="_blank"
@@ -137,6 +203,10 @@ export function Header() {
             <span className="text-xl">{mobileOpen ? '✕' : '☰'}</span>
           </button>
         </div>
+      </div>
+
+      <div className="flex items-center justify-center border-t border-slate-100 px-4 py-1.5 lg:hidden">
+        <FinancingLogos compact />
       </div>
 
       {mobileOpen && (
