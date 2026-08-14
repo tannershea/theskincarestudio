@@ -9,7 +9,9 @@ import {
   resultsResourcesPath,
   resultsResourcesLabel,
   cherryFinancingUrl,
+  cherryLogoSrc,
   careCreditUrl,
+  careCreditLogoSrc,
 } from '../data'
 
 const navLinkClass = ({ isActive }) =>
@@ -38,30 +40,21 @@ function GiftCardsNavLabel() {
 
 function CherryLogo({ compact = false }) {
   return (
-    <span className="inline-flex items-center gap-1 text-slate-900">
-      <svg
-        viewBox="0 0 32 32"
-        className={compact ? 'h-6 w-6' : 'h-7 w-7'}
-        fill="none"
-        aria-hidden="true"
-      >
-        <circle cx="16" cy="16" r="14.25" stroke="currentColor" strokeWidth="2.2" />
-        <circle cx="11.7" cy="11.5" r="2.55" fill="currentColor" />
-        <circle cx="20.3" cy="20.5" r="2.55" fill="currentColor" />
-        <path d="M13.3 13.1l5.4 5.8" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-      </svg>
-      <span className={`font-bold tracking-tight ${compact ? 'text-[12px]' : 'text-[13px] xl:text-[14px]'}`}>
-        Cherry
-      </span>
-    </span>
+    <img
+      src={cherryLogoSrc}
+      alt="Cherry"
+      className={`w-auto object-contain ${compact ? 'h-3' : 'h-3.5'}`}
+    />
   )
 }
 
 function CareCreditLogo({ compact = false }) {
   return (
-    <span className={`font-bold tracking-tight text-[#00857C] ${compact ? 'text-[12px]' : 'text-[13px] xl:text-[14px]'}`}>
-      CareCredit
-    </span>
+    <img
+      src={careCreditLogoSrc}
+      alt="CareCredit"
+      className={`w-auto object-contain ${compact ? 'h-3' : 'h-3.5'}`}
+    />
   )
 }
 
@@ -78,7 +71,7 @@ function FinancingLogos({ compact = false, onNavigate }) {
         aria-label="Apply for Cherry financing"
         title="Apply for Cherry financing"
         onClick={onNavigate}
-        className={linkClass}
+        className={`${linkClass} overflow-hidden bg-black p-0`}
       >
         <CherryLogo compact={compact} />
       </a>
@@ -89,7 +82,7 @@ function FinancingLogos({ compact = false, onNavigate }) {
         aria-label="Apply with CareCredit"
         title="Apply with CareCredit"
         onClick={onNavigate}
-        className={linkClass}
+        className={`${linkClass} overflow-hidden bg-black p-0`}
       >
         <CareCreditLogo compact={compact} />
       </a>
