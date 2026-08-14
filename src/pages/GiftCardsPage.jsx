@@ -122,7 +122,7 @@ export function GiftCardsPage() {
                 <img
                   src={cherryLogoSrc}
                   alt="Cherry"
-                  className="h-4 w-auto rounded-md object-contain sm:h-5"
+                  className="h-10 w-auto object-contain object-left sm:h-11"
                 />
                 <p className="mt-1.5 text-[14px] leading-relaxed text-slate-600 sm:text-[15px]">
                   Apply for flexible monthly payments through Cherry financing.

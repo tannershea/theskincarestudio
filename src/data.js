@@ -11,7 +11,7 @@ export const giftCardsLabel = 'Gift Cards & Payment Options'
 
 /** Patient financing applications */
 export const cherryFinancingUrl = 'https://pay.withcherry.com/theskincarestudioct'
-export const cherryLogoSrc = '/cherry-logo.png'
+export const cherryLogoSrc = '/cherry-logo.png?v=5'
 export const careCreditUrl = 'https://www.carecredit.com/go/JWJ538/'
 export const careCreditLogoSrc = '/carecredit-logo.png'
 

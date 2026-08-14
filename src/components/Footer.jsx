@@ -147,16 +147,16 @@ export function Footer() {
               <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">
                 Flexible financing
               </p>
-              <div className="mt-3 flex flex-wrap items-center gap-4">
+              <div className="mt-3 flex flex-nowrap items-center gap-5">
                 <a
                   href={cherryFinancingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Apply for Cherry financing"
                   title="Apply for Cherry financing"
-                  className="inline-flex items-center transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accentBlue"
+                  className="inline-flex min-w-0 shrink-0 items-center transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accentBlue"
                 >
-                  <img src={cherryLogoSrc} alt="Cherry" className="h-7 w-auto object-contain object-left sm:h-8" />
+                  <img src={cherryLogoSrc} alt="Cherry" className="h-9 w-auto max-w-[8.5rem] object-contain object-left sm:h-10" />
                 </a>
                 <a
                   href={careCreditUrl}
@@ -164,9 +164,9 @@ export function Footer() {
                   rel="noopener noreferrer"
                   aria-label="Apply with CareCredit"
                   title="Apply with CareCredit"
-                  className="inline-flex items-center transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accentBlue"
+                  className="inline-flex min-w-0 shrink-0 items-center transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accentBlue"
                 >
-                  <img src={careCreditLogoSrc} alt="CareCredit" className="h-7 w-auto object-contain object-left sm:h-8" />
+                  <img src={careCreditLogoSrc} alt="CareCredit" className="h-8 w-auto max-w-[10rem] object-contain object-left sm:h-9" />
                 </a>
               </div>
             </div>
