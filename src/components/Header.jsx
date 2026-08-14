@@ -8,10 +8,6 @@ import {
   giftCardsLabel,
   resultsResourcesPath,
   resultsResourcesLabel,
-  cherryFinancingUrl,
-  cherryLogoSrc,
-  careCreditUrl,
-  careCreditLogoSrc,
 } from '../data'
 
 const navLinkClass = ({ isActive }) =>
@@ -35,58 +31,6 @@ function GiftCardsNavLabel() {
       <span className="block whitespace-nowrap">Gift Cards &</span>
       <span className="block whitespace-nowrap">Payment Options</span>
     </span>
-  )
-}
-
-function CherryLogo({ compact = false }) {
-  return (
-    <img
-      src={cherryLogoSrc}
-      alt="Cherry"
-      className={`w-auto object-contain ${compact ? 'h-3' : 'h-3.5'}`}
-    />
-  )
-}
-
-function CareCreditLogo({ compact = false }) {
-  return (
-    <img
-      src={careCreditLogoSrc}
-      alt="CareCredit"
-      className={`w-auto object-contain ${compact ? 'h-3' : 'h-3.5'}`}
-    />
-  )
-}
-
-function FinancingLogos({ compact = false, onNavigate }) {
-  const linkClass =
-    'inline-flex items-center rounded-md border border-slate-200 bg-white px-1.5 py-1 shadow-sm transition-all hover:border-slate-300 hover:shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accentBlue'
-
-  return (
-    <div className={`flex items-center ${compact ? 'gap-1.5' : 'gap-2 xl:gap-2.5'}`}>
-      <a
-        href={cherryFinancingUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Apply for Cherry financing"
-        title="Apply for Cherry financing"
-        onClick={onNavigate}
-        className={`${linkClass} overflow-hidden bg-black p-0`}
-      >
-        <CherryLogo compact={compact} />
-      </a>
-      <a
-        href={careCreditUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Apply with CareCredit"
-        title="Apply with CareCredit"
-        onClick={onNavigate}
-        className={`${linkClass} overflow-hidden bg-black p-0`}
-      >
-        <CareCreditLogo compact={compact} />
-      </a>
-    </div>
   )
 }
 
@@ -151,24 +95,23 @@ export function Header() {
 
         <nav className="hidden min-w-0 flex-1 items-center justify-center gap-3.5 text-[14px] font-medium lg:flex xl:gap-6 xl:text-[15px]">
           <NavLink to="/" end className={navLinkClass}>Home</NavLink>
+          <NavLink to="/about" className={navLinkClass}>About</NavLink>
           <NavLink to="/services" className={navLinkClass}>Services</NavLink>
+          <NavLink to="/aftercare" className={navLinkClass}>Aftercare</NavLink>
           <NavLink to={resultsResourcesPath} className={resultsResourcesNavClass}>
             <span className="hidden whitespace-nowrap xl:inline">{resultsResourcesLabel}</span>
             <span className="xl:hidden">
               <ResultsResourcesNavLabel />
             </span>
           </NavLink>
-          <NavLink to="/aftercare" className={navLinkClass}>Aftercare</NavLink>
           <NavLink to="/products" className={navLinkClass}>Products</NavLink>
           <NavLink to={giftCardsPath} className={resultsResourcesNavClass}>
             <GiftCardsNavLabel />
           </NavLink>
-          <NavLink to="/about" className={navLinkClass}>About</NavLink>
-          <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
+          <NavLink to="/contact" className={navLinkClass}>Contact Us</NavLink>
         </nav>
 
         <div className="hidden shrink-0 items-center gap-2.5 lg:flex xl:gap-3.5">
-          <FinancingLogos />
           <a
             href={bookingUrl}
             target="_blank"
@@ -198,24 +141,23 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center border-t border-slate-100 px-4 py-1.5 lg:hidden">
-        <FinancingLogos compact />
-      </div>
-
       {mobileOpen && (
         <div className="border-t border-slate-100 bg-white px-6 py-4 lg:hidden">
           <nav className="flex flex-col gap-3">
             <NavLink to="/" end onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Home
             </NavLink>
+            <NavLink to="/about" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
+              About
+            </NavLink>
             <NavLink to="/services" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Services
             </NavLink>
-            <NavLink to={resultsResourcesPath} onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
-              {resultsResourcesLabel}
-            </NavLink>
             <NavLink to="/aftercare" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Aftercare
+            </NavLink>
+            <NavLink to={resultsResourcesPath} onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
+              {resultsResourcesLabel}
             </NavLink>
             <NavLink to="/products" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               Products
@@ -223,11 +165,8 @@ export function Header() {
             <NavLink to={giftCardsPath} onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
               {giftCardsLabel}
             </NavLink>
-            <NavLink to="/about" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
-              About
-            </NavLink>
             <NavLink to="/contact" onClick={() => setMobileOpen(false)} className="inline-block py-2.5 text-[15px] font-medium tracking-tight text-accentNavy transition-all duration-200 hover:underline hover:scale-105 origin-left">
-              Contact
+              Contact Us
             </NavLink>
             <a
               href={bookingUrl}
