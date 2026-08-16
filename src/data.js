@@ -306,7 +306,7 @@ export const contactDetails = {
 export const specialtyTagline = "Medical spa that specializes in skin for Black people, Latino people, African Americans, and dark skin.";
 
 export const socialLinks = {
-  instagram: "https://www.instagram.com/theskincarestudioct/",
+  instagram: "https://www.instagram.com/theskincarestudio.ct/",
   facebook: "https://www.facebook.com/theskincarestudioct/",
   tiktok: "https://www.tiktok.com/@skincarestudiomed",
 };
@@ -330,7 +330,7 @@ export const localBusinessSchema = {
   "image": "https://www.theskincarestudioct.com/studio-lounge.png",
   "priceRange": "$$",
   "sameAs": [
-    "https://www.instagram.com/theskincarestudioct/",
+    "https://www.instagram.com/theskincarestudio.ct/",
     "https://www.facebook.com/theskincarestudioct/",
     "https://www.tiktok.com/@skincarestudiomed"
   ],
