@@ -14,7 +14,7 @@ const comparisons = [
   },
 ]
 
-export function BeforeAfterSlider({ before, after, label }) {
+export function BeforeAfterSlider({ before, after, label, compact = false }) {
   const containerRef = useRef(null)
   const [position, setPosition] = useState(50)
   const dragging = useRef(false)
@@ -41,10 +41,10 @@ export function BeforeAfterSlider({ before, after, label }) {
   }
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className={`flex flex-col items-center ${compact ? 'gap-1.5' : 'gap-4'}`}>
       <div
         ref={containerRef}
-        className="relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden rounded-xl border border-slate-200 shadow-sm sm:rounded-2xl"
+        className={`relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden rounded-xl border border-slate-200 shadow-sm ${compact ? '' : 'sm:rounded-2xl'}`}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -77,23 +77,23 @@ export function BeforeAfterSlider({ before, after, label }) {
           className="absolute top-0 bottom-0 z-10 w-0.5 bg-white shadow-[0_0_6px_rgba(0,0,0,0.3)]"
           style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
         >
-          <div className="absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-accentNavy text-white shadow-lg">
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <div className={`absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-accentNavy text-white shadow-lg ${compact ? 'h-7 w-7' : 'h-10 w-10'}`}>
+            <svg className={compact ? 'h-3.5 w-3.5' : 'h-5 w-5'} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3" />
             </svg>
           </div>
         </div>
 
         {/* Labels */}
-        <span className="absolute top-4 left-4 z-10 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
+        <span className={`absolute z-10 rounded-full bg-black/50 font-semibold uppercase tracking-wider text-white backdrop-blur-sm ${compact ? 'left-1.5 top-1.5 px-1.5 py-0.5 text-[9px]' : 'left-4 top-4 px-3 py-1 text-xs'}`}>
           Before
         </span>
-        <span className="absolute top-4 right-4 z-10 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
+        <span className={`absolute z-10 rounded-full bg-black/50 font-semibold uppercase tracking-wider text-white backdrop-blur-sm ${compact ? 'right-1.5 top-1.5 px-1.5 py-0.5 text-[9px]' : 'right-4 top-4 px-3 py-1 text-xs'}`}>
           After
         </span>
       </div>
 
-      <p className="text-sm font-semibold tracking-wide text-accentNavy">{label}</p>
+      <p className={`font-semibold tracking-wide text-accentNavy ${compact ? 'text-[11px] sm:text-sm' : 'text-sm'}`}>{label}</p>
     </div>
   )
 }

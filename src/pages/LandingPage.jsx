@@ -6,7 +6,6 @@ import {
   googleMapsUrl,
   openingHours,
   reasons,
-  recognitions,
   serviceBookingUrlOverrides,
   socialLinks,
 } from '../data'
@@ -28,27 +27,28 @@ const landingUrl = 'https://www.theskincarestudioct.com/welcome'
 const beliefs = [
   {
     title: 'Natural results',
-    desc: 'We enhance without overdoing. Every treatment aims for results that look like the best version of you.',
+    desc: 'We enhance without overdoing.',
   },
   {
     title: 'Inclusive beauty',
-    desc: 'Expert care for all skin types, with treatment plans tailored to your unique needs.',
+    desc: 'Expert care for all skin types.',
   },
   {
     title: 'Medical expertise',
-    desc: 'A licensed medical team with 15+ years of dermatology-informed experience behind every plan.',
+    desc: '15+ years of dermatology-informed care.',
   },
   {
     title: 'Personalized care',
-    desc: 'No two clients are the same. We listen first, then build a plan around your skin, goals, and lifestyle.',
+    desc: 'Custom plans for your skin and goals.',
   },
 ]
 
 const popularTreatments = [
   {
     name: 'Neurotoxin',
-    tag: 'Most requested',
-    desc: 'Letybo and Daxxify to smooth fine lines while keeping your expression naturally you.',
+    tag: 'Top service',
+    featured: true,
+    desc: 'Smooth fine lines with a natural-looking expression.',
     price: '$14 per unit',
     duration: '15–30 min',
     image: '/studio-injection.png',
@@ -57,8 +57,9 @@ const popularTreatments = [
   },
   {
     name: 'Lip Filler',
-    tag: 'Client favorite',
-    desc: 'Soft, balanced volume and symmetry with hyaluronic acid filler, never overdone.',
+    tag: 'Top service',
+    featured: true,
+    desc: 'Soft, balanced volume. Never overdone.',
     price: '$600',
     duration: '45 min',
     image: '/learn-revanesse-versa-lips-before-after.png',
@@ -67,8 +68,9 @@ const popularTreatments = [
   },
   {
     name: 'VI Peel Original',
-    tag: 'Most loved',
-    desc: 'A medical-grade peel that improves tone, texture, and clarity with minimal downtime.',
+    tag: 'Top service',
+    featured: true,
+    desc: 'Brighter tone and texture, with minimal downtime.',
     price: '$400',
     duration: '35 min',
     image: '/learn-vi-peel-purify.png',
@@ -77,8 +79,8 @@ const popularTreatments = [
   },
   {
     name: 'SkinPen Microneedling',
-    tag: 'Collagen boost',
-    desc: 'FDA-cleared microneedling to refine texture, soften scars, and support healthier skin.',
+    tag: 'Popular',
+    desc: 'Collagen for texture, scars, and healthier skin.',
     price: '$475',
     duration: '1 hr',
     image: '/learn-skinpen-hero-treatment.png',
@@ -87,8 +89,8 @@ const popularTreatments = [
   },
   {
     name: 'Hydrafacial Deluxe',
-    tag: 'Instant glow',
-    desc: 'Deep cleanse, extractions, and customized boosters for hydrated, luminous skin.',
+    tag: 'Popular',
+    desc: 'Deep cleanse, extractions, and instant glow.',
     price: '$275',
     duration: '1 hr 15 min',
     image: '/learn-hydrafacial-treatment.png',
@@ -97,8 +99,8 @@ const popularTreatments = [
   },
   {
     name: 'GLO2Facial Signature',
-    tag: 'Radiance',
-    desc: 'Oxygenation facial that exfoliates, infuses nutrients, and leaves skin instantly brighter.',
+    tag: 'Popular',
+    desc: 'Oxygen facial for instant radiance.',
     price: '$225',
     duration: '1 hr',
     image: '/learn-glo2facial-treatment.png',
@@ -231,7 +233,7 @@ export function LandingPage() {
           <ScrollReveal direction="up">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div className="max-w-2xl">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Most popular</p>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Top services</p>
                 <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
                   The treatments clients book again and again.
                 </h2>
@@ -247,32 +249,43 @@ export function LandingPage() {
             </div>
           </ScrollReveal>
 
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-5 lg:grid-cols-3">
             {popularTreatments.map((item, i) => (
               <ScrollReveal key={item.name} direction="up" delay={i * 70}>
-                <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                  <div className="overflow-hidden">
+                <article className={`flex h-full flex-col overflow-hidden rounded-xl border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:rounded-2xl ${
+                  item.featured ? 'border-accentGreen/50 ring-2 ring-accentGreen/30' : 'border-slate-100'
+                }`}>
+                  <div className="relative overflow-hidden">
                     <ZoomableImage
                       src={item.image}
                       alt={item.imageAlt}
                       className="aspect-[4/3] w-full object-cover"
                       wrapperClassName="block w-full"
                     />
+                    {item.featured ? (
+                      <span className="pointer-events-none absolute left-2 top-2 z-10 rounded-full bg-accentGreen px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-accentNavy shadow-sm sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[10px]">
+                        Top service
+                      </span>
+                    ) : null}
                   </div>
-                  <div className="flex flex-1 flex-col p-5 sm:p-6">
-                    <p className="text-[11px] font-semibold uppercase tracking-luxury text-accentBlue">{item.tag}</p>
-                    <h3 className="mt-1.5 font-serif text-xl font-semibold tracking-tight text-accentNavy">{item.name}</h3>
-                    <p className="mt-2 flex-1 text-[14px] leading-[1.65] text-slate-600">{item.desc}</p>
-                    <p className="mt-3 text-[13px] font-medium text-slate-500">
-                      {item.price} · {item.duration}
+                  <div className="flex flex-1 flex-col p-3 sm:p-5 lg:p-6">
+                    {!item.featured ? (
+                      <p className="text-[10px] font-semibold uppercase tracking-luxury text-accentBlue sm:text-[11px]">{item.tag}</p>
+                    ) : null}
+                    <h3 className={`${item.featured ? '' : 'mt-1'} font-serif text-[15px] font-semibold leading-snug tracking-tight text-accentNavy sm:mt-1.5 sm:text-xl`}>{item.name}</h3>
+                    <p className="mt-1 flex-1 text-[12px] leading-snug text-slate-600 sm:mt-2 sm:text-[14px] sm:leading-[1.65]">{item.desc}</p>
+                    <p className="mt-2 text-[12px] font-medium text-slate-500 sm:mt-3 sm:text-[13px]">
+                      {item.price}
+                      <span className="hidden sm:inline"> · {item.duration}</span>
                     </p>
                     <a
                       href={item.bookUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center justify-center rounded-full bg-accentNavy px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-[1.02] hover:bg-accentNavy/90"
+                      className="mt-3 inline-flex items-center justify-center rounded-full bg-accentNavy px-3 py-2 text-[12px] font-semibold tracking-wide text-white transition-all duration-200 hover:scale-[1.02] hover:bg-accentNavy/90 sm:mt-4 sm:px-5 sm:py-2.5 sm:text-sm"
                     >
-                      Book {item.name}
+                      <span className="sm:hidden">Book</span>
+                      <span className="hidden sm:inline">Book {item.name}</span>
                     </a>
                   </div>
                 </article>
@@ -282,15 +295,30 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section className="border-t border-warmStone/40 bg-cream py-8 md:py-10">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-            {recognitions.map((item) => (
-              <div key={item} className="rounded-xl border border-slate-100 bg-white p-3.5 sm:rounded-2xl sm:p-5">
-                <svg className="mb-2 h-5 w-5 text-accentGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <p className="text-[15px] leading-[1.6] text-accentNavy">{item}</p>
+      <section className="border-t border-warmStone/50 bg-cream/40 py-10 md:py-16 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
+          <ScrollReveal direction="up">
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Before &amp; after</p>
+              <h2 className="mt-2 font-serif text-2xl tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
+                Real client results
+              </h2>
+              <p className="mx-auto mt-4 max-w-lg text-[15px] leading-[1.7] text-slate-500">
+                Drag the slider to compare.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-5 lg:grid-cols-3">
+            {padSlots(landingBeforeAfter, landingBeforeAfterSlotCount).map((item, i) => (
+              <div
+                key={item?.label || `ba-slot-${i}`}
+                className={i === 2 ? 'col-span-2 mx-auto w-full max-w-[calc(50%-0.375rem)] sm:max-w-[calc(50%-0.625rem)] lg:col-span-1 lg:max-w-none' : ''}
+              >
+                {item?.before && item?.after ? (
+                  <BeforeAfterSlider {...item} compact />
+                ) : (
+                  <MediaSlot label="Before & after slider" className="aspect-[3/4]" />
+                )}
               </div>
             ))}
           </div>
@@ -307,10 +335,10 @@ export function LandingPage() {
                   Science, artistry, and care in one place.
                 </h2>
                 <p className="mt-4 text-[15px] leading-[1.7] text-slate-600 sm:mt-5">
-                  Founded by Terri Miller, RN, The Skincare Studio Medical Spa was built for clients who want expert aesthetic care that still feels personal. We specialize in all skin types, and we welcome every client seeking natural, lasting results.
+                  Founded by Terri Miller, RN. Expert aesthetic care that still feels personal. We specialize in all skin types.
                 </p>
                 <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                  From neurotoxin and fillers to peels, facials, laser, and regenerative treatments, every visit starts with listening, then a plan that fits your skin and your goals.
+                  Every visit starts with listening, then a plan that fits your skin and goals.
                 </p>
                 <ul className="mt-6 space-y-3">
                   {reasons.map((reason) => (
@@ -332,60 +360,6 @@ export function LandingPage() {
                 />
               </div>
             </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-warmStone/50 bg-cream/40 py-10 md:py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
-          <ScrollReveal direction="up">
-            <div className="text-center">
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Before &amp; after</p>
-              <h2 className="mt-2 font-serif text-2xl tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
-                Real client results
-              </h2>
-              <p className="mx-auto mt-4 max-w-lg text-[15px] leading-[1.7] text-slate-500">
-                Drag the slider to compare.
-              </p>
-            </div>
-          </ScrollReveal>
-          <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
-            {padSlots(landingBeforeAfter, landingBeforeAfterSlotCount).map((item, i) => (
-              <div key={item?.label || `ba-slot-${i}`}>
-                {item?.before && item?.after ? (
-                  <BeforeAfterSlider {...item} />
-                ) : (
-                  <MediaSlot label="Before & after slider" className="aspect-[3/4]" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-warmStone/50 bg-cream/60 py-10 md:py-16 lg:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <ScrollReveal direction="up">
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">What we believe</p>
-              <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
-                Beautiful skin should feel like you.
-              </h2>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                We do not chase trends. We build confidence with evidence-based care, honest guidance, and results that look refreshed, balanced, and never overdone.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4">
-            {beliefs.map((item, i) => (
-              <ScrollReveal key={item.title} direction="up" delay={i * 80}>
-                <div className="h-full rounded-2xl border border-slate-100 bg-white p-5 shadow-sm sm:p-6">
-                  <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">{item.title}</p>
-                  <p className="mt-2 text-[14px] leading-[1.65] text-slate-600">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </section>
@@ -457,6 +431,33 @@ export function LandingPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-warmStone/50 bg-cream/60 py-10 md:py-16 lg:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <ScrollReveal direction="up">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">What we believe</p>
+              <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
+                Beautiful skin should feel like you.
+              </h2>
+              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
+                Evidence-based care and results that look like you. Never overdone.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-4">
+            {beliefs.map((item, i) => (
+              <ScrollReveal key={item.title} direction="up" delay={i * 80}>
+                <div className="h-full rounded-xl border border-slate-100 bg-white px-3 py-3 shadow-sm sm:rounded-2xl sm:p-6">
+                  <p className="font-serif text-[14px] font-semibold leading-snug tracking-tight text-accentNavy sm:text-lg">{item.title}</p>
+                  <p className="mt-1 text-[11px] leading-snug text-slate-600 sm:mt-2 sm:text-[14px] sm:leading-[1.65]">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
