@@ -14,7 +14,7 @@ const comparisons = [
   },
 ]
 
-function Slider({ before, after, label }) {
+export function BeforeAfterSlider({ before, after, label }) {
   const containerRef = useRef(null)
   const [position, setPosition] = useState(50)
   const dragging = useRef(false)
@@ -119,7 +119,7 @@ export function BeforeAfter() {
         <div className="mt-6 grid gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-8 md:mt-12 lg:gap-10">
           {comparisons.map((item, i) => (
             <ScrollReveal key={item.label} direction="up" delay={i * 120}>
-              <Slider {...item} />
+              <BeforeAfterSlider {...item} />
             </ScrollReveal>
           ))}
         </div>

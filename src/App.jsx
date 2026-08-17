@@ -14,7 +14,8 @@ import { AftercarePage } from './pages/AftercarePage'
 import { LearnHubPage } from './pages/LearnHubPage'
 import { LearnTopicPage } from './pages/LearnTopicPage'
 import { GiftCardsPage } from './pages/GiftCardsPage'
-import { resultsResourcesPath } from './data'
+import { LandingPage } from './pages/LandingPage'
+import { resultsResourcesPath, landingPath } from './data'
 
 function LearnLegacyRedirect() {
   const { slug } = useParams()
@@ -35,6 +36,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path={landingPath} element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/gifts" element={<GiftCardsPage />} />
           <Route path={resultsResourcesPath} element={<LearnHubPage />} />

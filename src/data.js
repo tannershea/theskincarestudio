@@ -19,6 +19,10 @@ export const careCreditLogoSrc = '/carecredit-logo.png'
 export const resultsResourcesPath = '/results-and-resources'
 export const resultsResourcesLabel = 'Results & Resources'
 
+/** Social / outside-source landing page (footer only, not in header) */
+export const landingPath = '/welcome'
+export const landingLabel = 'Welcome'
+
 /** Full booking URLs for services that use the external calendar instead of /book */
 export const serviceBookingUrlOverrides = {
   "Gift Cards": giftCardUrl,
@@ -382,7 +386,7 @@ export const featuredCategories = [
 
 export const reasons = [
   "Licensed medical team with dermatology-informed experience",
-  "Treatment plans personalized for all skin types and skin tones",
+  "Treatment plans personalized for all skin types",
   "A calm, luxury environment grounded in evidence-based care",
   "Results that look refreshed, balanced, and never overdone",
 ];

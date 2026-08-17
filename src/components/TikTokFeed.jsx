@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
 import { ScrollReveal } from './ScrollReveal'
+import { AutoPlayVideo } from './AutoPlayVideo'
 
 const tiktokVideos = [
   { src: '/videos/tiktok-1.mp4', alt: 'Skincare treatment at The Skincare Studio' },
@@ -7,42 +7,6 @@ const tiktokVideos = [
   { src: '/videos/tiktok-middle-left.mov', alt: 'The Skincare Studio, treatment and results' },
   { src: '/videos/tiktok-5.mov', alt: 'Behind the scenes at The Skincare Studio' },
 ]
-
-function AutoPlayVideo({ src, alt }) {
-  const videoRef = useRef(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {})
-        } else {
-          video.pause()
-        }
-      },
-      { threshold: 0.3 }
-    )
-
-    observer.observe(video)
-    return () => observer.disconnect()
-  }, [])
-
-  return (
-    <video
-      ref={videoRef}
-      src={src}
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      aria-label={alt}
-      className="h-full w-full object-cover"
-    />
-  )
-}
 
 export function TikTokFeed() {
   return (

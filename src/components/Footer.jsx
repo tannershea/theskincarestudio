@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { contactDetails, openingHours, bookingUrl, giftCardsPath, giftCardsLabel, logoSrc, socialLinks, resultsResourcesPath, resultsResourcesLabel, cherryFinancingUrl, cherryLogoSrc, careCreditUrl, careCreditLogoSrc } from '../data'
+import { contactDetails, openingHours, bookingUrl, giftCardsPath, giftCardsLabel, logoSrc, socialLinks, resultsResourcesPath, resultsResourcesLabel, landingPath, landingLabel, cherryFinancingUrl, cherryLogoSrc, careCreditUrl, careCreditLogoSrc } from '../data'
 
 export function Footer() {
   const hoursOrdered = openingHours
@@ -84,6 +84,7 @@ export function Footer() {
                   <Link to="/products" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Products</Link>
                   <Link to={giftCardsPath} className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">{giftCardsLabel}</Link>
                   <Link to="/contact" className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">Contact Us</Link>
+                  <Link to={landingPath} className="inline-block transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">{landingLabel}</Link>
                   <Link to="/terms" className="inline-block text-pretty transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">
                     Terms &amp; Conditions
                   </Link>
