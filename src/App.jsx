@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
-import { StickyCTA } from './components/StickyCTA'
 import { HomePage } from './pages/HomePage'
 import { ServicesPage } from './pages/ServicesPage'
 import { ContactPage } from './pages/ContactPage'
@@ -52,7 +51,6 @@ function App() {
         </Routes>
       </main>
       <Footer />
-      <StickyCTA />
     </div>
   )
 }
