@@ -36,8 +36,6 @@ function GiftCardsNavLabel() {
 
 function AnnouncementBar() {
   const [dismissed, setDismissed] = useState(false)
-  const wellnessSpecialsUrl =
-    'https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/category/04f1205a-4b89-46e5-a0a8-603f09d34bca'
 
   if (dismissed) return null
 
@@ -47,15 +45,15 @@ function AnnouncementBar() {
       <div className="relative mx-auto flex max-w-7xl items-center justify-center gap-3 px-4 py-2.5 text-center sm:gap-4 sm:px-8 lg:px-10">
         <p className="text-[13px] font-medium leading-snug tracking-wide sm:text-sm">
           <span className="mr-1.5 inline-flex shrink-0 items-center rounded bg-accentGreen/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accentGreen sm:text-[11px]">
-            August only
+            September only
           </span>
-          <span className="mr-1 inline-block text-base leading-none" aria-hidden>🌻</span>
-          <span className="font-extrabold text-accentGreen">Celebrate National Wellness Month</span>
-          <span className="text-white/95"> with limited-time Wellness Specials</span>
+          <span className="mr-1 inline-block text-base leading-none" aria-hidden>🍎</span>
+          <span className="font-extrabold text-accentGreen">Teachers & students get 10% off</span>
+          <span className="text-white/95"> all treatments this month when you present a valid ID</span>
           <span className="mx-1.5 text-white/35" aria-hidden>|</span>
-          <span className="text-white/65">Appointments Aug 1–31</span>
+          <span className="text-white/65">Appointments Sept 1–30</span>
           <a
-            href={wellnessSpecialsUrl}
+            href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 inline-flex shrink-0 items-center gap-1 rounded-full bg-accentGreen px-3 py-1 text-[12px] font-bold tracking-wide text-accentNavy shadow-sm transition-all hover:bg-accentGreen/90 hover:shadow-md sm:text-[13px]"

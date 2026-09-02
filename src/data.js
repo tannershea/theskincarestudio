@@ -26,14 +26,6 @@ export const landingLabel = 'Welcome'
 /** Full booking URLs for services that use the external calendar instead of /book */
 export const serviceBookingUrlOverrides = {
   "Gift Cards": giftCardUrl,
-  "Wellness Facial":
-    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/ade6412e-1488-43e8-82ed-a11d171f9771",
-  "Wellness Chemical Peel":
-    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/cc5b18ec-308f-4878-92f3-0ab17287363c",
-  "Wellness Neurotoxin":
-    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/d2a15ba9-fb05-4298-954d-e3582bd36c75",
-  "Wellness Lip Filler":
-    "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/9db0be57-ac4c-4aca-b5b9-87df4ac9d6b4",
   "Wellness Regimen Rebuild":
     "https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/89a7c78a-9971-41a8-a0c1-12e51be8a82d",
   "The Refresh Neurotoxin":
@@ -531,53 +523,12 @@ export const popularProductNames = [
 
 export const serviceGroups = [
   {
-    category: "Limited-Time Offers",
-    title: "National Wellness Month Specials",
-    services: [
-      {
-        name: "Wellness Facial",
-        duration: "45 min",
-        price: "$125",
-        desc: "The perfect reset for your skin. Cleanse, exfoliate, hydrate, and leave with a healthy, refreshed glow.",
-      },
-      {
-        name: "B-12 Shot",
-        duration: "15 min",
-        price: "$35",
-        desc: "Support natural energy, focus and overall wellness from the inside out. A boost to help you feel as good as you look.",
-      },
-      {
-        name: "Wellness Chemical Peel",
-        duration: "30 min",
-        price: "$65",
-        desc: "Target pigmentation, acne, texture, and signs of aging.",
-      },
-      {
-        name: "Wellness Neurotoxin",
-        duration: "15 min",
-        price: "$12/unit",
-        desc: "Smooth fine lines while maintaining natural looking results.",
-      },
-      {
-        name: "Wellness Lip Filler",
-        duration: "1 hr",
-        price: "$550 per syringe",
-        desc: "Enhance your lips with soft, balanced, natural-looking volume.",
-      },
-      {
-        name: "Wellness Regimen Rebuild",
-        duration: "30 min",
-        price: "$35 or waived with Skincare Purchase",
-        desc: "Bring in your current skincare products, and we'll evaluate your routine, identify what's working, and create a customized treatment plan.",
-      },
-    ],
-  },
-  {
     category: "Begin Your Journey",
     title: "Consultations",
     services: [
       { name: "Virtual Consultation", duration: "45 min", price: "$100", desc: "Meet with our team remotely to discuss your skin goals and explore treatment options." },
       { name: "In-Studio Facial Consultation", duration: "1 hr", price: "$100", desc: "Comprehensive in-person skin assessment with a personalized treatment plan." },
+      { name: "Wellness Regimen Rebuild", duration: "30 min", price: "$35 or waived with Skincare Purchase", desc: "Bring in your current skincare products, and we'll evaluate your routine, identify what's working, and create a customized treatment plan." },
       { name: "Cosmetic Consultation - Neurotoxin", duration: "30 min", price: "$100", desc: "Detailed evaluation to determine the best neurotoxin approach for your aesthetic goals." },
       { name: "Lip Dermal Filler Consultation", duration: "30 min", price: "$100", desc: "Focused consult on lip goals, filler options, and a personalized plan for natural-looking enhancement." },
       { name: "Laser Consultation", duration: "15 min", price: "$100", desc: "Skin analysis to determine candidacy and create a custom laser treatment plan." },
