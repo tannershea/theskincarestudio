@@ -60,8 +60,6 @@ export const serviceBookingUrlOverrides = {
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/2448b80a-e629-4cf7-9953-9be77ce54a79",
   "SkinPen Microneedling with VAMP":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/8e70127d-073c-4de4-bede-1021da3029d0",
-  "Nano Needling Brightening Facial":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/2aa47bc5-e462-49f5-be45-e230480a0085",
   "Radiofrequency Microneedling":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/a807cc38-0fcd-4534-ae11-b646f13c2999",
   "Radiofrequency Microneedling with PRP":
@@ -532,7 +530,7 @@ export const serviceGroups = [
       { name: "Cosmetic Consultation - Neurotoxin", duration: "30 min", price: "$100", desc: "Detailed evaluation to determine the best neurotoxin approach for your aesthetic goals." },
       { name: "Lip Dermal Filler Consultation", duration: "30 min", price: "$100", desc: "Focused consult on lip goals, filler options, and a personalized plan for natural-looking enhancement." },
       { name: "Laser Consultation", duration: "15 min", price: "$100", desc: "Skin analysis to determine candidacy and create a custom laser treatment plan." },
-      { name: "Hair Restoration Consultation", duration: "30 min", price: "$150", desc: "In-depth assessment of hair loss concerns with PRP/PRFM treatment recommendations." },
+      { name: "Hair Restoration Consultation", duration: "30 min", price: "$100", desc: "In-depth assessment of hair loss concerns with PRP/PRFM treatment recommendations." },
       { name: "Body Consultation", duration: "30 min", price: "$100", desc: "In-person discussion of body skin goals, tone, texture, acne, or rejuvenation, with a personalized plan for peels, lasers, or other body-appropriate options." },
       { name: "Office Visit", duration: "30 min", price: "$75", desc: "In-office time for follow-up, questions, or matters that do not require a full consultation." },
     ],
@@ -584,7 +582,6 @@ export const serviceGroups = [
       { name: "SkinPen Microneedling", duration: "1 hr", price: "$475", desc: "FDA-cleared microneedling to stimulate collagen, reduce scars, and improve skin texture." },
       { name: "SkinPen Microneedling with PRP", duration: "1 hr 30 min", price: "$675", desc: "Microneedling enhanced with platelet-rich plasma for accelerated healing and deeper rejuvenation." },
       { name: "SkinPen Microneedling with VAMP", duration: "45 min", price: "$575", desc: "Microneedling paired with VAMP by Prollenium, a PDRN skin booster for collagen support, glow, and skin quality." },
-      { name: "Nano Needling Brightening Facial", duration: "1 hr", price: "$300", desc: "Gentle nano-needling facial that infuses brightening serums for luminous, even-toned skin." },
       { name: "Radiofrequency Microneedling", duration: "1 hr", price: "$685", desc: "Lutronic Genius Radiofrequency Microneedling for skin tightening, wrinkle reduction, and deep remodeling." },
       { name: "Radiofrequency Microneedling with PRP", duration: "1 hr", price: "$725", desc: "RF microneedling combined with PRP for maximum collagen stimulation and skin renewal." },
     ],

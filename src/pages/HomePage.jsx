@@ -34,8 +34,9 @@ const treatmentCategories = [
   {
     title: 'Skin Treatments',
     href: '/services#facials',
-    image: '/learn-skincare-studio-facial-treatment.png',
-    alt: 'Facial and skin treatment at The Skincare Studio',
+    image: '/learn-hydrafacial-treatment.png',
+    imageClass: 'object-[center_80%]',
+    alt: 'Facial treatment at The Skincare Studio in Stratford',
   },
   {
     title: 'Laser Treatments',
@@ -46,8 +47,9 @@ const treatmentCategories = [
   {
     title: 'Consultations',
     href: '/services#consultations',
-    image: '/learn-consultations-lab-coat.png',
-    alt: 'Consultation at The Skincare Studio in Stratford',
+    image: '/home-treatment-philosophy.png',
+    imageClass: 'object-[center_22%]',
+    alt: 'In-studio consultation at The Skincare Studio in Stratford',
   },
 ]
 
@@ -152,7 +154,11 @@ export function HomePage() {
             {treatmentCategories.map((item, i) => (
               <ScrollReveal key={item.title} direction="up" delay={i * 80} className="min-w-0">
                 <article className="flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm sm:rounded-2xl">
-                  <img src={item.image} alt={item.alt} className="aspect-[4/3] w-full object-cover" />
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className={`aspect-[4/3] w-full object-cover ${item.imageClass || ''}`}
+                  />
                   <div className="flex flex-1 flex-col p-3 sm:p-4">
                     <h3 className="font-serif text-[15px] font-semibold tracking-tight text-accentNavy sm:text-lg">
                       {item.title}
