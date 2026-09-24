@@ -19,6 +19,7 @@
   html {
     font-size: var(--font-size-base) !important;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   @media (max-width: 639px) {
     html {
@@ -27,10 +28,14 @@
   }
   body {
     font-family: var(--font-sans);
-    @apply antialiased font-medium text-slate-600;
+    @apply antialiased font-medium text-slate-600 overflow-x-hidden;
     font-feature-settings:
       "kern" 1,
       "liga" 1;
+  }
+  #root {
+    max-width: 100%;
+    overflow-x: hidden;
   }
   .font-serif {
     font-weight: 500;
@@ -48,4 +53,17 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Podium Call/Text launcher is replaced by ContactFab */
+iframe[src*="podium"],
+iframe[id*="podium" i],
+iframe[title*="Podium" i],
+#podium-website-widget,
+#podium-bubble,
+[id*="Podium"],
+[class*="PodiumWidget"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }

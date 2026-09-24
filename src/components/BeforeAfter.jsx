@@ -1,4 +1,6 @@
 import { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { resultsResourcesPath } from '../data'
 import { ScrollReveal } from './ScrollReveal'
 
 const comparisons = [
@@ -44,7 +46,7 @@ export function BeforeAfterSlider({ before, after, label, compact = false }) {
     <div className={`flex flex-col items-center ${compact ? 'gap-1.5' : 'gap-4'}`}>
       <div
         ref={containerRef}
-        className={`relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden rounded-xl border border-slate-200 shadow-sm ${compact ? '' : 'sm:rounded-2xl'}`}
+        className={`relative aspect-[4/5] w-full cursor-col-resize touch-none select-none overflow-hidden rounded-xl border border-slate-200 shadow-sm sm:aspect-[3/4] ${compact ? '' : 'sm:rounded-2xl'}`}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -116,12 +118,20 @@ export function BeforeAfter() {
           </div>
         </ScrollReveal>
 
-        <div className="mt-6 grid gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-8 md:mt-12 lg:gap-10">
+        <div className="-mx-4 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:mt-10 sm:grid sm:grid-cols-2 sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-0 md:mt-12">
           {comparisons.map((item, i) => (
-            <ScrollReveal key={item.label} direction="up" delay={i * 120}>
+            <ScrollReveal key={item.label} direction="up" delay={i * 120} className="w-[min(86vw,22rem)] shrink-0 snap-center sm:w-auto sm:min-w-0">
               <BeforeAfterSlider {...item} />
             </ScrollReveal>
           ))}
+        </div>
+        <div className="mt-6 text-center sm:mt-8">
+          <Link
+            to={resultsResourcesPath}
+            className="inline-flex items-center text-sm font-semibold text-accentNavy hover:text-accentBlue"
+          >
+            View More Results →
+          </Link>
         </div>
       </div>
     </section>

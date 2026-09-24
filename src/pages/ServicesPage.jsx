@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { bookingUrl, serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs, servicesPageReviews, giftCardsPath } from '../data'
 import { FAQ } from '../components/FAQ'
 
@@ -229,6 +229,16 @@ const baUndereyeImage = {
 
 export function ServicesPage() {
   const [zoomedImage, setZoomedImage] = useState(null)
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) return
+    const id = hash.replace('#', '')
+    const timer = window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 80)
+    return () => window.clearTimeout(timer)
+  }, [hash])
 
   useEffect(() => {
     const handleEscape = (e) => {

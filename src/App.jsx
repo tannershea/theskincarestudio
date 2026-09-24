@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
+import { ContactFab } from './components/ContactFab'
 import { HomePage } from './pages/HomePage'
 import { ServicesPage } from './pages/ServicesPage'
 import { ContactPage } from './pages/ContactPage'
@@ -22,16 +23,20 @@ function LearnLegacyRedirect() {
 }
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    if (hash) return
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
   return null
 }
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-800">
+    <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-white text-slate-800">
       <ScrollToTop />
       <Header />
+      <ContactFab />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />

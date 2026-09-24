@@ -1,23 +1,16 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { Testimonials } from '../components/Testimonials'
-import { Newsletter } from '../components/Newsletter'
 import {
   bookingUrl,
-  giftCardUrl,
-  giftCardsPath,
   contactDetails,
+  googleMapsUrl,
+  openingHours,
   recognitions,
-  serviceAreas,
-  featuredCategories,
-  popularServices,
-  reasons,
   localBusinessSchema,
 } from '../data'
-import { TrustBadges } from '../components/TrustBadges'
-import { FAQ } from '../components/FAQ'
-import { TikTokFeed } from '../components/TikTokFeed'
+import { Testimonials } from '../components/Testimonials'
+import { Newsletter } from '../components/Newsletter'
 import { BeforeAfter } from '../components/BeforeAfter'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { CountUp } from '../components/CountUp'
@@ -29,6 +22,39 @@ const heroImages = [
   '/studio-elta-display.png',
   '/studio-reception-2.png',
   '/studio-injection.png',
+]
+
+const treatmentCategories = [
+  {
+    title: 'Injectables',
+    href: '/services#cosmetic-injectables',
+    image: '/studio-injection.png',
+    alt: 'Injectable treatment at The Skincare Studio in Stratford',
+  },
+  {
+    title: 'Skin Treatments',
+    href: '/services#facials',
+    image: '/learn-skincare-studio-facial-treatment.png',
+    alt: 'Facial and skin treatment at The Skincare Studio',
+  },
+  {
+    title: 'Laser Treatments',
+    href: '/services#laser-treatments',
+    image: '/learn-lutronic-clarity-treatment.png',
+    alt: 'Laser treatment at The Skincare Studio',
+  },
+  {
+    title: 'Consultations',
+    href: '/services#consultations',
+    image: '/learn-consultations-lab-coat.png',
+    alt: 'Consultation at The Skincare Studio in Stratford',
+  },
+]
+
+const whyChooseUs = [
+  'Experienced medical professionals',
+  'Personalized care for every skin type',
+  'Natural-looking, balanced results',
 ]
 
 function HeroBackgroundCarousel() {
@@ -80,317 +106,237 @@ export function HomePage() {
         <script type="application/ld+json">{JSON.stringify(schemaOrg)}</script>
       </Helmet>
 
-      {/* Hero */}
       <section className="relative overflow-hidden bg-white">
         <HeroBackgroundCarousel />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/25" />
 
-        <div className="relative mx-auto max-w-6xl px-4 pb-12 pt-14 sm:px-8 md:pb-20 md:pt-20 lg:px-12 lg:pb-28 lg:pt-28">
+        <div className="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-8 sm:pb-16 sm:pt-16 lg:px-12 lg:pb-24 lg:pt-24">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-accentGreen" />
-              <span className="text-xs font-semibold uppercase tracking-luxury text-white">Now booking in Stratford, CT</span>
-            </div>
-
-            <h1 className="mt-4 font-serif text-[1.75rem] leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-4xl md:text-5xl lg:text-[3.5rem]">
-              Confidence starts with your skin.
-            </h1>
-
-            <p className="mx-auto mt-4 max-w-lg text-[15px] leading-[1.65] text-white/80 sm:mt-5 sm:text-[16px] sm:leading-[1.7]">
-              Medical-grade treatments personalized to you, from neurotoxin and fillers to laser facials and regenerative skincare. Natural results, never overdone.
+            <p className="text-[11px] font-semibold uppercase tracking-luxury text-white/80">
+              Paradise Green · Stratford, CT
             </p>
-
-            <div className="mt-6 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center">
+            <h1 className="mt-3 text-balance font-serif text-[1.55rem] leading-[1.2] tracking-tight text-white sm:mt-4 sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+              Natural, personalized aesthetic treatments for every skin type.
+            </h1>
+            <p className="mx-auto mt-3 max-w-lg px-1 text-[14px] leading-[1.55] text-white/85 sm:mt-5 sm:text-[16px] sm:leading-[1.7]">
+              Expert injectables, laser treatments, and advanced skincare in Stratford, Connecticut.
+            </p>
+            <div className="mt-6 sm:mt-8">
               <a
                 href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-accentGreen px-8 py-3.5 text-[16px] font-semibold tracking-wide text-accentNavy shadow-lg transition-all duration-200 hover:scale-105 hover:bg-accentGreen/90 sm:px-10 sm:py-4 sm:text-[17px]"
               >
-                Book a consultation
-                <svg className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                Book an Appointment
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </a>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/30 px-6 py-3.5 text-[15px] font-semibold tracking-wide text-white transition-all duration-200 hover:bg-white/10 hover:scale-105"
-              >
-                Browse treatments
-                <span className="text-white/60">→</span>
-              </Link>
-            </div>
-
-            <div className="mx-auto mt-8 inline-flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-[14px] text-white/60 shadow-sm backdrop-blur-sm sm:mt-12 sm:gap-3 sm:px-8 sm:py-4 sm:text-[15px] md:flex-row md:gap-6">
-              <div className="flex items-center gap-2">
-                <span className="text-lg text-accentGreen">★</span>
-                <CountUp value="4.9" className="text-lg font-bold text-white" duration={2000} />
-                <span>rating</span>
-              </div>
-              <span className="hidden h-5 w-px bg-white/30 sm:block" />
-              <div className="flex items-center gap-2">
-                <CountUp value="10K+" className="text-lg font-bold text-white" duration={2000} />
-                <span>treatments</span>
-              </div>
-              <span className="hidden h-5 w-px bg-white/30 sm:block" />
-              <div className="flex items-center gap-2">
-                <CountUp value="15+" className="text-lg font-bold text-white" duration={2000} />
-                <span>years</span>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Recognitions - Warm cream + subtle blue accents */}
-      <section className="border-t border-warmStone/50 bg-cream py-9 md:py-12 lg:py-16">
+      <section className="border-t border-warmStone/50 bg-cream py-9 md:py-14 lg:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-            {recognitions.map((item, i) => (
-                <div
-                  key={item}
-                  className="rounded-xl border border-slate-100 bg-white p-3.5 sm:rounded-2xl sm:p-5"
-                >
-                  <svg className="mb-2 h-5 w-5 text-accentGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="text-[15px] leading-[1.6] text-accentNavy">{item}</p>
-                </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About - Reference layout: text left, image right, two boxes below */}
-      <section id="about" className="bg-gradient-to-b from-white to-cream/50 py-10 md:py-16 lg:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <div className="grid gap-6 md:gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:gap-12">
-            <ScrollReveal direction="left" delay={0}>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-luxury text-slate-500">About the studio</p>
-              <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
-                Where science, artistry, and individualized care come together.
-              </h2>
-              <p className="mt-4 text-[15px] leading-[1.65] text-slate-600 sm:mt-6 sm:leading-[1.7]">
-                Founded by Terri Miller, The Skincare Studio Medical Spa was created from a passion for transformative skincare and a commitment to helping every client feel confident in their own skin.
-              </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                With years of experience in dermatology and a deep understanding of the unique needs of diverse skin types and tones, the studio was designed as a welcoming destination for clients seeking expert guidance, modern treatment options, and beautifully natural outcomes.
-              </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                We believe aesthetic care should feel both elevated and approachable, combining medical expertise with genuine attention, comfort, and trust.
-              </p>
-            </div>
-            </ScrollReveal>
-            <ScrollReveal direction="right" delay={100}>
-            <div className="overflow-hidden rounded-xl shadow-[0_4px_24px_-4px_rgba(22,50,80,0.08)] sm:rounded-2xl">
-              <ZoomableImage
-                src="/home-about-studio-reception.png"
-                alt="Reception at The Skincare Studio in Stratford, white desk, orchids, and Revanesse signage in Paradise Green"
-                className="aspect-[4/3] w-full object-cover object-[center_top] sm:aspect-[4/5]"
-                wrapperClassName="block w-full"
-              />
-            </div>
-            </ScrollReveal>
-          </div>
-          <ScrollReveal direction="up" delay={50}>
-          <div className="mt-6 grid items-stretch gap-4 sm:mt-10 md:grid-cols-2 md:gap-6 lg:mt-12">
-            <ScrollReveal direction="left" delay={0} className="flex">
-            <div className="flex-1 rounded-xl bg-accentNavy p-5 text-white shadow-sm sm:rounded-2xl sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentGreen">Why clients choose us</p>
-              <ul className="mt-4 space-y-3">
-                {reasons.map((reason) => (
-                  <li key={reason} className="flex gap-2 text-[15px] leading-[1.6]">
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accentGreen" />
-                    {reason}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            </ScrollReveal>
-            <ScrollReveal direction="right" delay={100} className="flex">
-            <div className="flex-1 rounded-xl border border-warmStone bg-cream/80 p-5 shadow-sm sm:rounded-2xl sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Serving Fairfield County</p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                Conveniently located in Paradise Green in Stratford, we welcome clients from {serviceAreas.join(", ")} and surrounding communities seeking trusted neurotoxin, filler, laser, peel, and regenerative treatments.
-              </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                With flexible scheduling, same-day availability, and a warm, professional environment, every visit is designed to feel seamless and centered around your comfort and goals.
-              </p>
-            </div>
-            </ScrollReveal>
-          </div>
-          </ScrollReveal>
-          </div>
-      </section>
-
-      {/* Before & After */}
-      <BeforeAfter />
-
-      {/* Popular services - Mixed card colors */}
-      <section className="border-t border-warmStone/50 bg-cream py-10 md:py-16 lg:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <ScrollReveal direction="left" delay={0}>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Popular services</p>
-              <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
-                Advanced treatments tailored to your skin and aesthetic goals.
+          <ScrollReveal direction="up">
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Treatments</p>
+              <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:text-3xl">
+                Find the right care for your skin.
               </h2>
             </div>
-            <Link to="/services" className="inline-block text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left">
-              View all services →
-            </Link>
-          </div>
           </ScrollReveal>
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6 lg:mt-12 lg:grid-cols-4">
-            {popularServices.map((item, i) => (
-              <ScrollReveal key={item.title} direction="up" delay={i * 100}>
-              <div className="rounded-xl border border-slate-100 bg-white p-4 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-accentGreen/40 sm:rounded-2xl sm:p-6">
-                <h3 className="font-serif text-[15px] font-semibold leading-snug tracking-tight text-accentNavy sm:text-lg">{item.title}</h3>
-                <p className="mt-1.5 text-[13px] leading-[1.55] text-slate-600 sm:mt-2 sm:text-[15px] sm:leading-[1.6]">{item.description}</p>
-                <a
-                  href={bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-accentNavy transition-all duration-200 hover:text-accentBlue hover:underline hover:scale-105 origin-left sm:mt-4 sm:text-sm"
-                >
-                  Book now <span aria-hidden>→</span>
-                </a>
-              </div>
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-5 lg:grid-cols-4">
+            {treatmentCategories.map((item, i) => (
+              <ScrollReveal key={item.title} direction="up" delay={i * 80} className="min-w-0">
+                <article className="flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm sm:rounded-2xl">
+                  <img src={item.image} alt={item.alt} className="aspect-[4/3] w-full object-cover" />
+                  <div className="flex flex-1 flex-col p-3 sm:p-4">
+                    <h3 className="font-serif text-[15px] font-semibold tracking-tight text-accentNavy sm:text-lg">
+                      {item.title}
+                    </h3>
+                    <Link
+                      to={item.href}
+                      className="mt-2 inline-flex items-center text-[13px] font-semibold text-accentNavy hover:text-accentBlue sm:text-sm"
+                    >
+                      Learn More →
+                    </Link>
+                  </div>
+                </article>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Treatment philosophy - Bento-style with varied layout */}
-      <section className="bg-blueGray/30 py-10 md:py-16 lg:py-20">
+      <BeforeAfter />
+
+      <section className="bg-white py-9 md:py-14 lg:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <div className="grid gap-6 md:gap-10 lg:grid-cols-[0.6fr_1fr] lg:items-center lg:gap-12">
-            <ScrollReveal direction="left" delay={0}>
-            <div className="order-2 lg:order-1">
+          <ScrollReveal direction="up">
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Why choose us</p>
+              <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:text-3xl">
+                Calm, expert care that still feels personal.
+              </h2>
+            </div>
+          </ScrollReveal>
+          <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-3 sm:gap-5">
+            {whyChooseUs.map((reason, i) => (
+              <ScrollReveal key={reason} direction="up" delay={i * 80}>
+                <div className="h-full rounded-xl border border-slate-100 bg-cream/70 px-4 py-4 sm:rounded-2xl sm:px-5 sm:py-6">
+                  <span className="mb-3 flex h-7 w-7 items-center justify-center rounded-full bg-accentGreen/40 text-accentNavy">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <p className="font-serif text-[16px] font-semibold leading-snug text-accentNavy sm:text-lg">
+                    {reason}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-warmStone/50 bg-cream py-9 md:py-14 lg:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <ScrollReveal direction="up">
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Reviews &amp; credentials</p>
+              <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:text-3xl">
+                Trusted expertise, proven results.
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[14px] text-accentNavy sm:mt-8 sm:gap-x-10 sm:text-[15px]">
+            <div className="flex items-center gap-1.5">
+              <span className="text-accentGreen">★</span>
+              <CountUp value="4.9" className="font-bold" duration={2000} />
+              <span className="text-slate-500">rating</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CountUp value="10K+" className="font-bold" duration={2000} />
+              <span className="text-slate-500">treatments</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CountUp value="15+" className="font-bold" duration={2000} />
+              <span className="text-slate-500">years</span>
+            </div>
+          </div>
+
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 lg:grid-cols-4">
+            {recognitions.map((item) => (
+              <div key={item} className="rounded-xl border border-slate-100 bg-white p-3.5 sm:p-4">
+                <svg className="mb-2 h-5 w-5 text-accentGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p className="text-[13px] leading-[1.5] text-accentNavy sm:text-[14px]">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Testimonials />
+
+      <section id="about" className="bg-white py-9 md:py-14 lg:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-12">
+            <ScrollReveal direction="left">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-luxury text-slate-500">About the studio</p>
+                <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:text-3xl">
+                  Science, artistry, and care in one place.
+                </h2>
+                <p className="mt-4 text-[15px] leading-[1.65] text-slate-600">
+                  Founded by Terri Miller, The Skincare Studio offers medical-grade aesthetic care for every skin type in Paradise Green, Stratford. Natural results, never overdone.
+                </p>
+                <Link
+                  to="/about"
+                  className="mt-5 inline-flex items-center text-sm font-semibold text-accentNavy hover:text-accentBlue"
+                >
+                  Learn More →
+                </Link>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={80}>
               <div className="overflow-hidden rounded-xl shadow-sm sm:rounded-2xl">
                 <ZoomableImage
-                  src="/home-treatment-philosophy.png"
-                  alt="One-on-one treatment consultation at The Skincare Studio, with provider in embroidered lab coat and client in Stratford, CT"
-                  className="aspect-[4/3] w-full object-cover object-[center_30%] sm:aspect-[3/4]"
+                  src="/home-about-studio-reception.png"
+                  alt="Reception at The Skincare Studio in Stratford"
+                  className="aspect-[4/3] w-full object-cover object-[center_top]"
                   wrapperClassName="block w-full"
                 />
               </div>
-            </div>
             </ScrollReveal>
-            <ScrollReveal direction="right" delay={100}>
-            <div className="order-1 lg:order-2">
-              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Treatment philosophy</p>
-              <h2 className="mt-2 font-serif text-2xl leading-tight tracking-tight text-accentNavy sm:mt-3 sm:text-3xl md:text-4xl">
-                Personalized plans. Professional products. Results that feel like you.
-              </h2>
-              <p className="mt-4 text-[15px] leading-[1.65] text-slate-600 sm:mt-6 sm:leading-[1.7]">
-                Every recommendation begins with careful listening and an individualized plan. Whether you are exploring injectables for the first time, addressing acne or hyperpigmentation, or maintaining healthy, radiant skin, our team takes a thoughtful approach grounded in education and long-term skin health.
-              </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">
-                We also offer medical-grade skincare products and expert guidance to help clients build effective at-home routines that complement in-office treatments and support lasting results.
-              </p>
-            </div>
-            </ScrollReveal>
-          </div>
-          <div className="mt-6 -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 scrollbar-hide sm:mx-0 sm:mt-10 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 sm:items-stretch lg:mt-12">
-            {[
-              { ...featuredCategories[0], bg: "bg-white" },
-              { ...featuredCategories[1], bg: "bg-white" },
-              { ...featuredCategories[2], bg: "bg-white" },
-            ].map((item, i) => (
-              <ScrollReveal key={item.title} direction="up" delay={i * 100} className="h-full w-[min(88vw,20rem)] shrink-0 snap-start sm:w-auto sm:min-w-0">
-              <div className={`h-full rounded-xl border border-slate-100 ${item.bg} p-4 shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md sm:rounded-2xl sm:p-6`}>
-                <h3 className="font-serif text-[15px] font-semibold leading-snug tracking-tight text-accentNavy sm:text-lg">{item.title}</h3>
-                <p className="mt-1.5 text-[13px] leading-[1.55] text-slate-600 sm:mt-2 sm:text-[15px] sm:leading-[1.6]">{item.description}</p>
-              </div>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* Aftercare Instructions */}
-      <section className="border-t border-warmStone/50 bg-white py-9 md:py-12 lg:py-16">
+      <section className="border-t border-warmStone/50 bg-cream py-9 md:py-14 lg:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <ScrollReveal direction="up" delay={0}>
-            <div className="rounded-xl border border-accentBlue/20 bg-softBlue/50 p-5 sm:rounded-2xl sm:p-8 md:p-10">
-              <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">After your treatment</p>
-                  <h2 className="mt-2 font-serif text-xl font-semibold tracking-tight text-accentNavy sm:text-2xl md:text-3xl">
-                    Aftercare Instructions
-                  </h2>
-                  <p className="mt-3 max-w-xl text-[15px] leading-[1.6] text-slate-600">
-                    Follow our step-by-step guides for VI Peel, Microneedling, Chemical Peel, Facial Balancing, PRFM, Neurotoxin, and Filler to support healing and get the best results.
+          <ScrollReveal direction="up">
+            <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">Visit us</p>
+              <h2 className="mt-2 font-serif text-2xl tracking-tight text-accentNavy sm:text-3xl">
+                Conveniently located in Stratford.
+              </h2>
+              <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                <div className="space-y-2 text-[15px] leading-[1.6] text-slate-600">
+                  <p>
+                    {contactDetails.addressLine1}<br />
+                    {contactDetails.addressLine2}
                   </p>
+                  <p>{contactDetails.location}</p>
+                  <a href={`tel:${contactDetails.phone}`} className="inline-block font-semibold text-accentNavy hover:text-accentBlue">
+                    {contactDetails.phone}
+                  </a>
                 </div>
-                <Link
-                  to="/aftercare"
-                  className="shrink-0 inline-flex items-center gap-2 rounded-full bg-accentNavy px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:scale-105 hover:shadow-lg"
-                >
-                  View Aftercare Guide
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-                </Link>
+                <div className="space-y-2 text-[15px] leading-[1.6] text-slate-600">
+                  {openingHours.map((item) => (
+                    <p key={item.days}>
+                      <span className="font-medium text-accentNavy">{item.days}:</span> {item.hours}
+                    </p>
+                  ))}
+                  <a
+                    href={googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex text-sm font-semibold text-accentNavy hover:text-accentBlue"
+                  >
+                    Get directions →
+                  </a>
+                </div>
               </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* TikTok Feed */}
-      <TikTokFeed />
-
-      {/* Testimonials */}
-      <Testimonials />
-
-      {/* FAQ - Addresses objections, good for SEO */}
-      <FAQ />
-
-      {/* Booking CTA - Blue-gray tint */}
-      <section className="border-t border-blueGray/50 bg-blueGray/20 py-10 md:py-16 lg:py-20">
-        <ScrollReveal direction="zoom" delay={0}>
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-8 lg:px-12">
+      <section className="bg-white py-10 md:py-16">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-8">
           <h2 className="font-serif text-2xl tracking-tight text-accentNavy sm:text-3xl md:text-4xl">
-            A simple path to expert care.
+            Ready to book?
           </h2>
-          <p className="mt-4 text-[15px] leading-[1.65] text-slate-600 sm:mt-6 sm:text-[16px] sm:leading-[1.7]">
-            Browse treatments, review pricing, and schedule directly through our online booking page. If you are unsure where to begin, start with a consultation and our team will guide you toward the most appropriate treatment plan.
+          <p className="mx-auto mt-3 max-w-lg text-[15px] leading-[1.65] text-slate-600">
+            Schedule a consultation or treatment online. We’ll help you choose the right plan for your skin.
           </p>
-          <p className="mt-3 text-[15px] leading-[1.65] text-slate-600 sm:mt-4 sm:text-[16px] sm:leading-[1.7]">
-            New and returning clients can book online for consultations, injectables, facials, corrective treatments, and more.
-          </p>
-          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:gap-4 sm:flex-row">
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex justify-center rounded-full bg-accentGreen px-6 py-3 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:bg-accentGreen/90 hover:shadow-lg"
-            >
-              Book Your Appointment
-            </a>
-            <Link
-              to="/services"
-              className="shrink-0 inline-flex justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold tracking-wide text-accentNavy transition-all duration-200 hover:scale-105 hover:border-accentBlue hover:bg-slate-50"
-            >
-              View Services
-            </Link>
-          </div>
-          <p className="mt-5 text-[14px] leading-relaxed text-slate-600 sm:mt-6 sm:text-[15px]">
-            Perfect for birthdays, holidays, and treating someone special.{' '}
-            <Link
-              to={giftCardsPath}
-              className="font-semibold text-accentNavy underline decoration-accentGreen/60 underline-offset-2 transition-colors hover:text-accentBlue"
-            >
-              Buy a gift card
-            </Link>
-          </p>
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-accentGreen px-8 py-3.5 text-[16px] font-semibold tracking-wide text-accentNavy shadow-md transition-all duration-200 hover:scale-105 hover:bg-accentGreen/90 sm:px-10 sm:py-4 sm:text-[17px]"
+          >
+            Book an Appointment
+          </a>
         </div>
-        </ScrollReveal>
       </section>
 
-      {/* Newsletter */}
       <Newsletter />
     </>
   )
