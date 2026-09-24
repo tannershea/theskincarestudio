@@ -41,8 +41,8 @@ const treatmentCategories = [
   {
     title: 'Laser Treatments',
     href: '/services#laser-treatments',
-    image: '/learn-lutronic-clarity-treatment.png',
-    alt: 'Laser treatment at The Skincare Studio',
+    image: '/learn-lutronic-laser-after.png',
+    alt: 'Smooth skin after laser hair removal at The Skincare Studio',
   },
   {
     title: 'Consultations',
