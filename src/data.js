@@ -122,8 +122,6 @@ export const serviceBookingUrlOverrides = {
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/5221cf0e-8e04-491d-93e7-114485b148ed",
   "Teen Acne Facial":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/e8880d47-fe2b-474e-9fc0-c575f7f4a242",
-  "Summer Glow Facial":
-    "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/b1740b69-7b8d-43ca-916f-6fef22ed78b0",
   "Tween & Teen Clinical Facial":
     "https://booking.podium.com/medspa/019c8c61-898c-7767-a370-8c2b5f030753/6940fde4-e6e5-439f-9e8a-22ee9ffa500f",
   "Back Facial":
@@ -627,7 +625,6 @@ export const serviceGroups = [
     category: "Skin Maintenance & Facials",
     title: "Facials",
     services: [
-      { name: "Summer Glow Facial", duration: "30 min", price: "$125", desc: "A 30-minute brightening facial with no extractions and no dermaplaning. The perfect summer glow-up." },
       { name: "Tween & Teen Clinical Facial", duration: "45 min", price: "$125", desc: "Clinical-grade facial for tween and teen skin, gentle exfoliation, targeted care, and education for a healthy, clear complexion." },
       { name: "Hydrafacial Signature", duration: "1 hr", price: "$225", desc: "The classic Hydrafacial experience, deep cleanse, gentle exfoliation, painless extractions, and hydrating infusion for healthy, glowing skin." },
       { name: "Hydrafacial Deluxe", duration: "1 hr 15 min", price: "$275", desc: "Multi-step Hydrafacial with cleansing, extraction, and hydration plus customized boosters." },

@@ -93,7 +93,6 @@ const serviceIcons = {
   "LED Express Facial": <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>,
   "Skincare Studio Facial": <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>,
   "The Gentleman's Facial": <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>,
-  "Summer Glow Facial": <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>,
   "Tween & Teen Clinical Facial": <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" /></svg>,
   "Teen Acne Facial": <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" /></svg>,
   "Back Facial": <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>,
@@ -165,45 +164,86 @@ function ServiceRow({ service, groupTitle, bookLabel = 'Book now' }) {
     }
   }
 
+  const renderIcon = () => (
+    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-softBlue text-accentBlue">
+      {serviceIcons[service.name] || defaultIcon}
+    </span>
+  )
+  const renderPopularBadge = () => isPopular && (
+    <span className="rounded-full bg-accentGreen/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accentNavy">
+      Popular
+    </span>
+  )
+  const renderChevron = () => (
+    <svg
+      className={`h-4 w-4 shrink-0 text-slate-400 transition-transform duration-200 ease-out ${open ? 'rotate-180' : ''}`}
+      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  )
+  const bookLink = (label, className) => (
+    <a
+      href={bookHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={(e) => e.stopPropagation()}
+      className={className}
+    >
+      {label}
+    </a>
+  )
+
   return (
     <div className="border-b border-slate-100 last:border-b-0">
       <div
         role="button"
         tabIndex={0}
-        className="grid cursor-pointer gap-2 rounded-lg px-4 py-4 transition-all duration-150 ease-out hover:bg-slate-50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue/50 focus-visible:ring-inset sm:gap-3 sm:px-6 sm:py-5 md:grid-cols-[1.5fr_0.7fr_0.7fr_0.8fr] md:items-center"
+        className="flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors duration-150 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue/50 focus-visible:ring-inset md:hidden"
+        onClick={() => setOpen(!open)}
+        onKeyDown={handleKeyDown}
+      >
+        {renderIcon()}
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <p className="font-serif text-[15px] font-semibold leading-snug tracking-tight text-accentNavy">{service.name}</p>
+            {renderPopularBadge()}
+          </div>
+          <p className="mt-0.5 text-xs text-slate-500">
+            {service.duration}
+            <span className="mx-1.5 text-slate-300" aria-hidden="true">·</span>
+            <span className="font-semibold text-accentNavy">{service.price}</span>
+          </p>
+        </div>
+        {bookLink(
+          bookLabel === 'Buy a Gift Card' ? 'Buy' : 'Book',
+          'inline-flex shrink-0 rounded-lg bg-accentNavy px-3 py-1.5 text-xs font-semibold tracking-wide text-white',
+        )}
+        {renderChevron()}
+      </div>
+
+      <div
+        role="button"
+        tabIndex={0}
+        className="hidden cursor-pointer gap-3 rounded-lg px-6 py-5 transition-all duration-150 ease-out hover:bg-slate-50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue/50 focus-visible:ring-inset md:grid md:grid-cols-[1.5fr_0.7fr_0.7fr_0.8fr] md:items-center"
         onClick={() => setOpen(!open)}
         onKeyDown={handleKeyDown}
       >
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-softBlue text-accentBlue">
-            {serviceIcons[service.name] || defaultIcon}
-          </span>
+          {renderIcon()}
           <div className="flex flex-wrap items-center gap-2">
-            <p className="font-serif text-base font-semibold tracking-tight text-accentNavy sm:text-lg">{service.name}</p>
-            {isPopular && (
-              <span className="rounded-full bg-accentGreen/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accentNavy">
-                Popular
-              </span>
-            )}
+            <p className="font-serif text-lg font-semibold tracking-tight text-accentNavy">{service.name}</p>
+            {renderPopularBadge()}
           </div>
-          <svg
-            className={`h-4 w-4 shrink-0 text-slate-400 transition-transform duration-200 ease-out ${open ? 'rotate-180' : ''}`}
-            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
+          {renderChevron()}
         </div>
         <div className="text-base font-medium text-slate-600">{service.duration}</div>
         <div className="text-base font-semibold text-accentNavy">{service.price}</div>
-        <div className="md:text-right" onClick={(e) => e.stopPropagation()}>
-          <a
-            href={bookHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex rounded-lg bg-accentNavy px-4 py-2 text-sm font-semibold tracking-wide text-white transition-all duration-150 ease-out hover:scale-105 hover:bg-accentNavy/90 hover:shadow-md active:scale-[0.98]"
-          >
-            {bookLabel}
-          </a>
+        <div className="md:text-right">
+          {bookLink(
+            bookLabel,
+            'inline-flex rounded-lg bg-accentNavy px-4 py-2 text-sm font-semibold tracking-wide text-white transition-all duration-150 ease-out hover:scale-105 hover:bg-accentNavy/90 hover:shadow-md active:scale-[0.98]',
+          )}
         </div>
       </div>
       <div
@@ -228,11 +268,16 @@ const baUndereyeImage = {
 
 export function ServicesPage() {
   const [zoomedImage, setZoomedImage] = useState(null)
+  const [openGroupId, setOpenGroupId] = useState(() => {
+    if (typeof window === 'undefined') return null
+    return window.location.hash.replace('#', '') || null
+  })
   const { hash } = useLocation()
 
   useEffect(() => {
     if (!hash) return
     const id = hash.replace('#', '')
+    setOpenGroupId(id)
     const timer = window.setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, 80)
@@ -254,7 +299,10 @@ export function ServicesPage() {
   }, [zoomedImage])
 
   const scrollToCategory = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setOpenGroupId(id)
+    window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 60)
   }
   const schemaOrg = {
     "@context": "https://schema.org",
@@ -368,13 +416,13 @@ export function ServicesPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
           <div className="mb-6 sm:mb-10 md:mb-12">
             <p className="mb-3 text-xs font-semibold uppercase tracking-luxury text-accentBlue">Jump to category</p>
-            <div className="flex flex-wrap gap-2">
+            <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden">
               {serviceGroups.map((group) => (
                 <button
                   key={group.title}
                   type="button"
                   onClick={() => scrollToCategory(slugify(group.title))}
-                  className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm text-accentNavy transition-all duration-150 ease-out hover:scale-105 hover:border-accentBlue hover:bg-softBlue/50 hover:text-accentBlue active:scale-[0.98]"
+                  className="shrink-0 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm text-accentNavy transition-all duration-150 ease-out hover:scale-105 hover:border-accentBlue hover:bg-softBlue/50 hover:text-accentBlue active:scale-[0.98] md:shrink"
                 >
                   {group.title}
                 </button>
@@ -430,41 +478,72 @@ export function ServicesPage() {
             </div>
           </div>
 
-          <div className="space-y-8 sm:space-y-10 md:space-y-12">
-            {serviceGroups.map((group) => (
-              <section key={group.title} id={slugify(group.title)} className="scroll-mt-24 space-y-3 sm:space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">{group.category || "Category"}</p>
-                <h2 className="font-serif text-xl tracking-tight text-accentNavy sm:text-2xl md:text-3xl">
-                  {group.title}
-                </h2>
-
-                {group.services.length === 0 ? (
-                  <div className="rounded-xl border border-slate-200 bg-white px-4 py-10 text-center text-sm text-slate-600 shadow-sm sm:px-6">
-                    Services in this category will appear here once added to the menu.
-                  </div>
-                ) : (
-                  <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-200 ease-out hover:shadow-md hover:border-slate-300/80">
-                    <div className="grid border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold tracking-wide text-slate-500 sm:px-6 sm:py-4 sm:text-sm md:grid-cols-[1.5fr_0.7fr_0.7fr_0.8fr]">
-                      <div>Service</div>
-                      <div>Duration</div>
-                      <div>Price</div>
-                      <div className="text-left md:text-right">Booking</div>
+          <div className="space-y-3 md:space-y-12">
+            {serviceGroups.map((group) => {
+              const id = slugify(group.title)
+              const isOpen = openGroupId === id
+              const count = group.services.length
+              return (
+                <section key={group.title} id={id} className="scroll-mt-24">
+                  <button
+                    type="button"
+                    onClick={() => setOpenGroupId(isOpen ? null : id)}
+                    aria-expanded={isOpen}
+                    className={`flex w-full items-center justify-between gap-3 rounded-xl border bg-white px-4 py-3.5 text-left shadow-sm transition md:hidden ${
+                      isOpen ? 'rounded-b-none border-accentBlue/30' : 'border-slate-200'
+                    }`}
+                  >
+                    <div className="min-w-0">
+                      <p className="text-[10px] font-semibold uppercase tracking-luxury text-accentBlue">{group.category || 'Category'}</p>
+                      <h2 className="mt-0.5 font-serif text-lg tracking-tight text-accentNavy">{group.title}</h2>
+                      <p className="mt-0.5 text-xs text-slate-500">
+                        {count === 1 ? '1 treatment' : `${count} treatments`}
+                      </p>
                     </div>
+                    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-softBlue text-accentNavy transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </button>
 
-                    <div>
-                      {group.services.map((service) => (
-                        <ServiceRow
-                          key={`${group.title}-${service.name}`}
-                          service={service}
-                          groupTitle={group.title}
-                          bookLabel={group.title === 'Gift Cards' ? 'Buy a Gift Card' : 'Book now'}
-                        />
-                      ))}
-                    </div>
+                  <div className="mb-4 hidden md:block">
+                    <p className="text-xs font-semibold uppercase tracking-luxury text-accentBlue">{group.category || 'Category'}</p>
+                    <h2 className="mt-1 font-serif text-2xl tracking-tight text-accentNavy md:text-3xl">
+                      {group.title}
+                    </h2>
                   </div>
-                )}
-              </section>
-            ))}
+
+                  <div className={isOpen ? 'block' : 'hidden md:block'}>
+                    {count === 0 ? (
+                      <div className="rounded-b-xl border border-t-0 border-slate-200 bg-white px-4 py-10 text-center text-sm text-slate-600 shadow-sm md:rounded-xl md:border-t md:px-6">
+                        Services in this category will appear here once added to the menu.
+                      </div>
+                    ) : (
+                      <div className="overflow-hidden rounded-b-xl border border-t-0 border-slate-200 bg-white shadow-sm md:rounded-xl md:border-t md:transition-all md:duration-200 md:ease-out md:hover:border-slate-300/80 md:hover:shadow-md">
+                        <div className="hidden border-b border-slate-200 bg-slate-50 px-6 py-4 text-sm font-semibold tracking-wide text-slate-500 md:grid md:grid-cols-[1.5fr_0.7fr_0.7fr_0.8fr]">
+                          <div>Service</div>
+                          <div>Duration</div>
+                          <div>Price</div>
+                          <div className="text-right">Booking</div>
+                        </div>
+
+                        <div>
+                          {group.services.map((service) => (
+                            <ServiceRow
+                              key={`${group.title}-${service.name}`}
+                              service={service}
+                              groupTitle={group.title}
+                              bookLabel={group.title === 'Gift Cards' ? 'Buy a Gift Card' : 'Book now'}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              )
+            })}
           </div>
         </div>
       </section>

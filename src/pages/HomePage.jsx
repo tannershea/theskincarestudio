@@ -33,7 +33,7 @@ const treatmentCategories = [
   },
   {
     title: 'Skin Treatments',
-    href: '/services#facials',
+    href: '/services#acne-treatments',
     image: '/learn-hydrafacial-treatment.png',
     imageClass: 'object-[center_80%]',
     alt: 'Facial treatment at The Skincare Studio in Stratford',
