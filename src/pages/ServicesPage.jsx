@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link, useLocation } from 'react-router-dom'
-import { bookingUrl, serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs, servicesPageReviews, giftCardsPath } from '../data'
+import { bookingUrl, serviceBookingUrlOverrides, serviceGroups, popularServiceNames, serviceFaqs, servicesPageReviews, giftCardsPath, octoberSpecials } from '../data'
 import { FAQ } from '../components/FAQ'
 
 const servicesHeroImages = [
@@ -417,6 +417,13 @@ export function ServicesPage() {
           <div className="mb-6 sm:mb-10 md:mb-12">
             <p className="mb-3 text-xs font-semibold uppercase tracking-luxury text-accentBlue">Jump to category</p>
             <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden">
+              <button
+                type="button"
+                onClick={() => document.getElementById('october-specials')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                className="shrink-0 rounded-lg border border-accentGreen/60 bg-softGreen px-4 py-2.5 text-sm font-semibold text-accentNavy transition-all duration-150 ease-out hover:scale-105 hover:border-accentBlue active:scale-[0.98] md:shrink"
+              >
+                October Specials
+              </button>
               {serviceGroups.map((group) => (
                 <button
                   key={group.title}
@@ -476,6 +483,36 @@ export function ServicesPage() {
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
               </Link>
             </div>
+          </div>
+
+          <div id="october-specials" className="mb-3 scroll-mt-28 overflow-hidden rounded-xl border border-accentGreen/50 bg-white shadow-sm sm:rounded-2xl md:mb-12">
+            <div className="border-b border-accentGreen/30 bg-softGreen px-4 py-3 sm:px-6 sm:py-4">
+              <p className="text-[10px] font-semibold uppercase tracking-luxury text-accentNavy">This month</p>
+              <h2 className="mt-0.5 font-serif text-lg tracking-tight text-accentNavy sm:mt-1 sm:text-xl md:text-2xl">October specials</h2>
+              <p className="mt-0.5 text-xs text-slate-600 sm:mt-1 sm:text-sm">Available all month at the studio.</p>
+            </div>
+            <ul className="divide-y divide-slate-100 md:grid md:grid-cols-3 md:divide-x md:divide-y-0">
+              {octoberSpecials.map((item) => (
+                <li key={item.name} className="flex items-center gap-3 px-4 py-3 md:flex-col md:items-stretch md:px-5 md:py-5">
+                  <div className="min-w-0 flex-1">
+                    <p className="font-serif text-[15px] font-semibold leading-snug tracking-tight text-accentNavy md:text-lg">{item.name}</p>
+                    <p className="mt-0.5 text-xs font-semibold text-accentNavy md:hidden">{item.price}</p>
+                    <p className="mt-1 hidden text-sm text-slate-600 md:block">{item.note}</p>
+                  </div>
+                  <div className="flex shrink-0 items-center justify-between gap-3 md:mt-auto">
+                    <p className="hidden text-lg font-semibold text-accentNavy md:block">{item.price}</p>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex shrink-0 rounded-lg bg-accentNavy px-3 py-1.5 text-xs font-semibold tracking-wide text-white transition-all duration-150 hover:bg-accentNavy/90 md:px-3.5"
+                    >
+                      Book
+                    </a>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="space-y-3 md:space-y-12">

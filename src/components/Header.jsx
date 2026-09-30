@@ -6,6 +6,7 @@ import {
   contactDetails,
   giftCardsPath,
   resultsResourcesPath,
+  octoberAnnouncementMessages,
 } from '../data'
 
 const navLinkClass = ({ isActive }) =>
@@ -27,15 +28,36 @@ const resourceLinks = [
 
 function AnnouncementBar() {
   const [dismissed, setDismissed] = useState(false)
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (media.matches) return
+    const timer = setInterval(() => {
+      setIndex((current) => (current + 1) % octoberAnnouncementMessages.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
 
   if (dismissed) return null
 
   return (
     <div className="relative bg-accentNavy text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-1.5 pr-10 sm:gap-3 sm:px-8 lg:px-10">
-        <p className="min-w-0 truncate text-[12px] font-medium tracking-wide sm:text-[13px]">
-          Teachers &amp; students: 10% off this month
-        </p>
+        <Link
+          to="/services#october-specials"
+          className="flex min-w-0 items-center justify-center gap-1.5 text-[12px] font-medium hover:text-accentGreen sm:gap-2 sm:text-[13px] sm:tracking-wide"
+        >
+          <span className="sr-only">
+            October specials: Neurotoxin $12 per unit, Autumn Reset Express Facial $125, and Autumn Reset Signature Facial $200.
+          </span>
+          <span aria-hidden="true" className="inline-flex shrink-0 items-center rounded-full bg-white/10 px-1.5 py-0.5 text-[11px] font-semibold text-accentGreen sm:px-2 sm:text-[12px] sm:tracking-wide">
+            October Specials 🍂:
+          </span>
+          <span aria-hidden="true" className="truncate">
+            {octoberAnnouncementMessages[index]}
+          </span>
+        </Link>
         <a
           href={bookingUrl}
           target="_blank"

@@ -507,6 +507,33 @@ export const serviceFaqs = [
   },
 ];
 
+export const octoberSpecials = [
+  {
+    name: 'Neurotoxin',
+    price: '$12 per unit',
+    note: 'All month',
+    href: serviceBookingUrlOverrides.Neurotoxin,
+  },
+  {
+    name: 'Autumn Reset Express Facial',
+    price: '$125',
+    note: 'All month',
+    href: bookingUrl,
+  },
+  {
+    name: 'Autumn Reset Signature Facial',
+    price: '$200',
+    note: 'All month',
+    href: bookingUrl,
+  },
+]
+
+export const octoberAnnouncementMessages = [
+  'Neurotoxin $12/unit',
+  'Express facial $125',
+  'Signature facial $200',
+]
+
 export const popularServiceNames = [
   'VI Peel Original', 'GLO2Facial Signature', 'Hydrafacial Deluxe',
   'Neurotoxin', 'Lip Filler', 'SkinPen Microneedling', 'In-Studio Facial Consultation',

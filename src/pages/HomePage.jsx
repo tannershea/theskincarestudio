@@ -154,24 +154,31 @@ export function HomePage() {
           <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-5 lg:grid-cols-4">
             {treatmentCategories.map((item, i) => (
               <ScrollReveal key={item.title} direction="up" delay={i * 80} className="min-w-0">
-                <article className="flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm sm:rounded-2xl">
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    className={`aspect-[4/3] w-full object-cover ${item.imageClass || ''}`}
+                <div className="group relative h-full min-w-0">
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -inset-2 rounded-[1.15rem] bg-gradient-to-br from-accentGreen via-[#7ddec0] to-accentBlue opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-80 sm:-inset-2.5 sm:rounded-[1.4rem]"
                   />
-                  <div className="flex flex-1 flex-col p-3 sm:p-4">
-                    <h3 className="font-serif text-[15px] font-semibold tracking-tight text-accentNavy sm:text-lg">
-                      {item.title}
-                    </h3>
-                    <Link
-                      to={item.href}
-                      className="mt-2 inline-flex items-center text-[13px] font-semibold text-accentNavy hover:text-accentBlue sm:text-sm"
-                    >
-                      Learn More →
-                    </Link>
-                  </div>
-                </article>
+                  <Link
+                    to={item.href}
+                    aria-label={`${item.title}: Learn more`}
+                    className="relative z-10 flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-[0_0_0_1px_rgba(142,224,166,0.85),0_0_22px_2px_rgba(57,182,217,0.28)] sm:rounded-2xl"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      className={`aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03] ${item.imageClass || ''}`}
+                    />
+                    <div className="flex flex-1 flex-col p-3 sm:p-4">
+                      <h3 className="font-serif text-[15px] font-semibold tracking-tight text-accentNavy sm:text-lg">
+                        {item.title}
+                      </h3>
+                      <span className="mt-2 inline-flex items-center text-[13px] font-semibold text-accentNavy transition-colors group-hover:text-accentBlue sm:text-sm">
+                        Learn More →
+                      </span>
+                    </div>
+                  </Link>
+                </div>
               </ScrollReveal>
             ))}
           </div>
