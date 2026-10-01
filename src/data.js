@@ -512,19 +512,19 @@ export const octoberSpecials = [
     name: 'Neurotoxin',
     price: '$12 per unit',
     note: 'All month',
-    href: serviceBookingUrlOverrides.Neurotoxin,
+    href: 'https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/d2a15ba9-fb05-4298-954d-e3582bd36c75',
   },
   {
     name: 'Autumn Reset Express Facial',
     price: '$125',
     note: 'All month',
-    href: bookingUrl,
+    href: 'https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/ade6412e-1488-43e8-82ed-a11d171f9771',
   },
   {
     name: 'Autumn Reset Signature Facial',
     price: '$200',
     note: 'All month',
-    href: bookingUrl,
+    href: 'https://booking.podium.com/019c8c61-886d-7520-b631-d3871ad7f936/019c8c61-898c-7767-a370-8c2b5f030753/cc5b18ec-308f-4878-92f3-0ab17287363c',
   },
 ]
 
