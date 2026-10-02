@@ -6,15 +6,8 @@ export const TEAM_AVATAR_IMG_CLASS_WIDE =
 
 export const aboutTeamMembers = [
   {
-    name: 'Morine Cebert',
-    role: 'Medical Director',
-    credentials: 'PhD, FNP-C, RN, GYN',
-    bio: 'Dr. Cebert brings extensive clinical expertise and oversight, ensuring the highest standards of patient safety across all procedures.',
-    image: '/team-morine.png',
-  },
-  {
     name: 'Terri Miller',
-    role: 'CEO & Founder',
+    role: 'Owner, Office Manager',
     credentials: 'BSN, RN, Licensed Esthetician',
     bio: 'With over 15 years of experience in dermatology and plastic surgery, Terri founded The Skincare Studio to bring medical-grade aesthetic care to Fairfield County.',
     image: '/team-terri.png',
@@ -35,13 +28,6 @@ export const aboutTeamMembers = [
     image: '/team-britney.png',
   },
   {
-    name: 'Alix Agathos',
-    role: 'Aesthetic Clinical Assistant',
-    credentials: 'CPT, PCT',
-    bio: 'Alixandria supports our clinical team with hands-on assistance, ensuring every visit runs smoothly and comfortably.',
-    image: '/team-alixandria.png',
-  },
-  {
     name: 'Iyanna Brookins',
     role: 'Medical Esthetician',
     credentials: 'Licensed Esthetician',
@@ -50,7 +36,7 @@ export const aboutTeamMembers = [
   },
   {
     name: 'Semhar Samuels',
-    role: 'Practice Manager',
+    role: 'Patient Coordinator',
     credentials: '',
     bio: 'Semhar keeps The Skincare Studio running smoothly, delivering the elevated professional experience our clients expect.',
     image: '/team-semhar.png',
@@ -58,7 +44,7 @@ export const aboutTeamMembers = [
   },
   {
     name: 'Jenny Depina',
-    role: 'Assistant Manager',
+    role: 'Patient Coordinator',
     credentials: '',
     bio: 'Jenny ensures every client\'s experience, from scheduling through follow-up, is seamless, comfortable, and personalized.',
     image: '/team-jenny.png',

@@ -173,7 +173,7 @@ export function AboutPage() {
                 { value: '15+', label: 'Years of Experience' },
                 { value: '10K+', label: 'Treatments Performed' },
                 { value: '4.9', label: 'Google Rating' },
-                { value: '9', label: 'Expert Team Members' },
+                { value: '7', label: 'Expert Team Members' },
               ].map((stat, i) => (
                 <ScrollReveal key={stat.label} direction="up" delay={i * 80}>
                   <div className="text-center">
